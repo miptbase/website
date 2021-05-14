@@ -64,7 +64,7 @@ const Form = () => {
     const paymentValue = [
         {
             id: 1,
-            value: '1000',
+            value: '5000',
         },
         {
             id: 2,

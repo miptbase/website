@@ -14,7 +14,9 @@ const Value = (props) => {
 
     return (
         <div className={valueClass}  onClick={functionValueActive}>
-            {value}
+            <div className={style.hidden}> {value}</div>
+            <div className={style.text}>{value}</div>
+
         </div>
     )
 }
