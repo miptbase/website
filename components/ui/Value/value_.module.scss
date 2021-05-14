@@ -1,0 +1,21 @@
+@import "scss/mixins";
+.value {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid white;
+  background: transparent;
+  padding: 0 1.5rem;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+  font-weight: normal;
+  white-space: nowrap;
+
+  &_color {
+    &_select {
+      @include select;
+      text-align: center;
+    }
+  }
+}
+

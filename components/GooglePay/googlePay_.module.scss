@@ -1,0 +1,10 @@
+.input {
+  background: red;
+
+  &_color {
+    &_white {
+      border: white;
+    }
+  }
+}
+

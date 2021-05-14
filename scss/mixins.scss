@@ -1,0 +1,19 @@
+@import "colors";
+@mixin container {
+  max-width: 128rem;
+  padding: 0 6rem;
+  margin: 0 auto;
+}
+
+@mixin select {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s color ease-in-out, 0.2s background ease-in-out;
+  &_active {
+    background: white;
+    font-weight: bold;
+    color: $blue;
+  }
+}

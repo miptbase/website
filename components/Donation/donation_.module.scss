@@ -1,0 +1,19 @@
+@import "./scss/mixins";
+@import "./scss/colors";
+
+.donation {
+  @include container;
+  display: flex;
+}
+
+.form,
+.image {
+  flex: 0 0 50%;
+}
+
+.form {
+  padding: 4.2rem 4rem 4.6rem;
+  background: $blue;
+  border-radius: 2rem 0 0 2rem;
+}
+

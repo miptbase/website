@@ -1,0 +1,35 @@
+@import "scss/mixins";
+.input {
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+  background: transparent;
+  padding: 0 1.5rem;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+  font-weight: normal;
+
+  &_color {
+    &_white {
+      border: 1px solid white;
+      color: white;
+      &::placeholder {
+        color: rgba(white, 0.5);
+      }
+    }
+    &_select {
+      @include select;
+      text-align: center;
+      &::placeholder {
+        text-align: center;
+        color: white;
+      }
+      &_active {
+        &::placeholder {
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
