@@ -20,6 +20,7 @@
     "@babel/preset-react": "^7.13.13",
     "classnames": "^2.3.1",
     "frontmatter-markdown-loader": "^3.6.2",
+    "netlify-cli": "^3.30.6",
     "sass": "^1.32.12"
   }
 }
