@@ -5,12 +5,19 @@
   align-items: center;
   justify-content: center;
   height: 4.5rem;
-  width: 100%;
+  width: auto;
   border-radius: 0.5rem;
   color: white;
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 0.02em;
+  padding: 0 2rem;
+  
+  &_width {
+    &_100 {
+      width: 100%;
+    }
+  }
 
   &_color {
     &_white {
@@ -19,6 +26,10 @@
 
     &_orange {
       background: $orange;
+    }
+    
+    &_blue {
+      background: $blue;
     }
   }
 }

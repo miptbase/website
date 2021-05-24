@@ -5,16 +5,21 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "npm run build && next export"
   },
   "dependencies": {
     "@google-pay/button-react": "^2.3.0",
+    "netlify-cms-app": "^2.15.6",
     "next": "^10.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-react": "^7.13.13",
     "classnames": "^2.3.1",
+    "frontmatter-markdown-loader": "^3.6.2",
     "sass": "^1.32.12"
   }
 }

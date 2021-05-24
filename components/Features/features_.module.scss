@@ -1,0 +1,14 @@
+@import "./scss/mixins";
+.features {
+  @include container;
+}
+
+.title {
+  @include title-2;
+  margin-bottom: 5.367rem;
+}
+
+.content {
+  @include col2;
+}
+
