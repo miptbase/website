@@ -21,14 +21,14 @@ const HomeTop = (props) => {
                 </div>
             </div>
             <div className={style['img-container']}>
-                <Image
-                    src='/img/home-top.jpg'
-                    alt="MIPT"
-                    layout='fill'
-                    priority='true'
-                    objectFit='cover'
-                    objectPosition='center'
-                />
+                {/*<Image*/}
+                {/*    src='/img/home-top.jpg'*/}
+                {/*    alt="MIPT"*/}
+                {/*    layout='fill'*/}
+                {/*    priority='true'*/}
+                {/*    objectFit='cover'*/}
+                {/*    objectPosition='center'*/}
+                {/*/>*/}
             </div>
         </section>
     )
