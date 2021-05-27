@@ -12,6 +12,10 @@ collections:
         name: "home"
         file: "content/home.md"
         fields:
+          - label: "Top Image"
+              name: "thumbnail"
+              widget: "image"
+              default: "/img/home-top.jpg"
           - label: "Top"
             name: "top"
             widget: "object"

@@ -10,9 +10,9 @@ export default class Home extends Component {
         let {top, features} = attributes;
         return (
             <>
-                {/*<Head>*/}
-                {/*    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>*/}
-                {/*</Head>*/}
+                <Head>
+                    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+                </Head>
                 <HomeTop
                     title={top.title}
                     content={top.content}
