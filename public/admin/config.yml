@@ -1,6 +1,5 @@
 backend:
   name: git-gateway
-  repo: miptbase/website
   branch: develop # Branch to update (optional; defaults to master)
 media_folder: public/img
 public_folder: img
