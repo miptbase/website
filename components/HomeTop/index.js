@@ -1,7 +1,5 @@
 import React from 'react'
 import style from "./home-top_.module.scss"
-
-import Image from 'next/image'
 import Button from "../ui/Button";
 
 
@@ -21,14 +19,7 @@ const HomeTop = (props) => {
                 </div>
             </div>
             <div className={style['img-container']}>
-                {/*<Image*/}
-                {/*    src='/img/home-top.jpg'*/}
-                {/*    alt="MIPT"*/}
-                {/*    layout='fill'*/}
-                {/*    priority='true'*/}
-                {/*    objectFit='cover'*/}
-                {/*    objectPosition='center'*/}
-                {/*/>*/}
+
             </div>
         </section>
     )
