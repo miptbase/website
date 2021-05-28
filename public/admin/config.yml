@@ -40,3 +40,22 @@ collections:
               - { label: "TestContent", name: "test", widget: "string" }
               - { label: "ButtonText", name: "button", widget: "string" }
               - { label: "Image", name: "img", widget: "image" }
+          - label: 'Donors'
+            name: "donors"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - label: 'Items'
+                name: "items"
+                widget: list
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text" }
+              - label: 'Person'
+                name: "person"
+                widget: list
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Company", name: "company", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text"}
+                  - { label: "Image", name: "img", widget: "image" }
