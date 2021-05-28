@@ -37,7 +37,7 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Text", name: "text", widget: "text" }
-              - { label: "Caption", name: "caption", widget: "text" }
+              - { label: "Caption", name: "caption", widget: "string" }
               - { label: "Total", name: "total", widget: "number" }
               - { label: "Progress", name: "progress", widget: "number" }
               - { label: "ButtonText", name: "button", widget: "string" }
@@ -61,15 +61,15 @@ collections:
                   - { label: "Company", name: "company", widget: "string" }
                   - { label: "Description", name: "description", widget: "text"}
                   - { label: "Image", name: "img", widget: "image" }
-              - label: 'Media'
-                name: "media"
-                widget: "object"
-                fields:
-                  - { label: "Title", name: "title", widget: "string" }
-                  - label: 'Items'
-                    name: "items"
-                    widget: list
-                    fields:
-                      - { label: "Text", name: "text", widget: "text" }
-                      - { label: "Image", name: "img", widget: "image" }
-                      - { label: "Description", name: "description", widget: "string" }
+            - label: 'Media'
+              name: "media"
+              widget: "object"
+              fields:
+                - { label: "Title", name: "title", widget: "string" }
+                - label: 'Items'
+                  name: "items"
+                  widget: list
+                  fields:
+                    - { label: "Text", name: "text", widget: "text" }
+                    - { label: "Image", name: "img", widget: "image" }
+                    - { label: "Description", name: "description", widget: "string" }
