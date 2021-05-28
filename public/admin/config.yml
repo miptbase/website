@@ -95,16 +95,16 @@ collections:
                     name: "metods"
                     widget: list
                     fields:
-                      - widget: "text"
-                      - widget: "text"
-                      - widget: "text"
+                      - label: "Type"
+                        name: "type"
+                        widget: "string"
                   - label: 'Summ'
                     name: "summ"
                     widget: list
                     fields:
-                      - widget: "number"
-                      - widget: "number"
-                      - widget: "number"
+                      - label: "Button"
+                        name: "button"
+                        widget: "number"
                   - label: 'Other'
                     name: "other"
                     widget: "string"
