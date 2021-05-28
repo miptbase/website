@@ -1,0 +1,38 @@
+@import "./scss/mixins";
+
+.home-top {
+  @include container;
+  @include col2;
+  padding-bottom: 15.184rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  @include title-1;
+  margin-bottom: 2.5rem;
+}
+
+.text {
+  @include text-20;
+  margin-bottom: 4rem;
+}
+
+.button-container {
+  width: 20.5rem;
+}
+
+.img-container {
+  position: relative;
+  width: 56rem;
+  height: 50rem;
+}
+
+
+
+
+
