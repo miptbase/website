@@ -32,11 +32,11 @@ collections:
                   - { label: "Description", name: "description", widget: "text"}
                   - { label: "Image", name: "img", widget: "image"}
           - label: "Goal"
-              name: "goal"
-              widget: "object"
-              fields:
-                - { label: "Title", name: "title", widget: "string" }
-                - { label: "Content", name: "content", widget: "string" }
-                - { label: "TestContent", name: "test", widget: "string" }
-                - { label: "ButtonText", name: "button", widget: "string" }
-                - { label: "Image", name: "img", widget: "image" }
+            name: "goal"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Content", name: "content", widget: "string" }
+              - { label: "TestContent", name: "test", widget: "string" }
+              - { label: "ButtonText", name: "button", widget: "string" }
+              - { label: "Image", name: "img", widget: "image" }
