@@ -15,7 +15,7 @@ const Check = (props) => {
     return (
         <>
             <input className={style.input} type='checkbox' id={id}/>
-            <label className={labelClass} onClick={functionCheck} for={id}>  {text} </label>
+            <label className={labelClass} onClick={functionCheck} htmlFor={id}>  {text} </label>
         </>
 
     )

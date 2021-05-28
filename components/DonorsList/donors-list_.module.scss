@@ -1,0 +1,13 @@
+@import "./scss/mixins";
+@import "./scss/colors";
+
+.donors {
+  @include container;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+

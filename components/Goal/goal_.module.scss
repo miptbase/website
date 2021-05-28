@@ -1,17 +1,17 @@
 @import "./scss/mixins";
 @import "./scss/colors";
 
-.donation {
+.goal {
   @include container;
   display: flex;
 }
 
-.form,
+.content,
 .image {
   flex: 0 0 50%;
 }
 
-.form {
+.content {
   padding: 4.2rem 4rem 4.6rem;
   background: $blue;
   border-radius: 2rem 0 0 2rem;

@@ -1,0 +1,36 @@
+@import "../../scss/mixins";
+@import "../../scss/colors";
+
+.donor {
+}
+
+.flipper {
+  position: relative;
+  width: 20rem;
+  height: 27rem;
+  perspective: 3000px;;
+}
+
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.8s transform ease-in-out;
+}
+
+.front {
+  z-index: 2;
+  .donor:hover & {
+    transform: rotateY(180deg)
+  }
+}
+.back {
+  transform: rotateY(180deg);
+  background: #2d83e8;
+  .donor:hover & {
+    transform: rotateY(360deg)
+  }
+}

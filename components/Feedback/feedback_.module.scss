@@ -1,0 +1,19 @@
+@import "./scss/mixins";
+.feedback {
+
+}
+
+.inner {
+  @include container;
+  @include col2;
+}
+
+.form {
+  display: flex;
+}
+
+.input {
+  height: 4rem;
+}
+
+

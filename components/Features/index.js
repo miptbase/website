@@ -6,7 +6,7 @@ import Feature from '../Feature'
 const Features = (props) => {
     const {features} = props;
     return (
-        <div className={style.features}>
+        <section className={style.features}>
             <h2 className={style.title}>
                 {features.title}
             </h2>
@@ -16,10 +16,11 @@ const Features = (props) => {
                         key={feature.name}
                         title={feature.name}
                         text={feature.description}
+                        img={feature.img}
                     />
                 ))}
             </div>
-        </div>
+        </section>
     )
 }
 

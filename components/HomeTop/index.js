@@ -1,10 +1,12 @@
 import React from 'react'
 import style from "./home-top_.module.scss"
+
+import Image from 'next/image'
 import Button from "../ui/Button";
 
 
 const HomeTop = (props) => {
-    const {title, content} = props;
+    const {title, content, img} = props;
     return (
         <section className={style['home-top']}>
             <div className={style['content']}>
@@ -19,7 +21,7 @@ const HomeTop = (props) => {
                 </div>
             </div>
             <div className={style['img-container']}>
-
+                <img src={img}/>
             </div>
         </section>
     )

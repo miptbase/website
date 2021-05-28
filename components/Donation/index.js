@@ -6,14 +6,14 @@ import Form from '../Form'
 const Donation = () => {
 
     return (
-        <div className={style.donation}>
+        <section className={style.donation}>
             <div className={style.form}>
                 <Form />
             </div>
             <div className={style.image}>
                 <img src='/img/donations.jpg'/>
             </div>
-        </div>
+        </section>
     )
 }
 
