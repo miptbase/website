@@ -36,8 +36,10 @@ collections:
             widget: "object"
             fields:
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Content", name: "content", widget: "string" }
-              - { label: "TestContent", name: "test", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Caption", name: "caption", widget: "text" }
+              - { label: "Total", name: "total", widget: "number" }
+              - { label: "Progress", name: "progress", widget: "number" }
               - { label: "ButtonText", name: "button", widget: "string" }
               - { label: "Image", name: "img", widget: "image" }
           - label: 'Donors'
