@@ -14,7 +14,6 @@ const Form = () => {
     const [isStudent, setIsStudent] = useState(false);
     const [activeValue, setActiveValue] = useState(null);
     const [activeMethod, setActiveMethod] = useState(null);
-    const [currentId, setCurrentId] = useState(null);
     const selectValue = value => {
         setActiveValue(value);
     };
@@ -77,18 +76,20 @@ const Form = () => {
 
     const onSubmit = async e => {
         e.preventDefault();
-        const dataToSend = [...new FormData(e.target).entries()]
-            .reduce((acc, [key, value]) => {
-                acc[key] = value;
-                return acc;
-            }, {});
-        const response = await (await fetch('http://miptbaseback.4129.ru/id', {
-            method: 'POST',
-            body: JSON.stringify(dataToSend),
-        })).json();
-        const {orderStatus, orderId} = response;
-        setCurrentId(orderId)
-        console.log("lkjlkj");
+        // const formData = new FormData(e.target);
+        // const {result, id: paymentId} = await (await fetch('http://miptbaseback.4129.ru/id')).json();
+        if (result === 'success') {
+            localStorage.setItem('paymentData', JSON.stringify({
+                paymentId: 32323,
+                name: formData.get('name'),
+                value: formData.get('custom-donate-value'),
+            }));
+            if (activeMethod === 'Перевод') {
+                openTransfer();
+            }
+        } else {
+            console.log('error occured');
+        }
     };
 
 
@@ -197,7 +198,7 @@ const Form = () => {
                         placeholder='Поддержать'
                         color='orange'
                         type='submit'
-                        functionClick = {(activeMethod === 'Перевод') ? openTransfer : null}
+                        value='Поддержать'
                     />
                 </div>
 
