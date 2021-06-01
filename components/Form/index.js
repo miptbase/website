@@ -193,12 +193,11 @@ const Form = () => {
                 </div>
 
                 <div className={style.buttons}>
-                    <Button
-                        text='Поддержать'
+                    <Input
+                        placeholder='Поддержать'
                         color='orange'
-                        blank={true}
                         type='submit'
-                        buttonFunction = {(activeMethod === 'Перевод') ? openTransfer : null}
+                        functionClick = {(activeMethod === 'Перевод') ? openTransfer : null}
                     />
                 </div>
 
