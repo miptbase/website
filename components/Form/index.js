@@ -76,11 +76,11 @@ const Form = () => {
 
     const onSubmit = async e => {
         e.preventDefault();
-        // const formData = new FormData(e.target);
-        // const {result, id: paymentId} = await (await fetch('http://miptbaseback.4129.ru/id')).json();
+        const formData = new FormData(e.target);
+        const {result, id: paymentId} = await (await fetch('http://miptbaseback.4129.ru/id')).json();
         if (result === 'success') {
             localStorage.setItem('paymentData', JSON.stringify({
-                paymentId: 32323,
+                paymentId,
                 name: formData.get('name'),
                 value: formData.get('custom-donate-value'),
             }));
