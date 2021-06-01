@@ -109,6 +109,10 @@ const Form = () => {
         })).json();
     }, DEBOUNCE_MS);
 
+    const openTransfer = () => {
+        window.open('/transfer');
+    }
+
     return (
         <>
 
@@ -155,14 +159,13 @@ const Form = () => {
 
                 <div className={style.method}>
                     {paymentMethod.map(method => (
-                        <Input
+                        <div
                             className={(activeMethod === method.name) ? [style.item + ' ' + style.item_active] : [style.item]}
                             key={method.id}
                             onClick={()=> {selectMethod(`${method.name}`)}}
-                            type = {(activeMethod === 'Перевод') ? 'submit' : 'text'}
-                            placeholder = {method.name}
                         >
-                        </Input>
+                            {method.name}
+                        </div>
                     ))}
                 </div>
 
@@ -192,9 +195,9 @@ const Form = () => {
                     <Button
                         text='Поддержать'
                         color='orange'
-                        type={(activeMethod === 'Перевод') ? 'link' : 'button'}
-                        href={(activeMethod === 'Перевод') ? `transfer?name=Test&summ=3000&id=${currentId}` : "#"} // закинуть имя и сумму
                         blank={true}
+
+                        buttonFunction = {(activeMethod === 'Перевод') ? openTransfer : null}
                     />
                 </div>
 
