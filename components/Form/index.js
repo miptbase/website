@@ -196,7 +196,7 @@ const Form = () => {
                         text='Поддержать'
                         color='orange'
                         blank={true}
-
+                        type='submit'
                         buttonFunction = {(activeMethod === 'Перевод') ? openTransfer : null}
                     />
                 </div>

@@ -26,7 +26,7 @@ const Button = (props) => {
         )
     } else {
         return (
-            <button onClick={buttonFunction} className={buttonClass}>
+            <button onClick={buttonFunction} className={buttonClass} type={type}>
                 {text}
             </button>
         )
