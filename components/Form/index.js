@@ -88,6 +88,7 @@ const Form = () => {
         })).json();
         const {orderStatus, orderId} = response;
         setCurrentId(orderId)
+        console.log("lkjlkj");
     };
 
 
