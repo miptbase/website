@@ -4,7 +4,7 @@ import style from './button_.module.scss'
 import cn from 'classnames'
 
 const Button = (props) => {
-    const {color, buttonFunction, text, width} = props;
+    const {color, buttonFunction, text, width, type, href, blank} = props;
 
     const buttonClass = cn( {
         [style.button]: true,
@@ -13,12 +13,27 @@ const Button = (props) => {
         [style.button_color_blue]: color === 'blue',
         [style.button_width_100]: width === '100',
     });
+    console.log(href)
 
-    return (
-        <button onClick={buttonFunction} className={buttonClass}>
-            {text}
-        </button>
-    )
+    if (type === 'link') {
+        return (
+            <a href={href}
+                target={(blank) ? '_blank' : '_self'}
+                onClick={buttonFunction}
+                className={buttonClass}>
+                {text}
+            </a>
+        )
+    } else {
+        return (
+            <button onClick={buttonFunction} className={buttonClass}>
+                {text}
+            </button>
+        )
+    }
+
+
+
 }
 
 export default Button

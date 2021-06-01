@@ -215,5 +215,22 @@ social:
       link: '#'
 info: Фонд целевого капитала МФТИ (ИНН 5008998453, ОГРН 1145000001321) fund@phystech.edu, +7 (495) 642 38 89, официальный сайт — fund.mipt.ru
 copy: Сайт сделан в Accuraten
+transfer: 
+    Purpose: Назначение платежа 
+    valuePurpose: Пожертвование при публичном сборе денежных средств на Целевой капитал №9. 
+    Name: Получатель платежа
+    valueName: ФОНД ЦЕЛЕВОГО КАПИТАЛА МФТИ
+    PersonalAcc: Расчетный счет
+    valuePersonalAcc: 40703810800000716007
+    BankName: Банк
+    valueBankName: АО «ТИНЬКОФФ БАНК»
+    BIC: БИК банка
+    valueBIC: 044525974
+    CorrespAcc: Корреспондентский счет
+    valueCorrespAcc: 30101810145250000974
+    KPP: КПП получателя
+    valueKPP: 500801001
+    PayeeINN: ИНН получателя
+    valuePayeeINN: 5008998453
 ---
 

@@ -4,7 +4,7 @@ import style from './check_.module.scss'
 import cn from 'classnames'
 
 const Check = (props) => {
-    const {color, text, id, functionCheck, isSelected} = props;
+    const {color, text, id, functionCheck, isSelected, name} = props;
 
     const labelClass = cn({
         [style.label]: true,
@@ -14,7 +14,7 @@ const Check = (props) => {
 
     return (
         <>
-            <input className={style.input} type='checkbox' id={id}/>
+            <input className={style.input} type='checkbox' id={id} name={name}/>
             <label className={labelClass} onClick={functionCheck} htmlFor={id}>  {text} </label>
         </>
 
