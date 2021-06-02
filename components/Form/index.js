@@ -116,7 +116,8 @@ const Form = () => {
     }
     // const lalala = 'lalalaa'
     //
-    // const testov = `  <form id='payForm' name="TinkoffPayForm" onsubmit="pay(this); return false;">
+    // const testov = `  <form id='payForm' name="TinkoffPayForm" class="form" onsubmit="pay(this); return false;">
+    //                 <div class="form__title"> Улучшим вместе жизнь студентов Физтеха!</div>
     //             <input className="tinkoffPayRow" type="hidden" name="terminalkey" value="1611313361029"/>
     //                 <input className="tinkoffPayRow" type="hidden" name="frame" value="false" />
     //                     <input className="tinkoffPayRow" type="hidden" name="language" value="ru" />
@@ -134,11 +135,11 @@ const Form = () => {
     //                                                    name="phone" />
     //                                                 <input className="tinkoffPayRow" type="submit" value="Оплатить" />
     //         </form>`
-
+    //
     // function createMarkup() {
     //     return {__html: testov};
     // }
-
+    //
     // function MyComponent() {
     //     return <div dangerouslySetInnerHTML={createMarkup()} />;
     // }
