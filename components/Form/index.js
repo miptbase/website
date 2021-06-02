@@ -93,23 +93,23 @@ const Form = () => {
     };
 
 
-    const DEBOUNCE_MS = 3000;
-    const onNameOrEmailChange = debounce(async () => {
-        const name = nameInputRef.current.value;
-        const email = emailInputRef.current.value;
-        const dataToSend = {
-            event: 'Identify',
-            name: name,
-            email: email,
-        };
-        localStorage.setItem("name", name);
-        localStorage.setItem("email", email);
-
-        const response = await (await fetch('http://miptbaseback.4129.ru/log', {
-            method: 'POST',
-            body: JSON.stringify(dataToSend),
-        })).json();
-    }, DEBOUNCE_MS);
+    // const DEBOUNCE_MS = 3000;
+    // const onNameOrEmailChange = debounce(async () => {
+    //     const name = nameInputRef.current.value;
+    //     const email = emailInputRef.current.value;
+    //     const dataToSend = {
+    //         event: 'Identify',
+    //         name: name,
+    //         email: email,
+    //     };
+    //     localStorage.setItem("name", name);
+    //     localStorage.setItem("email", email);
+    //
+    //     const response = await (await fetch('http://miptbaseback.4129.ru/log', {
+    //         method: 'POST',
+    //         body: JSON.stringify(dataToSend),
+    //     })).json();
+    // }, DEBOUNCE_MS);
 
     const openTransfer = () => {
         window.open('/transfer');
@@ -128,7 +128,7 @@ const Form = () => {
                             color='white'
                             placeholder={formInput.placeholder}
                             name={formInput.name}
-                            onChange={onNameOrEmailChange}
+                            // onChange={onNameOrEmailChange}
                             ref={formInput.ref}
                         />
                     </div>
