@@ -77,7 +77,7 @@ const Form = () => {
     const onSubmit = async e => {
         e.preventDefault();
         const formData = new FormData(e.target);
-        const {result, id: paymentId} = await (await fetch('http://miptbaseback.4129.ru/id')).json();
+        const {result, id: paymentId} = await (await fetch('http://miptbaseback.4129.ru/id:splat 200!')).json();
         if (result === 'success') {
             localStorage.setItem('paymentData', JSON.stringify({
                 paymentId,
@@ -115,8 +115,31 @@ const Form = () => {
         window.open('/transfer');
     }
 
+    const onSubmitTink = ()  => {
+        document.getElementById('payForm').pay();
+        return false;
+    }
+
     return (
         <>
+            <form id='payForm' name="TinkoffPayForm" onSubmit={console.log(this)}>
+                <input className="tinkoffPayRow" type="hidden" name="terminalkey" value=ж1611313361029/>
+                    <input className="tinkoffPayRow" type="hidden" name="frame" value="false" />
+                        <input className="tinkoffPayRow" type="hidden" name="language" value="ru" />
+                            <input className="tinkoffPayRow" type="text" placeholder="Сумма заказа" name="amount"
+                                   required />
+                                <input className="tinkoffPayRow" type="text" placeholder="Номер заказа" name="order" />
+                                    <input className="tinkoffPayRow" type="text" placeholder="Описание заказа"
+                                           name="description" />
+                                        <input className="tinkoffPayRow" type="text" placeholder="ФИО плательщика"
+                                               name="name" />
+                                            <input className="tinkoffPayRow" type="text" placeholder="E-mail"
+                                                   name="email" />
+                                                <input className="tinkoffPayRow" type="text"
+                                                       placeholder="Контактный телефон"
+                                                       name="phone" />
+                                                    <input className="tinkoffPayRow" type="submit" value="Оплатить" />
+            </form>
 
             <form onSubmit={onSubmit} className={style.form}>
                 <div className={style.title}>
