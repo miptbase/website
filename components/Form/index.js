@@ -77,7 +77,7 @@ const Form = () => {
     const onSubmit = async e => {
         e.preventDefault();
         const formData = new FormData(e.target);
-        const {result, id: paymentId} = await (await fetch('http://miptbaseback.4129.ru/id:splat 200!')).json();
+        const {result, id: paymentId} = await (await fetch('http://miptbaseback.4129.ru/id')).json();
         if (result === 'success') {
             localStorage.setItem('paymentData', JSON.stringify({
                 paymentId,
