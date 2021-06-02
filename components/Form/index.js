@@ -77,7 +77,7 @@ const Form = () => {
     const onSubmit = async e => {
         e.preventDefault();
         const formData = new FormData(e.target);
-        const {result, id: paymentId} = await (await fetch('https://api.miptbase.org//id')).json();
+        const {result, id: paymentId} = await (await fetch('https://api.miptbase.org/id')).json();
         if (result === 'success') {
             localStorage.setItem('paymentData', JSON.stringify({
                 paymentId,
@@ -116,7 +116,7 @@ const Form = () => {
     }
     // const lalala = 'lalalaa'
     //
-    // const testov = `  <form id='payForm' name="TinkoffPayForm" class="form" onsubmit="pay(this); return false;">
+    // const testov = `  <form id='payForm' name="TinkoffPayForm" class="form" onsubmit="console.log('fffffffffffffff'); return false;">
     //                 <div class="form__title"> Улучшим вместе жизнь студентов Физтеха!</div>
     //             <input className="tinkoffPayRow" type="hidden" name="terminalkey" value="1611313361029"/>
     //                 <input className="tinkoffPayRow" type="hidden" name="frame" value="false" />
@@ -143,6 +143,12 @@ const Form = () => {
     // function MyComponent() {
     //     return <div dangerouslySetInnerHTML={createMarkup()} />;
     // }
+    //
+    // useEffect(() => {
+    //
+    // }, []);
+
+
 
     return (
         <>
