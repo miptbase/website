@@ -114,45 +114,51 @@ const Form = () => {
     const openTransfer = () => {
         window.open('/transfer');
     }
-    // const lalala = 'lalalaa'
-    //
-    // const testov = `  <form id='payForm' name="TinkoffPayForm" class="form" onsubmit="console.log('fffffffffffffff'); return false;">
-    //                 <div class="form__title"> Улучшим вместе жизнь студентов Физтеха!</div>
-    //             <input className="tinkoffPayRow" type="hidden" name="terminalkey" value="1611313361029"/>
-    //                 <input className="tinkoffPayRow" type="hidden" name="frame" value="false" />
-    //                     <input className="tinkoffPayRow" type="hidden" name="language" value="ru" />
-    //                         <input className="tinkoffPayRow" type="text" placeholder=${lalala} name="amount"
-    //                                required />
-    //                             <input className="tinkoffPayRow" type="text" placeholder="Номер заказа" name="order" />
-    //                                 <input className="tinkoffPayRow" type="text" placeholder="Описание заказа"
-    //                                        name="description" />
-    //                                     <input className="tinkoffPayRow" type="text" placeholder="ФИО плательщика"
-    //                                            name="name" />
-    //                                         <input className="tinkoffPayRow" type="text" placeholder="E-mail"
-    //                                                name="email" />
-    //                                             <input className="tinkoffPayRow" type="text"
-    //                                                    placeholder="Контактный телефон"
-    //                                                    name="phone" />
-    //                                                 <input className="tinkoffPayRow" type="submit" value="Оплатить" />
-    //         </form>`
-    //
-    // function createMarkup() {
-    //     return {__html: testov};
-    // }
-    //
-    // function MyComponent() {
-    //     return <div dangerouslySetInnerHTML={createMarkup()} />;
-    // }
-    //
-    // useEffect(() => {
-    //
-    // }, []);
+    const lalala = 'lalalaa'
+
+    const testov = `  <form id='payForm' name="TinkoffPayForm" class="form" onsubmit="pay(this); return false;">
+                    <div class="form__title"> Улучшим вместе жизнь студентов Физтеха!</div>
+                <input class="tinkoffPayRow" type="hidden" name="terminalkey" value="1611313361029"/>
+                    <input class="tinkoffPayRow" type="hidden" name="frame" value="false" />
+                        <input class="tinkoffPayRow" type="hidden" name="language" value="ru" />
+                            <input class="tinkoffPayRow" type="text" placeholder=${lalala} name="amount"
+                                   required />
+                                <input class="tinkoffPayRow" type="text" placeholder="Номер заказа" name="order" />
+                                    <input class="tinkoffPayRow" type="text" placeholder="Описание заказа"
+                                           name="description" />
+                                        <input class="tinkoffPayRow" type="text" placeholder="ФИО плательщика"
+                                               name="name" />
+                                            <input class="tinkoffPayRow" type="text" placeholder="E-mail"
+                                                   name="email" />
+                                                <input class="tinkoffPayRow" type="text"
+                                                       placeholder="Контактный телефон"
+                                                       name="phone" />
+                                                    <input id='submitButton' class="tinkoffPayRow" type="submit" value="Оплатить" />
+            </form>`
+
+    function createMarkup() {
+        return {__html: testov};
+    }
+
+    function MyComponent() {
+        return <div dangerouslySetInnerHTML={createMarkup()} />;
+    }
+
+    let submitButton;
+
+    useEffect(() => {
+        submitButton = document.getElementById('submitButton');
+    }, []);
+
+    const handlerClick = () => {
+        submitButton.click()
+    }
 
 
 
     return (
         <>
-            {/*<MyComponent />*/}
+            <MyComponent />
 
 
             <form onSubmit={onSubmit} className={style.form}>
@@ -231,12 +237,13 @@ const Form = () => {
                 </div>
 
                 <div className={style.buttons}>
-                    <Input
-                        placeholder='Поддержать'
-                        color='orange'
-                        type='submit'
-                        value='Поддержать'
-                    />
+                    <div onClick={handlerClick}>ЕУЫЕ</div>
+                    {/*<Input*/}
+                    {/*    placeholder='Поддержать'*/}
+                    {/*    color='orange'*/}
+                    {/*    type='submit'*/}
+                    {/*    value='Поддержать'*/}
+                    {/*/>*/}
                 </div>
 
                 <div className={style.privacy}>
