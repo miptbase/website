@@ -237,13 +237,13 @@ const Form = () => {
                 </div>
 
                 <div className={style.buttons}>
-                    <div onClick={handlerClick}>ЕУЫЕ</div>
-                    {/*<Input*/}
-                    {/*    placeholder='Поддержать'*/}
-                    {/*    color='orange'*/}
-                    {/*    type='submit'*/}
-                    {/*    value='Поддержать'*/}
-                    {/*/>*/}
+                    {/*<div onClick={handlerClick}>ЕУЫЕ</div>*/}
+                    <Input
+                        placeholder='Поддержать'
+                        color='orange'
+                        type='submit'
+                        value='Поддержать'
+                    />
                 </div>
 
                 <div className={style.privacy}>
