@@ -171,7 +171,7 @@ const Form = () => {
                     buttonOptions: {
                         lang: 'ru',
                         color: 'black'
-                    }
+                    },
                     paymentInfo: function () {
                     return {
                     infoEmail: "E-mail для отправки информации о платеже",
