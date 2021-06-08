@@ -30,7 +30,6 @@ export default class Home extends Component {
                     <Donors donors={donors}/>
                     <Donation/>
                     <Feedback feedback={feedback} />
-                    <Transfer transfer={transfer}/>
                 </>
             </Page>
         )
