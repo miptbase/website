@@ -170,7 +170,7 @@ const Form = () => {
                     ApplePay: {
                     buttonOptions: {
                         lang: 'ru',
-                        color 'black'
+                        color: 'black'
                     }
                     paymentInfo: function () {
                     return {
