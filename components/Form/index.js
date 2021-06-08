@@ -1,5 +1,4 @@
 import React, {useEffect, useRef, useState} from 'react'
-import { useRouter } from 'next/router'
 import style from './form_.module.scss'
 
 import Input from '../ui/Input'
@@ -9,15 +8,12 @@ import Value from '../ui/Value'
 import {debounce} from 'lodash';
 
 const Form = () => {
-    const router = useRouter()
-
     const [isStudent, setIsStudent] = useState(false);
     const [activeValue, setActiveValue] = useState(null);
-    const [activeMethod, setActiveMethod] = useState(null);
-    const selectValue = value => {
-        setActiveValue(value);
-    };
-
+    const [activeMethod, setActiveMethod] = useState('Карта');
+    const [selectedValue, setSelectedValue] = useState('0');
+    const [currentEmail, setCurrentEmail] = useState(null);
+    const [currentName, setCurrentName] = useState(null);
     const selectMethod = method => {
         setActiveMethod(method);
     };
@@ -74,6 +70,7 @@ const Form = () => {
     ]
 
 
+
     const onSubmit = async e => {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -82,10 +79,16 @@ const Form = () => {
             localStorage.setItem('paymentData', JSON.stringify({
                 paymentId,
                 name: formData.get('name'),
-                value: formData.get('custom-donate-value'),
+                email: formData.get('email'),
+                value: selectedValue,
             }));
+
             if (activeMethod === 'Перевод') {
                 openTransfer();
+            }
+
+            if (activeMethod === 'Карта') {
+                handlerClick();
             }
         } else {
             console.log('error occured');
@@ -114,41 +117,39 @@ const Form = () => {
     const openTransfer = () => {
         window.open('/transfer');
     }
-    const lalala = 'lalalaa'
 
-    const testov = `  <form id='payForm' name="TinkoffPayForm" class="form" onsubmit="pay(this); return false;">
+    const paymentSumm = Number(selectedValue.replace(/ +/g, '').trim());
+
+    const hiddenForm = `  <form id='payForm' name="TinkoffPayForm" class="form" onsubmit="pay(this); return false;">
                     <div class="form__title"> Улучшим вместе жизнь студентов Физтеха!</div>
                 <input class="tinkoffPayRow" type="hidden" name="terminalkey" value="1611313361029"/>
                     <input class="tinkoffPayRow" type="hidden" name="frame" value="false" />
                         <input class="tinkoffPayRow" type="hidden" name="language" value="ru" />
-                            <input class="tinkoffPayRow" type="text" placeholder=${lalala} name="amount"
+                            <input class="tinkoffPayRow" type="text" name="amount" value=${paymentSumm}
                                    required />
-                                <input class="tinkoffPayRow" type="text" placeholder="Номер заказа" name="order" />
-                                    <input class="tinkoffPayRow" type="text" placeholder="Описание заказа"
-                                           name="description" />
+                               
+                                 
                                         <input class="tinkoffPayRow" type="text" placeholder="ФИО плательщика"
-                                               name="name" />
+                                               name="name" value=${currentName} />
                                             <input class="tinkoffPayRow" type="text" placeholder="E-mail"
-                                                   name="email" />
-                                                <input class="tinkoffPayRow" type="text"
-                                                       placeholder="Контактный телефон"
-                                                       name="phone" />
+                                                   name="email"  value=${currentEmail} />
+                                              
                                                     <input id='submitButton' class="tinkoffPayRow" type="submit" value="Оплатить" />
             </form>`
 
-    function createMarkup() {
-        return {__html: testov};
+    function createHiddenForm() {
+        return {__html: hiddenForm};
     }
 
-    function MyComponent() {
-        return <div dangerouslySetInnerHTML={createMarkup()} />;
+    function CreatedForm() {
+        return <div dangerouslySetInnerHTML={createHiddenForm()} />;
     }
 
     let submitButton;
 
     useEffect(() => {
         submitButton = document.getElementById('submitButton');
-    }, []);
+    });
 
     const handlerClick = () => {
         submitButton.click()
@@ -158,8 +159,7 @@ const Form = () => {
 
     return (
         <>
-            <MyComponent />
-
+            <CreatedForm />
 
             <form onSubmit={onSubmit} className={style.form}>
                 <div className={style.title}>
@@ -173,6 +173,14 @@ const Form = () => {
                             name={formInput.name}
                             // onChange={onNameOrEmailChange}
                             ref={formInput.ref}
+                            onInput=  {(e)=> {
+                                if (formInput.name === 'name') {
+                                    setCurrentName(e.target.value)
+                                } else if (formInput.name === 'email') {
+                                    setCurrentEmail(e.target.value)
+                                }
+                                }
+                            }
                         />
                     </div>
                 ))}
@@ -220,8 +228,8 @@ const Form = () => {
                         <Value key={valueItem.id}
                                mod='select'
                                value={valueItem.value}
-                               functionValueActive = {()=> {selectValue(`${valueItem.value}`); }}
-                               isSelected = {activeValue == valueItem.value}
+                               functionValueActive = {()=> {setSelectedValue(`${valueItem.value}`); setActiveValue(`${valueItem.id}`);  console.log(paymentSumm)}}
+                               isSelected = {activeValue == valueItem.id}
                         />
                     ))}
                     <div>
@@ -229,20 +237,20 @@ const Form = () => {
                             color='white'
                             mod='select'
                             placeholder='Другая сумма'
-                            functionClick = {()=> {selectValue('input'); }}
+                            onClick={()=> {setActiveValue('input')}}
                             isSelected = {activeValue === 'input'}
                             name="custom-donate-value"
+                            onInput=  {(e)=> { setSelectedValue(e.target.value)}}
                         />
                     </div>
                 </div>
 
                 <div className={style.buttons}>
-                    {/*<div onClick={handlerClick}>ЕУЫЕ</div>*/}
-                    <Input
+                    <Button
                         placeholder='Поддержать'
                         color='orange'
                         type='submit'
-                        value='Поддержать'
+                        text='Поддержать'
                     />
                 </div>
 

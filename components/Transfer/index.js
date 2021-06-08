@@ -1,28 +1,25 @@
-import React, { useEffect, useRef } from 'react'
+import React, {useEffect, useState} from 'react'
 import style from "./transfer_.module.scss"
 
-const Transfer = (props, sum, id) => {
+const Transfer = (props) => {
     const {transfer} = props;
-    const summ = 3000;
-    const paymentId = 'test'
-    const name = 'test name'
+    const [transferName, setTransferName] = useState(false);
+    const [transferId, setTransferId] = useState(null);
+    const [transferSumm, setTransferSumm] = useState(null);
 
     useEffect(() => {
-        console.log(JSON.parse(localStorage.getItem('paymentData')));
+        const dataTransfer = JSON.parse(localStorage.getItem('paymentData'));
+        setTransferName(dataTransfer.name);
+        setTransferId(dataTransfer.paymentId);
+        setTransferSumm(dataTransfer.value);
     }, []);
+
+    const summ = transferSumm * 100;
+    const paymentId = transferId
+    const name = transferName;
+
     const QRCodeValue =
-        `ST00012
-        |Name=${transfer.valueName}
-        |PersonalAcc=${transfer.valuePersonalAcc}
-        |BankName=${transfer.valueBankName}
-        |BIC=${transfer.valueBIC}
-        |CorrespAcc=${transfer.valueCorrespAcc}
-        |KPP=${transfer.valueKPP}
-        |PayeeINN=${transfer.valuePayeeINN}
-        |lastName=${name}
-        |Purpose=${transfer.valuePurpose}${paymentId}
-        |Sum=${summ}
-        `
+        `ST00012|Name=${transfer.valueName}|PersonalAcc=${transfer.valuePersonalAcc}|BankName=${transfer.valueBankName}|BIC=${transfer.valueBIC}|CorrespAcc=${transfer.valueCorrespAcc}|KPP=${transfer.valueKPP}|PayeeINN=${transfer.valuePayeeINN}|lastName= ${name}|Purpose=${transfer.valuePurpose} ${paymentId}|Sum=${summ}`
 
     const generatorQR = `https://api.qrserver.com/v1/create-qr-code/?data=
     ${QRCodeValue}&amp;size=400x400"`
@@ -39,7 +36,7 @@ const Transfer = (props, sum, id) => {
                         </div>
 
                         <div className={style.name}>
-                            {transfer.name}
+                            {transfer.Name}
                         </div>
                         <div className={style.value}>
                             {transfer.valueName}
