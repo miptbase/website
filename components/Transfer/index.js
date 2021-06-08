@@ -9,9 +9,11 @@ const Transfer = (props) => {
 
     useEffect(() => {
         const dataTransfer = JSON.parse(localStorage.getItem('paymentData'));
-        setTransferName(dataTransfer.name);
-        setTransferId(dataTransfer.paymentId);
-        setTransferSumm(dataTransfer.value);
+        if (dataTransfer) {
+            setTransferName(dataTransfer.name);
+            setTransferId(dataTransfer.paymentId);
+            setTransferSumm(dataTransfer.value);
+        }
     }, []);
 
     const summ = transferSumm * 100;
