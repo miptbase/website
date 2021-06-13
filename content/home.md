@@ -227,7 +227,7 @@ donation:
     privacy: Отправляя свое пожертвование, вы соглашаетесь с Политикой
       конфиденциальности, даёте своё согласие на обработку персональных данных и
       принимаете условия договора пожертвования.
-donors_file: img/miptbase-data-donors_export.csv
+donors_file: files/miptbase-data-donors_export.csv
 copy: Сайт сделан в Accuraten
 footer:
   logo: img/logo-white.svg

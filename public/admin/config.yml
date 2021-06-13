@@ -123,7 +123,8 @@ collections:
           - label: "Donors"
             name: "donors_file"
             widget: "file"
+            default: "/files/miptbase-data-donors_export.csv"
             media_library:
-              media_folder: files
+              media_folder: /files
 
 
