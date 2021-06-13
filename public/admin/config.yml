@@ -72,7 +72,6 @@ collections:
                 fields:
                   - { label: "Text", name: "text", widget: "text" }
                   - { label: "Image", name: "img", widget: "image" }
-                  - { label: "Description", name: "description", widget: "string" }
           - label: 'Donation'
             name: "donation"
             widget: "object"
