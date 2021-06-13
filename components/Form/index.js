@@ -9,11 +9,12 @@ import {debounce} from 'lodash';
 
 const Form = () => {
     const [isStudent, setIsStudent] = useState(false);
-    const [activeValue, setActiveValue] = useState(null);
+    const [activeValue, setActiveValue] = useState('2');
     const [activeMethod, setActiveMethod] = useState('Карта');
     const [selectedValue, setSelectedValue] = useState('0');
     const [currentEmail, setCurrentEmail] = useState(null);
     const [currentName, setCurrentName] = useState(null);
+    const [otherPlaceholder, setOtherPlaceholder] = useState('Другая сумма');
     const selectMethod = method => {
         setActiveMethod(method);
     };
@@ -120,7 +121,7 @@ const Form = () => {
 
     const paymentSumm = Number(selectedValue.replace(/ +/g, '').trim());
 
-    const hiddenForm = `  <form style="visibility: hidden; height: 0;" id='payForm' name="TinkoffPayForm" class="form" onsubmit="pay(this); return false;">
+    const hiddenForm = `      <form style="visibility: hidden; height: 0;" id='payForm' name="TinkoffPayForm" class="form" onsubmit="pay(this); return false;">
                     <div class="form__title"> Улучшим вместе жизнь студентов Физтеха!</div>
                 <input class="tinkoffPayRow" type="hidden" name="terminalkey" value="1611313361029"/>
                     <input class="tinkoffPayRow" type="hidden" name="frame" value="false" />
@@ -137,37 +138,25 @@ const Form = () => {
                                                     <input id='submitButton' class="tinkoffPayRow" type="submit" value="Оплатить" />
             </form>
             
-                <script type="text/javascript">
-                const terminalkey = document.forms.TinkoffPayForm.terminalkey
-                const widgetParameters = {
-                container: 'tinkoffWidgetContainer',
-                terminalKey: terminalkey.value,
-                paymentSystems: {
-                GooglePay: {
-                environment: "TEST",
-                merchantId: "12345678901234567890",
-                buttonColor: "white",
-                buttonType: "short",
-                paymentInfo: function () {
-                return {
-                infoEmail: "E-mail для отправки информации о платеже",
-                paymentData: document.forms.TinkoffPayForm
-                }
-                }
-                },
-                },
-                };
-                window.addEventListener('load', function () {
-                initPayments(widgetParameters);
-                });
-                </script>
-                <script type="text/javascript">
+                     <script type="text/javascript">
                     const terminalkey = document.forms.TinkoffPayForm.terminalkey
                     const widgetParameters = {
                     container: 'tinkoffWidgetContainer',
                     terminalKey: terminalkey.value,
                     paymentSystems: {
-                    ApplePay: {
+                    GooglePay: {
+                    environment: "TEST",
+                    merchantId: "12345678901234567890",
+                    buttonColor: "black",
+                    buttonType: "short",
+                    paymentInfo: function () {
+                    return {
+                    infoEmail: "E-mail для отправки информации о платеже",
+                    paymentData: document.forms.TinkoffPayForm
+                    }
+                    }
+                    },
+                     ApplePay: {
                     buttonOptions: {
                         lang: 'ru',
                         color: 'black'
@@ -179,12 +168,14 @@ const Form = () => {
                     }
                     }
                     },
+                    
                     },
                     };
                     window.addEventListener('load', function () {
                     initPayments(widgetParameters);
                     });
-                    </script>`
+                    
+                </script>`
 
     function createHiddenForm() {
         return {__html: hiddenForm};
@@ -287,11 +278,18 @@ const Form = () => {
                         <Input
                             color='white'
                             mod='select'
-                            placeholder='Другая сумма'
+                            placeholder = {otherPlaceholder}
                             onClick={()=> {setActiveValue('input')}}
                             isSelected = {activeValue === 'input'}
                             name="custom-donate-value"
                             onInput=  {(e)=> { setSelectedValue(e.target.value)}}
+                            onFocus={() => setOtherPlaceholder('')}
+                            onBlur={(e) => {setOtherPlaceholder('Другая сумма');
+                                            if ((e.target.value) === '')
+                                            {
+                                                setActiveValue(null)
+                                            }
+                            }}
                         />
                     </div>
                 </div>

@@ -17,7 +17,7 @@ const Page = (props) => {
                 <meta property="og:url" content="//miptbase.netlify.app/OpenGraph.jpg" />
                 <meta property="og:image" content="//miptbase.netlify.app/OpenGraph.jpg"/>
                 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-                <script src="https://rest-api-test.tinkoff.ru/html/payForm/js/tinkoff_v2.js"></script>
+                <script defer src="https://rest-api-test.tinkoff.ru/html/payForm/js/tinkoff_v2.js"></script>
             </Head>
             {props.children}
         </>

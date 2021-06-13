@@ -1,5 +1,5 @@
 .check {
-
+  cursor: pointer;
 }
 
 .input {
@@ -10,6 +10,7 @@
   position: relative;
   padding-left: 2.8rem;
   letter-spacing: 0.02em;
+  cursor: pointer;
   &:after {
     content: '';
     position: absolute;

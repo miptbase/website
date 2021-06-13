@@ -13,10 +13,10 @@ const Check = (props) => {
     });
 
     return (
-        <>
+        <div className={style.check}>
             <input className={style.input} type='checkbox' id={id} name={name}/>
             <label className={labelClass} onClick={functionCheck} htmlFor={id}>  {text} </label>
-        </>
+        </div>
 
     )
 }
