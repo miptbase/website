@@ -124,5 +124,7 @@ collections:
           - label: "Donors"
             name: "donors_file"
             widget: "file"
+            media_library:
+              media_folder: files
 
 
