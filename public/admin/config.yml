@@ -9,7 +9,7 @@ collections:
     files:
       - label: "Home"
         name: "home"
-        file: "content/home.md"
+        file: "content/home.json"
         fields:
           - label: 'Media'
             name: "media"
