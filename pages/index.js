@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { attributes} from '../content/home.md';
+import { attributes} from '../content/home.json';
 
 import HomeTop from "../components/HomeTop";
 import Features from "../components/Features";
@@ -17,18 +17,7 @@ export default class Home extends Component {
         return (
             <Page>
                 <>
-                    <HomeTop
-                        title={top.title}
-                        content={top.content}
-                        img={top.img}
-                    />
-                    <Features
-                        features={features}
-                    />
-                    <Goal goal={goal}/>
                     <Media media={media}/>
-                    <Donors donors={donors}/>
-                    <Donation/>
                     <Feedback feedback={feedback} />
                 </>
             </Page>

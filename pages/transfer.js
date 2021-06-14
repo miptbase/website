@@ -8,7 +8,7 @@ export default class TransferPage extends Component {
         let {transfer} = attributes;
         return (
             <Page>
-                <Transfer transfer={transfer}/>
+
             </Page>
         )
     }
