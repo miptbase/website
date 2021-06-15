@@ -6,7 +6,7 @@ import DonorsList from "../DonorsList";
 import Feature from "../Feature";
 
 const Donors = (props) => {
-    const {donors} = props;
+    const {donors, donorsPerson} = props;
     const initialDonors = 15;
     const [showMore, setShowMore] = useState(false);
 
@@ -14,7 +14,7 @@ const Donors = (props) => {
         setShowMore(!showMore)
     }
 
-    const numberOfItems = showMore ? donors.person.length : initialDonors
+    const numberOfItems = showMore ? donorsPerson.length : initialDonors
     const buttonText = showMore ? donors.hide : donors.show
 
     return (
@@ -38,8 +38,8 @@ const Donors = (props) => {
                         </div>
                     ))}
                 </div>
-                <DonorsList donors={donors.person.slice(0, numberOfItems)}/>
-                {donors.person.length > initialDonors &&
+                <DonorsList donors={donorsPerson.slice(0, numberOfItems)}/>
+                {donorsPerson.length > initialDonors &&
                     <div className={style.button}>
                         <Button
                             text={buttonText}

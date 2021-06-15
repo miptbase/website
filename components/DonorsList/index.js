@@ -11,10 +11,10 @@ const DonorsList = (props) => {
               {donors.map((donor, index) => (
                   <Donor
                       key={index}
-                      name={donor.name}
-                      description={donor.description}
-                      img={donor.img}
-                      company={donor.company}
+                      name={donor.Donor}
+                      description= {`${donor.Department != ""  ? donor.Department : ''} ${donor.Year != "" ? (donor.Year) : ''}`}
+                      // img={donor.img}
+                      company={donor.Company}
                   />
               ))}
           </div>
