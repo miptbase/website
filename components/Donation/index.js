@@ -11,7 +11,7 @@ const Donation = () => {
                 <Form />
             </div>
             <div className={style.image}>
-                <img src='/img/donations.jpg'/>
+                <img src='/media/donations.jpg'/>
             </div>
         </section>
     )

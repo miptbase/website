@@ -3,14 +3,14 @@ media:
   title: О нас пишут
   items:
     - text: Окончившие Физтех бизнесмены запустили эндаумент для помощи студентам
-      img: img/forbes-logo.svg
+      img: media/forbes-logo.svg
       alt: forbes
     - text: Студенты МФТИ получат бесплатный интернет за счет выпускников
-      img: img/mfti-logo.svg
+      img: media/mfti-logo.svg
       alt: МФТИ
     - text: Молодые инвесторы и миллиардеры собрали фонд поддержки студентов Физтеха.
         В чем их интерес?
-      img: img/the-bell-logo.svg
+      img: media/the-bell-logo.svg
       alt: the bell
 feedback:
   title: 1 раз в семестр присылаем новости работы фонда, интересную статистику,
@@ -35,7 +35,7 @@ transfer:
   valueName: ФОНД ЦЕЛЕВОГО КАПИТАЛА МФТИ
   Purpose: Назначение платежа
 header:
-  logo: img/logo-black.svg
+  logo: media/logo-black.svg
   menu:
     - text: Стандарт
       link: "#"
@@ -50,7 +50,7 @@ top:
   title: Базовый жизненный стандарт для студентов МФТИ
   content: Целевой капитал позволяет студентам заниматься творчеством и учебой
     вместо поиска случайных заработков и решения бытовых проблем
-  img: img/home-top.jpg
+  img: media/home-top.jpg
   button: Поддержать проект
 features:
   title: Как это работает?
@@ -59,33 +59,33 @@ features:
         "тело" не тратится, поэтому он работает всегда. Кстати, средняя
         доходность ФЦК МФТИ с 2016 года — 16% годовых в рублях.
       name: Модель эндаумента
-      img: img/model-jendaumenta.png
+      img: media/model-jendaumenta.png
     - description: Студенты получат не деньги, а конкретные блага, которые оптом
         закупает эндаумент. Это дает ему более высокую покупательную способность
         и гарантирует целевое использование взносов.
       name: Натуральная форма
-      img: img/naturalnaja-forma.png
+      img: media/naturalnaja-forma.png
     - description: Для 1 бесплатного пакета интернета в кампусе навечно нужно собрать
         всего 40 000 рублей при 10% чистой годовой доходности. Каждый может
         сделать ощутимый вклад.
       name: Любой взнос имеет значение
-      img: img/ljuboi-vznos-imeet-znachenie.png
+      img: media/ljuboi-vznos-imeet-znachenie.png
     - description: На 1-4 курсах учатся ~4500 студентов, и для бесплатного интернета
         будет нужно около ₽160 млн в фонде. Для полного стандарта больше, но и
         эта цель вполне достижима за 5-10 лет. Затем сбор новых взносов может
         быть закрыт.
       name: Конечная измеримая цель
-      img: img/konechnaja-izmerimaja-cel.png
+      img: media/konechnaja-izmerimaja-cel.png
     - description: Донор будет получать отчеты и контакты получателя благ от его
         взноса. Студенты также будут знать, кому стоит сказать "спасибо". Это
         создаст связь между поколениями физтехов.
       name: Прозрачность и проверяемость
-      img: img/prozrachnost-i-proverjaemost.png
+      img: media/prozrachnost-i-proverjaemost.png
     - description: Блага распределяются на основе критериев, проверяемых без
         каких-либо субъективных оценок. Критерии разрабатывает отдельный совет
         эндаумента, контролируемый донорами.
       name: Объективное распределение
-      img: img/obektivnoe-raspredelenie.png
+      img: media/obektivnoe-raspredelenie.png
 goal:
   title: Наша ближайшая цель — обеспечить первокурсников бесплатным интернетом
   text: Нормальное обучение требует доступа к интернету. Сейчас студенты платят
@@ -95,7 +95,7 @@ goal:
   progress: 6 815 225
   caption: собрано от цели в
   button: Поддержать
-  img: img/goal.jpg
+  img: media/goal.jpg
 donors:
   title: Фонд поддержало уже 60 доноров. Вы можете стать одним из них!
   items:
@@ -110,100 +110,100 @@ donors:
   person:
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Александр Машрабов
       company: Snap
-      img: img/Aleksandr_Mashrabov.jpg
+      img: media/Aleksandr_Mashrabov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Антон Федоров
       company: Flashpoint VC
-      img: img/Anton_Fedorov.jpg
+      img: media/Anton_Fedorov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
     - name: Константин Виноградов
       company: Runa Capital
-      img: img/Konstantin_Vinogradov.jpg
+      img: media/Konstantin_Vinogradov.jpg
       description: Выпускник Факультета общей и прикладной физики (2000)
 social:
-  - img: img/fb.svg
+  - img: media/fb.svg
     link: "#"
-  - img: img/instagram.svg
+  - img: media/instagram.svg
     link: "#"
-  - img: img/vk.svg
+  - img: media/vk.svg
     link: "#"
-  - img: img/telegram.svg
+  - img: media/telegram.svg
     link: "#"
 info: Фонд целевого капитала МФТИ (ИНН 5008998453, ОГРН 1145000001321)
   fund@phystech.edu, +7 (495) 642 38 89, официальный сайт — fund.mipt.ru
@@ -230,7 +230,7 @@ donation:
 donors_file: files/miptbase-data-donors_export.csv
 copy: Сайт сделан в Accuraten
 footer:
-  logo: img/logo-white.svg
+  logo: media/logo-white.svg
   menu:
     - text: Стандарт
       link: "#"
