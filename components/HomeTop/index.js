@@ -1,6 +1,6 @@
 import React from 'react'
 import style from "./home-top_.module.scss"
-import Button from "../ui/Button";
+import Button from "../ui/Button"
 
 const HomeTop = (props) => {
     const {title, content, img} = props;

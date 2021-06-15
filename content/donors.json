@@ -1,63 +1,189 @@
-{ "person": [
-  {
-    "name": "Константин Виноградов",
-    "company": "Runa Capital",
-    "img": "media/Konstantin_Vinogradov.jpg",
-    "description": "Выпускник Факультета общей и прикладной физики (2000)"
-  },
-  {
-    "name": "Константин Виноградов",
-    "company": "Runa Capital",
-    "img": "media/Konstantin_Vinogradov.jpg",
-    "description": "Выпускник Факультета общей и прикладной физики (2000)"
-  },
-  {
-    "name": "Константин Виноградов",
-    "company": "Runa Capital",
-    "img": "media/Konstantin_Vinogradov.jpg",
-    "description": "Выпускник Факультета общей и прикладной физики (2000)"
-  },
-  {
-    "name": "Александр Машрабов",
-    "company": "Snap",
-    "media": "media/Aleksandr_Mashrabov.jpg",
-    "description": "Выпускник Факультета общей и прикладной физики (2000)"
-  },
-  {
-    "name": "Александр Машрабов",
-    "company": "Snap",
-    "img": "media/Aleksandr_Mashrabov.jpg",
-    "description": "Выпускник Факультета общей и прикладной физики (2000)"
-  },
-  {
-    "name": "Александр Машрабов",
-    "company": "Snap",
-    "img": "media/Aleksandr_Mashrabov.jpg",
-    "description": "Выпускник Факультета общей и прикладной физики (2000)"
-  },
-  {
-    "name": "Александр Машрабов",
-    "company": "Snap",
-    "img": "media/Aleksandr_Mashrabov.jpg",
-    "description": "Выпускник Факультета общей и прикладной физики (2000)"
-  },
-  {
-    "name": "Константин Виноградов",
-    "company": "Runa Capital",
-    "img": "media/Konstantin_Vinogradov.jpg",
-    "description": "Выпускник Факультета общей и прикладной физики (2000)"
-  },
-  {
-    "name": "Константин Виноградов",
-    "company": "Runa Capital",
-    "img": "media/Konstantin_Vinogradov.jpg",
-    "description": "Выпускник Факультета общей и прикладной физики (2000)"
-  },
-  {
-    "name": "Константин Виноградов",
-    "company": "Runa Capital",
-    "img": "media/Konstantin_Vinogradov.jpg",
-    "description": "Выпускник Факультета общей и прикладной физики (2000)"
-  }
+[
+{"Donor":"Terra VC","Class":"A","Title":"","Company":"","Department":"-","Year":"-","Text":"","field8":"","field9":"","Website":"Terra VC","Surname":"VC","field12":""},
+{"Donor":"Андрей Иващенко","Class":"A","Title":"Председатель совета директоров","Company":"Химрар","Department":"ФРТК","Year":"1990","Text":"Председатель совета директоров Химрар","field8":"","field9":"","Website":"Андрей Иващенко (Химрар)","Surname":"Иващенко","field12":"Terra VC • Полина Бабаева (Старкит) • Дмитрий Бабурин (Baring Vostok) • Алексей Блохин • Дмитрий Быкадоров (ФЦК МФТИ) • Александра Видюк (HSBC) • Константин Виноградов (Runa Capital) • Ренат Гимадеев (AIM High Tech) • Сергей Гордеев (ПИК) • Ольга Гребнева (Московская школа программистов) • Максим Гузинин (МИР-МИО) • Сергей Дашков (СДС-Фудс) • Денис Дмитриев (МФТИ) • Виктор Довжик (Интроверт) • Алексей Золотарев (ГК ПИК) • Андрей Иващенко (Химрар) • Илья Иващенко (МФТИ) • Алмаз Исхаков (PulsarProduction) • Виктор Кантор (МТС) • Дмитрий Коваль (Netwell) • Борис Крейнин • Артем Круглов (AnyQuery) • Виктор Лысенко (Osome) • Александр Машрабов (Snap) • Александр Мельников (Сбербанк) • Юрий Молодцов (MA Family) • Роман Мухомадеев (ПИК) • Андрей Недбаев • Денис Пак (Google) • Михаил Провизион (Konsol.pro) • Яков Пронин (ПИК) • Владимир Рубанов (Huawei Russia) • Татьяна Савельева (Яндекс) • Ратмир Тимашев (Veeam Software) • Богдан Узбеков (Square) • Антон Федоров (Flashpoint VC) • Ксения Чепурченко (ПИК) • Евгений Чернявский (Физтех-Центр) • Сергей Шаров (ASOdesk) • Марк Шмулевич (Taiger)"}
+,
+{"Donor":"Андрей Недбаев","Class":"A","Title":"","Company":"","Department":"","Year":"","Text":"","field8":"","field9":"","Website":"Андрей Недбаев","Surname":"Недбаев","field12":""}
+,
+{"Donor":"Дмитрий Коваль","Class":"A","Title":"Основатель","Company":"Netwell","Department":"ФУПМ","Year":"1997","Text":"Основатель Netwell","field8":"","field9":"","Website":"Дмитрий Коваль (Netwell)","Surname":"Коваль","field12":"•"}
+,
+{"Donor":"Ратмир Тимашев","Class":"A","Title":"Сооснователь","Company":"Veeam Software","Department":"ФМХФ","Year":"1990","Text":"Сооснователь Veeam Software","field8":"","field9":"","Website":"Ратмир Тимашев (Veeam Software)","Surname":"Тимашев","field12":""}
+,
+{"Donor":"Сергей Гордеев","Class":"A","Title":"Президент и основной акционер","Company":"ПИК","Department":"-","Year":"-","Text":"Президент и основной акционер ПИК","field8":"","field9":"","Website":"Сергей Гордеев (ПИК)","Surname":"Гордеев","field12":""}
+,
+{"Donor":"Сергей Дашков","Class":"A","Title":"Сооснователь","Company":"СДС-Фудс","Department":"ФФХБ","Year":"1993","Text":"Сооснователь СДС-Фудс","field8":"","field9":"","Website":"Сергей Дашков (СДС-Фудс)","Surname":"Дашков","field12":""}
+,
+{"Donor":"Александр Машрабов","Class":"B","Title":"Engineering Manager,","Company":"Snap","Department":"ФИВТ","Year":"2018","Text":"Engineering Manager, Snap","field8":"","field9":"","Website":"Александр Машрабов (Snap)","Surname":"Машрабов","field12":""}
+,
+{"Donor":"Александр Мельников","Class":"B","Title":"Директор по проектам","Company":"Сбербанк","Department":"ФПФЭ","Year":"2012","Text":"Директор по проектам Сбербанк","field8":"","field9":"","Website":"Александр Мельников (Сбербанк)","Surname":"Мельников","field12":""}
+,
+{"Donor":"Александра Видюк","Class":"B","Title":"Chief Data Officer","Company":"HSBC","Department":"ФИВТ","Year":"2009","Text":"Chief Data Officer HSBC","field8":"","field9":"","Website":"Александра Видюк (HSBC)","Surname":"Видюк","field12":""}
+,
+{"Donor":"Алексей Блохин","Class":"B","Title":"Серийный предприниматель","Company":"","Department":"ФАЛТ","Year":"1990","Text":"Серийный предприниматель","field8":"","field9":"","Website":"Алексей Блохин","Surname":"Блохин","field12":""}
+,
+{"Donor":"Алексей Золотарев","Class":"B","Title":"Бывший вице-президент и член правления","Company":"ГК ПИК","Department":"ФУПМ","Year":"2013","Text":"Бывший вице-президент и член правления ГК ПИК","field8":"","field9":"","Website":"Алексей Золотарев (ГК ПИК)","Surname":"Золотарев","field12":""}
+,
+{"Donor":"Алмаз Исхаков","Class":"B","Title":"CEO и основатель","Company":"PulsarProduction","Department":"ФАКИ","Year":"2020","Text":"CEO и основатель PulsarProduction","field8":"","field9":"","Website":"Алмаз Исхаков (PulsarProduction)","Surname":"Исхаков","field12":""}
+,
+{"Donor":"Антон Федоров","Class":"B","Title":"Партнер","Company":"Flashpoint VC","Department":"ФФКЭ","Year":"2010","Text":"Партнер Flashpoint VC","field8":"","field9":"","Website":"Антон Федоров (Flashpoint VC)","Surname":"Федоров","field12":""}
+,
+{"Donor":"Артем Круглов","Class":"B","Title":"CEO и сооснователь","Company":"AnyQuery","Department":"ФИВТ","Year":"2009","Text":"CEO и сооснователь AnyQuery","field8":"","field9":"","Website":"Артем Круглов (AnyQuery)","Surname":"Круглов","field12":""}
+,
+{"Donor":"Богдан Узбеков","Class":"B","Title":"European Operations,","Company":"Square","Department":"ФАКИ","Year":"2012","Text":"European Operations, Square","field8":"","field9":"","Website":"Богдан Узбеков (Square)","Surname":"Узбеков","field12":""}
+,
+{"Donor":"Борис Крейнин","Class":"B","Title":"Предприниматель","Company":"","Department":"-","Year":"-","Text":"Предприниматель","field8":"","field9":"","Website":"Борис Крейнин","Surname":"Крейнин","field12":""}
+,
+{"Donor":"Виктор Довжик","Class":"B","Title":"Управляющий партнер","Company":"Интроверт","Department":"-","Year":"-","Text":"Управляющий партнер Интроверт","field8":"","field9":"","Website":"Виктор Довжик (Интроверт)","Surname":"Довжик","field12":""}
+,
+{"Donor":"Виктор Кантор","Class":"B","Title":"Chief Data Science Officer","Company":"МТС","Department":"ФИВТ","Year":"2014","Text":"Chief Data Science Officer МТС","field8":"","field9":"","Website":"Виктор Кантор (МТС)","Surname":"Кантор","field12":""}
+,
+{"Donor":"Виктор Лысенко","Class":"B","Title":"CEO и сооснователь","Company":"Osome","Department":"ФУПМ","Year":"1994","Text":"CEO и сооснователь Osome","field8":"","field9":"","Website":"Виктор Лысенко (Osome)","Surname":"Лысенко","field12":""}
+,
+{"Donor":"Владимир Рубанов","Class":"B","Title":"CTO","Company":"Huawei Russia","Department":"ФУПМ","Year":"2000","Text":"CTO Huawei Russia","field8":"","field9":"","Website":"Владимир Рубанов (Huawei Russia)","Surname":"Рубанов","field12":""}
+,
+{"Donor":"Денис Дмитриев","Class":"B","Title":"Проректор по молодежной политике","Company":"МФТИ","Department":"ФУПМ","Year":"2013","Text":"Проректор по молодежной политике МФТИ","field8":"","field9":"","Website":"Денис Дмитриев (МФТИ)","Surname":"Дмитриев","field12":""}
+,
+{"Donor":"Денис Пак","Class":"B","Title":"Head of Strategy and Operations,","Company":"Google","Department":"ФОПФ","Year":"2008","Text":"Head of Strategy and Operations, Google","field8":"","field9":"","Website":"Денис Пак (Google)","Surname":"Пак","field12":""}
+,
+{"Donor":"Дмитрий Бабурин","Class":"B","Title":"Партнер","Company":"Baring Vostok","Department":"ФАКИ","Year":"2010","Text":"Партнер Baring Vostok","field8":"","field9":"","Website":"Дмитрий Бабурин (Baring Vostok)","Surname":"Бабурин","field12":""}
+,
+{"Donor":"Дмитрий Быкадоров","Class":"B","Title":"Зам. председателя правления","Company":"ФЦК МФТИ","Department":"ФМХФ","Year":"1990","Text":"Зам. председателя правления ФЦК МФТИ","field8":"","field9":"","Website":"Дмитрий Быкадоров (ФЦК МФТИ)","Surname":"Быкадоров","field12":""}
+,
+{"Donor":"Евгений Чернявский","Class":"B","Title":"CEO и основатель","Company":"Физтех-Центр","Department":"ФУПМ","Year":"2018","Text":"CEO и основатель Физтех-Центр","field8":"","field9":"","Website":"Евгений Чернявский (Физтех-Центр)","Surname":"Чернявский","field12":""}
+,
+{"Donor":"Илья Иващенко","Class":"B","Title":"Студент","Company":"МФТИ","Department":"ФБМФ","Year":"2023","Text":"Студент МФТИ","field8":"","field9":"","Website":"Илья Иващенко (МФТИ)","Surname":"Иващенко","field12":""}
+,
+{"Donor":"Константин Виноградов","Class":"B","Title":"Инвестиционный директор","Company":"Runa Capital","Department":"ФИВТ","Year":"2014","Text":"Инвестиционный директор Runa Capital","field8":"","field9":"","Website":"Константин Виноградов (Runa Capital)","Surname":"Виноградов","field12":""}
+,
+{"Donor":"Ксения Чепурченко","Class":"B","Title":"Зам. руководителя департамента подготовки проектов","Company":"ПИК","Department":"ФУПМ","Year":"2016","Text":"Зам. руководителя департамента подготовки проектов ПИК","field8":"","field9":"","Website":"Ксения Чепурченко (ПИК)","Surname":"Чепурченко","field12":""}
+,
+{"Donor":"Максим Гузинин","Class":"B","Title":"Директор ассоциации","Company":"МИР-МИО","Department":"ФОПФ","Year":"2016","Text":"Директор ассоциации МИР-МИО","field8":"","field9":"","Website":"Максим Гузинин (МИР-МИО)","Surname":"Гузинин","field12":""}
+,
+{"Donor":"Марк Шмулевич","Class":"B","Title":"Старший вице-президент","Company":"Taiger","Department":"ФУПМ","Year":"2005","Text":"Старший вице-президент Taiger","field8":"","field9":"","Website":"Марк Шмулевич (Taiger)","Surname":"Шмулевич","field12":""}
+,
+{"Donor":"Михаил Провизион","Class":"B","Title":"СЕО и основатель","Company":"Konsol.pro","Department":"ФИВТ","Year":"2009","Text":"СЕО и основатель Konsol.pro","field8":"","field9":"","Website":"Михаил Провизион (Konsol.pro)","Surname":"Провизион","field12":""}
+,
+{"Donor":"Ольга Гребнева","Class":"B","Title":"COO","Company":"Московская школа программистов","Department":"ФУПМ","Year":"2014","Text":"COO Московская школа программистов","field8":"","field9":"","Website":"Ольга Гребнева (Московская школа программистов)","Surname":"Гребнева","field12":""}
+,
+{"Donor":"Полина Бабаева","Class":"B","Title":"Генеральный директор","Company":"Старкит","Department":"ФАКИ","Year":"2014","Text":"Генеральный директор Старкит","field8":"","field9":"","Website":"Полина Бабаева (Старкит)","Surname":"Бабаева","field12":""}
+,
+{"Donor":"Ренат Гимадеев","Class":"B","Title":"Директор департамент исследований","Company":"AIM High Tech","Department":"ФУПМ","Year":"2011","Text":"Директор департамент исследований AIM High Tech","field8":"","field9":"","Website":"Ренат Гимадеев (AIM High Tech)","Surname":"Гимадеев","field12":""}
+,
+{"Donor":"Роман Мухомадеев","Class":"B","Title":"Директор по операционному развитию","Company":"ПИК","Department":"ФИВТ","Year":"2016","Text":"Директор по операционному развитию ПИК","field8":"","field9":"","Website":"Роман Мухомадеев (ПИК)","Surname":"Мухомадеев","field12":""}
+,
+{"Donor":"Сергей Шаров","Class":"B","Title":"CEO и сооснователь","Company":"ASOdesk","Department":"ФИВТ","Year":"2016","Text":"CEO и сооснователь ASOdesk","field8":"","field9":"","Website":"Сергей Шаров (ASOdesk)","Surname":"Шаров","field12":""}
+,
+{"Donor":"Татьяна Савельева","Class":"B","Title":"Руководитель","Company":"Яндекс","Department":"ФБМФ","Year":"2019","Text":"Руководитель Яндекс","field8":"","field9":"","Website":"Татьяна Савельева (Яндекс)","Surname":"Савельева","field12":""}
+,
+{"Donor":"Юрий Молодцов","Class":"B","Title":"СОО и партнер","Company":"MA Family","Department":"ФИВТ","Year":"2018","Text":"СОО и партнер MA Family","field8":"","field9":"","Website":"Юрий Молодцов (MA Family)","Surname":"Молодцов","field12":""}
+,
+{"Donor":"Яков Пронин","Class":"B","Title":"Инвестиционный директор","Company":"ПИК","Department":"ФУПМ","Year":"2013","Text":"Инвестиционный директор ПИК","field8":"","field9":"","Website":"Яков Пронин (ПИК)","Surname":"Пронин","field12":""}
+,
+{"Donor":"Александр Мирошниченко","Class":"C","Title":"Президент и сооснователь","Company":"Flashgrid","Department":"ФФКЭ","Year":"1985","Text":"Президент и сооснователь Flashgrid","field8":"","field9":"","Website":"Александр Мирошниченко (Flashgrid)","Surname":"Мирошниченко","field12":""}
+,
+{"Donor":"Александр Павлов","Class":"C","Title":"Вице-президент","Company":"Target Global","Department":"ФОПФ","Year":"","Text":"Вице-президент Target Global","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Александр Турбанов","Class":"C","Title":"","Company":"","Department":"-","Year":"-","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Алексей Голдин","Class":"C","Title":"","Company":"","Department":"ФПФЭ","Year":"1993","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Алексей Катаев","Class":"C","Title":"","Company":"","Department":"-","Year":"-","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Алексей Фиошкин","Class":"C","Title":"","Company":"","Department":"-","Year":"-","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Анастасия Кучеренко","Class":"C","Title":"","Company":"","Department":"-","Year":"-","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Андрей Гордийчук","Class":"C","Title":"","Company":"","Department":"ФФКЭ","Year":"1990","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Андрей Якименко","Class":"C","Title":"","Company":"","Department":"-","Year":"-","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Антон Петухов","Class":"C","Title":"","Company":"","Department":"ФИВТ","Year":"2013","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Антон Урусов","Class":"C","Title":"","Company":"","Department":"ФИВТ","Year":"2009","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Артемий Ефимов","Class":"C","Title":"","Company":"","Department":"ФОПФ","Year":"2022","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Варвара Русскова","Class":"C","Title":"","Company":"","Department":"-","Year":"-","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Вера Кадруль","Class":"C","Title":"","Company":"","Department":"ФРТК","Year":"","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Виктория Ольховская","Class":"C","Title":"","Company":"","Department":"ФАКИ","Year":"2019","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Виталий Яшин","Class":"C","Title":"","Company":"","Department":"ФИВТ","Year":"2015","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Владислав Минашкин","Class":"C","Title":"Студент","Company":"МФТИ","Department":"ФУПМ","Year":"","Text":"Студент МФТИ","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Вячеслав Агарков","Class":"C","Title":"","Company":"","Department":"-","Year":"-","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Геннадий Куркин","Class":"C","Title":"","Company":"","Department":"ФМБФ","Year":"1991","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Глеб Фильков","Class":"C","Title":"","Company":"","Department":"ФБМФ","Year":"2014","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Дарья Донец","Class":"C","Title":"","Company":"","Department":"ФУПМ","Year":"2020","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Дарья Курзанова","Class":"C","Title":"","Company":"","Department":"ФИВТ","Year":"2013","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Денис Семененко","Class":"C","Title":"","Company":"","Department":"ФИВТ","Year":"2019","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Дмитрий Примак","Class":"C","Title":"","Company":"","Department":"ФОПФ","Year":"2025","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Дмитрий Устинов","Class":"C","Title":"","Company":"","Department":"ФИВТ","Year":"2013","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Евгений Подгорнов","Class":"C","Title":"","Company":"","Department":"ФАЛТ","Year":"1991","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Екатерина Виноградова","Class":"C","Title":"","Company":"","Department":"-","Year":"-","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Елена Нестерова","Class":"C","Title":"","Company":"","Department":"-","Year":"-","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Елисеева Екатерина","Class":"C","Title":"","Company":"","Department":"ФИВТ","Year":"2010","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Игорь Ефимов","Class":"C","Title":"","Company":"","Department":"ФОПФ","Year":"1986","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Илья Зуев","Class":"C","Title":"","Company":"","Department":"ФРТК","Year":"2022","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Илья Линицкий","Class":"C","Title":"","Company":"","Department":"ФАКИ","Year":"2020","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Ирина Григал","Class":"C","Title":"","Company":"ФЦК МФТИ","Department":"ФФКЭ","Year":"2010","Text":"ФЦК МФТИ","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Кирилл Вотяков","Class":"C","Title":"","Company":"","Department":"ФОПФ","Year":"2004","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Мария Станко","Class":"C","Title":"","Company":"","Department":"-","Year":"-","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Ник Спирин","Class":"C","Title":"","Company":"","Department":"ФУПМ","Year":"2012","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Никита Комаров","Class":"C","Title":"","Company":"","Department":"","Year":"","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Никита Юрьев","Class":"C","Title":"","Company":"","Department":"ФИВТ","Year":"2010","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Николай Борисенко","Class":"C","Title":"","Company":"","Department":"ФИВТ","Year":"2010","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Олег Линников","Class":"C","Title":"","Company":"","Department":"ФАКИ","Year":"2019","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Олег Оксюк","Class":"C","Title":"","Company":"","Department":"ФУПМ","Year":"2001","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Петр Чупров","Class":"C","Title":"","Company":"","Department":"ФАКИ","Year":"2020","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Ринат Плавник","Class":"C","Title":"","Company":"","Department":"ФАКИ","Year":"2021","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Ростислав Березовский","Class":"C","Title":"","Company":"","Department":"ФУПМ","Year":"2013","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Руслан Янбарисов","Class":"C","Title":"","Company":"","Department":"ФУПМ","Year":"2017","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Сандаара Романова","Class":"C","Title":"","Company":"","Department":"ФБМФ","Year":"2020","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Сергей Балалаев","Class":"C","Title":"","Company":"","Department":"ФИВТ","Year":"2016","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Сергей Елизаров","Class":"C","Title":"Начальник отдела","Company":"ОАО \"Радиофизика\"","Department":"ФМХФ","Year":"1991","Text":"Начальник отдела ОАО \"Радиофизика\"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Сергей Рыжков","Class":"C","Title":"","Company":"","Department":"ФУПМ","Year":"1985","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Сергей Тарасов","Class":"C","Title":"","Company":"","Department":"ФРТК","Year":"1987","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Степан Осипов","Class":"C","Title":"","Company":"","Department":"-","Year":"-","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Степан Солоднев","Class":"C","Title":"","Company":"","Department":"ФРТК","Year":"2019","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Федор Царев","Class":"C","Title":"","Company":"","Department":"-","Year":"-","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+,
+{"Donor":"Юлия Ледуховская","Class":"C","Title":"","Company":"","Department":"-","Year":"-","Text":"","field8":"","field9":"","Website":"","Surname":"","field12":""}
+
 ]
-}
