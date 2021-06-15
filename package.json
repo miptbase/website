@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "prebuild": "csvtojson public/media/miptbase-data-donors_export.csv > content/donors.json",
+    "prebuild": "node content/donors.js",
     "export": "npm run build && next export"
   },
   "dependencies": {
