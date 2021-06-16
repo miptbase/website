@@ -164,7 +164,7 @@
     }
   ],
   "info": "Фонд целевого капитала МФТИ (ИНН 5008998453, ОГРН 1145000001321) fund@phystech.edu, +7 (495) 642 38 89, официальный сайт — fund.mipt.ru",
-  "donors_file": "media/miptbase-data-donors_export.csv",
+  "donors_file": "media/test-donors.csv",
   "donation": {
     "title": "Внесите вклад в жизнь нового поколения ученых и предпринимателей",
     "form": {
