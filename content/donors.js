@@ -1,8 +1,22 @@
 const { exec } = require("child_process");
-const data = require("../content/home.json");
-const patch = data.donors_file;
+const patch = "public/files/donors.csv"
+const cp = require('child_process');
+const url = 'https://docs.google.com/spreadsheets/d/1CD_sGqy6C5dpChHq2uPs-I8q3MZOkRuyS5e4tMeTHhA/gviz/tq?tqx=out:csv&sheet=donors';
 
-exec( `csvtojson public/${patch} > content/donors.json`, (error, stdout, stderr) => {
+let download = async function(uri, filename){
+    let command = `curl -o ${filename}  '${uri}'`;
+    let result = cp.execSync(command);
+};
+
+
+async function getDonors() {
+    await download( url, patch);
+};
+
+getDonors();
+
+
+exec( `csvtojson ${patch} > content/donors.json`, (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`);
         return;
@@ -13,6 +27,7 @@ exec( `csvtojson public/${patch} > content/donors.json`, (error, stdout, stderr)
     }
     console.log(`stdout: ${stdout}`);
 })
+
 
 
 

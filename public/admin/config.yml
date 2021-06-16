@@ -112,11 +112,5 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Placeholder", name: "placeholder", widget: "string" }
               - { label: "Button", name: "button", widget: "string" }
-          - label: "Donors"
-            name: "donors_file"
-            widget: "file"
-            default: "/files/miptbase-data-donors_export.csv"
-            media_library:
-              media_folder: public/img
 
 
