@@ -1,3 +1,3 @@
 ---
-privacy: Home
+privacy: Homes
 ---
