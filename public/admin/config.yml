@@ -114,7 +114,7 @@ collections:
               - { label: "Button", name: "button", widget: "string" }
   - label: "Inner"
     name: "InnerPages"
-    folder: "inner/pages"
+    folder: "pages"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
