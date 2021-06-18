@@ -112,12 +112,6 @@ collections:
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Placeholder", name: "placeholder", widget: "string" }
               - { label: "Button", name: "button", widget: "string" }
-  - label: "Inner"
-    name: "InnerPages"
-    folder: "pages"
-    create: true
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+
 
 
