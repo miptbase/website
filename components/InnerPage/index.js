@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class InnerPage extends Component {
     static async getInitialProps({ query }) {
         const { slug } = query;
-        const blogpost = await import(`../../../content/innerPage/${slug}.md`).catch(error => null);
+        const blogpost = await import(`../../content/innerPage/${slug}.md`).catch(error => null);
 
         return { blogpost };
     }
