@@ -138,7 +138,44 @@ const Form = () => {
                                                     <input id='submitButton' class="tinkoffPayRow" type="submit" value="Оплатить" />
             </form>
             
-                   `
+                     <script type="text/javascript">
+    const terminalkey = document.forms.TinkoffPayForm.terminalkey
+    const widgetParameters = {
+        container: 'tinkoffWidgetContainer',
+        terminalKey: terminalkey.value,
+        paymentSystems: {
+            GooglePay: {
+                environment: "TEST",
+                merchantId: "12345678901234567890",
+                buttonColor: "black",
+                buttonType: "short",
+                paymentInfo: function () {
+                    return {
+                        infoEmail: "E-mail для отправки информации о платеже",
+                        paymentData: document.forms.TinkoffPayForm
+                    }
+                }
+            },
+            ApplePay: {
+                buttonOptions: {
+                    lang: 'ru',
+                    color: 'black'
+                },
+                paymentInfo: function () {
+                    return {
+                        infoEmail: "E-mail для отправки информации о платеже",
+                        paymentData: document.forms.TinkoffPayForm
+                    }
+                }
+            },
+
+        },
+    };
+    window.addEventListener('load', function () {
+        initPayments(widgetParameters);
+    });
+
+</script>`
 
     function createHiddenForm() {
         return {__html: hiddenForm};
@@ -258,6 +295,7 @@ const Form = () => {
                 </div>
 
                 <div className={style.buttons}>
+                    <div className={style['pay-button']} id="tinkoffWidgetContainer"></div>
                     <Button
                         placeholder='Поддержать'
                         color='orange'
