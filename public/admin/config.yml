@@ -116,10 +116,12 @@ collections:
     name: 'inner'
     folder: 'content/innerPage'
     create: true
-    slug: '{{slug}}'
+    slug: "{{slug}}"
+    identifier_field: slug
+    summary: "{{title}}"
     fields:
+      - { label: 'Slug', name: 'slug', widget: 'string', required: true }
       - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'TitlePage', name: 'titlePage', widget: 'string', required: true }
       - { label: 'Body', name: 'body', widget: 'markdown', required: true }
 
 
