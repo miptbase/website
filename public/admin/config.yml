@@ -118,8 +118,8 @@ collections:
     create: true
     slug: '{{name}}'
     fields:
-      - { label: 'Name', name: 'name', widget: 'string', required: true }
       - { label: 'Title', name: 'title', widget: 'string', required: true }
+      - { label: 'TitlePage', name: 'titlePage', widget: 'string', required: true }
       - { label: 'Body', name: 'body', widget: 'markdown', required: true }
 
 
