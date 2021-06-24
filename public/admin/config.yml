@@ -116,7 +116,7 @@ collections:
     name: 'inner'
     folder: 'content/innerPage'
     create: true
-    slug: '{{slug}}'
+    slug: '{{name}}'
     fields:
       - { label: 'Name', name: 'name', widget: 'string', required: true }
       - { label: 'Title', name: 'title', widget: 'string', required: true }
