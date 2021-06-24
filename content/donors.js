@@ -1,4 +1,4 @@
-const { default: axios } = require('axios');
+const axios = require('axios');
 const csv = require('csvtojson');
 const fs = require('fs');
 
