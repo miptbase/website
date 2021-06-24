@@ -24,7 +24,7 @@ const Form = () => {
     const formtransfer = [
         {
             id: 1,
-            placeholder: 'Ваше им',
+            placeholder: 'Ваше имя',
             name: 'name',
             ref: nameInputRef,
         },
