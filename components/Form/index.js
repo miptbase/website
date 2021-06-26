@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react'
+import ReactDOM from 'react-dom';
 import style from './form_.module.scss'
 
 import Input from '../ui/Input'
@@ -70,7 +71,30 @@ const Form = () => {
         },
     ]
 
-
+    const [payPalButton, setPayPalButton] = useState(null);
+    const [showPayPalButton, setShowPayPalButton] = useState(false);
+    const createPayPalOrder = (data, actions) => {
+      const {paymentId, value} = JSON.parse(localStorage.getItem('paymentData'));
+      return actions.order.create({
+        id: paymentId,
+        purchase_units: [
+          {
+            amount: {
+              value: value.replace(/ /, ''),
+            },
+          },
+        ],
+      });
+    };
+    useEffect(() => {
+      document.getElementById('paypal-sdk').addEventListener('load', () => {
+        const payPalButton = React.createElement(
+          paypal.Buttons.driver("react", { React, ReactDOM }),
+          {createOrder: createPayPalOrder},
+        );
+        setPayPalButton(payPalButton);
+      })
+    }, []);
 
     const onSubmit = async e => {
         e.preventDefault();
@@ -91,11 +115,14 @@ const Form = () => {
             if (activeMethod === 'Карта') {
                 handlerClick();
             }
+
+            if (activeMethod === 'PayPal') {
+              setShowPayPalButton(true);
+            }
         } else {
             console.log('error occured');
         }
     };
-
 
     // const DEBOUNCE_MS = 3000;
     // const onNameOrEmailChange = debounce(async () => {
@@ -195,8 +222,17 @@ const Form = () => {
         submitButton.click()
     }
 
-
-
+    const payButtons = showPayPalButton
+      ? payPalButton
+      : <>
+          <div className={style['pay-button']} id="tinkoffWidgetContainer"></div>
+          <Button
+              placeholder='Поддержать'
+              color='orange'
+              type='submit'
+              text='Поддержать'
+          />
+        </>;
     return (
         <>
             <CreatedForm />
@@ -295,13 +331,7 @@ const Form = () => {
                 </div>
 
                 <div className={style.buttons}>
-                    <div className={style['pay-button']} id="tinkoffWidgetContainer"></div>
-                    <Button
-                        placeholder='Поддержать'
-                        color='orange'
-                        type='submit'
-                        text='Поддержать'
-                    />
+                    {payButtons}
                 </div>
 
                 <div className={style.privacy}>
