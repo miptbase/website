@@ -10,7 +10,7 @@ const output = [];
   csv()
     .fromString(response.data)
     .subscribe((csvLine)=>{ 
-      output.push(csvLine);
+      output.push(csvLine)
     })
     .on('done', (error)=>{
       fs.writeFileSync(outputPath, JSON.stringify(output));
