@@ -55,7 +55,7 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 /* Элементы a c классом наследуют цвет  */
-a[class] {
+a {
   color: inherit;
 }
 

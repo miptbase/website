@@ -1,35 +1,49 @@
 @import "./scss/mixins";
 
 .home-top {
+  background: linear-gradient(180deg, #2D83E8 1.56%, #4D8FEB 34.38%, #BBE6FF 78.64%);
+}
+
+.inner {
   @include container;
-  @include col2;
-  padding-bottom: 15.184rem;
+  position: relative;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding-top: 15rem;
+  max-width: 96rem;
+  margin: 0 auto;
 }
 
 .title {
   @include title-1;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: white;
 }
 
 .text {
-  @include text-20;
-  margin-bottom: 4rem;
+  @include text-24;
+  margin-bottom: 4.6rem;
+  text-align: center;
+  color: white;
 }
 
 .button-container {
-  width: 20.5rem;
+  margin-bottom: 6rem;
 }
 
 .img-container {
-  position: relative;
-  width: 56rem;
-  height: 50rem;
+  width: 100%;
+  height: auto;
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 

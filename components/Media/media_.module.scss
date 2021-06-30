@@ -1,14 +1,43 @@
 @import "./scss/mixins";
 .media {
   @include container;
+  padding-bottom: 10rem;
 }
 
 .title {
   @include title-2;
-  margin-bottom: 5.367rem;
+  margin-bottom: 6rem;
 }
 
 .items {
   @include col3;
+}
+
+.item {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+  padding: 3rem 2.5rem;
+  height: 26.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text {
+  font-size: 2rem;
+  line-height: 140%;
+}
+
+.bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.date {
+  font-size: 1.2rem;
+  line-height: 130%;
+  letter-spacing: 0.02em;
+  opacity: 0.6;
 }
 

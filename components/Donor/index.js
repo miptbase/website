@@ -11,8 +11,10 @@ const Donor = (props) => {
                     <div className={style.img}>
                         <img src={img} alt={name}/>
                     </div>
-                    <p className={style.name}>{name}</p>
-                    <p className={style.company}>{company}</p>
+                    <div className={style.info}>
+                        <p className={style.name}>{name}</p>
+                        <p className={style.company}>{company}</p>
+                    </div>
                 </div>
                 <div className={style.back}>
                     <p className={style['back-name']}>{name}</p>

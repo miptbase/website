@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { top, features, donors, goal, media, feedback} from '../content/home.json';
+import { top, features, donors, goal, media, feedback, donation} from '../content/home.json';
 import donorsPerson from '../content/donors.json'
 
 import HomeTop from "../components/HomeTop";
@@ -25,10 +25,10 @@ export default class Home extends Component {
                         features={features}
                     />
                     <Goal goal={goal}/>
-                    <Media media={media}/>
                     <Donors donors={donors} donorsPerson={donorsPerson}/>
-                    <Donation/>
-                    <Feedback feedback={feedback} />
+                    <Media media={media}/>
+                    <Donation donation={donation}/>
+                    {/*<Feedback feedback={feedback} />*/}
                 </>
             </Page>
         )

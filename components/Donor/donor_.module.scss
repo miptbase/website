@@ -2,13 +2,16 @@
 @import "../../scss/colors";
 
 .donor {
+  cursor: pointer;
 }
 
 .flipper {
   position: relative;
-  width: 20rem;
-  height: 27rem;
-  perspective: 3000px;;
+  width: 100%;
+  height: 24.3rem;
+  perspective: 7000px;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
 }
 
 .front, .back {
@@ -29,8 +32,64 @@
 }
 .back {
   transform: rotateY(180deg);
+  padding: 1.5rem;
   background: #2d83e8;
+  display: flex;
+  flex-direction: column;
   .donor:hover & {
     transform: rotateY(360deg)
   }
+}
+
+.img {
+  height: 16rem;
+  width: 16rem;
+  background: rebeccapurple;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.info {
+  background: #F7F7F7;
+  padding: 1.5rem;
+  height: 8.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.company {
+  font-size: 1.2rem;
+  line-height: 130%;
+}
+
+.back-name {
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 120%;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.back-company {
+  font-size: 1.2rem;
+  line-height: 130%;
+  color: white;
+}
+
+.back-description {
+  font-size: 1.2rem;
+  line-height: 130%;
+  color: white;
+  margin-top: auto;
 }

@@ -19,8 +19,13 @@ const Media = (props) => {
                         <p className={style.text}>
                             {item.text}
                         </p>
-                        <div className={style.img}>
-                            <img src={item.img} alt={item.alt}/>
+                        <div className={style.bottom}>
+                            <div className={style.img}>
+                                <img src={item.img} alt={item.alt}/>
+                            </div>
+                            <div className={style.date}>
+                                {item.date}
+                            </div>
                         </div>
                     </div>
                 ))}

@@ -12,7 +12,7 @@ const DonorsList = (props) => {
                   <Donor
                       key={index}
                       name={donor.Donor}
-                      description= {`${donor.Department != ""  ? donor.Department : ''} ${donor.Year != "" ? (donor.Year) : ''}`}
+                      description= {`${donor.Department != "" &&  donor.Department != "-" ? donor.Department : ''} ${donor.Year != "" &&  donor.Year != "-" ? `(${donor.Year})` : ''}`}
                       // img={donor.img}
                       company={donor.Company}
                   />

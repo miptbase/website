@@ -7,7 +7,7 @@ import Feature from "../Feature";
 
 const Donors = (props) => {
     const {donors, donorsPerson} = props;
-    const initialDonors = 15;
+    const initialDonors = 18;
     const [showMore, setShowMore] = useState(false);
 
     const handleClick = () => {

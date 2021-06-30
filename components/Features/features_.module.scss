@@ -1,14 +1,20 @@
 @import "./scss/mixins";
 .features {
   @include container;
+  padding-top: 12rem;
+  padding-bottom: 14.1rem;
 }
 
 .title {
   @include title-2;
   margin-bottom: 5.367rem;
+  width: 80%;
+  margin-bottom: 8rem;
 }
 
 .content {
-  @include col2;
+  @include col3;
+  grid-column-gap: 8rem;
+  grid-row-gap: 6.8rem;
 }
 

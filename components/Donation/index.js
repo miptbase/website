@@ -3,15 +3,21 @@ import style from "./donation_.module.scss"
 
 import Form from '../Form'
 
-const Donation = () => {
-
+const Donation = (props) => {
+    const {donation} = props;
     return (
         <section className={style.donation}>
-            <div className={style.form}>
-                <Form />
+            <div className={style.content}>
+                <img src={donation.img} className={style.img}/>
+                <h2 className={style.title}>
+                    {donation.title}
+                </h2>
+                <p className={style.text}>
+                    {donation.text}
+                </p>
             </div>
-            <div className={style.image}>
-                <img src='/media/donations.jpg'/>
+            <div className={style.form}>
+                <Form form={donation.form}/>
             </div>
         </section>
     )

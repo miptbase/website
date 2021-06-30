@@ -7,12 +7,14 @@ import Check from '../ui/Check'
 import Button from '../ui/Button'
 import Value from '../ui/Value'
 import {debounce} from 'lodash';
+import cn from 'classnames'
 
-const Form = () => {
+const Form = (props) => {
+    const { form } = props;
     const [isStudent, setIsStudent] = useState(false);
     const [activeValue, setActiveValue] = useState('2');
     const [activeMethod, setActiveMethod] = useState('Карта');
-    const [selectedValue, setSelectedValue] = useState('0');
+    const [selectedValue, setSelectedValue] = useState('40000');
     const [currentEmail, setCurrentEmail] = useState(null);
     const [currentName, setCurrentName] = useState(null);
     const [otherPlaceholder, setOtherPlaceholder] = useState('Другая сумма');
@@ -60,14 +62,17 @@ const Form = () => {
         {
             id: 1,
             value: '5000',
+            tooltip: 'test test'
         },
         {
             id: 2,
             value: '40 000',
+            tooltip: 'Этого хватит на месяц интернета для целой группы студентов'
         },
         {
             id: 3,
             value: '100 000',
+            tooltip: 'test test test '
         },
     ]
 
@@ -239,10 +244,6 @@ const Form = () => {
 
 
             <form onSubmit={onSubmit} className={style.form}>
-
-                <div className={style.title}>
-                    Улучшим вместе жизнь студентов Физтеха!
-                </div>
                 {formtransfer.map(formInput => (
                     <div className={style.input} key={formInput.id}>
                         <Input
@@ -288,54 +289,75 @@ const Form = () => {
                     ))}
                 </div>
 
-                <div className={style.method}>
-                    {paymentMethod.map(method => (
-                        <div
-                            className={(activeMethod === method.name) ? [style.item + ' ' + style.item_active] : [style.item]}
-                            key={method.id}
-                            onClick={()=> {selectMethod(`${method.name}`)}}
-                        >
-                            {method.name}
+                <div className={style['pay-container']}>
+                    <div className={style.method}>
+                        {paymentMethod.map(method => (
+                            <div
+                                className={(activeMethod === method.name) ? [style.item + ' ' + style.item_active] : [style.item]}
+                                key={method.id}
+                                onClick={()=> {selectMethod(`${method.name}`)}}
+                            >
+                                {method.name}
+                            </div>
+                        ))}
+                        <div className={style['method-other']}>
+                            ...
                         </div>
-                    ))}
-                </div>
-
-                <div className={style.value}>
-
-                    {paymentValue.map(valueItem => (
-                        <Value key={valueItem.id}
-                               mod='select'
-                               value={valueItem.value}
-                               functionValueActive = {()=> {setSelectedValue(`${valueItem.value}`); setActiveValue(`${valueItem.id}`);  console.log(paymentSumm)}}
-                               isSelected = {activeValue == valueItem.id}
-                        />
-                    ))}
-                    <div>
-                        <Input
-                            color='white'
-                            mod='select'
-                            placeholder = {otherPlaceholder}
-                            onClick={()=> {setActiveValue('input')}}
-                            isSelected = {activeValue === 'input'}
-                            name="custom-donate-value"
-                            onInput=  {(e)=> { setSelectedValue(e.target.value)}}
-                            onFocus={() => setOtherPlaceholder('')}
-                            onBlur={(e) => {setOtherPlaceholder('Другая сумма');
-                                            if ((e.target.value) === '')
-                                            {
-                                                setActiveValue(null)
-                                            }
-                            }}
-                        />
                     </div>
-                </div>
 
+                    <div className={style.value}>
+                        <div className={style['value-items']}>
+                            {paymentValue.map(valueItem => (
+                                <Value key={valueItem.id}
+                                       mod='select'
+                                       value={valueItem.value}
+                                       functionValueActive = {()=> {setSelectedValue(`${valueItem.value}`); setActiveValue(`${valueItem.id}`)}}
+                                       isSelected = {activeValue == valueItem.id}
+                                />
+                            ))}
+                        </div>
+                        <div className={style['custom-donate']}>
+                            <Input
+                                color='white'
+                                mod='select'
+                                placeholder = {otherPlaceholder}
+                                onClick={()=> {setActiveValue('input')}}
+                                isSelected = {activeValue === 'input'}
+                                name="custom-donate-value"
+                                onInput=  {(e)=> { setSelectedValue(e.target.value)}}
+                                onFocus={() => setOtherPlaceholder('')}
+                                onBlur={(e) => {setOtherPlaceholder('Другая сумма');
+                                    if ((e.target.value) === '')
+                                    {
+                                        setActiveValue(0)
+                                    }
+                                }}
+                            />
+                        </div>
+
+
+                    </div>
+
+                    {activeValue != "input" && (
+                        <div className={style.tooltip}>
+                            {activeValue == 1 && (
+                                paymentValue[0].tooltip
+                            )}
+                            {activeValue == 2 && (
+                                paymentValue[1].tooltip
+                            )}
+                            {activeValue == 3 && (
+                                paymentValue[2].tooltip
+                            )}
+                        </div>
+                    )}
+                </div>
                 <div className={style.buttons}>
                     {payButtons}
                 </div>
 
                 <div className={style.privacy}>
-                    Отправляя свое пожертвование, вы соглашаетесь с Политикой конфиденциальности, даёте своё согласие на обработку персональных данных и принимаете условия договора пожертвования.
+                    Отправляя свое пожертвование, вы соглашаетесь с <a className={style.link} href='/'>Политикой конфиденциальности</a>, даёте своё согласие на обработку персональных данных и принимаете условия договора пожертвования.
                 </div>
 
 

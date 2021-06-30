@@ -2,6 +2,13 @@
 @import "./scss/colors";
 
 .donors {
+  padding: 12rem 0;
+}
+
+.title {
+  text-align: center;
+  @include title-5;
+  margin-bottom: 6rem;
 }
 
 .inner {
@@ -10,11 +17,37 @@
 
 .items {
   @include col3;
+  grid-gap: 0;
 }
 
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(#000000, 0.3);
+  margin-bottom: 10rem;
+  &:last-child {
+    border: none;
+  }
+}
+
+.item-title {
+  @include text-36;
+}
+
+.item-text {
+  @include text-16;
+  opacity: 0.6;
+}
 .list {
   display: flex;
   flex-wrap: wrap;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
 }
 
 

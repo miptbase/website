@@ -53,7 +53,7 @@ module.exports = {
                                     widget: "list",
                                     fields: [
                                         { label: "Name", name: "name", widget: "string"},
-                                        { label: "Description", name: "description", widget: "text"},
+                                        { label: "Description", name: "description", widget: "markdown"},
                                         { label: "Image", name: "img", widget: "image"}
                                     ]
                                 }
@@ -67,8 +67,6 @@ module.exports = {
                                 { label: "Title", name: "title", widget: "string" },
                                 { label: "Text", name: "text", widget: "text" },
                                 { label: "Caption", name: "caption", widget: "string" },
-                                { label: "Total", name: "total", widget: "number" },
-                                { label: "Progress", name: "progress", widget: "number" },
                                 { label: "ButtonText", name: "button", widget: "string" },
                                 { label: "Image", name: "img", widget: "image" }
                             ]
@@ -103,7 +101,8 @@ module.exports = {
                                     fields:
                                         [
                                             { label: "Text", name: "text", widget: "text" },
-                                            { label: "Image", name: "img", widget: "image" }
+                                            { label: "Image", name: "img", widget: "image" },
+                                            { label: "Date", name: "date", widget: "text" },
                                         ]
 
                                 }
@@ -115,6 +114,8 @@ module.exports = {
                             widget: "object",
                             fields: [
                                 {label: "Title", name: "title", widget: "string"},
+                                {label: "Text", name: "text", widget: "text"},
+                                {label: "Image", name: "img", widget: "image" },
                                 {
                                     label: 'Form',
                                     name: 'form',

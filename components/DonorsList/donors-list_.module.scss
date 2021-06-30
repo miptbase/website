@@ -6,8 +6,12 @@
 }
 
 .list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   flex-wrap: wrap;
+  grid-gap: 4rem;
+  gap: 4rem;
+  margin-bottom: 8rem;
 }
 
 

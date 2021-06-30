@@ -8,29 +8,30 @@ const Goal = (props) => {
     const percent = 25;
     return (
         <section className={style.goal}>
-            <div className={style.content}>
-                <h2 className={style.title}>
-                    {goal.title}
-                </h2>
-                <p className={style.text}>
-                    {goal.text}
-                </p>
+            <div className={style.container}>
+                <div className={style.content}>
+                    <h2 className={style.title}>
+                        {goal.title}
+                    </h2>
+                    <p className={style.text}>
+                        {goal.text}
+                    </p>
+
+
+                    <Button
+                        text={goal.button}
+                        color= 'orange'
+                    />
+                </div>
                 <div className={style.progress}>
-                    <div className={style['progress-line']} />
+                    <div className={style['progress-circle']} />
+                    <div className={style.info}>
+                        <div className={style.percent}>86%</div>
+                        <div className={style['info-text']}>
+                            собрано от цели в 24 млн ₽
+                        </div>
+                    </div>
                 </div>
-                <div className={style['progress-summ']}>
-                    {goal.progress} ₽ ({percent}%)
-                </div>
-                <div className={style.total}>
-                    {goal.caption} {goal.total} ₽
-                </div>
-                <Button
-                    text={goal.buttonText}
-                    color= 'orange'
-                />
-            </div>
-            <div className={style.image}>
-                <img src={goal.img}/>
             </div>
         </section>
     )
