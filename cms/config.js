@@ -172,11 +172,6 @@ module.exports = {
                                     ]
                                 }
                             ]
-                        },
-                        {
-                            label: 'Privacy',
-                            name: "privacy",
-                            widget: "text"
                         }
                     ]
                 }
