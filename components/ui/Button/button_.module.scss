@@ -1,15 +1,17 @@
 @import "scss/colors";
 
 .button {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 4.5rem;
+  height: 4.4rem;
   width: auto;
   border-radius: 0.5rem;
   color: white;
+  overflow: hidden;
   font-weight: 500;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   padding: 0 var(--buttonPadding, 3.6rem);
   cursor: pointer;
   transition: 0.3s color ease-in-out,
@@ -25,6 +27,7 @@
 
   &_color {
     &_white {
+      height: 3.5rem;
       background: transparent;
       border: 2px solid #FFFFFF;
       &:hover, &:focus {
@@ -43,11 +46,76 @@
 
     &_orange {
       background: $orange;
+      &:after {
+        content: '';
+        position: absolute;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        background: rgba(white, 0.15);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        transition: 0.3s opacity ease-in-out, 0.3s background-color ease-in-out;
+        z-index: 1;
+      }
+      &:hover, &:focus {
+        &:after {
+          opacity: 1;
+        }
+      }
+      
+      &:active {
+        &:after {
+          background: rgba(black, 0.15);
+          opacity: 1;
+        }
+      }
+  
+      &.disabled {
+        color: rgba(white, 0.5);
+      }
     }
     
     &_blue {
       background: $blue;
+      &:after {
+        content: '';
+        position: absolute;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        background: rgba(white, 0.15);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0;
+        transition: 0.3s opacity ease-in-out, 0.3s background-color ease-in-out;
+        z-index: 1;
+      }
+      &:hover, &:focus {
+        &:after {
+          opacity: 1;
+        }
+      }
+  
+      &:active {
+        &:after {
+          background: rgba(black, 0.15);
+          opacity: 1;
+        }
+      }
+  
+      &.disabled {
+        color: rgba(white, 0.5);
+      }
     }
   }
+}
+
+.text {
+  position: relative;
+  z-index: 2;
 }
 
