@@ -53,9 +53,9 @@ const Form = (props) => {
     ]
 
     const paymentMethod = [
-        {id: 1, name: 'Карта'},
+        {id: 1, name: 'Карта', icon: "🇷🇺"},
         {id: 2, name: 'Перевод'},
-        {id: 3, name: 'PayPal'},
+        {id: 3, name: 'PayPal', icon: "🌎"},
     ]
 
     const paymentValue = [
@@ -297,7 +297,11 @@ const Form = (props) => {
                                 key={method.id}
                                 onClick={()=> {selectMethod(`${method.name}`)}}
                             >
-                                {method.name}
+                                <div className={style['method-name']}>{method.name}</div>
+                                {
+                                    method.icon &&
+                                    <div className={style['method-icon']}>{method.icon}</div>
+                                }
                             </div>
                         ))}
                         <div className={style['method-other']}>

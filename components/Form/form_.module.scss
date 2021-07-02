@@ -43,7 +43,18 @@
   overflow: hidden;
   margin-bottom: 2rem;
   cursor: pointer;
-  height: 4.4rem
+  height: 4.4rem;
+}
+
+.method-text {
+  font-size: 1.6rem;
+  line-height: 130%;
+}
+
+.method-icon {
+  font-size: 1.2rem;
+  margin-left: 0.4rem;
+  margin-bottom: 0.4rem;
 }
 
 .method-other {

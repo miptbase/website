@@ -143,7 +143,7 @@ module.exports = {
                                                 {
                                                     label: "Type",
                                                     name: "type",
-                                                    widget: "string"
+                                                    widget: "markdown"
                                                 }
                                             ]
                                         },
