@@ -28,3 +28,40 @@
   margin-bottom: 5rem;
   color: white;
 }
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.progress-circle {
+  width: 35.3rem;
+  height: 35.3rem;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  border-radius: 50%;
+  background: url("../../public/media/circle.svg");
+}
+
+.info {
+  position: absolute;
+  max-width: 16rem;
+  max-height: 12rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.percent {
+  font-size: 6rem;
+  line-height: 100%;
+  color: white;
+  margin-bottom: 0.4rem;
+}
+.info-text {
+  text-align: center;
+  font-size: 16px;
+  line-height: 130%;
+  color: white;
+}

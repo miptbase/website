@@ -28,7 +28,8 @@ const Goal = (props) => {
                     <div className={style.info}>
                         <div className={style.percent}>86%</div>
                         <div className={style['info-text']}>
-                            собрано от цели в 24 млн ₽
+                            {goal.caption} <br />
+                            в 24 млн ₽
                         </div>
                     </div>
                 </div>
