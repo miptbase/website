@@ -23,15 +23,13 @@
 
 .student {
   padding-top: 3.4rem;
-  visibility: hidden;
-  opacity: 0;
+  overflow: hidden;
   max-height: 0;
-  transition: 0.3s visibility ease-in-out, 0.3s opacity ease-in-out,  0.3s max-height ease-in-out;
+  transition: 0.2s max-height linear;
   &_active {
-    visibility: visible;
-    opacity: 1;
     height: auto;
-    max-height: 100rem;
+    max-height: 20rem;
+    transition: 0.2s max-height linear;
   }
 }
 
@@ -130,16 +128,29 @@
 }
 
 .buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
   margin-bottom: 1.8rem;
+  &_single {
+    gap: 0;
+  }
 }
 
 .pay-button {
+  flex: 1 0 50%;
+  &_no_active {
+    flex-shrink: 1;
+  }
   div, button {
     width: 100% !important;
     height: 100% !important;
+  }
+}
+
+.pay-button-main {
+  flex: 1 0 50%;
+  &_100 {
+    flex: 1 0 100%;
   }
 }
 

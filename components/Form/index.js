@@ -1,7 +1,6 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useRef, useState, useCallback} from 'react'
 import ReactDOM from 'react-dom';
 import style from './form_.module.scss'
-
 import Input from '../ui/Input'
 import Check from '../ui/Check'
 import Button from '../ui/Button'
@@ -194,19 +193,7 @@ const Form = (props) => {
                         paymentData: document.forms.TinkoffPayForm
                     }
                 }
-            },
-            ApplePay: {
-                buttonOptions: {
-                    lang: 'ru',
-                    color: 'black'
-                },
-                paymentInfo: function () {
-                    return {
-                        infoEmail: "E-mail для отправки информации о платеже",
-                        paymentData: document.forms.TinkoffPayForm
-                    }
-                }
-            },
+            }
 
         },
     };
@@ -237,13 +224,22 @@ const Form = (props) => {
     const payButtons = showPayPalButton
       ? payPalButton
       : <>
-          <div className={style['pay-button']} id="tinkoffWidgetContainer"></div>
-          <Button
-              placeholder='Поддержать'
-              color='orange'
-              type='submit'
-              text='Поддержать'
-          />
+          <div className={cn({
+              [style['pay-button']]: true,
+              [style['pay-button_no_active']]: true,
+          })} id="tinkoffWidgetContainer"   />
+          <div className={cn({
+              [style['pay-button-main']]: true,
+              [style['pay-button-main_100']]: true,
+          })}>
+              <Button
+                  placeholder='Поддержать'
+                  color='orange'
+                  type='submit'
+                  text='Поддержать'
+                  width="100"
+              />
+          </div>
         </>;
     return (
         <>
@@ -271,30 +267,34 @@ const Form = (props) => {
                     </div>
                 ))}
 
-                <div className={style.check}>
-                    <Check
-                        color='white'
-                        text='Я учился/учусь в МФТИ'
-                        id='isStudent'
-                        checkChild={true}
-                        functionCheck={()=> setIsStudent(!isStudent)}
-                        name='member'
-                    >
-                    </Check>
+                <div className={style.hidden}>
+                    <div className={style.check}>
+                        <Check
+                            color='white'
+                            text='Я учился/учусь в МФТИ'
+                            id='isStudent'
+                            checkChild={true}
+                            functionCheck={()=> setIsStudent(!isStudent)}
+                            name='member'
+                        >
+                        </Check>
+                    </div>
+
+                    <div className={isStudent ? [style.student + ' ' + style.student_active] : [style.student]}>
+
+                        {studenttransfer.map(studentInput => (
+                            <div className={style.input} key={studentInput.id}>
+                                <Input
+                                    color='white'
+                                    placeholder={studentInput.placeholder}
+                                    name={studentInput.name}
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
-                <div className={isStudent ? [style.student + ' ' + style.student_active] : [style.student]}>
 
-                    {studenttransfer.map(studentInput => (
-                        <div className={style.input} key={studentInput.id}>
-                            <Input
-                                color='white'
-                                placeholder={studentInput.placeholder}
-                                name={studentInput.name}
-                            />
-                        </div>
-                    ))}
-                </div>
 
                 <div className={style['pay-container']}>
                     <div className={style.method}>
@@ -363,7 +363,10 @@ const Form = (props) => {
                         </div>
                     )}
                 </div>
-                <div className={style.buttons}>
+                <div className={cn({
+                    [style.buttons]: true,
+                    [style.buttons_single]: true,
+                })}>
                     {payButtons}
                 </div>
 
