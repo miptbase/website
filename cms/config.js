@@ -17,7 +17,7 @@ module.exports = {
     media_folder: "public/media/",
 
     // Where to link the images
-    public_folder: "public/media/",
+    public_folder: "media/",
 
     // The Pages collection
     collections: [
@@ -177,6 +177,102 @@ module.exports = {
                             label: 'Privacy',
                             name: "privacy",
                             widget: "text"
+                        }
+                    ]
+                }
+            ],
+        },
+        {
+            name: "common",
+            label: "Common",
+            files: [
+                {
+                    label: "Header",
+                    name: "header",
+                    file: "content/header.json",
+                    fields: [
+                        {
+                            label: "Header",
+                            name: "header",
+                            widget: "object",
+                            fields: [
+                                { label: "Logo", name: "logo", widget: "image"},
+                                { label: "Button", name: "button", widget: "string"},
+                            ]
+                        }
+                    ]
+                },
+                {
+                    label: "Footer",
+                    name: "footer",
+                    file: "content/footer.json",
+                    fields: [
+                        {
+                            label: "Footer",
+                            name: "footer",
+                            widget: "object",
+                            fields: [
+                                { label: "Logo", name: "logo", widget: "image"},
+                                {
+                                    label: 'Social',
+                                    name: "social",
+                                    widget: "list",
+                                    fields: [
+                                        { label: "Name", name: "name", widget: "string"},
+                                        { label: "Link", name: "link", widget: "string"},
+                                        { label: "Image", name: "img", widget: "image"}
+                                    ]
+                                },
+                                {
+                                    label: 'Copy',
+                                    name: "copy",
+                                    widget: "object",
+                                    fields: [
+                                        { label: "Text", name: "text", widget: "markdown"},
+                                        { label: "Copy", name: "copy", widget: "markdown"}
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    label: "Menu",
+                    name: "menu",
+                    file: "content/menu.json",
+                    fields: [
+                        {
+                            label: "Menu",
+                            name: "menu",
+                            widget: "object",
+                            fields: [
+                                {
+                                    label: "Items",
+                                    name: "items",
+                                    widget: "list",
+                                    fields: [
+                                        { label: "Item", name: "item", widget: "string"},
+                                        { label: "Link", name: "link", widget: "string"}
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    label: 'Feedback',
+                    name: "feedback",
+                    file: "content/feedback.json",
+                    fields: [
+                        {
+                            label: 'Feedback',
+                            name: "feedback",
+                            widget: "object",
+                            fields: [
+                                { label: "Text", name: "text", widget: "text"},
+                                { label: "Placeholder", name: "placeholder", widget: "string"},
+                                { label: "Button", name: "button", widget: "string"},
+                            ]
                         }
                     ]
                 }

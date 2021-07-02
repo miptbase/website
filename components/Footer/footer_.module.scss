@@ -1,0 +1,96 @@
+@import "./scss/mixins";
+.footer {
+  background: rgba(black, 0.85);
+}
+
+.inner {
+  @include container;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 20rem auto 20rem;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.logo {
+  width: 13.887rem;
+  height: 2.963rem;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.social {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.social-item {
+  width: 1.6rem;
+  height: 1.7rem;
+}
+
+.social-img {
+  height: 100%;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0 4.1rem;
+}
+
+.info-description {
+  width: 29.1rem;
+  font-size: 0.8rem;
+  line-height: 120%;
+  color: rgba(white, 0.6);
+  a {
+    text-decoration: none;
+  }
+}
+
+.info-button {
+  display: flex;
+  align-items: center;
+  width: 10.245rem;
+  height: 2.1rem;
+  padding: 0 0.6rem ;
+  border: 1px solid #FFFFFF;
+  border-radius: 3px;
+}
+
+.info-text {
+  font-size: 0.8rem;
+  line-height: 120%;
+  color: white;
+  margin-left: 0.6rem;
+  white-space: nowrap;
+}
+
+.info-icon {
+  width: 1.3rem;
+  height: 1.1rem;
+}
+
+.copy {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  font-size: 1.2rem;
+  line-height: 130%;
+  color: rgba(#FFFFFF, 0.75);
+}

@@ -1,0 +1,36 @@
+{
+  "footer": {
+    "logo": "media/logo-white.svg",
+    "social": [
+      {
+        "link": "/",
+        "img": "media/fb.svg",
+        "name": "Facebook"
+      },
+      {
+        "img": "media/instagram.svg",
+        "link": "/",
+        "name": "Instagram"
+      },
+      {
+        "img": "media/vk.svg",
+        "link": "/",
+        "name": "Vk"
+      },
+      {
+        "img": "media/telegram.svg",
+        "link": "/",
+        "name": "Telegram"
+      },
+      {
+        "img": "media/git.svg",
+        "link": "/",
+        "name": "Git"
+      }
+    ],
+    "copy": {
+      "text": " Фонд целевого капитала МФТИ (ИНН 5008998453, ОГРН 1145000001321)\n                            <a href='mailto:fund@phystech.edu'>fund@phystech.edu</a>,\n                            <a href='tel:74956423889'>+7 (495) 642 38 89</a>,\n                            официальный сайт — <a href='https://fund.mipt.ru/' target=\"_blank\">fund.mipt.ru</a>",
+      "copy": "Сайт сделан в <a href='/' target=\"_blank\">Accuraten</a>"
+    }
+  }
+}

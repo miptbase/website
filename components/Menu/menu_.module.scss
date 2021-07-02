@@ -1,7 +1,23 @@
 @import "./scss/mixins";
 
 .menu {
+  display: flex;
+}
 
+.item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 0 1.5rem;
+  cursor: pointer;
+}
+
+.link {
+  font-size: 1.2rem;
+  line-height: 130%;
+  color: white;
+  text-decoration: none;
 }
 
 

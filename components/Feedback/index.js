@@ -11,18 +11,20 @@ const Feedback = (props) => {
         <section className={style.feedback}>
             <div className={style.inner}>
                 <h2 className={style.title}>
-                    {feedback.title}
+                    {feedback.text}
                 </h2>
                 <form className={style.form}>
                     <div className={style.input}>
                         <Input
                             placeholder={feedback.placeholder}
+                            color='white'
                         />
                     </div>
                     <div className={style.button}>
                         <Button
                             text={feedback.button}
                             color= 'blue'
+                            width="100"
                         />
                     </div>
                 </form>

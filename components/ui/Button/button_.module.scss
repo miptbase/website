@@ -10,8 +10,12 @@
   color: white;
   font-weight: 500;
   font-size: 1.6rem;
-  padding: 0 3.6rem;
+  padding: 0 var(--buttonPadding, 3.6rem);
   cursor: pointer;
+  transition: 0.3s color ease-in-out,
+              0.3s background-color ease-in-out,
+              0.3s border-color ease-in-out,
+              0.3s opacity ease-in-out;
   
   &_width {
     &_100 {
@@ -21,7 +25,20 @@
 
   &_color {
     &_white {
-      background: white;
+      background: transparent;
+      border: 2px solid #FFFFFF;
+      &:hover, &:focus {
+        color: black;
+        background: white;
+      }
+      &:active {
+        background: rgba(0, 0, 0, 0.15);
+        border: 2px solid rgba(0, 0, 0, 0.15);
+        color: black;
+      }
+      &.disabled {
+        opacity: 0.5;
+      }
     }
 
     &_orange {

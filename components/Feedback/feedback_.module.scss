@@ -1,19 +1,42 @@
 @import "./scss/mixins";
 .feedback {
-
+  padding: 6.6rem 0;
+  border-bottom: 1px solid rgba(#FFFFFF, 0.3);
 }
 
 .inner {
-  @include container;
-  @include col2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.title {
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 140%;
+  color: white;
+  width: 80%;
 }
 
 .form {
   display: flex;
+  width: 100%;
+  gap: 2rem;
+}
+
+.button {
+  width: 23.2rem;
+  flex-shrink: 0;
 }
 
 .input {
-  height: 4rem;
+  flex-grow: 1;
+  height: 4.4rem;
+  input {
+    &::placeholder {
+      color: white;
+    }
+  }
 }
 
 
