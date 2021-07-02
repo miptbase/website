@@ -42,7 +42,7 @@
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   border-radius: 50%;
-  background: url("../../public/media/circle.svg");
+  background: url("../../public/media/circle.svg") no-repeat center;
 }
 
 .info {
