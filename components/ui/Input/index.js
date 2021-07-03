@@ -12,22 +12,30 @@ const Input = React.forwardRef((props, ref) => {
         [style.input_color_select]: mod === 'select',
         [style.input_color_select_active]: isSelected === true
     });
+    const inputContainerClass = cn( {
+        [style['input-container']]: true,
+        [style['input-container_color_white']]: color === 'white',
+        [style.input_color_select]: mod === 'select',
+        [style.input_color_select_active]: isSelected === true
+    });
 
     return (
-        <input
-            id={id}
-            className={inputClass}
-            placeholder={placeholder}
-            readOnly={readonly}
-            name={name}
-            onInput={onInput}
-            onChange={onChange}
-            ref={ref}
-            type={type}
-            onClick={onClick}
-            onFocus={onFocus}
-            onBlur={onBlur}
-        />
+        <div className={inputContainerClass}>
+            <input
+                id={id}
+                className={inputClass}
+                placeholder={placeholder}
+                readOnly={readonly}
+                name={name}
+                onInput={onInput}
+                onChange={onChange}
+                ref={ref}
+                type={type}
+                onClick={onClick}
+                onFocus={onFocus}
+                onBlur={onBlur}
+            />
+        </div>
     )
 });
 

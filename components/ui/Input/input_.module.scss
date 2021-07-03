@@ -1,5 +1,6 @@
 @import "scss/mixins";
 .input {
+  position: relative;
   height: 100%;
   width: 100%;
   border-radius: 0.5rem;
@@ -9,13 +10,14 @@
   font-weight: normal;
   border: 1px solid;
   color: inherit;
+  cursor: pointer;
+  transition: 0.3s border-width ease-in-out;
 
   &_color {
     &_white {
-      border: 1px solid white;
       color: white;
       &::placeholder {
-        color: rgba(white, 0.5);
+        color: white;
       }
     }
     &_select {
@@ -31,6 +33,43 @@
         }
       }
     }
+  }
+}
+
+.input-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  position: relative;
+  &_color {
+    &_white {
+      color: white;
+      &:after {
+        content: '';
+        position: absolute;
+        border-radius: 0.5rem;
+        border: 1px solid white;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        transition: 0.3s border-width ease-in-out;
+      }
+      &::placeholder {
+        color: rgba(white, 0.5);
+      }
+      &:hover, &:focus {
+        &:after {
+          border-width: 2px;
+        }
+      }
+    }
+  }
+  &_disabled {
+    opacity: 0.5;
   }
 }
 
