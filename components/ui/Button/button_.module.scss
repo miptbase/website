@@ -11,7 +11,7 @@
   color: white;
   overflow: hidden;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   padding: 0 var(--buttonPadding, 3.6rem);
   cursor: pointer;
   transition: 0.3s color ease-in-out,
@@ -27,6 +27,7 @@
 
   &_color {
     &_white {
+      font-size: 1.2rem;
       height: 3.5rem;
       background: transparent;
       border: 2px solid #FFFFFF;
