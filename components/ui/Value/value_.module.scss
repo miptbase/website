@@ -3,14 +3,19 @@
   position: relative;
   height: 100%;
   width: 100%;
-  border-right: 1px solid white;
   background: transparent;
   padding: 0 1.5rem;
   font-size: 1.6rem;
   font-weight: normal;
   white-space: nowrap;
   cursor: pointer;
-
+  box-shadow: 1px 1px 0 0px white inset, 1px -1px 0px white inset;
+  &:first-child {
+    border-radius: 0.4rem 0 0 0.4rem;
+  }
+  &:hover, &:focus {
+    box-shadow:  1px 1px 0 1px white inset, 1px -1px 1px white inset, -1px -1px 0px 0px white inset, 1px -1px 0px 1px white inset;
+  }
   &_color {
     &_select {
       @include select;

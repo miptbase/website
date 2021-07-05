@@ -4,7 +4,7 @@ import Button from "../ui/Button";
 
 
 const Goal = (props) => {
-    const {goal} = props;
+    const {goal, scrollToDonation} = props;
     const percent = 25;
     return (
         <section className={style.goal}>
@@ -21,6 +21,7 @@ const Goal = (props) => {
                     <Button
                         text={goal.button}
                         color= 'orange'
+                        buttonFunction={scrollToDonation}
                     />
                 </div>
                 <div className={style.progress}>

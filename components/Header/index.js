@@ -4,7 +4,7 @@ import Button from "../ui/Button";
 import Menu from "../Menu";
 
 const Header = (props) => {
-    const {header, menu} = props;
+    const {header, menu, scrollToDonation} = props;
     return (
         <section className={style.header}>
             <div className={style.inner}>
@@ -19,6 +19,7 @@ const Header = (props) => {
                         color='white'
                         text={header.button}
                         padding='1.6rem'
+                        buttonFunction={scrollToDonation}
                     />
                 </div>
             </div>

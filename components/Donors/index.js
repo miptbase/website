@@ -3,20 +3,11 @@ import style from "./donors_.module.scss"
 
 import Button from "../ui/Button";
 import DonorsList from "../DonorsList";
-import Feature from "../Feature";
+
 
 const Donors = (props) => {
     const {donors, donorsPerson} = props;
     const initialDonors = 18;
-    const [showMore, setShowMore] = useState(false);
-
-    const handleClick = () => {
-        setShowMore(!showMore)
-    }
-
-    const numberOfItems = showMore ? donorsPerson.length : initialDonors
-    const buttonText = showMore ? donors.hide : donors.show
-
     return (
         <section className={style.donors}>
             <div className={style.inner}>
@@ -38,16 +29,13 @@ const Donors = (props) => {
                         </div>
                     ))}
                 </div>
-                <DonorsList donors={donorsPerson.slice(0, numberOfItems)}/>
-                {donorsPerson.length > initialDonors &&
-                    <div className={style.button}>
-                        <Button
-                            text={buttonText}
-                            color='blue'
-                            buttonFunction={handleClick}
-                        />
-                    </div>
-                }
+                <DonorsList donors={donorsPerson.slice(0, initialDonors)}/>
+                <div className={style.button}>
+                    <Button
+                        text={donors.show}
+                        color='blue'
+                    />
+                </div>
             </div>
         </section>
     )

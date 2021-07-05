@@ -3,7 +3,7 @@ import style from "./home-top_.module.scss"
 import Button from "../ui/Button"
 
 const HomeTop = (props) => {
-    const {title, content, img} = props;
+    const {title, content, img, scrollToDonation} = props;
     return (
         <section className={style['home-top']}>
 
@@ -15,6 +15,7 @@ const HomeTop = (props) => {
                         <Button
                             text='Поддержать проект'
                             color='orange'
+                            buttonFunction={scrollToDonation}
                         >
                         </Button>
                     </div>

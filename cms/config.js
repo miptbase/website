@@ -103,6 +103,7 @@ module.exports = {
                                             { label: "Text", name: "text", widget: "text" },
                                             { label: "Image", name: "img", widget: "image" },
                                             { label: "Date", name: "date", widget: "text" },
+                                            { label: "Link", name: "link", widget: "stroke" },
                                         ]
 
                                 }

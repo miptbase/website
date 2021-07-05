@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useRef } from 'react'
 import { top, features, donors, goal, media, donation} from '../content/home.json';
 import { header } from '../content/header.json';
 import { footer } from '../content/footer.json';
@@ -16,29 +16,37 @@ import Feedback from "../components/Feedback";
 import Page from "../components/Page";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import style from "../components/Goal/goal_.module.scss";
+import Button from "../components/ui/Button";
 
-export default class Home extends Component {
-    render() {
-        return (
-            <Page>
-                <>
-                    <Header   header={header} menu={menu}/>
-                    <HomeTop
-                        title={top.title}
-                        content={top.content}
-                        img={top.img}
-                    />
-                    <Features
-                        features={features}
-                    />
-                    <Goal goal={goal}/>
-                    <Donors donors={donors} donorsPerson={donorsPerson}/>
-                    <Media media={media}/>
-                    <Donation donation={donation}/>
-                    <Footer   footer={footer} menu={menu} feedback={feedback}/>
-                    {/*<Feedback feedback={feedback} />*/}
-                </>
-            </Page>
-        )
+
+const Home = () => {
+    const donationRef = useRef();
+    const toDonation = () => {
+        donationRef.current.scrollIntoView({ behavior: 'smooth' })
     }
+    return (
+        <Page>
+            <>
+                <Header   header={header} menu={menu} scrollToDonation={toDonation}/>
+                <HomeTop
+                    scrollToDonation={toDonation}
+                    title={top.title}
+                    content={top.content}
+                    img={top.img}
+                />
+                <Features
+                    features={features}
+                />
+                <Goal goal={goal} scrollToDonation={toDonation}/>
+                <Donors donors={donors} donorsPerson={donorsPerson}/>
+                <Media media={media}/>
+                <Donation donation={donation} refDonation={donationRef}/>
+                <Footer   footer={footer} menu={menu} feedback={feedback}/>
+                {/*<Feedback feedback={feedback} />*/}
+            </>
+        </Page>
+    )
 }
+
+export default Home

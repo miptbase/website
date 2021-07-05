@@ -13,8 +13,23 @@
 }
 
 .input {
+  position: relative;
   height: 4.4rem;
   margin-bottom: 2rem;
+}
+
+.placeholder {
+  position: absolute;
+  left: 1.5rem;
+  font-size: 1.6rem;
+  line-height: 130%;
+  top: 50%;
+  color: white;
+  transform: translateY(-50%);
+}
+
+.placeholder-value {
+  opacity: 0.5;
 }
 
 .check {
@@ -22,6 +37,7 @@
 }
 
 .student {
+  position: relative;
   padding-top: 3.4rem;
   overflow: hidden;
   max-height: 0;
@@ -31,22 +47,61 @@
     max-height: 20rem;
     transition: 0.2s max-height linear;
   }
+  
+  &_select_active {
+    overflow: visible;
+  }
+}
+
+.select-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.5rem;
+  background: transparent;
+  padding: 0 1.5rem;
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: inherit;
+  cursor: pointer;
 }
 
 .method {
-  border-radius: 0.5rem;
-  border: 1px solid white;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 4.6rem;
-  overflow: hidden;
   margin-bottom: 2rem;
   cursor: pointer;
   height: 4.4rem;
 }
 
-.method-text {
+.item {
+  position: relative;
+  @include select;
+  height: 4.4rem;
+  box-shadow: 1px 1px 0 0px white inset, 1px -1px 0px white inset;
+  &:first-child {
+    border-radius: 0.4rem 0 0 0.4rem;
+  }
+  &:last-child {
+    box-shadow: 1px 1px 0 0px white inset, 1px -1px 0px white inset, -1px -1px 0px 0px white inset;
+    border-radius: 0 0.4rem 0.4rem 0;
+    &:hover, &:focus {
+      box-shadow:  1px 1px 0 1px white inset, 1px -1px 1px white inset, -1px -1px 0px 1px white inset, 1px -1px 0px 1px white inset;
+    }
+  }
+  &:hover, &:focus {
+    box-shadow:  1px 1px 0 1px white inset, 1px -1px 1px white inset, -1px -1px 0px 0px white inset, 1px -1px 0px 1px white inset;
+  }
+}
+
+.method-name {
   font-size: 1.6rem;
   line-height: 130%;
+  position: absolute;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .method-icon {
@@ -55,24 +110,13 @@
   margin-bottom: 0.4rem;
 }
 
-.method-other {
-  @include select;
-}
 
-.item {
-  @include select;
-  height: 4.4rem;
-  border-right: 1px solid white;
-}
 
 .value {
   height: 4.4rem;
   margin-bottom: 8.1rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 4.6rem;
-  border-radius: 0.5rem;
-  border: 1px solid white;
-  overflow: hidden;
 }
 
 .value-items {
@@ -86,7 +130,7 @@
   height: 4.4rem;
   margin-left: -0.2px;
   input {
-    border-radius: 0;
+    border-radius: 0 0.4rem 0.4rem 0;
     border: none;
   }
 }

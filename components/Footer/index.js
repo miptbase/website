@@ -26,7 +26,7 @@ const Footer = (props) => {
                                 className={style['social-item']}
                                 key={item.img}
                             >
-                                <a href={item.link}>
+                                <a href={item.link} target='_blank' rel='noopener'>
                                     <SVG className={style['social-img']} src={item.img} />
                                 </a>
 
