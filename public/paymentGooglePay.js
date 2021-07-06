@@ -20,5 +20,4 @@ const widgetParameters = {
 };
 window.addEventListener('load', function () {
     initPayments(widgetParameters);
-    console.log('lkl;kjlk;lkj')
 });

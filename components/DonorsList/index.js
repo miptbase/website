@@ -8,13 +8,14 @@ const DonorsList = (props) => {
     return (
         <div className={style['donors-list']}>
           <div className={style.list}>
-              {donors.map((donor, index) => (
+              {donors.map((donor) => (
                   <Donor
-                      key={index}
+                      key={donor.ID}
                       name={donor.Donor}
                       description= {`${donor.Department != "" &&  donor.Department != "-" ? donor.Department : ''} ${donor.Year != "" &&  donor.Year != "-" ? `(${donor.Year})` : ''}`}
                       // img={donor.img}
                       company={donor.Company}
+                      img={`media/${donor.ID}.png`}
                   />
               ))}
           </div>

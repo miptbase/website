@@ -17,5 +17,4 @@
 };
     window.addEventListener('load', function () {
     initPayments(widgetParameters);
-        console.log('po[po[po[po')
 })

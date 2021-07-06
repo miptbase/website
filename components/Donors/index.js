@@ -7,7 +7,6 @@ import DonorsList from "../DonorsList";
 
 const Donors = (props) => {
     const {donors, donorsPerson} = props;
-    const initialDonors = 18;
     return (
         <section className={style.donors}>
             <div className={style.inner}>
@@ -29,7 +28,7 @@ const Donors = (props) => {
                         </div>
                     ))}
                 </div>
-                <DonorsList donors={donorsPerson.slice(0, initialDonors)}/>
+                <DonorsList donors={donorsPerson.filter(donor => donor.Top === "1")}/>
                 <div className={style.button}>
                     <Button
                         text={donors.show}
