@@ -2,21 +2,32 @@
 @import "./scss/colors";
 
 .donation {
-  @include container;
   display: flex;
   padding-top: 8rem;
   padding-bottom: 10rem;
+  @include mediaMob {
+    padding-top: 0;
+    flex-direction: column;
+  }
 }
 
 .form,
 .content {
   flex: 0 0 50%;
+  @include mediaMob {
+    flex: 0 0 auto;
+    @include container;
+  }
 }
 
 .form {
   padding: 5rem 5rem 5rem;
   background: $blue;
   border-radius: 0 2rem 2rem 0;
+  @include mediaMob {
+    border-radius: 0;
+    padding: 4rem 2rem;
+  }
 }
 
 .content {
@@ -29,6 +40,9 @@
   flex-direction: column;
   justify-content: flex-end;
   border-radius: 2rem 0 0 2rem;
+  @include mediaMob {
+    border-radius: 0;
+  }
 }
 
 .img {

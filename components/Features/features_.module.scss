@@ -3,18 +3,31 @@
   @include container;
   padding-top: 12rem;
   padding-bottom: 14.1rem;
+  @include mediaMob {
+    padding-top: 6rem;
+    padding-bottom: 1.8rem;
+  }
 }
 
 .title {
   @include title-2;
-  margin-bottom: 5.367rem;
   width: 80%;
   margin-bottom: 8rem;
+  @include mediaMob {
+    width: 100%;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 140%;
+    margin-bottom: 4.2rem;
+  }
 }
 
 .content {
   @include col3;
   grid-column-gap: 8rem;
   grid-row-gap: 6.8rem;
+  @include mediaMob {
+    display: block;
+  }
 }
 

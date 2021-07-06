@@ -2,6 +2,10 @@
 @mixin container {
   padding: 0 6rem;
   margin: 0 auto;
+  @include mediaMob {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 @mixin select {
@@ -77,6 +81,10 @@
 @mixin text-16 {
   font-size: 1.6rem;
   line-height: 1.5;
+}
+
+@mixin mediaMob {
+  @media (max-width: 1023px)  { @content; }
 }
 
 

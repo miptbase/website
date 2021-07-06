@@ -72,6 +72,11 @@
   margin-bottom: 2rem;
   cursor: pointer;
   height: 4.4rem;
+  @include mediaMob {
+    height: 8.8rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 }
 
 .item {
@@ -80,8 +85,9 @@
   height: 4.4rem;
   box-shadow: 1px 1px 0 0px white inset, 1px -1px 0px white inset;
   &:first-child {
-    border-radius: 0.4rem 0 0 0.4rem;
+    border-radius: 0.4rem 0 0 0;
   }
+  
   &:last-child {
     box-shadow: 1px 1px 0 0px white inset, 1px -1px 0px white inset, -1px -1px 0px 0px white inset;
     border-radius: 0 0.4rem 0.4rem 0;

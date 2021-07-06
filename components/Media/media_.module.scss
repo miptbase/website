@@ -2,15 +2,26 @@
 .media {
   @include container;
   padding-bottom: 10rem;
+  @include mediaMob {
+    padding-bottom: 8rem;
+  }
 }
 
 .title {
   @include title-2;
   margin-bottom: 6rem;
+  @include mediaMob {
+    font-size: 2rem;
+    line-height: 140%;
+    margin-bottom: 3rem;
+  }
 }
 
 .items {
   @include col3;
+  @include mediaMob {
+    display: block;
+  }
 }
 
 .item {
@@ -23,6 +34,11 @@
   justify-content: space-between;
   text-decoration: none;
   transition: 0.3s background-color ease-in-out;
+  @include mediaMob {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    height: 17rem;
+  }
   &:after {
     content: '';
     position: absolute;
@@ -54,6 +70,10 @@
 .text {
   font-size: 2rem;
   line-height: 140%;
+  @include mediaMob {
+    font-size: 1.6rem;
+    line-height: 130%;
+  }
 }
 
 .bottom {
@@ -62,10 +82,20 @@
   justify-content: space-between;
 }
 
+.img {
+  @include mediaMob {
+  
+  }
+}
+
 .date {
   font-size: 1.2rem;
   line-height: 130%;
   letter-spacing: 0.02em;
   opacity: 0.6;
+  @include mediaMob {
+    font-size: 1.2rem;
+    line-height: 130%;
+  }
 }
 

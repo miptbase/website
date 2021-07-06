@@ -1,5 +1,9 @@
+@import "mixins";
 html {
   font-size: 0.78125vw;
+  @include mediaMob {
+    font-size: 3.125vw;
+  }
 }
 
 body {

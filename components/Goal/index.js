@@ -1,9 +1,11 @@
 import React from 'react'
 import style from "./goal_.module.scss"
 import Button from "../ui/Button";
+import { useIsMobile } from '../../hooks/useIsMobile';
 
 
 const Goal = (props) => {
+    const isMobile = useIsMobile();
     const {goal, scrollToDonation} = props;
     const percent = 25;
     return (
@@ -16,12 +18,11 @@ const Goal = (props) => {
                     <p className={style.text}>
                         {goal.text}
                     </p>
-
-
                     <Button
-                        text={goal.button}
+                        text={isMobile ? `${goal.buttonMobile}` : `${goal.button}` }
                         color= 'orange'
                         buttonFunction={scrollToDonation}
+                        width={isMobile ? '100' :''}
                     />
                 </div>
                 <div className={style.progress}>

@@ -3,6 +3,10 @@
 
 .goal {
   @include container;
+  @include mediaMob {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 .container {
   display: flex;
@@ -10,6 +14,13 @@
   overflow: hidden;
   background: $blue;
   padding: 5rem;
+  @include mediaMob {
+    @include container;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    border-radius: 0;
+    flex-direction: column-reverse;
+  }
 
 }
 .content,
@@ -21,12 +32,23 @@
   @include  title-4;
   color: white;
   margin-bottom: 2.5rem;
+  @include mediaMob {
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 120%;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .text {
   @include text-16;
   margin-bottom: 5rem;
   color: white;
+  @include mediaMob {
+    font-size: 1.4rem;
+    line-height: 130%;
+    margin-bottom: 2.5rem;
+  }
 }
 
 .progress {
@@ -34,6 +56,9 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  @include mediaMob {
+    margin-bottom: 3rem;
+  }
 }
 
 .progress-circle {
@@ -43,6 +68,12 @@
   backface-visibility: hidden;
   border-radius: 50%;
   background: url("../../public/media/circle.svg") no-repeat center;
+  @include mediaMob {
+    width: 27rem;
+    height: 27rem;
+    margin: 0 auto;
+    background: url("../../public/media/circle-mobile.svg") no-repeat center;
+  }
 }
 
 .info {
@@ -58,10 +89,19 @@
   line-height: 100%;
   color: white;
   margin-bottom: 0.4rem;
+  @include mediaMob {
+    font-size: 4rem;
+    line-height: 100%;
+    margin-bottom: 0.3rem;
+  }
 }
 .info-text {
   text-align: center;
   font-size: 16px;
   line-height: 130%;
   color: white;
+  @include mediaMob {
+    font-size: 1.4rem;
+    line-height: 130%;
+  }
 }

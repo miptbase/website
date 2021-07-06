@@ -31,9 +31,7 @@ const Home = () => {
                 <Header   header={header} menu={menu} scrollToDonation={toDonation}/>
                 <HomeTop
                     scrollToDonation={toDonation}
-                    title={top.title}
-                    content={top.content}
-                    img={top.img}
+                    top={top}
                 />
                 <Features
                     features={features}

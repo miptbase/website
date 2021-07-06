@@ -6,6 +6,9 @@
   left: 0;
   padding: 2.1rem 0;
   z-index: 1;
+  @include mediaMob {
+    padding: 1rem 0;
+  }
 }
 
 .inner {
@@ -13,16 +16,42 @@
   display: grid;
   grid-template-columns: 14rem auto 14rem;
   align-items: center;
+  @include mediaMob {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .logo {
   width: 13.887rem;
   height: 2.963rem;
+  @include mediaMob {
+    width: 13.2rem;
+    height: 2.81rem;
+  }
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: left center;
+  }
+}
+
+.menu-button {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.menu-line {
+  height: 0.2rem;
+  background: white;
+  &_1 {
+    width: 2.5rem;
+    margin-bottom: 0.8rem;
+  }
+  &_2 {
+    width: 1.3rem;
   }
 }
 

@@ -38,7 +38,9 @@ module.exports = {
                                 { label: "Title", name: "title", widget: "string"},
                                 { label: "Content", name: "content", widget: "string" },
                                 { label: "ButtonText", name: "button", widget: "string"},
+                                { label: "ButtonMobileText", name: "buttonMobile", widget: "string"},
                                 { label: "Image", name: "img", widget: "image"},
+                                { label: "MobileImg", name: "mobileImg", widget: "image"},
                             ]
                         },
                         {
@@ -68,6 +70,7 @@ module.exports = {
                                 { label: "Text", name: "text", widget: "text" },
                                 { label: "Caption", name: "caption", widget: "string" },
                                 { label: "ButtonText", name: "button", widget: "string" },
+                                { label: "ButtonMobileText", name: "buttonMobile", widget: "string" },
                                 { label: "Image", name: "img", widget: "image" }
                             ]
                         },
