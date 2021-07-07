@@ -39,7 +39,9 @@ module.exports = {
                                 { label: "Title", name: "title", widget: "string"},
                                 { label: "Content", name: "content", widget: "string" },
                                 { label: "ButtonText", name: "button", widget: "string"},
+                                { label: "ButtonMobileText", name: "buttonMobile", widget: "string"},
                                 { label: "Image", name: "img", widget: "image"},
+                                { label: "MobileImg", name: "mobileImg", widget: "image"},
                             ]
                         },
                         {
@@ -69,6 +71,7 @@ module.exports = {
                                 { label: "Text", name: "text", widget: "text" },
                                 { label: "Caption", name: "caption", widget: "string" },
                                 { label: "ButtonText", name: "button", widget: "string" },
+                                { label: "ButtonMobileText", name: "buttonMobile", widget: "string" },
                                 { label: "Image", name: "img", widget: "image" }
                             ]
                         },
@@ -104,6 +107,7 @@ module.exports = {
                                             { label: "Text", name: "text", widget: "text" },
                                             { label: "Image", name: "img", widget: "image" },
                                             { label: "Date", name: "date", widget: "text" },
+                                            { label: "Link", name: "link", widget: "stroke" },
                                         ]
 
                                 }
@@ -173,11 +177,6 @@ module.exports = {
                                     ]
                                 }
                             ]
-                        },
-                        {
-                            label: 'Privacy',
-                            name: "privacy",
-                            widget: "text"
                         }
                     ]
                 }
@@ -230,7 +229,8 @@ module.exports = {
                                     widget: "object",
                                     fields: [
                                         { label: "Text", name: "text", widget: "markdown"},
-                                        { label: "Copy", name: "copy", widget: "markdown"}
+                                        { label: "Copy", name: "copy", widget: "markdown"},
+                                        { label: "CopyMobile", name: "copy_mobile", widget: "markdown"}
                                     ]
                                 }
                             ]

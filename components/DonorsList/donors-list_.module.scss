@@ -12,6 +12,11 @@
   grid-gap: 4rem;
   gap: 4rem;
   margin-bottom: 8rem;
+  @include mediaMob {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.4rem;
+    margin-bottom: 4rem;
+  }
 }
 
 

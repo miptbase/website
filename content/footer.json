@@ -3,34 +3,35 @@
     "logo": "media/logo-white.svg",
     "social": [
       {
-        "link": "/",
+        "link": "https://facebook.com/miptfund",
         "img": "media/fb.svg",
         "name": "Facebook"
       },
       {
         "img": "media/instagram.svg",
-        "link": "/",
+        "link": "https://www.instagram.com/endowment_mipt",
         "name": "Instagram"
       },
       {
         "img": "media/vk.svg",
-        "link": "/",
-        "name": "Vk"
+        "link": "https://vk.com/miptfund",
+        "name": "Vkontakte"
       },
       {
         "img": "media/telegram.svg",
-        "link": "/",
+        "link": "https://t.me/miptfund",
         "name": "Telegram"
       },
       {
         "img": "media/git.svg",
-        "link": "/",
-        "name": "Git"
+        "link": "https://github.com/miptbase",
+        "name": "Github"
       }
     ],
     "copy": {
-      "text": " Фонд целевого капитала МФТИ (ИНН 5008998453, ОГРН 1145000001321)\n                            <a href='mailto:fund@phystech.edu'>fund@phystech.edu</a>,\n                            <a href='tel:74956423889'>+7 (495) 642 38 89</a>,\n                            официальный сайт — <a href='https://fund.mipt.ru/' target=\"_blank\">fund.mipt.ru</a>",
-      "copy": "Сайт сделан в <a href='/' target=\"_blank\">Accuraten</a>"
+      "text": "Фонд целевого капитала МФТИ (ИНН 5008998453, ОГРН 1145000001321)\n                            <a href='mailto:fund@phystech.edu'>fund@phystech.edu</a>,\n                            <a href='tel:74956423889'>+7 (495) 642 38 89</a>,\n                            официальный сайт — <a href='https://fund.mipt.ru/' target=\"_blank\" rel=\"noopener\">fund.mipt.ru</a>",
+      "copy": "Сайт сделан в <a href='https://accuraten.com/en/' target=\"_blank\" rel=\"noopener\">Accuraten</a>",
+      "copy_mobile": "Сделано в <a href='https://accuraten.com/en/' target=\"_blank\" rel=\"noopener\">Accuraten</a>"
     }
   }
 }

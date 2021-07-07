@@ -1,5 +1,6 @@
 @import "scss/mixins";
 .input {
+  position: relative;
   height: 100%;
   width: 100%;
   border-radius: 0.5rem;
@@ -7,15 +8,23 @@
   padding: 0 1.5rem;
   font-size: 1.6rem;
   font-weight: normal;
-  border: 1px solid;
   color: inherit;
+  cursor: pointer;
+  -webkit-appearance: none;
+  
 
   &_color {
     &_white {
-      border: 1px solid white;
       color: white;
+      box-shadow: 0 0 0 1px white inset;
+      transition: 0.3s box-shadow ease-in-out;
       &::placeholder {
-        color: rgba(white, 0.5);
+        color: white;
+      }
+      &:enabled {
+        &:hover {
+          box-shadow: 0 0 0 2px white inset;
+        }
       }
     }
     &_select {
@@ -31,6 +40,12 @@
         }
       }
     }
+  }
+  &:-webkit-autofill, &:-webkit-autofill:hover,  &:-webkit-autofill:focus {
+    -webkit-box-shadow:0 0 0 1px white inset, 0 0 0 50px #2D83E8 inset; /* можно изменить на любой вариант цвета */
+    -webkit-text-fill-color: white;
+    transition: none;
+    caret-color: white;
   }
 }
 

@@ -2,6 +2,10 @@
 @mixin container {
   padding: 0 6rem;
   margin: 0 auto;
+  @include mediaMob {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 @mixin select {
@@ -9,7 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.2s color ease-in-out, 0.2s background ease-in-out;
+  transition: 0.2s color ease-in-out, 0.2s background ease-in-out, 0.3s box-shadow ease-in-out;
   &_active {
     font-weight: 500;
     background: white;
@@ -78,6 +82,73 @@
   font-size: 1.6rem;
   line-height: 1.5;
 }
+
+@mixin mediaMob {
+  @media (max-width: 1023px)  { @content; }
+}
+
+@mixin logo {
+  width: 13.887rem;
+  height: 2.963rem;
+  cursor: pointer;
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 16.3rem;
+    height: 4.1rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #FFFFFF;
+    border-radius: 0.3rem;
+    opacity: 0;
+    transition: 0.3s opacity ease-in-out;
+  }
+  @include mediaMob {
+    width: 13.2rem;
+    height: 2.8rem;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+  &:hover {
+    opacity: 0.6;
+  }
+  &:focus {
+    opacity: 1;
+    &:after {
+      opacity: 1;
+    }
+  }
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+@mixin link-hovered {
+  color: inherit;
+  position: relative;
+  border-bottom: 1px solid;
+  transition: 0.3s border ease-in-out;
+  text-decoration: none;
+  &:hover {
+    border-bottom: 1px solid $blue;
+  }
+  &:focus, &:focus-visible {
+    outline: none;
+    border: 1px solid
+  }
+}
+
 
 
 

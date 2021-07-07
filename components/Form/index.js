@@ -1,45 +1,42 @@
-import React, {useEffect, useRef, useState} from 'react'
+import React, {useEffect, useRef, useState, useCallback} from 'react'
 import ReactDOM from 'react-dom';
 import style from './form_.module.scss'
-
 import Input from '../ui/Input'
 import Check from '../ui/Check'
 import Button from '../ui/Button'
 import Value from '../ui/Value'
-import {debounce} from 'lodash';
+import Select, { components }from 'react-select'
 import cn from 'classnames'
 import {IPSTACK_API_KEY} from '../../config';
+import Menu from "../Menu";
+import {useIsMobile} from "../../hooks/useIsMobile";
+
 
 const Form = (props) => {
-    const { form } = props;
-    const [isStudent, setIsStudent] = useState(false);
-    const [activeValue, setActiveValue] = useState('2');
-    const [activeMethod, setActiveMethod] = useState('Карта');
-    const [selectedValue, setSelectedValue] = useState('40000');
-    const [currentEmail, setCurrentEmail] = useState(null);
-    const [currentName, setCurrentName] = useState(null);
-    const [otherPlaceholder, setOtherPlaceholder] = useState('Другая сумма');
-    const selectMethod = method => {
-        setActiveMethod(method);
-    };
+    const isMobile = useIsMobile();
     const nameInputRef = useRef(null);
     const emailInputRef = useRef(null);
 
-    const formtransfer = [
+    const formTransfer = [
         {
             id: 1,
-            placeholder: 'Ваше имя',
+            placeholder: {
+                name: 'Ваше имя',
+                value: 'Петр Капица'
+            },
             name: 'name',
             ref: nameInputRef,
         },
         {
             id: 2,
-            placeholder: 'Ваш Email',
+            placeholder: {
+                name: 'Ваш email',
+                value: 'landau@phystech.edu'
+            },
             name: 'email',
             ref: emailInputRef,
         }
     ]
-
     const studenttransfer = [
         {
             id: 1,
@@ -50,6 +47,75 @@ const Form = (props) => {
             id: 2,
             placeholder: 'Год окончания',
             name: 'graduate-year',
+        }
+    ]
+    const { form } = props;
+    const [isStudent, setIsStudent] = useState(false);
+    const [activeValue, setActiveValue] = useState('2');
+    const [activeMethod, setActiveMethod] = useState('Карта');
+    const [selectedValue, setSelectedValue] = useState('40000');
+    const [currentEmail, setCurrentEmail] = useState(null);
+    const [currentName, setCurrentName] = useState(null);
+    const [otherPlaceholder, setOtherPlaceholder] = useState('Другая сумма');
+    const [namePlaceholder, setNamePlaceholder] = useState(formTransfer[0].placeholder);
+    const [emailPlaceholder, setEmailPlaceholder] = useState(formTransfer[1].placeholder);
+    const [nameMobilePlaceholder, setNameMobilePlaceholder] = useState(formTransfer[0].placeholder.name);
+    const [emailMobilePlaceholder, setEmailMobilePlaceholder] = useState(formTransfer[1].placeholder.name);
+    const [yearPlaceholder, setYearPlaceholder] = useState(studenttransfer[1].placeholder);
+    const [selectDepartmentActive, setSelectDepartmentActive] = useState(false);
+    const selectMethod = method => {
+        setActiveMethod(method);
+    };
+
+    useEffect(() => {
+        if (currentName) {
+            setNamePlaceholder({name: '', value: ''})
+        }
+        if (currentEmail) {
+            setEmailPlaceholder({name: '', value: ''})
+        }
+    }, [currentName, currentEmail]);
+
+
+    const departments = [
+        {
+            value: 'ФРТК', label: 'ФРТК'
+        },
+        {
+            value: 'РТФ', label: 'РТФ'
+        },
+        {
+            value: 'ФОПФ, РФФ', label: 'ФОПФ, РФФ'
+        },
+        {
+            value: 'ФАКИ, АМФ', label: 'ФАКИ, АМФ'
+        },
+        {
+            value: 'ФМБФ, ФМХФ, ФХФ', label: 'ФМБФ, ФМХФ, ФХФ'
+        },
+        {
+            value: 'ФФКЭ', label: 'ФФКЭ'
+        },
+        {
+            value: 'ФАЛТ', label: 'ФАЛТ'
+        },
+        {
+            value: 'ФУПМ, ФПМЭ', label: 'ФУПМ, ФПМЭ'
+        },
+        {
+            value: 'ФПФЭ', label: 'ФПФЭ'
+        },
+        {
+            value: 'ФИВТ', label: 'ФИВТ'
+        },
+        {
+            value: 'ФФХБ', label: 'ФФХБ'
+        },{
+            value: 'ФНБИК', label: 'ФНБИК'
+        },{
+            value: 'ФБМФ', label: 'ФБМФ'
+        },{
+            value: 'ФИБС', label: 'ФИБС'
         }
     ]
 
@@ -76,6 +142,133 @@ const Form = (props) => {
             tooltip: 'test test test '
         },
     ]
+    const DropdownIndicator = (
+        props
+    ) => {
+        return (
+            <components.DropdownIndicator {...props}>
+                <svg style={selectDepartmentActive? {
+                    width: '1.5rem',
+                    height: '0.9rem',
+                    marginRight: '-8px',
+                    transform: 'rotate(180deg)',
+                    transformOrigin: 'center',
+                    transition: '0.3s transform ease-in-out'}
+                    : {
+                        width: '1.5rem',
+                        height: '0.9rem',
+                        marginRight: '-8px',
+                        transform: 'rotate(0)',
+                        transformOrigin: 'center',
+                        transition: '0.3s transform ease-in-out'
+                }
+                    }
+                     xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="9"
+                    fill="none"
+                    viewBox="0 0 15 9"
+                >
+                    <path
+                        fill="#fff"
+                        d="M7.549 7.776l-.354.354.354.353.353-.353-.353-.354zM.494 1.43l6.701 6.7.707-.706-6.7-6.701-.708.707zm7.409 6.7l6.7-6.7-.707-.707-6.7 6.7.707.708z"
+                    />
+                </svg>
+            </components.DropdownIndicator>
+        );
+    };
+    const customStyles = {
+        container: (provided, state) => ({
+            ...provided,
+            width: '100%',
+            color: "white",
+            height: '4.4rem',
+            borderRadius: '0.5rem',
+            background: 'transparent',
+            padding: '0 1.5rem',
+            fontSize: '1.6rem',
+            fontWeight: 'normal',
+            boxShadow: '0 0 0 1px white inset',
+            transition: '0.3s box-shadow ease-in-out',
+            display: 'flex',
+            cursor: 'pointer',
+            '&:hover': {
+                boxShadow: '0 0 0 2px white inset'
+            }
+        }),
+        valueContainer: (provided, state) => ({
+            ...provided,
+            padding: '0',
+
+        }),
+        menuList: (provided, state) => ({
+            ...provided,
+            maxHeight: 'none',
+            padding: '0.5rem 1rem',
+            background: 'white'
+
+        }),
+        option: (provided, state) => ({
+            ...provided,
+            color: '#2D83E8',
+            padding: '1rem 0',
+            borderBottom: '1px solid #2D83E8',
+            fontSize: '1.6rem',
+            lineHeight: '130%',
+            cursor: 'pointer',
+            background: 'white',
+            '&:active': {
+                background: 'white',
+            },
+            '&:last-child': {
+                borderBottom: 'none',
+            }
+
+        }),
+        placeholder: (provided, state) => ({
+            ...provided,
+            color: 'white',
+            margin: '0'
+        }),
+        menu: (provided, state) => ({
+            ...provided,
+            width: '100%',
+            height: 'auto',
+            borderBottom: '1px dotted pink',
+            color: "white",
+            left: '0',
+            zIndex: '3'
+        }),
+        indicatorSeparator: (provided, state) => ({
+            ...provided,
+            display: 'none'
+        }),
+        IndicatorsContainer: (provided, state) => ({
+            ...provided,
+            padding: '0'
+        }),
+
+        control: (provided, state) => ({
+            ...provided,
+            width: '100%',
+            color: "white",
+            height: '4.4rem',
+            background: 'transparent',
+            fontSize: '1.6rem',
+            fontWeight: 'normal',
+            display: 'flex',
+            padding: '0',
+            border: 'none',
+            alignItems: 'center',
+            cursor: 'pointer',
+            boxShadow: 'none'
+        }),
+
+        singleValue: (provided, state) => ({
+            ...provided,
+            color: "white"
+        }),
+    }
 
     const [payPalButton, setPayPalButton] = useState(null);
     const [showPayPalButton, setShowPayPalButton] = useState(false);
@@ -136,24 +329,6 @@ const Form = (props) => {
         }
     };
 
-    // const DEBOUNCE_MS = 3000;
-    // const onNameOrEmailChange = debounce(async () => {
-    //     const name = nameInputRef.current.value;
-    //     const email = emailInputRef.current.value;
-    //     const dataToSend = {
-    //         event: 'Identify',
-    //         name: name,
-    //         email: email,
-    //     };
-    //     localStorage.setItem("name", name);
-    //     localStorage.setItem("email", email);
-    //
-    //     const response = await (await fetch('http://miptbaseback.4129.ru/log', {
-    //         method: 'POST',
-    //         body: JSON.stringify(dataToSend),
-    //     })).json();
-    // }, DEBOUNCE_MS);
-
     const openTransfer = () => {
         window.open('/transfer');
     }
@@ -194,19 +369,7 @@ const Form = (props) => {
                         paymentData: document.forms.TinkoffPayForm
                     }
                 }
-            },
-            ApplePay: {
-                buttonOptions: {
-                    lang: 'ru',
-                    color: 'black'
-                },
-                paymentInfo: function () {
-                    return {
-                        infoEmail: "E-mail для отправки информации о платеже",
-                        paymentData: document.forms.TinkoffPayForm
-                    }
-                }
-            },
+            }
 
         },
     };
@@ -237,13 +400,22 @@ const Form = (props) => {
     const payButtons = showPayPalButton
       ? payPalButton
       : <>
-          <div className={style['pay-button']} id="tinkoffWidgetContainer"></div>
-          <Button
-              placeholder='Поддержать'
-              color='orange'
-              type='submit'
-              text='Поддержать'
-          />
+          <div className={cn({
+              [style['pay-button']]: true,
+              [style['pay-button_no_active']]: true,
+          })} id="tinkoffWidgetContainer"   />
+          <div className={cn({
+              [style['pay-button-main']]: true,
+              [style['pay-button-main_100']]: true,
+          })}>
+              <Button
+                  placeholder='Поддержать'
+                  color='orange'
+                  type='submit'
+                  text='Поддержать'
+                  width="100"
+              />
+          </div>
         </>;
     return (
         <>
@@ -251,50 +423,169 @@ const Form = (props) => {
 
 
             <form onSubmit={onSubmit} className={style.form}>
-                {formtransfer.map(formInput => (
-                    <div className={style.input} key={formInput.id}>
-                        <Input
-                            color='white'
-                            placeholder={formInput.placeholder}
-                            name={formInput.name}
-                            // onChange={onNameOrEmailChange}
-                            ref={formInput.ref}
-                            onInput=  {(e)=> {
-                                if (formInput.name === 'name') {
+                {!isMobile
+                && (
+                    <>
+                        <div className={style.input}>
+                            <div className={style.placeholder}>
+                                <span className={style['placeholder-text']}>{namePlaceholder.name} </span> <span className={style['placeholder-value']}>{namePlaceholder.value}</span>
+                            </div>
+                            <Input
+                                color='white'
+                                name={'name'}
+                                ref={nameInputRef}
+                                onInput=  {(e)=> {
                                     setCurrentName(e.target.value)
-                                } else if (formInput.name === 'email') {
+                                }
+                                }
+                                onFocus={() => {
+                                    setNamePlaceholder({name: '', value: ''})
+                                }}
+                                onBlur={(e) => {
+                                    if ((e.target.value) !== '') {
+                                        setNamePlaceholder({name: '', value: ''})
+                                    } else {
+                                        setNamePlaceholder(formTransfer[0].placeholder)
+                                    }
+                                }}
+                            />
+                        </div>
+
+                        <div className={style.input}>
+                            <div className={style.placeholder}>
+                                <span className={style['placeholder-text']}>{emailPlaceholder.name} </span> <span className={style['placeholder-value']}>{emailPlaceholder.value}</span>
+                            </div>
+                            <Input
+                                color='white'
+                                name={'name'}
+                                ref={nameInputRef}
+                                onInput=  {(e)=> {
                                     setCurrentEmail(e.target.value)
                                 }
                                 }
-                            }
-                        />
-                    </div>
-                ))}
-
-                <div className={style.check}>
-                    <Check
-                        color='white'
-                        text='Я учился/учусь в МФТИ'
-                        id='isStudent'
-                        checkChild={true}
-                        functionCheck={()=> setIsStudent(!isStudent)}
-                        name='member'
-                    >
-                    </Check>
-                </div>
-
-                <div className={isStudent ? [style.student + ' ' + style.student_active] : [style.student]}>
-
-                    {studenttransfer.map(studentInput => (
-                        <div className={style.input} key={studentInput.id}>
-                            <Input
-                                color='white'
-                                placeholder={studentInput.placeholder}
-                                name={studentInput.name}
+                                onFocus={() => {
+                                    setEmailPlaceholder({name: '', value: ''})
+                                }}
+                                onBlur={(e) => {
+                                    if ((e.target.value) !== '') {
+                                        setEmailPlaceholder({name: '', value: ''})
+                                    } else {
+                                        setEmailPlaceholder(formTransfer[1].placeholder)
+                                    }
+                                }}
                             />
                         </div>
-                    ))}
+                    </>
+                )}
+                {isMobile
+                && (
+                    <>
+                        <div className={style.input}>
+                            <div className={style.placeholder}>
+                                <span className={style['placeholder-text']}>{nameMobilePlaceholder} </span>
+                            </div>
+                            <Input
+                                color='white'
+                                name={'name'}
+                                ref={nameInputRef}
+                                onInput=  {(e)=> {
+                                    setCurrentName(e.target.value)
+                                }
+                                }
+                                onFocus={() => {
+                                    setNameMobilePlaceholder('')
+                                }}
+                                onBlur={(e) => {
+                                    if ((e.target.value) !== '') {
+                                        setNameMobilePlaceholder('')
+                                    } else {
+                                        setNameMobilePlaceholder(formTransfer[0].placeholder.name)
+                                    }
+                                }}
+                            />
+                        </div>
+
+                        <div className={style.input}>
+                            <div className={style.placeholder}>
+                                <span className={style['placeholder-text']}>{emailMobilePlaceholder} </span>
+                            </div>
+                            <Input
+                                color='white'
+                                name={'name'}
+                                ref={nameInputRef}
+                                onInput=  {(e)=> {
+                                    setCurrentEmail(e.target.value)
+                                }
+                                }
+                                onFocus={() => {
+                                    setEmailMobilePlaceholder('')
+                                }}
+                                onBlur={(e) => {
+                                    if ((e.target.value) !== '') {
+                                        setEmailMobilePlaceholder('')
+                                    } else {
+                                        setEmailMobilePlaceholder(formTransfer[1].placeholder.name)
+                                    }
+                                }}
+                            />
+                        </div>
+                    </>
+                )}
+
+
+                <div className={style.hidden}>
+                    <div className={style.check}>
+                        <Check
+                            color='white'
+                            text='Я учился/учусь в МФТИ'
+                            id='isStudent'
+                            checkChild={true}
+                            functionCheck={()=> setIsStudent(!isStudent)}
+                            name='member'
+                        >
+                        </Check>
+                    </div>
+
+                    <div className={cn({
+                        [style.student]: true,
+                        [style.student_active]: isStudent,
+                        [style.student_select_active]: selectDepartmentActive
+                    })}>
+
+                        <div className={style.input}>
+                            <Select options={departments}
+                                    onMenuOpen={() => {setSelectDepartmentActive(true)}}
+                                    onMenuClose={() => {setSelectDepartmentActive(false)}}
+                                    styles={customStyles}
+                                    placeholder={'Факультет'}
+                                    isSearchable={ false }
+                                    components={{ DropdownIndicator }}
+                                    instanceId={'department'}
+                                    inputId={'department'}
+                            />
+
+                        </div>
+                        <div className={style.input}>
+                            <Input
+                                color='white'
+                                placeholder={yearPlaceholder}
+                                name={studenttransfer[1].name}
+                                onFocus={() => {
+                                    setYearPlaceholder('')
+                                }}
+                                onBlur={(e) => {
+                                    if ((e.target.value) !== '') {
+                                        setYearPlaceholder('')
+                                    } else {
+                                        setYearPlaceholder(studenttransfer[1].placeholder)
+                                    }
+                                }}
+                            />
+                        </div>
+                    </div>
                 </div>
+
+
 
                 <div className={style['pay-container']}>
                     <div className={style.method}>
@@ -304,52 +595,95 @@ const Form = (props) => {
                                 key={method.id}
                                 onClick={()=> {selectMethod(`${method.name}`)}}
                             >
-                                <div className={style['method-name']}>{method.name}</div>
-                                {
-                                    method.icon &&
-                                    <div className={style['method-icon']}>{method.icon}</div>
-                                }
+                                <div className={style['method-name']}>{method.name}
+                                    {
+                                        method.icon &&
+                                        <div className={style['method-icon']}>{method.icon}</div>
+                                    }
+                                </div>
+
                             </div>
                         ))}
-                        <div className={style['method-other']}>
+                        <div className={style.item}>
                             ...
                         </div>
                     </div>
 
                     <div className={style.value}>
-                        <div className={style['value-items']}>
-                            {paymentValue.map(valueItem => (
-                                <Value key={valueItem.id}
-                                       mod='select'
-                                       value={valueItem.value}
-                                       functionValueActive = {()=> {setSelectedValue(`${valueItem.value}`); setActiveValue(`${valueItem.id}`)}}
-                                       isSelected = {activeValue == valueItem.id}
-                                />
-                            ))}
-                        </div>
-                        <div className={style['custom-donate']}>
-                            <Input
-                                color='white'
-                                mod='select'
-                                placeholder = {otherPlaceholder}
-                                onClick={()=> {setActiveValue('input')}}
-                                isSelected = {activeValue === 'input'}
-                                name="custom-donate-value"
-                                onInput=  {(e)=> { setSelectedValue(e.target.value)}}
-                                onFocus={() => setOtherPlaceholder('')}
-                                onBlur={(e) => {setOtherPlaceholder('Другая сумма');
-                                    if ((e.target.value) === '')
-                                    {
-                                        setActiveValue(0)
-                                    }
-                                }}
-                            />
-                        </div>
+                        {!isMobile
+                        && (
+                            <>
+                                <div className={style['value-items']}>
+                                    {paymentValue.map(valueItem => (
+                                        <Value key={valueItem.id}
+                                               mod='select'
+                                               value={valueItem.value}
+                                               functionValueActive = {()=> {setSelectedValue(`${valueItem.value}`); setActiveValue(`${valueItem.id}`)}}
+                                               isSelected = {activeValue == valueItem.id}
+                                        />
+                                    ))}
+                                </div>
+                                <div className={style['custom-donate']}>
+                                    <Input
+                                        color='white'
+                                        mod='select'
+                                        placeholder = {otherPlaceholder}
+                                        onClick={()=> {setActiveValue('input')}}
+                                        isSelected = {activeValue === 'input'}
+                                        name="custom-donate-value"
+                                        onInput=  {(e)=> { setSelectedValue(e.target.value)}}
+                                        onFocus={() => setOtherPlaceholder('')}
+                                        onBlur={(e) => {setOtherPlaceholder('Другая сумма');
+                                            if ((e.target.value) === '')
+                                            {
+                                                setActiveValue(0)
+                                            }
+                                        }}
+                                    />
+                                </div>
+                            </>
+                        )}
+                        {isMobile
+                        && (
+                            <div className={style['value-items']}>
+                                {paymentValue.map(valueItem => (
+                                    <Value key={valueItem.id}
+                                           mod='select'
+                                           value={valueItem.value}
+                                           functionValueActive = {()=> {setSelectedValue(`${valueItem.value}`); setActiveValue(`${valueItem.id}`)}}
+                                           isSelected = {activeValue == valueItem.id}
+                                    />
+                                ))}
+                                <div className={cn(
+                                    style['value-item'],
+                                    style['value-item_custom-donate']
+                                )}>
+                                    <Input
+                                        color='white'
+                                        mod='select'
+                                        placeholder = {otherPlaceholder}
+                                        onClick={()=> {setActiveValue('input')}}
+                                        isSelected = {activeValue === 'input'}
+                                        name="custom-donate-value"
+                                        onInput=  {(e)=> { setSelectedValue(e.target.value)}}
+                                        onFocus={() => setOtherPlaceholder('')}
+                                        onBlur={(e) => {setOtherPlaceholder('Другая сумма');
+                                            if ((e.target.value) === '')
+                                            {
+                                                setActiveValue(0)
+                                            }
+                                        }}
+                                    />
+                                </div>
+                            </div>
+
+                        )}
+
 
 
                     </div>
 
-                    {activeValue != "input" && (
+                    {activeValue != "input" && !isMobile && (
                         <div className={style.tooltip}>
                             {activeValue == 1 && (
                                 paymentValue[0].tooltip
@@ -363,9 +697,13 @@ const Form = (props) => {
                         </div>
                     )}
                 </div>
-                <div className={style.buttons}>
+                <div className={cn({
+                    [style.buttons]: true,
+                    [style.buttons_single]: true,
+                })}>
                     {payButtons}
                 </div>
+
 
                 <div className={style.privacy}>
                     Отправляя свое пожертвование, вы соглашаетесь с <a className={style.link} href='/'>Политикой конфиденциальности</a>, даёте своё согласие на обработку персональных данных и принимаете условия договора пожертвования.

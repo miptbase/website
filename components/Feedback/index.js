@@ -1,12 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import style from "./feedback_.module.scss"
-
-import Feature from '../Feature'
 import Input from "../ui/Input";
 import Button from "../ui/Button";
 
 const Feedback = (props) => {
     const {feedback} = props;
+    const [feedbackPlaceholder, setFeedbackPlaceholder] = useState(feedback.placeholder);
     return (
         <section className={style.feedback}>
             <div className={style.inner}>
@@ -16,8 +15,18 @@ const Feedback = (props) => {
                 <form className={style.form}>
                     <div className={style.input}>
                         <Input
-                            placeholder={feedback.placeholder}
+                            placeholder={feedbackPlaceholder}
                             color='white'
+                            onFocus={() => {
+                                setFeedbackPlaceholder('')
+                            }}
+                            onBlur={(e) => {
+                                if ((e.target.value) !== '') {
+                                    setFeedbackPlaceholder('')
+                                } else {
+                                    setFeedbackPlaceholder(feedback.placeholder)
+                                }
+                            }}
                         />
                     </div>
                     <div className={style.button}>

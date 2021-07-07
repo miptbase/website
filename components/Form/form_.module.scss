@@ -13,42 +13,131 @@
 }
 
 .input {
+  position: relative;
   height: 4.4rem;
   margin-bottom: 2rem;
+  @include mediaMob {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.placeholder {
+  position: absolute;
+  left: 1.5rem;
+  font-size: 1.6rem;
+  line-height: 130%;
+  top: 50%;
+  color: white;
+  transform: translateY(-50%);
+}
+
+.placeholder-value {
+  opacity: 0.5;
 }
 
 .check {
   margin-top: 3.4rem;
-}
-
-.student {
-  padding-top: 3.4rem;
-  visibility: hidden;
-  opacity: 0;
-  max-height: 0;
-  transition: 0.3s visibility ease-in-out, 0.3s opacity ease-in-out,  0.3s max-height ease-in-out;
-  &_active {
-    visibility: visible;
-    opacity: 1;
-    height: auto;
-    max-height: 100rem;
+  @include mediaMob {
+    margin-top: 3rem;
   }
 }
 
-.method {
+.student {
+  position: relative;
+  padding-top: 3.4rem;
+  overflow: hidden;
+  max-height: 0;
+  transition: 0.2s max-height linear;
+  visibility: hidden;
+  @include mediaMob {
+    padding-top: 3rem;
+  }
+  &_active {
+    height: auto;
+    max-height: 20rem;
+    transition: 0.2s max-height linear;
+    visibility: visible;
+  }
+  
+  &_select_active {
+    overflow: visible;
+  }
+}
+
+.select-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
   border-radius: 0.5rem;
-  border: 1px solid white;
+  background: transparent;
+  padding: 0 1.5rem;
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: inherit;
+  cursor: pointer;
+}
+
+.method {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 4.6rem;
-  overflow: hidden;
   margin-bottom: 2rem;
   cursor: pointer;
   height: 4.4rem;
+  @include mediaMob {
+    height: 8.8rem;
+    margin-bottom: 3rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 }
 
-.method-text {
+.item {
+  position: relative;
+  @include select;
+  height: 4.4rem;
+  box-shadow: 1px 1px 0 0px white inset, 1px -1px 0px white inset;
+  @include mediaMob {
+    box-shadow: 1px 1px 0 0px white inset;
+  }
+  &:first-child {
+    border-radius: 0.4rem 0 0 0;
+  }
+  &:nth-child(2) {
+    @include mediaMob {
+      border-radius:  0 0.4rem 0 0;
+      box-shadow: 1px 1px 0 0px white inset,  -1px 1px 0 0px white inset;
+    }
+  }
+  &:nth-child(3) {
+    @include mediaMob {
+      border-radius:  0 0 0  0.4rem ;
+      box-shadow: 1px 1px 0 0px white inset,  1px -1px 0 0px white inset;
+    }
+  }
+  
+  &:last-child {
+    box-shadow: 1px 1px 0 0px white inset, 1px -1px 0px white inset, -1px -1px 0px 0px white inset;
+    border-radius: 0 0.4rem 0.4rem 0;
+    &:hover, &:focus {
+      box-shadow:  1px 1px 0 1px white inset, 1px -1px 1px white inset, -1px -1px 0px 1px white inset, 1px -1px 0px 1px white inset;
+    }
+    @include mediaMob {
+      border-radius: 0 0 0.4rem 0;
+    }
+  }
+  &:hover, &:focus {
+    box-shadow:  1px 1px 0 1px white inset, 1px -1px 1px white inset, -1px -1px 0px 0px white inset, 1px -1px 0px 1px white inset;
+  }
+}
+
+.method-name {
   font-size: 1.6rem;
   line-height: 130%;
+  position: absolute;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .method-icon {
@@ -57,24 +146,18 @@
   margin-bottom: 0.4rem;
 }
 
-.method-other {
-  @include select;
-}
 
-.item {
-  @include select;
-  height: 4.4rem;
-  border-right: 1px solid white;
-}
 
 .value {
   height: 4.4rem;
   margin-bottom: 8.1rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 4.6rem;
-  border-radius: 0.5rem;
-  border: 1px solid white;
-  overflow: hidden;
+  @include mediaMob {
+    height: 8.8rem;
+    display: block;
+    margin-bottom: 3rem;
+  }
 }
 
 .value-items {
@@ -82,14 +165,28 @@
   display: grid;
   height: 4.4rem;
   grid-template-columns: 1fr 1fr 1fr;
+  @include mediaMob {
+    height: 8.8rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 }
 .custom-donate {
   grid-area: 1 / 3 / 2 / 5;
   height: 4.4rem;
   margin-left: -0.2px;
   input {
-    border-radius: 0;
+    border-radius: 0 0.4rem 0.4rem 0;
     border: none;
+  }
+}
+
+.value-item_custom-donate {
+  input {
+    @include mediaMob {
+      border-radius: 0 0 0.4rem 0;
+      box-shadow: 1px 1px 0 0px white inset, 1px -1px 0px white inset, -1px -1px 0px 0px white inset;
+    }
   }
 }
 
@@ -118,6 +215,13 @@
   color: white;
   font-size: 1.2rem;
   line-height: 130%;
+  @include mediaMob {
+    font-size: 0.8rem;
+    line-height: 120%;
+  }
+  a {
+    @include link-hovered;
+  }
 }
 
 .apple {
@@ -130,16 +234,29 @@
 }
 
 .buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
   margin-bottom: 1.8rem;
+  &_single {
+    gap: 0;
+  }
 }
 
 .pay-button {
+  flex: 1 0 50%;
+  &_no_active {
+    flex-shrink: 1;
+  }
   div, button {
     width: 100% !important;
     height: 100% !important;
+  }
+}
+
+.pay-button-main {
+  flex: 1 0 50%;
+  &_100 {
+    flex: 1 0 100%;
   }
 }
 

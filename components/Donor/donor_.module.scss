@@ -3,13 +3,21 @@
 
 .donor {
   cursor: pointer;
+  @include mediaMob {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    @include mediaMob {
+      height: 21rem;
+      overflow: hidden;
+    }
+  }
 }
 
 .flipper {
   position: relative;
   width: 100%;
   height: 24.3rem;
-  perspective: 7000px;
+  perspective: 10000px;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
 }
@@ -44,11 +52,17 @@
 .img {
   height: 16rem;
   width: 16rem;
-  background: rebeccapurple;
+  background: #2D83E8;
+  position: relative;
+  @include mediaMob {
+    height: 13.5rem;
+    width: 100%;
+  }
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center;
   }
 }
 
@@ -59,6 +73,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @include mediaMob {
+    height: 7.5rem;
+    padding: 1rem;
+  }
 }
 
 .name {
@@ -66,11 +84,21 @@
   font-size: 1.6rem;
   line-height: 100%;
   margin-bottom: 0.5rem;
+  @include mediaMob {
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 120%;
+  }
 }
 
 .company {
   font-size: 1.2rem;
   line-height: 130%;
+  @include mediaMob {
+    font-size: 1.2rem;
+    line-height: 130%;
+    color: rgba(black, 0.75)
+  }
 }
 
 .back-name {
@@ -92,4 +120,17 @@
   line-height: 130%;
   color: white;
   margin-top: auto;
+}
+
+.button {
+  height: 4.4rem;
+  background: #FFFFFF;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 100%;
+  color: black;
 }

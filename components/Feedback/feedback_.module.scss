@@ -2,12 +2,18 @@
 .feedback {
   padding: 6.6rem 0;
   border-bottom: 1px solid rgba(#FFFFFF, 0.3);
+  @include mediaMob {
+    padding: 4rem 0 5rem;
+  }
 }
 
 .inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  @include mediaMob {
+    display: block;
+  }
 }
 
 .title {
@@ -16,22 +22,37 @@
   line-height: 140%;
   color: white;
   width: 80%;
+  @include mediaMob {
+    font-size: 2rem;
+    line-height: 140%;
+    width: 100%;
+    margin-bottom: 2.5rem;
+  }
 }
 
 .form {
   display: flex;
   width: 100%;
-  gap: 2rem;
+  @include mediaMob {
+    flex-direction: column;
+  }
 }
 
 .button {
   width: 23.2rem;
   flex-shrink: 0;
+  @include mediaMob {
+    width: 100%;
+  }
 }
 
 .input {
   flex-grow: 1;
   height: 4.4rem;
+  margin-right: 2rem;
+  @include mediaMob {
+    margin-bottom: 1.5rem;
+  }
   input {
     &::placeholder {
       color: white;

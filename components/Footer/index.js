@@ -6,9 +6,11 @@ import SVG from 'react-inlinesvg';
 import Feedback from "../Feedback";
 import rehypeRaw from 'rehype-raw'
 import ReactMarkdown from 'react-markdown'
+import { useIsMobile } from '../../hooks/useIsMobile';
 
 const Footer = (props) => {
     const {footer, menu, feedback} = props;
+    const isMobile = useIsMobile();
     return (
         <section className={style.footer}>
             <div className={style.inner}>
@@ -17,22 +19,44 @@ const Footer = (props) => {
                     <a href="/" className={style.logo}>
                         <img src={footer.logo} alt='logo' />
                     </a>
-                    <div className={style.menu}>
-                        <Menu menu={menu} />
-                    </div>
-                    <div className={style.social}>
-                        {footer.social.map((item) => (
-                            <div
-                                className={style['social-item']}
-                                key={item.img}
-                            >
-                                <a href={item.link}>
-                                    <SVG className={style['social-img']} src={item.img} />
-                                </a>
-
+                    {!isMobile
+                    && (
+                        <>
+                            <div className={style.menu}>
+                                <Menu menu={menu} />
                             </div>
-                        ))}
-                    </div>
+                            <div className={style.social}>
+                                {footer.social.map((item) => (
+                                    <div
+                                        className={style['social-item']}
+                                        key={item.img}
+                                    >
+                                        <a className={style.link} href={item.link} target='_blank' rel='noopener'>
+                                            <SVG className={style['social-img']} src={item.img} />
+                                        </a>
+
+                                    </div>
+                                ))}
+                            </div>
+                        </>
+                    )}
+                    {isMobile
+                    && (
+                        <>
+                            <div className={style.links}>
+                                {footer.social.map((item) => (
+                                        <a className={style['social-link']}     key={item.name} href={item.link} target='_blank' rel='noopener'>
+                                            {item.name}
+                                        </a>
+                                ))}
+                                <a className={style['social-link']} href='mailto:fund@phystech.edu' target='_blank' rel='noopener'>
+                                    Mail us
+                                </a>
+                            </div>
+                        </>
+                    )}
+
+
                 </div>
                 <div className={style.info}>
                     <div className={style['info-description']}>
@@ -42,8 +66,17 @@ const Footer = (props) => {
                         <SVG className={style['info-icon']} src='media/info-footer.svg' />
                         <div className={style['info-text']}>Powered by Vercel</div>
                     </div>
+
                     <div className={style.copy}>
-                        <ReactMarkdown rehypePlugins={[rehypeRaw]} children={footer.copy.copy} />
+                        {!isMobile
+                        && (
+                            <ReactMarkdown rehypePlugins={[rehypeRaw]} children={footer.copy.copy} />
+                        )}
+                        {isMobile
+                        && (
+                            <ReactMarkdown rehypePlugins={[rehypeRaw]} children={footer.copy.copy_mobile} />
+                        )}
+
                     </div>
                 </div>
             </div>

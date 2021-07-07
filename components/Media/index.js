@@ -12,7 +12,7 @@ const Media = (props) => {
             </h2>
             <div className={style.items}>
                 {media.items.map((item, index) => (
-                    <div
+                    <a href={item.link} target='_blank' rel='noopener'
                         className={style.item}
                         key={index}
                     >
@@ -27,7 +27,7 @@ const Media = (props) => {
                                 {item.date}
                             </div>
                         </div>
-                    </div>
+                    </a>
                 ))}
             </div>
         </section>

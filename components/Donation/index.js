@@ -4,9 +4,9 @@ import style from "./donation_.module.scss"
 import Form from '../Form'
 
 const Donation = (props) => {
-    const {donation} = props;
+    const {donation, refDonation} = props;
     return (
-        <section className={style.donation}>
+        <section className={style.donation} ref={refDonation}>
             <div className={style.content}>
                 <img src={donation.img} className={style.img}/>
                 <h2 className={style.title}>
@@ -17,7 +17,7 @@ const Donation = (props) => {
                 </p>
             </div>
             <div className={style.form}>
-                <Form form={donation.form}/>
+                <Form formInfo={donation.form}/>
             </div>
         </section>
     )

@@ -1,23 +1,26 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import style from "./donors-list_.module.scss"
-
 import Donor from "../Donor";
 
 const DonorsList = (props) => {
     const {donors} = props;
+
     return (
         <div className={style['donors-list']}>
           <div className={style.list}>
-              {donors.map((donor, index) => (
+              {donors.map((donor) => (
                   <Donor
-                      key={index}
+                      key={donor.ID}
+                      donor={donor}
                       name={donor.Donor}
                       description= {`${donor.Department != "" &&  donor.Department != "-" ? donor.Department : ''} ${donor.Year != "" &&  donor.Year != "-" ? `(${donor.Year})` : ''}`}
-                      // img={donor.img}
                       company={donor.Company}
+                      text={donor.Text}
+                      img={`media/${donor.ID}.png`}
                   />
               ))}
           </div>
+
         </div>
     )
 }
