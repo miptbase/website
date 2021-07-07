@@ -52,6 +52,7 @@
   margin-right: 2rem;
   @include mediaMob {
     margin-bottom: 1.5rem;
+    margin-right: 0;
   }
   input {
     &::placeholder {
