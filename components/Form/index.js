@@ -9,9 +9,12 @@ import Select, { components }from 'react-select'
 import {debounce} from 'lodash';
 import cn from 'classnames'
 import {IPSTACK_API_KEY} from '../../config';
+import Menu from "../Menu";
+import {useIsMobile} from "../../hooks/useIsMobile";
 
 
 const Form = (props) => {
+    const isMobile = useIsMobile();
     const nameInputRef = useRef(null);
     const emailInputRef = useRef(null);
 
@@ -547,34 +550,75 @@ const Form = (props) => {
                     </div>
 
                     <div className={style.value}>
-                        <div className={style['value-items']}>
-                            {paymentValue.map(valueItem => (
-                                <Value key={valueItem.id}
-                                       mod='select'
-                                       value={valueItem.value}
-                                       functionValueActive = {()=> {setSelectedValue(`${valueItem.value}`); setActiveValue(`${valueItem.id}`)}}
-                                       isSelected = {activeValue == valueItem.id}
-                                />
-                            ))}
-                        </div>
-                        <div className={style['custom-donate']}>
-                            <Input
-                                color='white'
-                                mod='select'
-                                placeholder = {otherPlaceholder}
-                                onClick={()=> {setActiveValue('input')}}
-                                isSelected = {activeValue === 'input'}
-                                name="custom-donate-value"
-                                onInput=  {(e)=> { setSelectedValue(e.target.value)}}
-                                onFocus={() => setOtherPlaceholder('')}
-                                onBlur={(e) => {setOtherPlaceholder('Другая сумма');
-                                    if ((e.target.value) === '')
-                                    {
-                                        setActiveValue(0)
-                                    }
-                                }}
-                            />
-                        </div>
+                        {!isMobile
+                        && (
+                            <>
+                                <div className={style['value-items']}>
+                                    {paymentValue.map(valueItem => (
+                                        <Value key={valueItem.id}
+                                               mod='select'
+                                               value={valueItem.value}
+                                               functionValueActive = {()=> {setSelectedValue(`${valueItem.value}`); setActiveValue(`${valueItem.id}`)}}
+                                               isSelected = {activeValue == valueItem.id}
+                                        />
+                                    ))}
+                                </div>
+                                <div className={style['custom-donate']}>
+                                    <Input
+                                        color='white'
+                                        mod='select'
+                                        placeholder = {otherPlaceholder}
+                                        onClick={()=> {setActiveValue('input')}}
+                                        isSelected = {activeValue === 'input'}
+                                        name="custom-donate-value"
+                                        onInput=  {(e)=> { setSelectedValue(e.target.value)}}
+                                        onFocus={() => setOtherPlaceholder('')}
+                                        onBlur={(e) => {setOtherPlaceholder('Другая сумма');
+                                            if ((e.target.value) === '')
+                                            {
+                                                setActiveValue(0)
+                                            }
+                                        }}
+                                    />
+                                </div>
+                            </>
+                        )}
+                        {isMobile
+                        && (
+                            <div className={style['value-items']}>
+                                {paymentValue.map(valueItem => (
+                                    <Value key={valueItem.id}
+                                           mod='select'
+                                           value={valueItem.value}
+                                           functionValueActive = {()=> {setSelectedValue(`${valueItem.value}`); setActiveValue(`${valueItem.id}`)}}
+                                           isSelected = {activeValue == valueItem.id}
+                                    />
+                                ))}
+                                <div className={cn(
+                                    style['value-item'],
+                                    style['value-item_custom-donate']
+                                )}>
+                                    <Input
+                                        color='white'
+                                        mod='select'
+                                        placeholder = {otherPlaceholder}
+                                        onClick={()=> {setActiveValue('input')}}
+                                        isSelected = {activeValue === 'input'}
+                                        name="custom-donate-value"
+                                        onInput=  {(e)=> { setSelectedValue(e.target.value)}}
+                                        onFocus={() => setOtherPlaceholder('')}
+                                        onBlur={(e) => {setOtherPlaceholder('Другая сумма');
+                                            if ((e.target.value) === '')
+                                            {
+                                                setActiveValue(0)
+                                            }
+                                        }}
+                                    />
+                                </div>
+                            </div>
+
+                        )}
+
 
 
                     </div>
