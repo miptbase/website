@@ -14,6 +14,8 @@
   font-size: 1.6rem;
   padding: 0 var(--buttonPadding, 3.6rem);
   cursor: pointer;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
   transition: 0.3s color ease-in-out,
               0.3s background-color ease-in-out,
               0.3s border-color ease-in-out,
@@ -30,15 +32,41 @@
       font-size: 1.2rem;
       height: 3.5rem;
       background: transparent;
-      border: 2px solid #FFFFFF;
+      &:after {
+        content: '';
+        position: absolute;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        background: transparent;
+        box-shadow: 0 0 0 2px white inset;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 1;
+        transition: 0.3s opacity ease-in-out, 0.3s background-color ease-in-out;
+        z-index: 1;
+      }
       &:hover, &:focus {
         color: black;
         background: white;
       }
+      &:hover {
+        &:after {
+          opacity: 0;
+        }
+      }
+      &:focus {
+        &:after {
+          box-shadow: 0 0 0 2px black inset;
+        }
+      }
       &:active {
-        background: rgba(0, 0, 0, 0.15);
-        border: 2px solid rgba(0, 0, 0, 0);
+        background: #F7F7F7;
         color: black;
+        &:after {
+         opacity: 0;
+        }
       }
       &.disabled {
         opacity: 0.5;
@@ -52,7 +80,8 @@
         position: absolute;
         border-radius: 0.5rem;
         overflow: hidden;
-        background: rgba(white, 0.15);
+        background: transparent;
+        box-shadow: 0 0 0 2px  $orange inset;
         top: 0;
         bottom: 0;
         left: 0;
@@ -61,17 +90,20 @@
         transition: 0.3s opacity ease-in-out, 0.3s background-color ease-in-out;
         z-index: 1;
       }
-      &:hover, &:focus {
+      &:hover {
+        color: $orange;
+        background: #F7F7F7;
+      }
+      &:focus {
+        color: $orange;
+        background: #F7F7F7;
         &:after {
           opacity: 1;
         }
       }
-      
+  
       &:active {
-        &:after {
-          background: rgba(black, 0.15);
-          opacity: 1;
-        }
+        background: rgba(0, 0, 0, 0.1);
       }
   
       &.disabled {
@@ -86,7 +118,8 @@
         position: absolute;
         border-radius: 0.5rem;
         overflow: hidden;
-        background: rgba(white, 0.15);
+        background: transparent;
+        box-shadow: 0 0 0 2px white inset;
         top: 0;
         bottom: 0;
         left: 0;
@@ -95,17 +128,18 @@
         transition: 0.3s opacity ease-in-out, 0.3s background-color ease-in-out;
         z-index: 1;
       }
-      &:hover, &:focus {
+      &:hover {
+        color: $blue;
+        background: #F7F7F7;
+      }
+      &:focus {
         &:after {
           opacity: 1;
         }
       }
   
       &:active {
-        &:after {
-          background: rgba(black, 0.15);
-          opacity: 1;
-        }
+        background: rgba(0, 0, 0, 0.1);
       }
   
       &.disabled {
