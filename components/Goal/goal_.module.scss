@@ -68,11 +68,13 @@
   backface-visibility: hidden;
   border-radius: 50%;
   background: url("../../public/media/circle.svg") no-repeat center;
+  background-size: cover;
   @include mediaMob {
     width: 27rem;
     height: 27rem;
     margin: 0 auto;
     background: url("../../public/media/circle-mobile.svg") no-repeat center;
+    background-size: cover;
   }
 }
 
