@@ -64,7 +64,6 @@ const Form = (props) => {
     const [emailMobilePlaceholder, setEmailMobilePlaceholder] = useState(formTransfer[1].placeholder.name);
     const [yearPlaceholder, setYearPlaceholder] = useState(studenttransfer[1].placeholder);
     const [selectDepartmentActive, setSelectDepartmentActive] = useState(false);
-    const [currentDepartment, setCurrentDepartment] = useState('ffff')
     const selectMethod = method => {
         setActiveMethod(method);
     };
