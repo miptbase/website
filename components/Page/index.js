@@ -21,7 +21,6 @@ const Page = (props) => {
                 <script src="https://www.paypal.com/sdk/js?currency=RUB&client-id=AWVifSid8kSj1W3ap0jqZNuhTX8Har9m_sdMWrfC0jh2vxwsex90gPoo0XpnCizDS5KOwv4cOlqgskbu"
                   id="paypal-sdk"></script>
             </Head>
-            <div id='modal' />
             {props.children}
         </>
 
