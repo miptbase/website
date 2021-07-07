@@ -1,16 +1,20 @@
 import React from 'react'
 import style from "./home-top_.module.scss"
 import Button from "../ui/Button"
-import withSizes from 'react-sizes'
+import { useMediaQuery } from 'react-responsive'
 import cn from "classnames";
 
 const HomeTop = (props) => {
-    const {top, scrollToDonation, isMobile} = props;
+    const {top, scrollToDonation} = props;
+    const isMobile = useMediaQuery(
+        { maxWidth: 1224 }
+    )
     return (
         <section className={style['home-top']}>
 
             <div className={style.inner}>
                 <div className={style.content}>
+                    <div>test</div>
                     <h1 className={style.title}>{top.title}</h1>
                     <p className={style.text}>{top.content}</p>
                     <div className={style['button-container']}>
@@ -40,8 +44,5 @@ const HomeTop = (props) => {
         </section>
     )
 }
-const mapSizesToProps = ({ width }) => ({
-    isMobile: width < 1024,
-})
 
-export default withSizes(mapSizesToProps)(HomeTop)
+export default HomeTop
