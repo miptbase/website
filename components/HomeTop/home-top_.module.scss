@@ -56,11 +56,23 @@
 }
 
 .img-container {
+  position: relative;
   width: 100%;
-  height: auto;
-  img {
-    width: 100%;
-    height: auto;
+  height: 44rem;
+}
+
+.img {
+  width: 100%;
+  @include mediaMob {
+    display: none;
+  }
+}
+
+.img_mobile {
+  width: 100%;
+  display: none;
+  @include mediaMob {
+    display: block;
   }
 }
 

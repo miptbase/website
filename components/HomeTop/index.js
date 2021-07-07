@@ -28,14 +28,8 @@ const HomeTop = (props) => {
 
             </div>
             <div className={style['img-container']}>
-                {!isMobile
-                && (
-                    <img src={top.img}/>
-                )}
-                {isMobile
-                && (
-                    <img src={top.mobileImg}/>
-                )}
+                <img className={style.img} src={top.img}/>
+                <img className={style.img_mobile} src={top.mobileImg}/>
             </div>
 
         </section>
