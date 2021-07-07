@@ -28,10 +28,10 @@ const Goal = (props) => {
                 <div className={style.progress}>
                     <div className={style['progress-circle']} />
                     <div className={style.info}>
-                        <div className={style.percent}>86%</div>
+                        <div className={style.percent}>70%</div>
                         <div className={style['info-text']}>
                             {goal.caption} <br />
-                            в 24 млн ₽
+                            в 45 млн ₽
                         </div>
                     </div>
                 </div>
