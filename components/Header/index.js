@@ -15,41 +15,35 @@ const Header = (props) => {
                 <a href="/" className={style.logo}>
                     <img src={header.logo} alt='logo' />
                 </a>
-                {!isMobile
-                && (
-                    <>
-                        <div className={style.menu}>
-                            <Menu menu={menu} />
-                        </div>
-                        <div className={style['button-container']}>
-                            <Button
-                                color='white'
-                                text={header.button}
-                                padding='1.6rem'
-                                buttonFunction={scrollToDonation}
-                            />
-                        </div>
-                    </>
-                )}
-                {isMobile
-                && (
-                    <div className={cn({
-                        [style['menu-button']]: true,
-                        [style['menu-button_open']]: !!menuOpen
-                    })} onClick={() => setMenuOpen(!menuOpen)}>
-                        <div className={cn({[style['menu-line']]: true, [style['menu-line_1']]: true, [style['menu-line_1_open']]: !!menuOpen})} />
-                        <div className={cn({[style['menu-line']]: true, [style['menu-line_2']]: true, [style['menu-line_2_open']]: !!menuOpen})} />
-                    </div>
-                )}
-                {isMobile
-                && (
-                    <div className={cn({
-                        [style['menu-mobile']]: true,
-                        [style['menu-mobile_open']]: !!menuOpen
-                    })} >
-                        <Menu menu={menu} />
-                    </div>
-                )}
+                <div className={style.menu}>
+                    <Menu menu={menu} />
+                </div>
+                <div className={style['button-container']}>
+                    <Button
+                        color='white'
+                        text={header.button}
+                        padding='1.6rem'
+                        buttonFunction={scrollToDonation}
+                    />
+                </div>
+
+
+
+                <div className={cn({
+                    [style['menu-button']]: true,
+                    [style['menu-button_open']]: !!menuOpen
+                })} onClick={() => setMenuOpen(!menuOpen)}>
+                    <div className={cn({[style['menu-line']]: true, [style['menu-line_1']]: true, [style['menu-line_1_open']]: !!menuOpen})} />
+                    <div className={cn({[style['menu-line']]: true, [style['menu-line_2']]: true, [style['menu-line_2_open']]: !!menuOpen})} />
+                </div>
+
+
+                <div className={cn({
+                    [style['menu-mobile']]: true,
+                    [style['menu-mobile_open']]: !!menuOpen
+                })} >
+                    <Menu menu={menu} />
+                </div>
 
             </div>
         </section>

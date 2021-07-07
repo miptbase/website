@@ -13,17 +13,20 @@
 }
 
 .menu-mobile {
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-  background: #2D83E8;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  transform: translateX(100%);
-  transition: 0.3s transform ease-in-out;
-  &_open {
-  transform: translateX(0);
+  display: none;
+  @include mediaMob {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: #2D83E8;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: translateX(100%);
+    transition: 0.3s transform ease-in-out;
+    &_open {
+      transform: translateX(0);
+    }
   }
 }
 
@@ -55,10 +58,13 @@
 }
 
 .menu-button {
-  display: flex;
-  height: 1.2rem;
-  position: relative;
-  z-index: 2;
+  display: none;
+  @include mediaMob {
+    display: flex;
+    height: 1.2rem;
+    position: relative;
+    z-index: 2;
+  }
 }
 
 .menu-line {
@@ -95,9 +101,15 @@
 .button-container {
   display: flex;
   justify-content: flex-end;
+  @include mediaMob {
+    display: none;
+  }
 }
 
 .menu {
   display: flex;
   justify-content: center;
+  @include mediaMob {
+    display: none;
+  }
 }
