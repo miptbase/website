@@ -1,6 +1,9 @@
 @import "./scss/mixins";
 .footer {
   background: rgba(black, 0.85);
+  @include mediaMob {
+    overflow: hidden;
+  }
 }
 
 .inner {

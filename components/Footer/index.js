@@ -6,9 +6,11 @@ import SVG from 'react-inlinesvg';
 import Feedback from "../Feedback";
 import rehypeRaw from 'rehype-raw'
 import ReactMarkdown from 'react-markdown'
+import { useIsMobile } from '../../hooks/useIsMobile';
 
 const Footer = (props) => {
     const {footer, menu, feedback} = props;
+    const isMobile = useIsMobile();
     return (
         <section className={style.footer}>
             <div className={style.inner}>
