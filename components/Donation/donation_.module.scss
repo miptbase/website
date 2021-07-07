@@ -43,6 +43,7 @@
   border-radius: 2rem 0 0 2rem;
   @include mediaMob {
     border-radius: 0;
+    padding: 6rem 2rem;
   }
 }
 
@@ -50,6 +51,11 @@
   width: 11.7rem;
   height: 16.3rem;
   margin-bottom: auto;
+  @include mediaMob {
+    width: 9.6rem;
+    height: 9.6rem;
+    margin-bottom: 2.5rem;
+  }
 }
 
 .title {
@@ -57,9 +63,19 @@
   font-size: 3.6rem;
   line-height: 120%;
   margin-bottom: 2rem;
+  @include mediaMob {
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 110%;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .text {
   font-size: 2rem;
   line-height: 140%;
+  @include mediaMob {
+    font-size: 1.6rem;
+    line-height: 130%;
+  }
 }
