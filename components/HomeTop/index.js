@@ -7,14 +7,12 @@ import cn from "classnames";
 const HomeTop = (props) => {
     const {top, scrollToDonation} = props;
     const isMobile = useMediaQuery(
-        { maxWidth: 1224 }
+        { maxWidth: 1024 }
     )
     return (
         <section className={style['home-top']}>
-
             <div className={style.inner}>
                 <div className={style.content}>
-                    <div>test</div>
                     <h1 className={style.title}>{top.title}</h1>
                     <p className={style.text}>{top.content}</p>
                     <div className={style['button-container']}>
@@ -27,7 +25,6 @@ const HomeTop = (props) => {
                         </Button>
                     </div>
                 </div>
-
 
             </div>
             <div className={style['img-container']}>

@@ -7,10 +7,13 @@ import Feedback from "../Feedback";
 import rehypeRaw from 'rehype-raw'
 import ReactMarkdown from 'react-markdown'
 import { useIsMobile } from '../../hooks/useIsMobile';
+import { useMediaQuery } from 'react-responsive'
 
 const Footer = (props) => {
     const {footer, menu, feedback} = props;
-    const isMobile = useIsMobile();
+    const isMobile = useMediaQuery(
+        { maxWidth: 1024 }
+    )
     return (
         <section className={style.footer}>
             <div className={style.inner}>
