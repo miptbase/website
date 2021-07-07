@@ -457,7 +457,7 @@ const Form = (props) => {
                             </div>
                             <Input
                                 color='white'
-                                name={'name'}
+                                name={'email'}
                                 ref={nameInputRef}
                                 onInput=  {(e)=> {
                                     setCurrentEmail(e.target.value)
