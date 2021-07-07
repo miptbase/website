@@ -36,6 +36,7 @@
     "json-loader": "^0.5.7",
     "netlify-cli": "^3.30.6",
     "react-inlinesvg": "^2.3.0",
+    "react-sizes": "^2.0.0",
     "rehype-raw": "^5.1.0",
     "sass": "^1.32.12"
   }

@@ -219,6 +219,9 @@
     font-size: 0.8rem;
     line-height: 120%;
   }
+  a {
+    @include link-hovered;
+  }
 }
 
 .apple {

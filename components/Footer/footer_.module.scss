@@ -115,7 +115,7 @@
     line-height: 130%;
   }
   a {
-    text-decoration: none;
+    @include link-hovered;
   }
 }
 
@@ -172,7 +172,7 @@
   line-height: 130%;
   color: rgba(#FFFFFF, 0.75);
   a {
-    text-decoration: none;
+    @include link-hovered;
   }
   @include mediaMob {
    align-items: flex-end;

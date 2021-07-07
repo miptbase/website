@@ -137,14 +137,15 @@
 @mixin link-hovered {
   color: inherit;
   position: relative;
-  &:after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: -0.2em;
-    width: 100%;
-    left: 0;
-    background-color: currentColor;
+  border-bottom: 1px solid;
+  transition: 0.3s border ease-in-out;
+  text-decoration: none;
+  &:hover {
+    border-bottom: 1px solid $blue;
+  }
+  &:focus, &:focus-visible {
+    outline: none;
+    border: 1px solid
   }
 }
 
