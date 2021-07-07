@@ -60,6 +60,8 @@ const Form = (props) => {
     const [otherPlaceholder, setOtherPlaceholder] = useState('Другая сумма');
     const [namePlaceholder, setNamePlaceholder] = useState(formTransfer[0].placeholder);
     const [emailPlaceholder, setEmailPlaceholder] = useState(formTransfer[1].placeholder);
+    const [nameMobilePlaceholder, setNameMobilePlaceholder] = useState(formTransfer[0].placeholder.name);
+    const [emailMobilePlaceholder, setEmailMobilePlaceholder] = useState(formTransfer[1].placeholder.name);
     const [yearPlaceholder, setYearPlaceholder] = useState(studenttransfer[1].placeholder);
     const [selectDepartmentActive, setSelectDepartmentActive] = useState(false);
     const [currentDepartment, setCurrentDepartment] = useState('ffff')
@@ -423,55 +425,115 @@ const Form = (props) => {
 
 
             <form onSubmit={onSubmit} className={style.form}>
-                <div className={style.input}>
-                    <div className={style.placeholder}>
-                        <span className={style['placeholder-text']}>{namePlaceholder.name} </span> <span className={style['placeholder-value']}>{namePlaceholder.value}</span>
-                    </div>
-                <Input
-                    color='white'
-                    name={'name'}
-                    ref={nameInputRef}
-                    onInput=  {(e)=> {
-                        setCurrentName(e.target.value)
-                    }
-                    }
-                    onFocus={() => {
-                        setNamePlaceholder({name: '', value: ''})
-                    }}
-                    onBlur={(e) => {
-                        if ((e.target.value) !== '') {
-                            setNamePlaceholder({name: '', value: ''})
-                        } else {
-                            setNamePlaceholder(formTransfer[0].placeholder)
-                        }
-                    }}
-                />
-                </div>
+                {!isMobile
+                && (
+                    <>
+                        <div className={style.input}>
+                            <div className={style.placeholder}>
+                                <span className={style['placeholder-text']}>{namePlaceholder.name} </span> <span className={style['placeholder-value']}>{namePlaceholder.value}</span>
+                            </div>
+                            <Input
+                                color='white'
+                                name={'name'}
+                                ref={nameInputRef}
+                                onInput=  {(e)=> {
+                                    setCurrentName(e.target.value)
+                                }
+                                }
+                                onFocus={() => {
+                                    setNamePlaceholder({name: '', value: ''})
+                                }}
+                                onBlur={(e) => {
+                                    if ((e.target.value) !== '') {
+                                        setNamePlaceholder({name: '', value: ''})
+                                    } else {
+                                        setNamePlaceholder(formTransfer[0].placeholder)
+                                    }
+                                }}
+                            />
+                        </div>
 
-                <div className={style.input}>
-                    <div className={style.placeholder}>
-                        <span className={style['placeholder-text']}>{emailPlaceholder.name} </span> <span className={style['placeholder-value']}>{emailPlaceholder.value}</span>
-                    </div>
-                    <Input
-                        color='white'
-                        name={'name'}
-                        ref={nameInputRef}
-                        onInput=  {(e)=> {
-                            setCurrentEmail(e.target.value)
-                        }
-                        }
-                        onFocus={() => {
-                            setEmailPlaceholder({name: '', value: ''})
-                        }}
-                        onBlur={(e) => {
-                            if ((e.target.value) !== '') {
-                                setEmailPlaceholder({name: '', value: ''})
-                            } else {
-                                setEmailPlaceholder(formTransfer[1].placeholder)
-                            }
-                        }}
-                    />
-                </div>
+                        <div className={style.input}>
+                            <div className={style.placeholder}>
+                                <span className={style['placeholder-text']}>{emailPlaceholder.name} </span> <span className={style['placeholder-value']}>{emailPlaceholder.value}</span>
+                            </div>
+                            <Input
+                                color='white'
+                                name={'name'}
+                                ref={nameInputRef}
+                                onInput=  {(e)=> {
+                                    setCurrentEmail(e.target.value)
+                                }
+                                }
+                                onFocus={() => {
+                                    setEmailPlaceholder({name: '', value: ''})
+                                }}
+                                onBlur={(e) => {
+                                    if ((e.target.value) !== '') {
+                                        setEmailPlaceholder({name: '', value: ''})
+                                    } else {
+                                        setEmailPlaceholder(formTransfer[1].placeholder)
+                                    }
+                                }}
+                            />
+                        </div>
+                    </>
+                )}
+                {isMobile
+                && (
+                    <>
+                        <div className={style.input}>
+                            <div className={style.placeholder}>
+                                <span className={style['placeholder-text']}>{nameMobilePlaceholder} </span>
+                            </div>
+                            <Input
+                                color='white'
+                                name={'name'}
+                                ref={nameInputRef}
+                                onInput=  {(e)=> {
+                                    setCurrentName(e.target.value)
+                                }
+                                }
+                                onFocus={() => {
+                                    setNameMobilePlaceholder('')
+                                }}
+                                onBlur={(e) => {
+                                    if ((e.target.value) !== '') {
+                                        setNameMobilePlaceholder('')
+                                    } else {
+                                        setNameMobilePlaceholder(formTransfer[0].placeholder.name)
+                                    }
+                                }}
+                            />
+                        </div>
+
+                        <div className={style.input}>
+                            <div className={style.placeholder}>
+                                <span className={style['placeholder-text']}>{emailMobilePlaceholder} </span>
+                            </div>
+                            <Input
+                                color='white'
+                                name={'name'}
+                                ref={nameInputRef}
+                                onInput=  {(e)=> {
+                                    setCurrentEmail(e.target.value)
+                                }
+                                }
+                                onFocus={() => {
+                                    setEmailMobilePlaceholder('')
+                                }}
+                                onBlur={(e) => {
+                                    if ((e.target.value) !== '') {
+                                        setEmailMobilePlaceholder('')
+                                    } else {
+                                        setEmailMobilePlaceholder(formTransfer[1].placeholder.name)
+                                    }
+                                }}
+                            />
+                        </div>
+                    </>
+                )}
+
 
                 <div className={style.hidden}>
                     <div className={style.check}>
