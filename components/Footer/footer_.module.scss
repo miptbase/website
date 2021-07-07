@@ -91,7 +91,6 @@
 
 .info {
   display: flex;
-  gap: 2rem;
   padding: 2rem 0 4.1rem;
   @include mediaMob {
     display: grid;
@@ -103,11 +102,13 @@
 }
 
 .info-description {
+  margin-right: 2rem;
   width: 29.1rem;
   font-size: 0.8rem;
   line-height: 120%;
   color: rgba(white, 0.6);
   @include mediaMob {
+    margin-right: 0;
     grid-area: 1/ 1/ 2/ 3;
     width: 100%;
     font-size: 1.2rem;
