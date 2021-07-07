@@ -1,5 +1,5 @@
 @import "scss/colors";
-
+@import "scss/mixins";
 .button {
   position: relative;
   display: flex;
@@ -20,6 +20,9 @@
               0.3s background-color ease-in-out,
               0.3s border-color ease-in-out,
               0.3s opacity ease-in-out;
+  @include mediaMob {
+    height: 4rem;
+  }
   
   &_width {
     &_100 {

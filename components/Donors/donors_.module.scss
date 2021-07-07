@@ -16,7 +16,7 @@
     font-weight: 500;
     font-size: 2.4rem;
     line-height: 110%;
-    margin-bottom: 3rem;
+    margin-bottom: 2.2rem;
     max-width: 25rem;
     margin-left: auto;
     margin-right: auto;
@@ -33,7 +33,7 @@
   @include mediaMob {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
-    margin-bottom: 4.3rem;
+    margin-bottom: 3.2rem;
   }
 }
 

@@ -10,7 +10,7 @@ const HomeTop = (props) => {
     return (
         <section className={style['home-top']}>
 
-            <div className={style['inner']}>
+            <div className={style.inner}>
                 <div className={style.content}>
                     <h1 className={style.title}>{top.title}</h1>
                     <p className={style.text}>{top.content}</p>

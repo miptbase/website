@@ -50,6 +50,9 @@
 
 .button-container {
   margin-bottom: 6rem;
+  @include mediaMob {
+    width: 100%;
+  }
 }
 
 .img-container {

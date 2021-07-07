@@ -16,6 +16,9 @@
   position: relative;
   height: 4.4rem;
   margin-bottom: 2rem;
+  @include mediaMob {
+    margin-bottom: 1.5rem;
+  }
 }
 
 .placeholder {
@@ -80,6 +83,7 @@
   height: 4.4rem;
   @include mediaMob {
     height: 8.8rem;
+    margin-bottom: 3rem;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
@@ -150,6 +154,7 @@
   @include mediaMob {
     height: 8.8rem;
     display: block;
+    margin-bottom: 3rem;
   }
 }
 
@@ -208,6 +213,10 @@
   color: white;
   font-size: 1.2rem;
   line-height: 130%;
+  @include mediaMob {
+    font-size: 0.8rem;
+    line-height: 120%;
+  }
 }
 
 .apple {
