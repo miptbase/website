@@ -5,9 +5,10 @@ module.exports = {
 
     // Backend configuration, in this case with git
     backend: {
-        name: "git-gateway",
-        branch: "develop",
-        squash_merges: true,
+      name: "github",
+      repo: "miptbase/website",
+      branch: "develop",
+      base_url: "https://netlify-cms.adrianub.vercel.app",
     },
 
     // Local backend is used during development
