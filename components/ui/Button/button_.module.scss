@@ -122,7 +122,7 @@
         border-radius: 0.5rem;
         overflow: hidden;
         background: transparent;
-        box-shadow: 0 0 0 2px white inset;
+        box-shadow: 0 0 0 2px $blue inset;
         top: 0;
         bottom: 0;
         left: 0;
@@ -136,6 +136,8 @@
         background: #F7F7F7;
       }
       &:focus {
+        color: $blue;
+        background: #F7F7F7;
         &:after {
           opacity: 1;
         }
