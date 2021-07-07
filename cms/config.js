@@ -228,7 +228,8 @@ module.exports = {
                                     widget: "object",
                                     fields: [
                                         { label: "Text", name: "text", widget: "markdown"},
-                                        { label: "Copy", name: "copy", widget: "markdown"}
+                                        { label: "Copy", name: "copy", widget: "markdown"},
+                                        { label: "CopyMobile", name: "copy_mobile", widget: "markdown"}
                                     ]
                                 }
                             ]

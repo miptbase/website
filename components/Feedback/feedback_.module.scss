@@ -22,17 +22,30 @@
   line-height: 140%;
   color: white;
   width: 80%;
+  @include mediaMob {
+    font-size: 2rem;
+    line-height: 140%;
+    width: 100%;
+    margin-bottom: 2.5rem;
+  }
 }
 
 .form {
   display: flex;
   width: 100%;
   gap: 2rem;
+  @include mediaMob {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 }
 
 .button {
   width: 23.2rem;
   flex-shrink: 0;
+  @include mediaMob {
+    width: 100%;
+  }
 }
 
 .input {
