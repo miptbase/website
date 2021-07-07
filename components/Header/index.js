@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import style from "./header_.module.scss"
 import Button from "../ui/Button";
 import Menu from "../Menu";
-import { useIsMobile } from '../../hooks/useIsMobile';
+import { useMediaQuery } from 'react-responsive'
 import cn from "classnames";
 
 const Header = (props) => {
-    const isMobile = useIsMobile();
+    const isMobile = useMediaQuery(
+        { maxWidth: 1024 }
+    )
     const [menuOpen, setMenuOpen] = useState(false);
     const {header, menu, scrollToDonation} = props;
     return (

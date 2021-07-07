@@ -6,7 +6,6 @@ import SVG from 'react-inlinesvg';
 import Feedback from "../Feedback";
 import rehypeRaw from 'rehype-raw'
 import ReactMarkdown from 'react-markdown'
-import { useIsMobile } from '../../hooks/useIsMobile';
 import { useMediaQuery } from 'react-responsive'
 
 const Footer = (props) => {

@@ -1,13 +1,10 @@
 import React, {useState} from 'react'
 import style from "./feedback_.module.scss"
-
-import { useIsMobile } from '../../hooks/useIsMobile';
 import Input from "../ui/Input";
 import Button from "../ui/Button";
 
 const Feedback = (props) => {
     const {feedback} = props;
-    const isMobile = useIsMobile();
     const [feedbackPlaceholder, setFeedbackPlaceholder] = useState(feedback.placeholder);
     return (
         <section className={style.feedback}>

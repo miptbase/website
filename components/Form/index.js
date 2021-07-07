@@ -6,15 +6,16 @@ import Check from '../ui/Check'
 import Button from '../ui/Button'
 import Value from '../ui/Value'
 import Select, { components }from 'react-select'
-import {debounce} from 'lodash';
 import cn from 'classnames'
 import {IPSTACK_API_KEY} from '../../config';
 import Menu from "../Menu";
-import {useIsMobile} from "../../hooks/useIsMobile";
+import { useMediaQuery } from 'react-responsive'
 
 
 const Form = (props) => {
-    const isMobile = useIsMobile();
+    const isMobile = useMediaQuery(
+        { maxWidth: 1024 }
+    )
     const nameInputRef = useRef(null);
     const emailInputRef = useRef(null);
 

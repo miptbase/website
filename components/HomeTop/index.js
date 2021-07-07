@@ -2,7 +2,7 @@ import React from 'react'
 import style from "./home-top_.module.scss"
 import Button from "../ui/Button"
 import { useMediaQuery } from 'react-responsive'
-import cn from "classnames";
+
 
 const HomeTop = (props) => {
     const {top, scrollToDonation} = props;

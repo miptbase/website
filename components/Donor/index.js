@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import style from "./donor_.module.scss"
-import { useIsMobile } from '../../hooks/useIsMobile';
+import { useMediaQuery } from 'react-responsive'
 import { makeStyles } from '@material-ui/core/styles';
 import Dialog from "@material-ui/core/Dialog";
 import DonorDetails from "../DonorDetails";
@@ -34,7 +34,9 @@ const useStyles = makeStyles((theme) => ({
 
 const Donor = (props) => {
     const classes = useStyles();
-    const isMobile = useIsMobile();
+    const isMobile = useMediaQuery(
+        { maxWidth: 1024 }
+    )
     const {name, description, img, company, text} = props;
     const [modal, setModal] = React.useState(false);
 
