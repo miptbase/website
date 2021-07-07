@@ -1,12 +1,11 @@
 import React from 'react'
 import style from "./home-top_.module.scss"
 import Button from "../ui/Button"
-import { useIsMobile } from '../../hooks/useIsMobile';
+import withSizes from 'react-sizes'
 import cn from "classnames";
 
 const HomeTop = (props) => {
-    const {top, scrollToDonation} = props;
-    const isMobile = useIsMobile();
+    const {top, scrollToDonation, isMobile} = props;
     return (
         <section className={style['home-top']}>
 
@@ -41,5 +40,8 @@ const HomeTop = (props) => {
         </section>
     )
 }
+const mapSizesToProps = ({ width }) => ({
+    isMobile: width < 1024,
+})
 
-export default HomeTop
+export default withSizes(mapSizesToProps)(HomeTop)
