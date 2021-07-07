@@ -1,4 +1,5 @@
 import React, { useRef } from 'react'
+import Head from "next/head";
 import { top, features, donors, goal, media, donation} from '../content/home.json';
 import { header } from '../content/header.json';
 import { footer } from '../content/footer.json';
@@ -12,12 +13,9 @@ import Donation from "../components/Donation";
 import Donors from "../components/Donors";
 import Goal from "../components/Goal";
 import Media from "../components/Media";
-import Feedback from "../components/Feedback";
 import Page from "../components/Page";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import style from "../components/Goal/goal_.module.scss";
-import Button from "../components/ui/Button";
 
 
 const Home = () => {
@@ -28,6 +26,10 @@ const Home = () => {
     return (
         <Page>
             <>
+                <Head>
+                    <title>MIPTBASE — базовый жизненный стандарт для студентов МФТИ</title>
+                    <meta name="description" content="Эндаумент для покрытия базовых нужд студентов МФТИ, позволяющий им фокусироваться на учебе и творчестве" />
+                </Head>
                 <Header   header={header} menu={menu} scrollToDonation={toDonation}/>
                 <HomeTop
                     scrollToDonation={toDonation}
