@@ -6,13 +6,11 @@ import SVG from 'react-inlinesvg';
 import Feedback from "../Feedback";
 import rehypeRaw from 'rehype-raw'
 import ReactMarkdown from 'react-markdown'
-import { useMediaQuery } from 'react-responsive'
+import { useIsMobile } from '../../hooks/useIsMobile';
 
 const Footer = (props) => {
     const {footer, menu, feedback} = props;
-    const isMobile = useMediaQuery(
-        { maxWidth: 1024 }
-    )
+    const isMobile = useIsMobile();
     return (
         <section className={style.footer}>
             <div className={style.inner}>

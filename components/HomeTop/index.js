@@ -1,16 +1,15 @@
 import React from 'react'
 import style from "./home-top_.module.scss"
 import Button from "../ui/Button"
-import { useMediaQuery } from 'react-responsive'
-
+import { useIsMobile } from '../../hooks/useIsMobile';
+import cn from "classnames";
 
 const HomeTop = (props) => {
     const {top, scrollToDonation} = props;
-    const isMobile = useMediaQuery(
-        { maxWidth: 1024 }
-    )
+    const isMobile = useIsMobile();
     return (
         <section className={style['home-top']}>
+
             <div className={style.inner}>
                 <div className={style.content}>
                     <h1 className={style.title}>{top.title}</h1>
@@ -25,6 +24,7 @@ const HomeTop = (props) => {
                         </Button>
                     </div>
                 </div>
+
 
             </div>
             <div className={style['img-container']}>

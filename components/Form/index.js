@@ -9,13 +9,11 @@ import Select, { components }from 'react-select'
 import cn from 'classnames'
 import {IPSTACK_API_KEY} from '../../config';
 import Menu from "../Menu";
-import { useMediaQuery } from 'react-responsive'
+import {useIsMobile} from "../../hooks/useIsMobile";
 
 
 const Form = (props) => {
-    const isMobile = useMediaQuery(
-        { maxWidth: 1024 }
-    )
+    const isMobile = useIsMobile();
     const nameInputRef = useRef(null);
     const emailInputRef = useRef(null);
 

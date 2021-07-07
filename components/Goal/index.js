@@ -1,13 +1,11 @@
 import React from 'react'
 import style from "./goal_.module.scss"
 import Button from "../ui/Button";
-import { useMediaQuery } from 'react-responsive'
+import { useIsMobile } from '../../hooks/useIsMobile';
 
 
 const Goal = (props) => {
-    const isMobile = useMediaQuery(
-        { maxWidth: 1024 }
-    )
+    const isMobile = useIsMobile();
     const {goal, scrollToDonation} = props;
     const percent = 25;
     return (

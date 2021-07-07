@@ -44,6 +44,7 @@
 
 .logo {
  @include logo;
+  z-index: 2;
 }
 
 .menu-button {
