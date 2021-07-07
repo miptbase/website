@@ -63,9 +63,14 @@ const Form = (props) => {
     const [emailMobilePlaceholder, setEmailMobilePlaceholder] = useState(formTransfer[1].placeholder.name);
     const [yearPlaceholder, setYearPlaceholder] = useState(studenttransfer[1].placeholder);
     const [selectDepartmentActive, setSelectDepartmentActive] = useState(false);
+    const [paymentSumm, setPaymentSumm] = useState(0);
     const selectMethod = method => {
         setActiveMethod(method);
     };
+
+    useEffect(() => {
+        setPaymentSumm(Number(selectedValue.replace(/ +/g, '').trim()));
+    }, [selectedValue]);
 
     useEffect(() => {
         if (currentName) {
@@ -333,8 +338,8 @@ const Form = (props) => {
         window.open('/transfer');
     }
 
-    const paymentSumm = Number(selectedValue.replace(/ +/g, '').trim());
 
+    console.log(paymentSumm);
     const hiddenForm = `      <form style="visibility: hidden; height: 0;" id='payForm' name="TinkoffPayForm" class="form" onsubmit="pay(this); return false;">
                     <div class="form__title"> Улучшим вместе жизнь студентов Физтеха!</div>
                 <input class="tinkoffPayRow" type="hidden" name="terminalkey" value="1611313361029DEMO"/>
@@ -683,16 +688,20 @@ const Form = (props) => {
 
                     </div>
 
-                    {activeValue != "input" && !isMobile && (
+                    {!isMobile && (
                         <div className={style.tooltip}>
-                            {activeValue == 1 && (
-                                paymentValue[0].tooltip
+                            {paymentSumm < 40000 && (
+
+                               `Если добавить еще ${40000 - paymentSumm}, то хватит на 1 вечное интернет-место в студгородке`
                             )}
-                            {activeValue == 2 && (
-                                paymentValue[1].tooltip
+                            {paymentSumm >= 40000 && paymentSumm < 80000 && (
+                                "Этого должно хватить на 1 вечное интернет-место в студгородке"
                             )}
-                            {activeValue == 3 && (
-                                paymentValue[2].tooltip
+                            {paymentSumm >= 80000 && paymentSumm < 150000 && (
+                                "Должно хватить на 2 вечных интернет-места в студгородке"
+                            )}
+                            {paymentSumm >= 150000 && (
+                                "Это медианное пожертвование через банк. Вы же хотите попасть в топ-50% доноров?"
                             )}
                         </div>
                     )}
