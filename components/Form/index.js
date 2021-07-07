@@ -644,19 +644,6 @@ const Form = (props) => {
                     {payButtons}
                 </div>
 
-                {!isMobile && (
-                    <div className={style.tooltip}>
-                        {activeValue == 1 && (
-                            paymentValue[0].tooltip
-                        )}
-                        {activeValue == 2 && (
-                            paymentValue[1].tooltip
-                        )}
-                        {activeValue == 3 && (
-                            paymentValue[2].tooltip
-                        )}
-                    </div>
-                )}
 
                 <div className={style.privacy}>
                     Отправляя свое пожертвование, вы соглашаетесь с <a className={style.link} href='/'>Политикой конфиденциальности</a>, даёте своё согласие на обработку персональных данных и принимаете условия договора пожертвования.
