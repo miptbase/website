@@ -31,7 +31,7 @@ const Footer = (props) => {
                                         className={style['social-item']}
                                         key={item.img}
                                     >
-                                        <a href={item.link} target='_blank' rel='noopener'>
+                                        <a className={style.link} href={item.link} target='_blank' rel='noopener'>
                                             <SVG className={style['social-img']} src={item.img} />
                                         </a>
 

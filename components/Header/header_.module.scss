@@ -42,19 +42,7 @@
 }
 
 .logo {
-  width: 13.887rem;
-  height: 2.963rem;
-  @include mediaMob {
-    width: 13.2rem;
-    height: 2.81rem;
-    z-index: 2;
-  }
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: left center;
-  }
+ @include logo;
 }
 
 .menu-button {
