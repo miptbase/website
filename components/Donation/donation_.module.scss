@@ -3,12 +3,12 @@
 
 .donation {
   display: flex;
+  @include container;
   padding-top: 8rem;
   padding-bottom: 10rem;
   @include mediaMob {
-    padding-top: 0;
+    padding: 0;
     flex-direction: column;
-    padding-bottom: 0;
   }
 }
 
