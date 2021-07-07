@@ -109,7 +109,6 @@
   @include mediaMob {
     width: 13.2rem;
     height: 2.8rem;
-    margin-bottom: 4rem;
   }
   img {
     width: 100%;
@@ -132,6 +131,20 @@
   }
   &:focus-visible {
     outline: none;
+  }
+}
+
+@mixin link-hovered {
+  color: inherit;
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -0.2em;
+    width: 100%;
+    left: 0;
+    background-color: currentColor;
   }
 }
 
