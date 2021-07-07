@@ -25,6 +25,9 @@
 
 .logo {
   @include logo;
+  @include mediaMob {
+    margin-bottom: 4rem;
+  }
 }
 
 .menu {
