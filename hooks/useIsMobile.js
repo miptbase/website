@@ -7,12 +7,11 @@ export function useIsMobile() {
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
       handleResize();
-      window.addEventListener('load', handleResize);
     window.addEventListener('resize', handleResize);
     return () => {
-        window.removeEventListener('load', handleResize);
       window.removeEventListener('resize', handleResize);
     };
+
   }, [width]);
   return width < DESKTOP_BREAKPOINT;
 }

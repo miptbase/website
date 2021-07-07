@@ -622,8 +622,41 @@ const Form = (props) => {
 
 
                     </div>
+                    {!isMobile
+                    && (
+                        <>
+                            <div className={style['value-items']}>
+                                {paymentValue.map(valueItem => (
+                                    <Value key={valueItem.id}
+                                           mod='select'
+                                           value={valueItem.value}
+                                           functionValueActive = {()=> {setSelectedValue(`${valueItem.value}`); setActiveValue(`${valueItem.id}`)}}
+                                           isSelected = {activeValue == valueItem.id}
+                                    />
+                                ))}
+                            </div>
+                            <div className={style['custom-donate']}>
+                                <Input
+                                    color='white'
+                                    mod='select'
+                                    placeholder = {otherPlaceholder}
+                                    onClick={()=> {setActiveValue('input')}}
+                                    isSelected = {activeValue === 'input'}
+                                    name="custom-donate-value"
+                                    onInput=  {(e)=> { setSelectedValue(e.target.value)}}
+                                    onFocus={() => setOtherPlaceholder('')}
+                                    onBlur={(e) => {setOtherPlaceholder('Другая сумма');
+                                        if ((e.target.value) === '')
+                                        {
+                                            setActiveValue(0)
+                                        }
+                                    }}
+                                />
+                            </div>
+                        </>
+                    )}
 
-                    {activeValue != "input" && (
+                    {activeValue != "input" && !isMobile && (
                         <div className={style.tooltip}>
                             {activeValue == 1 && (
                                 paymentValue[0].tooltip

@@ -34,6 +34,9 @@
 
 .check {
   margin-top: 3.4rem;
+  @include mediaMob {
+    margin-top: 3rem;
+  }
 }
 
 .student {
@@ -42,6 +45,9 @@
   overflow: hidden;
   max-height: 0;
   transition: 0.2s max-height linear;
+  @include mediaMob {
+    padding-top: 3rem;
+  }
   &_active {
     height: auto;
     max-height: 20rem;
