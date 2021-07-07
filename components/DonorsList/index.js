@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
 import style from "./donors-list_.module.scss"
 import Donor from "../Donor";
 
