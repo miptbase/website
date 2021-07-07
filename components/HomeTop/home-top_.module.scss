@@ -53,6 +53,11 @@
   @include mediaMob {
     width: 100%;
   }
+  button {
+    @include mediaMob {
+      height: 4rem;
+    }
+  }
 }
 
 .img-container {
