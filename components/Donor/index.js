@@ -7,6 +7,7 @@ import DonorDetails from "../DonorDetails";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogActions from "@material-ui/core/DialogActions";
+import Image from 'next/image'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -45,7 +46,8 @@ const Donor = (props) => {
                     <div className={style.flipper}>
                         <div className={style.front}>
                             <div className={style.img}>
-                                <img src={img} alt={name}/>
+                                <Image src={`/${img}`} alt={name} layout='fill' objectFit='cover' objectPosition='top center'
+                                />
                             </div>
                             <div className={style.info}>
                                 <p className={style.name}>{name}</p>
@@ -65,7 +67,7 @@ const Donor = (props) => {
                 <>
                 <div className={style.donor} onClick={() => setModal(true)}>
                     <div className={style.img}>
-                        <img src={img} alt={name}/>
+                        <Image src={`/${img}`} alt={name} layout='fill'  objectFit='cover' objectPosition='top center'/>
                     </div>
                     <div className={style.info}>
                         <p className={style.name}>{name}</p>
