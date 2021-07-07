@@ -5,7 +5,8 @@ module.exports = {
 
     // Backend configuration, in this case with git
     backend: {
-        name: "git-gateway",
+        name: "github",
+        repo: 'miptbase/website',
         branch: "develop",
         squash_merges: true,
     },
