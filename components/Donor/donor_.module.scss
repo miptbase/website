@@ -57,11 +57,11 @@
     height: auto;
     font-weight: 500;
     font-size: 1.4rem;
-    line-height: 120%;
+    line-height: 100%;
   }
 }
 
-.company, .back-company {
+.company, .details-company {
   position: absolute;
   top: 5.2rem;
   left: 1.5rem;
@@ -81,6 +81,7 @@
 .details-company {
   font-size: 1.2rem;
   line-height: 130%;
+  top: 6.5rem;
   color: white;
   opacity: 0;
   visibility: hidden;
@@ -117,13 +118,14 @@
     .name {
       transform: scale(1.2);
       color: white;
+      line-height: 130%;
     }
     .company {
       visibility: hidden;
       opacity: 0;
     }
     .details-company {
-      top: 8.3rem;
+      top: 6.5rem;
       visibility: visible;
       opacity: 1;
     }
