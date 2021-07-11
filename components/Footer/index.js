@@ -7,6 +7,8 @@ import Feedback from "../Feedback";
 import rehypeRaw from 'rehype-raw'
 import ReactMarkdown from 'react-markdown'
 import { useIsMobile } from '../../hooks/useIsMobile';
+import Link from "next/link";
+import Image from "next/image";
 
 const Footer = (props) => {
     const {footer, menu, feedback} = props;
@@ -16,9 +18,19 @@ const Footer = (props) => {
             <div className={style.inner}>
                 <Feedback feedback={feedback}/>
                 <div className={style.main}>
-                    <a href="/" className={style.logo}>
-                        <img src={footer.logo} alt='logo' />
-                    </a>
+                    <div className={style.logo}>
+                        <Link href="/">
+                            <a>
+                                <Image
+                                    src={`/${footer.logo}`}
+                                    alt='logo'
+                                    layout='fill'
+                                    objectFit='cover'
+                                    objectPosition='left center'
+                                />
+                            </a>
+                        </Link>
+                    </div>
                     {!isMobile
                     && (
                         <>

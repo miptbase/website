@@ -20,8 +20,7 @@ const Media = (props) => {
                             {item.text}
                         </p>
                         <div className={style.bottom}>
-                            <div className={style.img}>
-                                <img src={item.img} alt={item.alt}/>
+                            <div className={style.img} style={{background: `url(${item.img}) no-repeat left bottom`}}>
                             </div>
                             <div className={style.date}>
                                 {item.date}

@@ -43,6 +43,7 @@
 }
 
 .logo {
+  position: relative;
  @include logo;
   z-index: 2;
 }

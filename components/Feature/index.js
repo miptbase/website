@@ -2,6 +2,7 @@ import React from 'react'
 import style from "./feature_.module.scss"
 import rehypeRaw from 'rehype-raw'
 import ReactMarkdown from 'react-markdown'
+import Image from 'next/image'
 
 import Form from '../Form'
 
@@ -11,7 +12,8 @@ const Feature = (props) => {
         <div className={style.feature}>
             <div className={style.top}>
                 <div className={style.img}>
-                    <img src={img} alt={title}/>
+                    <Image src={`/${img}`} alt={title} layout='fill' objectFit='cover' objectPosition='center'
+                    />
                 </div>
                 <div className={style.title}>
                     {title}

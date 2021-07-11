@@ -1,6 +1,6 @@
 import React from 'react'
 import style from "./donation_.module.scss"
-
+import Image from "next/image";
 import Form from '../Form'
 
 const Donation = (props) => {
@@ -8,7 +8,16 @@ const Donation = (props) => {
     return (
         <section className={style.donation} ref={refDonation}>
             <div className={style.content}>
-                <img src={donation.img} className={style.img}/>
+                <div className={style.img}>
+                    <Image
+                        src={`/${donation.img}`}
+                        alt='donation'
+                        layout='fill'
+                        objectFit='cover'
+                        objectPosition='left center'
+                    />
+                </div>
+
                 <h2 className={style.title}>
                     {donation.title}
                 </h2>

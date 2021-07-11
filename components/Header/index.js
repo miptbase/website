@@ -4,6 +4,8 @@ import Button from "../ui/Button";
 import Menu from "../Menu";
 import { useIsMobile } from '../../hooks/useIsMobile';
 import cn from "classnames";
+import Link from 'next/link'
+import Image from "next/image";
 
 const Header = (props) => {
     const isMobile = useIsMobile();
@@ -12,9 +14,19 @@ const Header = (props) => {
     return (
         <section className={style.header}>
             <div className={style.inner}>
-                <a href="/" className={style.logo}>
-                    <img src={header.logo} alt='logo' />
-                </a>
+                <div className={style.logo}>
+                    <Link href="/">
+                        <a>
+                            <Image
+                                src={`/${header.logo}`}
+                                alt='logo'
+                                layout='fill'
+                                objectFit='cover'
+                                objectPosition='left center'
+                            />
+                        </a>
+                    </Link>
+                </div>
                 <div className={style.menu}>
                     <Menu menu={menu} />
                 </div>

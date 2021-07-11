@@ -2,7 +2,7 @@ import React from 'react'
 import style from "./home-top_.module.scss"
 import Button from "../ui/Button"
 import { useIsMobile } from '../../hooks/useIsMobile';
-import cn from "classnames";
+import Image from 'next/image'
 
 const HomeTop = (props) => {
     const {top, scrollToDonation} = props;
@@ -28,8 +28,24 @@ const HomeTop = (props) => {
 
             </div>
             <div className={style['img-container']}>
-                <img className={style.img} src={top.img}/>
-                <img className={style.img_mobile} src={top.mobileImg}/>
+                <div className={style.img}>
+                    <Image
+                        src={`/${top.img}`}
+                        alt='MITPBASE'
+                        layout='responsive'
+                        width={1277}
+                        height={455}
+                    />
+                </div>
+                <div className={style.img_mobile}>
+                    <Image
+                        src={`/${top.mobileImg}`}
+                        alt='MITPBASE'
+                        layout='responsive'
+                        width={321}
+                        height={234}
+                    />
+                </div>
             </div>
 
         </section>

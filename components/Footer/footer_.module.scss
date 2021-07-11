@@ -24,6 +24,7 @@
 }
 
 .logo {
+  position: relative;
   @include logo;
   @include mediaMob {
     margin-bottom: 4rem;
