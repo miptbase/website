@@ -6,7 +6,7 @@ import Form from '../Form'
 const Donation = (props) => {
     const {donation, refDonation} = props;
     return (
-        <section className={style.donation} ref={refDonation}>
+        <section className={style.donation}>
             <div className={style.content}>
                 <div className={style.img}>
                     <Image
@@ -25,7 +25,7 @@ const Donation = (props) => {
                     {donation.text}
                 </p>
             </div>
-            <div className={style.form}>
+            <div className={style.form} ref={refDonation}>
                 <Form formInfo={donation.form}/>
             </div>
         </section>
