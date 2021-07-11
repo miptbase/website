@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node content/donors.js",
+    "prebuild": "node content/donors.js && node content/stats.js",
     "build": "next build",
     "start": "next start",
     "export": "npm run build && next export",
