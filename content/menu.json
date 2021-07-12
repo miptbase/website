@@ -5,23 +5,23 @@
     "items": [
       {
         "item": "Стандарт",
-        "link": "/"
+        "link": "/standard"
       },
       {
         "item": "Донорам",
-        "link": "/"
+        "link": "/donors"
       },
       {
         "item": "Управление",
-        "link": "/"
+        "link": "/management"
       },
       {
         "item": "Студенты",
-        "link": "/"
+        "link": "/students"
       },
       {
         "item": "FAQ",
-        "link": "/"
+        "link": "/faq"
       }
     ]
   }

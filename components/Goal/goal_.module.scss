@@ -57,7 +57,10 @@
   justify-content: center;
   position: relative;
   @include mediaMob {
-    margin-bottom: 3rem;
+    height: 27rem;
+    width: 27rem;
+    margin: 0 auto 3rem;
+    flex: auto;
   }
 }
 
@@ -107,3 +110,48 @@
     line-height: 130%;
   }
 }
+@keyframes chart {
+from {
+  opacity: 0;
+}
+  to {
+    opacity: 1;
+  }
+}
+
+.chart-container {
+  width: 35.3rem;
+  height: 35.3rem;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  animation: chart 0.1s both;
+  animation-delay: 0.5s;
+  @include mediaMob {
+    width: 27rem;
+    height: 27rem;
+    margin: 0 auto;
+  }
+}
+
+.chart {
+  width: 100%;
+  height: 100%;
+  circle {
+    cx: 50%;
+    cy: 50%;
+    r: 41%;
+    stroke-width: 6rem;
+    @include mediaMob {
+      cx: 50%;
+      cy: 50%;
+      r: 37%;
+      stroke-width: 4rem;
+    }
+  }
+}
+
+.spinner {
+
+}
+
+

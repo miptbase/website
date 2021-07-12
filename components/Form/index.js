@@ -10,6 +10,8 @@ import cn from 'classnames'
 import {IPSTACK_API_KEY} from '../../config';
 import Menu from "../Menu";
 import {useIsMobile} from "../../hooks/useIsMobile";
+import Link from "next/link";
+import Image from "next/image";
 
 
 const Form = (props) => {
@@ -715,7 +717,15 @@ const Form = (props) => {
 
 
                 <div className={style.privacy}>
-                    Отправляя свое пожертвование, вы соглашаетесь с <a className={style.link} href='/'>Политикой конфиденциальности</a>, даёте своё согласие на обработку персональных данных и принимаете условия договора пожертвования.
+                    <span>Отправляя свое пожертвование, вы соглашаетесь с </span>
+                    <span className={style.link} >
+                          <Link href="privacy">
+                                <a>
+                                    Политикой конфиденциальности
+                                </a>
+                        </Link>
+                    </span>
+                    <span>, даёте своё согласие на обработку персональных данных и принимаете условия договора пожертвования.</span>
                 </div>
 
 
