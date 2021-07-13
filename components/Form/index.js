@@ -677,10 +677,7 @@ const Form = (props) => {
                     [style.buttons]: true,
                     [style.buttons_single]: true,
                 })}>
-                    <PayPalScriptProvider options={{
-                      currency: 'RUB',
-                      'client-id': 'AWVifSid8kSj1W3ap0jqZNuhTX8Har9m_sdMWrfC0jh2vxwsex90gPoo0XpnCizDS5KOwv4cOlqgskbu',
-                    }}>
+                    
                       {activeMethod === 'Карта' && <>
                         <div className={cn({
                             [style['pay-button']]: true,
@@ -712,9 +709,13 @@ const Form = (props) => {
                           />
                       </div>}
                       {activeMethod === 'PayPal' && 
-                        <PayPalButtons createOrder={createPayPalOrder} />
+                        <PayPalScriptProvider options={{
+                            currency: 'RUB',
+                            'client-id': 'AWVifSid8kSj1W3ap0jqZNuhTX8Har9m_sdMWrfC0jh2vxwsex90gPoo0XpnCizDS5KOwv4cOlqgskbu',
+                        }}>
+                            <PayPalButtons createOrder={createPayPalOrder} />
+                        </PayPalScriptProvider>
                       }
-                    </PayPalScriptProvider>
                 </div>
 
 
