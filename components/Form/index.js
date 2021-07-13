@@ -12,6 +12,7 @@ import Menu from "../Menu";
 import {useIsMobile} from "../../hooks/useIsMobile";
 import Link from "next/link";
 import Image from "next/image";
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 
 const Form = (props) => {
@@ -277,29 +278,21 @@ const Form = (props) => {
         }),
     }
 
-    const [payPalButton, setPayPalButton] = useState(null);
-    const [showPayPalButton, setShowPayPalButton] = useState(false);
-    const createPayPalOrder = (data, actions) => {
-      const {paymentId, value} = JSON.parse(localStorage.getItem('paymentData'));
+    const createPayPalOrder = async (data, actions) => {
+      const {result, id: paymentId} = await (await fetch('https://api.miptbase.org/id')).json();
+      if (result !== 'success') return;
       return actions.order.create({
         id: paymentId,
         purchase_units: [
           {
             amount: {
-              value: value.replace(/ /, ''),
+              value: selectedValue,
             },
           },
         ],
       });
     };
     useEffect(async () => {
-      document.getElementById('paypal-sdk').addEventListener('load', () => {
-        const payPalButton = React.createElement(
-          paypal.Buttons.driver("react", { React, ReactDOM }),
-          {createOrder: createPayPalOrder},
-        );
-        setPayPalButton(payPalButton);
-      })
       const response = await (
         await fetch(`http://api.ipstack.com/check?access_key=${IPSTACK_API_KEY}`)
       ).json();
@@ -326,10 +319,6 @@ const Form = (props) => {
 
             if (activeMethod === 'Карта') {
                 handlerClick();
-            }
-
-            if (activeMethod === 'PayPal') {
-              setShowPayPalButton(true);
             }
         } else {
             console.log('error occured');
@@ -380,10 +369,7 @@ const Form = (props) => {
 
         },
     };
-    window.addEventListener('load', function () {
-        initPayments(widgetParameters);
-    });
-
+    initPayments(widgetParameters);
 </script>`
 
     function createHiddenForm() {
@@ -403,27 +389,6 @@ const Form = (props) => {
     const handlerClick = () => {
         submitButton.click()
     }
-
-    const payButtons = showPayPalButton
-      ? payPalButton
-      : <>
-          <div className={cn({
-              [style['pay-button']]: true,
-              [style['pay-button_no_active']]: true,
-          })} id="tinkoffWidgetContainer"   />
-          <div className={cn({
-              [style['pay-button-main']]: true,
-              [style['pay-button-main_100']]: true,
-          })}>
-              <Button
-                  placeholder='Поддержать'
-                  color='orange'
-                  type='submit'
-                  text='Поддержать'
-                  width="100"
-              />
-          </div>
-        </>;
     return (
         <>
             <CreatedForm />
@@ -712,7 +677,44 @@ const Form = (props) => {
                     [style.buttons]: true,
                     [style.buttons_single]: true,
                 })}>
-                    {payButtons}
+                    <PayPalScriptProvider options={{
+                      currency: 'RUB',
+                      'client-id': 'AWVifSid8kSj1W3ap0jqZNuhTX8Har9m_sdMWrfC0jh2vxwsex90gPoo0XpnCizDS5KOwv4cOlqgskbu',
+                    }}>
+                      {activeMethod === 'Карта' && <>
+                        <div className={cn({
+                            [style['pay-button']]: true,
+                            [style['pay-button_no_active']]: true,
+                        })} id="tinkoffWidgetContainer"   />
+                        <div className={cn({
+                            [style['pay-button-main']]: true,
+                            [style['pay-button-main_100']]: true,
+                        })}>
+                            <Button
+                                placeholder='Поддержать'
+                                color='orange'
+                                type='submit'
+                                text='Поддержать'
+                                width="100"
+                            />
+                        </div>
+                      </>}
+                      {activeMethod === 'Перевод' && <div className={cn({
+                            [style['pay-button-main']]: true,
+                            [style['pay-button-main_100']]: true,
+                        })}>
+                          <Button
+                              placeholder='Поддержать'
+                              color='orange'
+                              type='submit'
+                              text='Поддержать'
+                              width="100"
+                          />
+                      </div>}
+                      {activeMethod === 'PayPal' && 
+                        <PayPalButtons createOrder={createPayPalOrder} />
+                      }
+                    </PayPalScriptProvider>
                 </div>
 
 
