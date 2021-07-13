@@ -292,14 +292,14 @@ const Form = (props) => {
         ],
       });
     };
-    useEffect(async () => {
-      const response = await (
-        await fetch(`http://api.ipstack.com/check?access_key=${IPSTACK_API_KEY}`)
-      ).json();
-      if (response.country_code !== 'RU') {
-        console.log('not ru');
-      }
-    }, []);
+    // useEffect(async () => {
+    //   const response = await (
+    //     await fetch(`http://api.ipstack.com/check?access_key=${IPSTACK_API_KEY}`)
+    //   ).json();
+    //   if (response.country_code !== 'RU') {
+    //     console.log('not ru');
+    //   }
+    // }, []);
 
     const onSubmit = async e => {
         e.preventDefault();
