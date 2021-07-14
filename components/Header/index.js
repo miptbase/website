@@ -1,16 +1,29 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import style from "./header_.module.scss"
 import Button from "../ui/Button";
 import Menu from "../Menu";
-import { useIsMobile } from '../../hooks/useIsMobile';
 import cn from "classnames";
 import Link from 'next/link'
 import Image from "next/image";
 
 const Header = (props) => {
-    const isMobile = useIsMobile();
-    const [menuOpen, setMenuOpen] = useState(false);
     const {header, menu, scrollToDonation} = props;
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [menuPadding, setMenuPadding] = useState(false);
+    const menuRef = useRef(null);
+
+    useEffect(() => {
+        const height = Math.max(
+            window.innerHeight, document.documentElement.clientHeight
+        );
+        if (menuOpen) {
+            document.body.style.height = `${height}px`;
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.height = 'auto';
+            document.body.style.overflow = 'visible';
+        }
+    }, [menuOpen]);
     return (
         <section className={style.header}>
             <div className={style.inner}>
@@ -50,7 +63,7 @@ const Header = (props) => {
                 </div>
 
 
-                <div className={cn({
+                <div ref={menuRef} className={cn({
                     [style['menu-mobile']]: true,
                     [style['menu-mobile_open']]: !!menuOpen
                 })} >
