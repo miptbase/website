@@ -18,8 +18,6 @@ const Page = (props) => {
                 <meta property="og:image" content="//miptbase.netlify.app/OpenGraph.jpg"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"></script>
-                <script src="https://www.paypal.com/sdk/js?currency=RUB&client-id=AWVifSid8kSj1W3ap0jqZNuhTX8Har9m_sdMWrfC0jh2vxwsex90gPoo0XpnCizDS5KOwv4cOlqgskbu"
-                  id="paypal-sdk"></script>
             </Head>
             {props.children}
         </>
