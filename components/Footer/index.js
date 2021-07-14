@@ -74,10 +74,10 @@ const Footer = (props) => {
                     <div className={style['info-description']}>
                         <ReactMarkdown rehypePlugins={[rehypeRaw]} children={footer.copy.text} />
                     </div>
-                    <div className={style['info-button']}>
+                    <a className={style['info-button']} href='https://vercel.com/?utm_source=miptbaseorg&utm_campaign=oss' target='_blank' rel='noopener'>
                         <SVG className={style['info-icon']} src='media/info-footer.svg' />
                         <div className={style['info-text']}>Powered by Vercel</div>
-                    </div>
+                    </a>
 
                     <div className={style.copy}>
                         {!isMobile
