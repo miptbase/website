@@ -9,6 +9,7 @@ module.exports = {
         repo: "miptbase/website",
         branch: "develop",
         squash_merges: true,
+        base_url: 'https://netlify-cms-github-oauth-provider.vercel.app',
     },
 
     // Local backend is used during development
