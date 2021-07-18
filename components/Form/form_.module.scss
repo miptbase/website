@@ -12,7 +12,7 @@
   margin-bottom: 4rem;
 }
 
-.input {
+.input, .select {
   position: relative;
   height: 4.4rem;
   margin-bottom: 2rem;
@@ -20,6 +20,13 @@
     margin-bottom: 1.5rem;
   }
 }
+
+.select {
+  width: 100%;
+  appearance: none;
+  @include input;
+}
+
 
 .placeholder {
   position: absolute;

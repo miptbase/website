@@ -525,16 +525,31 @@ const Form = (props) => {
                     })}>
 
                         <div className={style.input}>
-                            <Select options={departments}
-                                    onMenuOpen={() => {setSelectDepartmentActive(true)}}
-                                    onMenuClose={() => {setSelectDepartmentActive(false)}}
-                                    styles={customStyles}
-                                    placeholder={'Факультет'}
-                                    isSearchable={ false }
-                                    components={{ DropdownIndicator }}
-                                    instanceId={'department'}
-                                    inputId={'department'}
-                            />
+                            {!isMobile &&
+                                <Select options={departments}
+                                        onMenuOpen={() => {setSelectDepartmentActive(true)}}
+                                        onMenuClose={() => {setSelectDepartmentActive(false)}}
+                                        styles={customStyles}
+                                        placeholder={'Факультет'}
+                                        isSearchable={ false }
+                                        components={{ DropdownIndicator }}
+                                        instanceId={'department'}
+                                        inputId={'department'}
+                                />
+                            }
+                            {
+                                isMobile &&
+                                <select className={cn(
+                                    style.select,
+                                    style.select_color_white
+                                )} name="departments">
+                                    <option selected >Факультет</option>
+                                    {departments.map(department => (
+                                        <option value={department.value}>{department.value}</option>
+                                    ))}
+                                </select>
+                            }
+
 
                         </div>
                         <div className={style.input}>
