@@ -1,9 +1,10 @@
 import React from 'react'
 import style from "./media_.module.scss"
-
-import Feature from '../Feature'
+import {useIsMobile} from "../../hooks/useIsMobile";
+import cn from "classnames";
 
 const Media = (props) => {
+    const isMobile = useIsMobile();
     const {media} = props;
     return (
         <section className={style.media}>
@@ -20,7 +21,13 @@ const Media = (props) => {
                             {item.text}
                         </p>
                         <div className={style.bottom}>
-                            <div className={style.img} style={{background: `url(${item.img}) no-repeat left bottom`}}>
+                            <div
+                                className={cn(
+                                    style.img,
+                                    style[`img_${item.name}`]
+                                )}
+                                style={isMobile ? {background: `url(${item.mobileImg}) no-repeat left bottom`}
+                                : {background: `url(${item.img}) no-repeat left bottom`}}>
                             </div>
                             <div className={style.date}>
                                 {item.date}

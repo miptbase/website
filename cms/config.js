@@ -105,8 +105,10 @@ module.exports = {
                                     widget: "list",
                                     fields:
                                         [
+                                            { label: "Name", name: "name", widget: "stroke" },
                                             { label: "Text", name: "text", widget: "text" },
                                             { label: "Image", name: "img", widget: "image" },
+                                            { label: "MobileImage", name: "mobileImg", widget: "image" },
                                             { label: "Date", name: "date", widget: "text" },
                                             { label: "Link", name: "link", widget: "stroke" },
                                         ]
