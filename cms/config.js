@@ -124,6 +124,7 @@ module.exports = {
                                 {label: "Title", name: "title", widget: "string"},
                                 {label: "Text", name: "text", widget: "text"},
                                 {label: "Image", name: "img", widget: "image" },
+                                {label: "MobileImage", name: "mobileImg", widget: "image" },
                                 {
                                     label: 'Form',
                                     name: 'form',
