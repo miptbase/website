@@ -23,13 +23,16 @@ const useStyles = makeStyles((theme) => ({
         width: '24.2rem',
         height: '34.1rem',
         background: '#2D83E8',
-        padding: '2.5rem 2rem',
+        padding: '2rem 2rem 2.5rem ',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        borderRadius: '0.5rem',
+        overflow: 'hidden',
+        transform: 'translate3d(0, 0, 0)',
+        webkitBackfaceVisibility: 'hidden'
     }
 }));
-
 
 
 const Donor = (props) => {
