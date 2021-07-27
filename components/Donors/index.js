@@ -7,6 +7,8 @@ import DonorsList from "../DonorsList";
 
 const Donors = (props) => {
     const {donors, donorsPerson} = props;
+    console.log('donorsPerson', donorsPerson);
+    console.log('donorsPerson filter', donorsPerson.filter(donor => donor.Top === "1"));
     return (
         <section className={style.donors}>
             <div className={style.inner}>
