@@ -37,9 +37,7 @@ const Goal = (props) => {
     const percent = Number(stats
         .filter(item => item.Key === "Target progress")[0].Value
         .replace(/[\s.,%]/g, ''));
-    console.log('circumference', circumference);
     const chartLine = String(circumference - circumference * percent / 100)
-    console.log(typeof chartLine)
     return (
         <section className={style.goal} >
             <div className={style.container}>
