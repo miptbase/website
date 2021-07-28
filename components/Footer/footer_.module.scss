@@ -60,6 +60,8 @@
   height: 100%;
   width: 100%;
   transition: 0.3s opacity ease-in-out;
+  transform: translate3d(0,0,0);
+  -webkit-backface-visibility: hidden;
   &:after {
     content: '';
     display: block;
