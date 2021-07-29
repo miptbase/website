@@ -25,6 +25,7 @@
   width: 100%;
   appearance: none;
   @include input;
+  background: url("../../public/media/arrow-select.svg") no-repeat calc(100% - 1.2rem) center;
 }
 
 
