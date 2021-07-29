@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from "./donors_.module.scss"
+import Link from "next/link";
 
 import Button from "../ui/Button";
 import DonorsList from "../DonorsList";
@@ -31,10 +32,17 @@ const Donors = (props) => {
                 </div>
                 <DonorsList donors={donorsPerson.filter(donor => donor.Top === "1")}/>
                 <div className={style.button}>
+
                     <Button
-                        text={donors.show}
                         color='blue'
-                    />
+                        buttonFunction={(e) => e.preventDefault()}
+                    >
+                        <Link href={'/donors'}>
+                            <a className={style.link}>
+                                {donors.show}
+                            </a>
+                        </Link>
+                    </Button>
                 </div>
             </div>
         </section>

@@ -4,7 +4,7 @@ import style from './button_.module.scss'
 import cn from 'classnames'
 
 const Button = (props) => {
-    const {color, buttonFunction, text, width, type, padding} = props;
+    const {color, buttonFunction, text, width, type, padding, children} = props;
 
     const buttonClass = cn( {
         [style.button]: true,
@@ -16,7 +16,8 @@ const Button = (props) => {
 
     return (
         <button onClick={buttonFunction} className={buttonClass} type={type} style={{'padding' : `0 ${padding}`}}>
-            <span className={style.text}>{text}</span>
+            {text &&  <span className={style.text}>{text}</span>}
+            {children}
         </button>
     )
 }
