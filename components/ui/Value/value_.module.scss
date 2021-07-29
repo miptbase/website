@@ -31,7 +31,8 @@
       box-shadow: 1px 1px 0 0px white inset,  1px -1px 0 0px white inset;
     }
   }
-  &:hover, &:focus {
+  &:hover, &:focus, &:focus-visible {
+    outline: none;
     box-shadow:  1px 1px 0 1px white inset, 1px -1px 1px white inset, -1px -1px 0px 0px white inset, 1px -1px 0px 1px white inset;
   }
   &_color {

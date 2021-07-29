@@ -13,7 +13,7 @@ const Value = (props) => {
     });
 
     return (
-        <div className={valueClass}  onClick={functionValueActive}>
+        <div className={valueClass}  onClick={functionValueActive} tabIndex="0">
             <div className={style.hidden}> {value}</div>
             <div className={style.text}>{value}</div>
 

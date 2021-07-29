@@ -578,6 +578,7 @@ const Form = (props) => {
                         {paymentMethod.map(method => (
                             <div
                                 className={(activeMethod === method.name) ? [style.item + ' ' + style.item_active] : [style.item]}
+                                tabIndex="0"
                                 key={method.id}
                                 onClick={()=> {selectMethod(`${method.name}`)}}
                             >
@@ -590,7 +591,7 @@ const Form = (props) => {
 
                             </div>
                         ))}
-                        <div className={style.item}>
+                        <div className={style.item} tabIndex="0">
                             ...
                         </div>
                     </div>

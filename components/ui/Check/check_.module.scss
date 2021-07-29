@@ -1,7 +1,28 @@
 .check {
   cursor: pointer;
-}
+  position: relative;
+  &:after {
+    position: absolute;
+    content: '';
+    width: calc(100% + 1rem);
+    left: -1rem;
+    height: calc(100% + 2rem);
+    top: -1rem;
+    border: 1px solid #FFFFFF;
+    border-radius: 3px;
+    opacity: 0;
+    transition: 0.3s opacity ease-in-out;
+    pointer-events: none;
 
+  }
+  &:focus, &:focus-visible, &:focus-within{
+    outline: none;
+    &:after {
+      opacity: 1;
+    }
+  }
+
+}
 .input {
   display: none;
 }

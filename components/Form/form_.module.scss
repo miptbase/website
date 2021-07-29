@@ -125,14 +125,15 @@
   &:last-child {
     box-shadow: 1px 1px 0 0px white inset, 1px -1px 0px white inset, -1px -1px 0px 0px white inset;
     border-radius: 0 0.4rem 0.4rem 0;
-    &:hover, &:focus {
+    &:hover, &:focus, &:focus-visible {
       box-shadow:  1px 1px 0 1px white inset, 1px -1px 1px white inset, -1px -1px 0px 1px white inset, 1px -1px 0px 1px white inset;
     }
     @include mediaMob {
       border-radius: 0 0 0.4rem 0;
     }
   }
-  &:hover, &:focus {
+  &:hover, &:focus, &:focus-visible {
+    outline: none;
     box-shadow:  1px 1px 0 1px white inset, 1px -1px 1px white inset, -1px -1px 0px 0px white inset, 1px -1px 0px 1px white inset;
   }
 }
