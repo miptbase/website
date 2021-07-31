@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import style from "./goal_.module.scss"
 import Button from "../ui/Button";
 import { useIsMobile } from '../../hooks/useIsMobile';
+import { Tween } from 'react-gsap';
 
 
 const Goal = (props) => {
@@ -56,58 +57,29 @@ const Goal = (props) => {
                     />
                 </div>
 
-                    <div className={style.progress} ref={chartRef}>
-                        {chartVisible &&
-                    <div className={style['chart-container']}>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="80"
-                            height="80"
-                            className={style.chart}
-                        >
-                            <circle
-                                cx="40"
-                                cy="40"
-                                r="28"
-                                fill="none"
-                                stroke="rgba(216,216,216,0.1)"
-                                strokeWidth="8"
-                            />
-                            <circle
-                                cx="40"
-                                cy="40"
-                                r="28"
-                                fill="none"
-                                stroke="white"
-                                strokeLinecap="butt"
-                                strokeWidth="8"
-                                id='spinner-line'
-                                strokeDasharray={circumference}
-                                strokeDashoffset={chartLine}
+                <div className={style.progress} ref={chartRef}>
+                    {chartVisible &&
+                        <div className={style['chart-container']}>
+                        <Tween to={{"--val": percent}} duration={2} ease="power2.inOut">
+                            <div className={style.grad}>
+                            </div>
+                        </Tween>
+                        <Tween to={{scale: 0.65}} duration={2} ease="power2.inOut">
+                            <div className={style.info}>
 
-                            >
-                                <animate
-                                    attributeName="stroke-dashoffset"
-                                    from={circumference}
-                                    to={chartLine}
-                                    dur="1s"
-                                    fill="freeze"
-                                    keyTimes="0; 1"
-                                    keySplines="0.64, 0, 0.78, 0;"
-                                    begin="0.5s"
-                                />
-                            </circle>
-                        </svg>
+                            </div>
+                        </Tween>
+                        <Tween from={{autoAlpha: 0, translateY: '20px'}} duration={2} ease="power2.inOut">
+                            <div className={style['info-content']}>
+                                <div className={style.percent}>{`${percent}%`} </div>
+                                <div className={style['info-text']}>
+                                    {goal.caption} <br/>
+                                    {`в ${targetValue} млн ₽`}
+                                </div>
+                            </div>
+                        </Tween>
                     </div>
-                        }
-
-                    <div className={style.info}>
-                        <div className={style.percent}>{`${percent}%`} </div>
-                        <div className={style['info-text']}>
-                            {goal.caption} <br />
-                            {`в ${targetValue} млн ₽`}
-                        </div>
-                    </div>
+                    }
                 </div>
 
             </div>
