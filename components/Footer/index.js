@@ -16,7 +16,7 @@ const Footer = (props) => {
     return (
         <section className={style.footer}>
             <div className={style.inner}>
-                <Feedback feedback={feedback}/>
+                {/*<Feedback feedback={feedback}/>*/}
                 <div className={style.main}>
                     <div className={style.logo}>
                         <Link href="/">
