@@ -87,7 +87,6 @@ module.exports = {
                                     widget: "list",
                                     fields:
                                         [
-                                            { label: "Title", name: "title", widget: "string" },
                                             { label: "Text", name: "text", widget: "text" }
                                         ]
                                 }

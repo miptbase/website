@@ -40,9 +40,9 @@ const Home = () => {
                     features={features}
                 />
                 <Goal goal={goal} stats={stats} scrollToDonation={toDonation}/>
-                <Donors donors={donors} donorsPerson={donorsPerson}/>
+                <Donors donors={donors} donorsPerson={donorsPerson} stats={stats}/>
                 <Media media={media}/>
-                <Donation donation={donation} refDonation={donationRef}/>
+                <Donation donation={donation} refDonation={donationRef} stats={stats}/>
                 <Footer   footer={footer} menu={menu} feedback={feedback}/>
                 {/*<Feedback feedback={feedback} />*/}
             </>
