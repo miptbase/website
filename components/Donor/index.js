@@ -17,12 +17,13 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
         borderRadius: '0.5rem',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        background: '#252F3C',
     },
     modalBody: {
         width: '24.2rem',
         height: '34.1rem',
-        background: '#2D83E8',
+        background: '#252F3C',
         padding: '2rem 2rem 2.5rem ',
         display: 'flex',
         flexDirection: 'column',

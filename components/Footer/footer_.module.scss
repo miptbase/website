@@ -1,7 +1,8 @@
 @import "./scss/mixins";
+@import "./scss/colors";
 .footer {
   padding-top: 2rem;
-  background: rgba(black, 0.85);
+  background: $blue;
   @include mediaMob {
     padding-top: 0;
     overflow: hidden;

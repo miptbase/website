@@ -224,9 +224,9 @@ const Form = (props) => {
         }),
         option: (provided, state) => ({
             ...provided,
-            color: '#2D83E8',
+            color: '#252F3C',
             padding: '1rem 0',
-            borderBottom: '1px solid #2D83E8',
+            borderBottom: '1px solid #252F3C',
             fontSize: '1.6rem',
             lineHeight: '130%',
             cursor: 'pointer',
