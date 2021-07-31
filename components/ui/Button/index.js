@@ -4,7 +4,7 @@ import style from './button_.module.scss'
 import cn from 'classnames'
 
 const Button = (props) => {
-    const {color, buttonFunction, text, width, type, padding, children} = props;
+    const {color, buttonFunction, text, width, type, padding, children, disabled} = props;
 
     const buttonClass = cn( {
         [style.button]: true,
@@ -12,6 +12,7 @@ const Button = (props) => {
         [style.button_color_orange]: color === 'orange',
         [style.button_color_blue]: color === 'blue',
         [style.button_width_100]: width === '100',
+        [style.disabled]: disabled,
     });
 
     return (

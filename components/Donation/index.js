@@ -6,7 +6,8 @@ import {useIsMobile} from "../../hooks/useIsMobile";
 
 const Donation = (props) => {
     const isMobile = useIsMobile();
-    const {donation, refDonation} = props;
+    const {donation, refDonation, stats} = props;
+    const topQuartile = Number(stats.filter(item => item.Key === 'Top quartile')[0].Value.replace(/,/g, ''));
     return (
         <section className={style.donation}>
             <div className={style.content}>
@@ -42,7 +43,7 @@ const Donation = (props) => {
                 </p>
             </div>
             <div className={style.form} ref={refDonation}>
-                <Form formInfo={donation.form}/>
+                <Form formInfo={donation.form} topQuartile={topQuartile}/>
             </div>
         </section>
     )

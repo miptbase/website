@@ -16,6 +16,7 @@ import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
 
 const Form = (props) => {
+    const {topQuartile} = props;
     const isMobile = useIsMobile();
     const nameInputRef = useRef(null);
     const emailInputRef = useRef(null);
@@ -67,6 +68,7 @@ const Form = (props) => {
     const [yearPlaceholder, setYearPlaceholder] = useState(studenttransfer[1].placeholder);
     const [selectDepartmentActive, setSelectDepartmentActive] = useState(false);
     const [paymentSumm, setPaymentSumm] = useState(0);
+    const [buttonDisabled, setButtonDisabled] = useState(false);
     const selectMethod = method => {
         setActiveMethod(method);
     };
@@ -74,6 +76,10 @@ const Form = (props) => {
     useEffect(() => {
         setPaymentSumm(Number(selectedValue.replace(/ +/g, '').trim()));
     }, [selectedValue]);
+
+    useEffect(() => {
+        paymentSumm <= 0 ? setButtonDisabled(true) : setButtonDisabled(false);
+    }, [paymentSumm]);
 
     useEffect(() => {
         if (currentName) {
@@ -615,7 +621,12 @@ const Form = (props) => {
                                         color='white'
                                         mod='select'
                                         placeholder = {otherPlaceholder}
-                                        onClick={()=> {setActiveValue('input')}}
+                                        onClick={(e)=> {
+                                            setActiveValue('input')
+                                            if (e.target.value) {
+                                                setSelectedValue(e.target.value);
+                                            }
+                                        }}
                                         isSelected = {activeValue === 'input'}
                                         name="custom-donate-value"
                                         onInput=  {(e)=> { setSelectedValue(e.target.value)}}
@@ -672,18 +683,20 @@ const Form = (props) => {
 
                     {!isMobile && (
                         <div className={style.tooltip}>
-                            {paymentSumm < 40000 && (
-
-                               `Если добавить еще ${40000 - paymentSumm}, то хватит на 1 вечное интернет-место в студгородке`
+                            {paymentSumm <= 0 && (
+                                `А комлексные числа сюда не хотите вставить? :)`
                             )}
-                            {paymentSumm >= 40000 && paymentSumm < 80000 && (
-                                "Этого должно хватить на 1 вечное интернет-место в студгородке"
+                            {paymentSumm < 50000 && paymentSumm > 0 && (
+                                `Любой вклад важен для нас! Если добавить еще ${50000 - paymentSumm} руб., то пожертвования примерно хватит на 1 интернет-место в студгородке`
                             )}
-                            {paymentSumm >= 80000 && paymentSumm < 150000 && (
-                                "Должно хватить на 2 вечных интернет-места в студгородке"
+                            {paymentSumm >= 50000 && paymentSumm < 100000 && (
+                                `Должно хватить примерно на 1 интернет-места в студгородке! Добавьте еще ${100000 - paymentSumm} руб., чтобы войти в закрытый клуб доноров`
                             )}
-                            {paymentSumm >= 150000 && (
-                                "Это медианное пожертвование через банк. Вы же хотите попасть в топ-50% доноров?"
+                            {paymentSumm >= 100000 && paymentSumm < topQuartile && (
+                                `Этого хватит, чтобы войти в клуб доноров. Добавьте еще ${topQuartile - paymentSumm} руб., чтобы войти в топ-25% доноров`
+                            )}
+                            {paymentSumm >= topQuartile && (
+                                "Это крутое пожертвование, которым вы сможете гордиться"
                             )}
                         </div>
                     )}
@@ -708,6 +721,7 @@ const Form = (props) => {
                                 type='submit'
                                 text='Поддержать'
                                 width="100"
+                                disabled={buttonDisabled}
                             />
                         </div>
                       </>}
@@ -721,6 +735,7 @@ const Form = (props) => {
                               type='submit'
                               text='Поддержать'
                               width="100"
+                              disabled={buttonDisabled}
                           />
                       </div>}
                       {activeMethod === 'PayPal' && 
