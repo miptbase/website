@@ -357,31 +357,7 @@ const Form = (props) => {
                                                    name="email"  value=${currentEmail} />
                                               
                                                     <input id='submitButton' class="tinkoffPayRow" type="submit" value="Оплатить" />
-            </form>
-            
-                     <script type="text/javascript">
-    const terminalkey = document.forms.TinkoffPayForm.terminalkey
-    const widgetParameters = {
-        container: 'tinkoffWidgetContainer',
-        terminalKey: terminalkey.value,
-        paymentSystems: {
-            GooglePay: {
-                environment: "TEST",
-                merchantId: "12345678901234567890",
-                buttonColor: "black",
-                buttonType: "short",
-                paymentInfo: function () {
-                    return {
-                        infoEmail: "E-mail для отправки информации о платеже",
-                        paymentData: document.forms.TinkoffPayForm
-                    }
-                }
-            }
-
-        },
-    };
-    initPayments(widgetParameters);
-</script>`
+            </form>`
 
     function createHiddenForm() {
         return {__html: hiddenForm};
@@ -404,6 +380,29 @@ const Form = (props) => {
         <>
             <Script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"
                 strategy="beforeInteractive"></Script>
+            <Script strategy="beforeInteractive">{`
+                const terminalkey = document.forms.TinkoffPayForm.terminalkey
+                const widgetParameters = {
+                    container: 'tinkoffWidgetContainer',
+                    terminalKey: terminalkey.value,
+                    paymentSystems: {
+                        GooglePay: {
+                            environment: "TEST",
+                            merchantId: "12345678901234567890",
+                            buttonColor: "black",
+                            buttonType: "short",
+                            paymentInfo: function () {
+                                return {
+                                    infoEmail: "E-mail для отправки информации о платеже",
+                                    paymentData: document.forms.TinkoffPayForm
+                                }
+                            }
+                        }
+
+                    },
+                };
+                initPayments(widgetParameters);
+            `}</Script>
             <CreatedForm />
 
 
