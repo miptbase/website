@@ -13,6 +13,7 @@ import {useIsMobile} from "../../hooks/useIsMobile";
 import Link from "next/link";
 import Image from "next/image";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import Script from 'next/script';
 
 const tinkoffTerminalKey = process.env.ENV === 'production'
     ? '1611313361029'
@@ -401,6 +402,8 @@ const Form = (props) => {
     }
     return (
         <>
+            <Script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"
+                strategy="beforeInteractive"></Script>
             <CreatedForm />
 
 

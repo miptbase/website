@@ -17,7 +17,6 @@ const Page = (props) => {
                 <meta property="og:url" content="/OpenGraph.jpg" />
                 <meta property="og:image" content="/OpenGraph.jpg"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"></script>
             </Head>
             {props.children}
         </>
