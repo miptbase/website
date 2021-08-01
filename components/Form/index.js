@@ -14,7 +14,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 
-
+const tinkoffTerminalKey = process.env.ENV === 'production'
+    ? '1611313361029'
+    : '1611313361029DEMO';
+const paypalClientId = process.env.ENV === 'production'
+    ? 'AWVifSid8kSj1W3ap0jqZNuhTX8Har9m_sdMWrfC0jh2vxwsex90gPoo0XpnCizDS5KOwv4cOlqgskbu'
+    : 'AWVifSid8kSj1W3ap0jqZNuhTX8Har9m_sdMWrfC0jh2vxwsex90gPoo0XpnCizDS5KOwv4cOlqgskbu';
 const Form = (props) => {
     const {topQuartile} = props;
     const isMobile = useIsMobile();
@@ -338,7 +343,7 @@ const Form = (props) => {
 
     const hiddenForm = `      <form style="visibility: hidden; height: 0;" id='payForm' name="TinkoffPayForm" class="form" onsubmit="pay(this); return false;">
                     <div class="form__title"> Улучшим вместе жизнь студентов Физтеха!</div>
-                <input class="tinkoffPayRow" type="hidden" name="terminalkey" value="1611313361029DEMO"/>
+                <input class="tinkoffPayRow" type="hidden" name="terminalkey" value="${tinkoffTerminalKey}"/>
                     <input class="tinkoffPayRow" type="hidden" name="frame" value="false" />
                         <input class="tinkoffPayRow" type="hidden" name="language" value="ru" />
                             <input class="tinkoffPayRow" type="text" name="amount" value=${paymentSumm}
@@ -741,7 +746,7 @@ const Form = (props) => {
                       {activeMethod === 'PayPal' && 
                         <PayPalScriptProvider options={{
                             currency: 'RUB',
-                            'client-id': 'AWVifSid8kSj1W3ap0jqZNuhTX8Har9m_sdMWrfC0jh2vxwsex90gPoo0XpnCizDS5KOwv4cOlqgskbu',
+                            'client-id': paypalClientId,
                         }}>
                             <PayPalButtons createOrder={createPayPalOrder} />
                         </PayPalScriptProvider>
