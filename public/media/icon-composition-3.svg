@@ -1,0 +1,46 @@
+<svg width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<path d="M39.8471 10.3781V6.40625H29.0846V16.5281H6.27832V68.9312H73.9283V10.3781H39.8471Z" fill="#FF945E" stroke="black" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M39.3345 7.04688H29.7251V68.9312H39.3345V7.04688Z" fill="#FF945E" stroke="black" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M49.4564 17.1688H45.9971V22.9344H49.4564V17.1688Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M49.4564 29.725H45.9971V35.4907H49.4564V29.725Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M49.4564 42.2812H45.9971V48.0469H49.4564V42.2812Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M49.4564 54.9656H45.9971V60.7313H49.4564V54.9656Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M58.0409 17.1688H54.5815V22.9344H58.0409V17.1688Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M58.0409 29.725H54.5815V35.4907H58.0409V29.725Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M58.0409 42.2812H54.5815V48.0469H58.0409V42.2812Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M58.0409 54.9656H54.5815V60.7313H58.0409V54.9656Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M66.497 17.1688H63.0376V22.9344H66.497V17.1688Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M66.497 29.725H63.0376V35.4907H66.497V29.725Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M66.497 42.2812H63.0376V48.0469H66.497V42.2812Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M66.497 54.9656H63.0376V60.7313H66.497V54.9656Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M15.5031 33.6968H12.1719V38.4375H15.5031V33.6968Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M15.5031 44.8438H12.1719V49.5844H15.5031V44.8438Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M15.5031 22.55H12.1719V27.2906H15.5031V22.55Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M15.5031 55.8625H12.1719V60.6031H15.5031V55.8625Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M23.7033 33.6968H20.3721V38.4375H23.7033V33.6968Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M23.7033 44.8438H20.3721V49.5844H23.7033V44.8438Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M23.7033 22.55H20.3721V27.2906H23.7033V22.55Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path d="M23.7033 55.8625H20.3721V60.6031H23.7033V55.8625Z" fill="white" stroke="black" stroke-miterlimit="10"/>
+<path opacity="0.2" d="M45.3563 68.9312H39.3345V10.5062L45.3563 16.2719V68.9312Z" fill="black"/>
+<path d="M0 68.9313H81.7437" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M0.896973 75.9782L6.40635 69.4438" stroke="black" stroke-miterlimit="10"/>
+<path d="M7.04688 75.9782L12.4281 69.4438" stroke="black" stroke-miterlimit="10"/>
+<path d="M13.1968 75.9782L18.578 69.4438" stroke="black" stroke-miterlimit="10"/>
+<path d="M19.2188 75.9782L24.7281 69.4438" stroke="black" stroke-miterlimit="10"/>
+<path d="M25.3687 75.9782L30.878 69.4438" stroke="black" stroke-miterlimit="10"/>
+<path d="M31.5186 75.9782L37.0279 69.4438" stroke="black" stroke-miterlimit="10"/>
+<path d="M37.6689 75.9782L43.1783 69.4438" stroke="black" stroke-miterlimit="10"/>
+<path d="M43.8188 75.9782L49.3282 69.4438" stroke="black" stroke-miterlimit="10"/>
+<path d="M49.9688 75.9782L55.35 69.4438" stroke="black" stroke-miterlimit="10"/>
+<path d="M56.1187 75.9782L61.4999 69.4438" stroke="black" stroke-miterlimit="10"/>
+<path d="M62.1406 75.9782L67.65 69.4438" stroke="black" stroke-miterlimit="10"/>
+<path d="M68.2905 75.9782L73.7999 69.4438" stroke="black" stroke-miterlimit="10"/>
+<path d="M74.4404 75.9782L79.9498 69.4438" stroke="black" stroke-miterlimit="10"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="81.7438" height="71.2375" fill="white" transform="translate(0 5.125)"/>
+</clipPath>
+</defs>
+</svg>

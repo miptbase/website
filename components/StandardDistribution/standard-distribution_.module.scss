@@ -1,0 +1,60 @@
+@import "./scss/mixins";
+@import "./scss/colors";
+
+.distribution {
+  @include container;
+  padding-top: 12rem;
+}
+
+.title {
+  font-size: 3.6rem;
+  line-height: 130%;
+  font-weight: normal;
+  margin-bottom: 8rem;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 6rem;
+}
+
+.item-number {
+  width: 10.4rem;
+  height: 10.4rem;
+  margin-bottom: 2.4rem;
+  font-weight: 800;
+  font-size: 5.1rem;
+  color: white;
+  line-height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: black 2px 2px 0, black -2px -2px 0,
+  black -2px 1px 0, black 2px -2px 0, 0px 4px 0px rgba(0, 0, 0, 0.25);
+  .item:first-child & {
+    background: #82D1FF;
+  }
+  .item:nth-child(2) & {
+    background: #FF945E;
+  }
+  .item:last-child & {
+    background: #B4F48C;
+  }
+}
+
+.item-name {
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 110%;
+  margin-bottom: 1.6rem;
+}
+
+.item-text {
+  font-size: 2rem;
+  line-height: 140%;
+}
+
+
+

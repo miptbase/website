@@ -17,6 +17,9 @@
   margin: 0 2.1rem;
   cursor: pointer;
   color: white;
+  &_black {
+    color: black;
+  }
 
   transition: 0.3s box-shadow ease-in-out;
   @include mediaMob {
@@ -55,6 +58,20 @@
       font-weight: 500;
       font-size: 3.6rem;
       line-height: 120%;
+    }
+  }
+  &_black {
+    a {
+      &:hover {
+        color: rgba(black, 0.6)
+      }
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 1px black inset;
+      }
+      &.disabled {
+        opacity: 0.3;
+      }
     }
   }
 

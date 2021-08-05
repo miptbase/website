@@ -13,6 +13,11 @@ html {
 body {
   font-family: "Golos Text", Arial, sans-serif;
   font-size: 1.6rem;
+  display: flex;
+  > div {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .tinkoffPayRow{

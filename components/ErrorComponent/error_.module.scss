@@ -1,0 +1,48 @@
+@import "./scss/mixins";
+@import "./scss/colors";
+
+.error {
+  background: $blue;
+  padding-top: 15.8rem;
+  padding-bottom: 18rem;
+}
+
+.container {
+  @include container;
+  @include col2;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 3.8rem;
+  line-height: 110%;
+  margin-bottom:  2.5rem;
+  max-width: 46rem;
+  color: white;
+}
+
+.text {
+  font-size: 2rem;
+  line-height: 140%;
+  color: white;
+  margin-bottom: 6.3rem;
+}
+
+.button-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 1.5rem;
+}
+
+.img-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img {
+  width: 37rem;
+  height: 34.6rem;
+  position: relative;
+}

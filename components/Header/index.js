@@ -7,7 +7,7 @@ import Link from 'next/link'
 import Image from "next/image";
 
 const Header = (props) => {
-    const {header, menu, scrollToDonation} = props;
+    const {header, menu, scrollToDonation, color, goToMain} = props;
     const [menuOpen, setMenuOpen] = useState(false);
     const [menuPadding, setMenuPadding] = useState(false);
     const menuRef = useRef(null);
@@ -31,7 +31,7 @@ const Header = (props) => {
                     <Link href="/">
                         <a>
                             <Image
-                                src={`/${header.logo}`}
+                                src={color === 'black'?  `/${header.logoBlack}` : `/${header.logo}`}
                                 alt='logo'
                                 layout='fill'
                                 objectFit='cover'
@@ -41,18 +41,30 @@ const Header = (props) => {
                     </Link>
                 </div>
                 <div className={style.menu}>
-                    <Menu menu={menu} />
+                    <Menu menu={menu} color={color}/>
                 </div>
                 <div className={style['button-container']}>
-                    <Button
-                        color='white'
-                        text={header.button}
-                        padding='1.6rem'
-                        buttonFunction={scrollToDonation}
-                    />
+                    {!goToMain &&
+                        <Button
+                            color={color === 'black' ? 'black' : 'white'}
+                            text={header.button}
+                            padding='1.6rem'
+                            height='4.1rem'
+                            buttonFunction={scrollToDonation}
+                        />
+                    }
+                    {goToMain &&
+                        <Link href={'/'}>
+                            <a className={style.link}>
+                                <Button
+                                    text={header.button}
+                                    color='orange'
+                                    padding='1.6rem'
+                                />
+                            </a>
+                        </Link>
+                    }
                 </div>
-
-
 
                 <div className={cn({
                     [style['menu-button']]: true,

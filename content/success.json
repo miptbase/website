@@ -1,0 +1,61 @@
+{
+  "content": {
+    "title": "Вы сделали хорошее дело",
+    "text": "Мы очень рады приветствовать вас  в сообществе доноров MIPTBASE. Вместе мы создадим лучшие условия для нового поколения талантливой молодежи — студентов МФТИ. Чем больше жертвователей вовлечется в проект, тем быстрее мы достигнем конечной цели, поэтому предлагаем вам рассказать  о вашем вкладе MIPTBASE своим друзьям."
+  },
+  "image": {
+    "title": "Я помог студентам МФТИ. Присоединяйтесь!",
+    "logo": "media/success-logo.svg",
+    "img": "media/success-img.png"
+  },
+  "share": {
+    "title": "ПОДЕЛИТЬСЯ С ДРУЗЬЯМИ",
+    "items": [
+      {
+        "name": "in",
+        "img": "media/in-big.svg",
+        "link": "/"
+      },
+      {
+        "name": "fb",
+        "img": "media/fb-big.svg",
+        "link": "/"
+      },
+      {
+        "name": "tg",
+        "img": "media/tg-big.svg",
+        "link": "/"
+      },
+      {
+        "name": "fb-messenger",
+        "img": "media/fb-messenger-big.svg",
+        "link": "/"
+      },
+      {
+        "name": "vk",
+        "img": "media/vk-big.svg",
+        "link": "/"
+      },
+      {
+        "name": "gh",
+        "img": "media/gh-big.svg",
+        "link": "/"
+      },
+      {
+        "name": "wa",
+        "img": "media/wa-big.svg",
+        "link": "/"
+      },
+      {
+        "name": "tw",
+        "img": "media/tw-big.svg",
+        "link": "/"
+      },
+      {
+        "name": "li",
+        "img": "media/li-big.svg",
+        "link": "/"
+      }
+    ]
+  }
+}

@@ -182,7 +182,151 @@ module.exports = {
                             ]
                         }
                     ]
-                }
+                },
+                {
+                    label: "Success",
+                    name: "Success",
+                    file: "content/success.json",
+                    fields: [
+                        {
+                            label: "Content",
+                            name: "content",
+                            widget: "object",
+                            fields:[
+                                { label: "Title", name: "title", widget: "string"},
+                                { label: "Text", name: "text", widget: "string" },
+                            ]
+                        },
+                        {
+                            label: 'Image',
+                            name: "image",
+                            widget: "object",
+                            fields: [
+                                { label: "Title", name: "title", widget: "string"},
+                                { label: "Logo", name: "logo", widget: "image" },
+                                { label: "Image", name: "img", widget: "image" },
+
+                            ]
+                        },
+
+                        {
+                            label: 'Share',
+                            name: "share",
+                            widget: "object",
+                            fields: [
+                                { label: "Title", name: "title", widget: "string" },
+                                {   label: 'Items',
+                                    name: "items",
+                                    widget: "list",
+                                    fields:
+                                        [
+                                            { label: "Name", name: "name", widget: "name" },
+                                            { label: "Image", name: "img", widget: "image" },
+                                            { label: "Link", name: "link", widget: "string" },
+                                        ]
+                                }
+                            ]
+                        },
+                    ]
+                },
+                {
+                    label: "Error",
+                    name: "Error",
+                    file: "content/error.json",
+                    fields: [
+                        {
+                            label: "Content",
+                            name: "content",
+                            widget: "object",
+                            fields:[
+                                { label: "Title", name: "title", widget: "string"},
+                                { label: "Text", name: "text", widget: "markdown" },
+                                { label: "ButtonPayText", name: "buttonPayText", widget: "string" },
+                                { label: "ButtonSupportText", name: "buttonSupportText", widget: "string" },
+                            ]
+                        },
+                        {
+                            label: 'Image',
+                            name: "image",
+                            widget: "object",
+                            fields: [
+                                { label: "Image", name: "img", widget: "image" },
+
+                            ]
+                        },
+                    ]
+                },
+                {
+                    label: "Standard",
+                    name: "Standard",
+                    file: "content/standard.json",
+                    fields: [
+                        {
+                            label: "Standard",
+                            name: "standard",
+                            widget: "object",
+                            fields:[
+                                { label: "Title", name: "title", widget: "string"},
+                                {   label: 'Items',
+                                    name: "items",
+                                    widget: "list",
+                                    fields:
+                                        [
+                                            { label: "Name", name: "name", widget: "string" },
+                                            { label: "Text", name: "text", widget: "text" },
+                                        ]
+                                }
+                            ]
+                        },
+                        {
+                            label: "CompositionStandard",
+                            name: "compositionStandard",
+                            widget: "object",
+                            fields:[
+                                { label: "Title", name: "title", widget: "string"},
+                                {   label: 'Items',
+                                    name: "items",
+                                    widget: "list",
+                                    fields:
+                                        [
+                                            { label: "Title", name: "title", widget: "string" },
+                                            { label: "Image", name: "image", widget: "image" },
+                                            { label: "Subtitle", name: "subtitle", widget: "string" },
+                                            { label: "Text", name: "text", widget: "text" },
+                                        ]
+                                }
+                            ]
+                        },
+                        {
+                            label: "StandardGoal",
+                            name: "standardGoal",
+                            widget: "object",
+                            fields:[
+                                { label: "Title", name: "title", widget: "string"},
+                                { label: "Text", name: "text", widget: "text"},
+                                { label: "Image", name: "image", widget: "image"},
+                                { label: "Logo", name: "logo", widget: "image"},
+                            ]
+                        },
+                        {
+                            label: 'Distribution',
+                            name: "distribution",
+                            widget: "object",
+                            fields: [
+                                { label: "Title", name: "title", widget: "string" },
+                                {   label: 'Items',
+                                    name: "items",
+                                    widget: "list",
+                                    fields:
+                                        [
+                                            { label: "Title", name: "title", widget: "string" },
+                                            { label: "Text", name: "text", widget: "text" },
+                                        ]
+                                }
+                            ]
+                        },
+                    ]
+                },
             ],
         },
         {
@@ -200,6 +344,7 @@ module.exports = {
                             widget: "object",
                             fields: [
                                 { label: "Logo", name: "logo", widget: "image"},
+                                { label: "logoBlack", name: "logoBlack", widget: "image"},
                                 { label: "Button", name: "button", widget: "string"},
                             ]
                         }

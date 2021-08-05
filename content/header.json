@@ -1,6 +1,7 @@
 {
   "header": {
     "logo": "media/logo-white.svg",
+    "logoBlack": "media/logo-black.svg",
     "button": "Поддержать"
   }
 }
