@@ -13,8 +13,14 @@ import {useIsMobile} from "../../hooks/useIsMobile";
 import Link from "next/link";
 import Image from "next/image";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import Script from 'next/script';
 
-
+const tinkoffTerminalKey = process.env.ENV === 'production'
+    ? '1611313361029'
+    : '1611313361029DEMO';
+const paypalClientId = process.env.ENV === 'production'
+    ? 'AWVifSid8kSj1W3ap0jqZNuhTX8Har9m_sdMWrfC0jh2vxwsex90gPoo0XpnCizDS5KOwv4cOlqgskbu'
+    : 'AWVifSid8kSj1W3ap0jqZNuhTX8Har9m_sdMWrfC0jh2vxwsex90gPoo0XpnCizDS5KOwv4cOlqgskbu';
 const Form = (props) => {
     const {topQuartile} = props;
     const isMobile = useIsMobile();
@@ -338,7 +344,7 @@ const Form = (props) => {
 
     const hiddenForm = `      <form style="visibility: hidden; height: 0;" id='payForm' name="TinkoffPayForm" class="form" onsubmit="pay(this); return false;">
                     <div class="form__title"> Улучшим вместе жизнь студентов Физтеха!</div>
-                <input class="tinkoffPayRow" type="hidden" name="terminalkey" value="1611313361029DEMO"/>
+                <input class="tinkoffPayRow" type="hidden" name="terminalkey" value="${tinkoffTerminalKey}"/>
                     <input class="tinkoffPayRow" type="hidden" name="frame" value="false" />
                         <input class="tinkoffPayRow" type="hidden" name="language" value="ru" />
                             <input class="tinkoffPayRow" type="text" name="amount" value=${paymentSumm}
@@ -351,31 +357,7 @@ const Form = (props) => {
                                                    name="email"  value=${currentEmail} />
                                               
                                                     <input id='submitButton' class="tinkoffPayRow" type="submit" value="Оплатить" />
-            </form>
-            
-                     <script type="text/javascript">
-    const terminalkey = document.forms.TinkoffPayForm.terminalkey
-    const widgetParameters = {
-        container: 'tinkoffWidgetContainer',
-        terminalKey: terminalkey.value,
-        paymentSystems: {
-            GooglePay: {
-                environment: "TEST",
-                merchantId: "12345678901234567890",
-                buttonColor: "black",
-                buttonType: "short",
-                paymentInfo: function () {
-                    return {
-                        infoEmail: "E-mail для отправки информации о платеже",
-                        paymentData: document.forms.TinkoffPayForm
-                    }
-                }
-            }
-
-        },
-    };
-    initPayments(widgetParameters);
-</script>`
+            </form>`
 
     function createHiddenForm() {
         return {__html: hiddenForm};
@@ -396,6 +378,31 @@ const Form = (props) => {
     }
     return (
         <>
+            <Script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"
+                strategy="beforeInteractive"></Script>
+            <Script strategy="beforeInteractive">{`
+                const terminalkey = document.forms.TinkoffPayForm.terminalkey
+                const widgetParameters = {
+                    container: 'tinkoffWidgetContainer',
+                    terminalKey: terminalkey.value,
+                    paymentSystems: {
+                        GooglePay: {
+                            environment: "TEST",
+                            merchantId: "12345678901234567890",
+                            buttonColor: "black",
+                            buttonType: "short",
+                            paymentInfo: function () {
+                                return {
+                                    infoEmail: "E-mail для отправки информации о платеже",
+                                    paymentData: document.forms.TinkoffPayForm
+                                }
+                            }
+                        }
+
+                    },
+                };
+                initPayments(widgetParameters);
+            `}</Script>
             <CreatedForm />
 
 
@@ -741,7 +748,7 @@ const Form = (props) => {
                       {activeMethod === 'PayPal' && 
                         <PayPalScriptProvider options={{
                             currency: 'RUB',
-                            'client-id': 'AWVifSid8kSj1W3ap0jqZNuhTX8Har9m_sdMWrfC0jh2vxwsex90gPoo0XpnCizDS5KOwv4cOlqgskbu',
+                            'client-id': paypalClientId,
                         }}>
                             <PayPalButtons createOrder={createPayPalOrder} />
                         </PayPalScriptProvider>
