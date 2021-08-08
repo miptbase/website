@@ -141,7 +141,7 @@ const Form = (props) => {
 
     const paymentMethod = [
         {id: 1, name: 'Карта', icon: "🇷🇺"},
-        {id: 2, name: 'Перевод'},
+        {id: 2, name: 'Перевод', icon: "🇷🇺"},
         {id: 3, name: 'PayPal', icon: "🌎"},
     ]
 
@@ -598,7 +598,12 @@ const Form = (props) => {
                                 <div className={style['method-name']}>{method.name}
                                     {
                                         method.icon &&
-                                        <div className={style['method-icon']}>{method.icon}</div>
+                                        <div className={cn(
+                                            style['method-icon'],
+                                            style[`method-icon_${method.id}`]
+                                        )}>
+                                            {method.icon}
+                                        </div>
                                     }
                                 </div>
 
