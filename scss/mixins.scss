@@ -155,6 +155,7 @@
     border-radius: 0.3rem;
     opacity: 0;
     transition: 0.3s opacity ease-in-out;
+    pointer-events: none;
   }
   @include mediaMob {
     width: 13.2rem;
