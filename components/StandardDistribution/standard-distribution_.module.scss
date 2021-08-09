@@ -34,6 +34,21 @@
   justify-content: center;
   text-shadow: black 2px 2px 0, black -2px -2px 0,
   black -2px 1px 0, black 2px -2px 0, 0px 4px 0px rgba(0, 0, 0, 0.25);
+  &_1 {
+    background: url("../../public/media/icon-num-1.svg") no-repeat center;
+    background-size: 100%;
+  }
+  &_2 {
+    background: url("../../public/media/icon-num-2.svg") no-repeat center;
+    background-size: 100%;
+  }
+  &_3 {
+    background: url("../../public/media/icon-num-3.svg") no-repeat center;
+    background-size: 100%;
+    &:after {
+      display: none;
+    }
+  }
   &:after {
     content: "";
     position: absolute;
@@ -44,18 +59,6 @@
     width: 28.8rem;
     height: 2.2rem;
     background-size: 100%;
-  }
-  .item:first-child & {
-    background: #82D1FF;
-  }
-  .item:nth-child(2) & {
-    background: #FF945E;
-  }
-  .item:last-child & {
-    background: #B4F48C;
-    &:after {
-      display: none;
-    }
   }
 }
 
