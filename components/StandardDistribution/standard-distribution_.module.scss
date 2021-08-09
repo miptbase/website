@@ -20,6 +20,7 @@
 }
 
 .item-number {
+  position: relative;
   width: 10.4rem;
   height: 10.4rem;
   margin-bottom: 2.4rem;
@@ -33,6 +34,17 @@
   justify-content: center;
   text-shadow: black 2px 2px 0, black -2px -2px 0,
   black -2px 1px 0, black 2px -2px 0, 0px 4px 0px rgba(0, 0, 0, 0.25);
+  &:after {
+    content: "";
+    position: absolute;
+    left: calc(100% + 0.6rem);
+    top: 50%;
+    transform: translateY(calc(-50% - 0.8rem));
+    background: url('../../public/media/arrow-standard.svg') no-repeat left center;
+    width: 28.8rem;
+    height: 2.2rem;
+    background-size: 100%;
+  }
   .item:first-child & {
     background: #82D1FF;
   }
@@ -41,6 +53,9 @@
   }
   .item:last-child & {
     background: #B4F48C;
+    &:after {
+      display: none;
+    }
   }
 }
 
