@@ -15,10 +15,10 @@ import Image from "next/image";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import Script from 'next/script';
 
-const tinkoffTerminalKey = process.env.ENV === 'production'
+const tinkoffTerminalKey = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
     ? '1611313361029'
     : '1611313361029DEMO';
-const paypalClientId = process.env.ENV === 'production'
+const paypalClientId = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
     ? 'AWVifSid8kSj1W3ap0jqZNuhTX8Har9m_sdMWrfC0jh2vxwsex90gPoo0XpnCizDS5KOwv4cOlqgskbu'
     : 'AWVifSid8kSj1W3ap0jqZNuhTX8Har9m_sdMWrfC0jh2vxwsex90gPoo0XpnCizDS5KOwv4cOlqgskbu';
 const Form = (props) => {
