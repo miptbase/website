@@ -15,8 +15,8 @@ const Page = (props) => {
                 <meta name="theme-color" content="#ffffff" />
                 <meta property="og:title" content="Базовый жизненный стандарт для студентов МФТИ" />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/OpenGraph.jpg`} />
-                <meta property="og:image" content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/OpenGraph.jpg`} />
+                <meta property="og:url" content={`https://${process.env.NEXT_PUBLIC_DOMAIN}/OpenGraph.jpg`} />
+                <meta property="og:image" content={`https://${process.env.NEXT_PUBLIC_DOMAIN}/OpenGraph.jpg`} />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <title>{seo.title}</title>
                 <meta name="description" content={seo.description} />
