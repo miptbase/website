@@ -4,15 +4,17 @@ import rehypeRaw from 'rehype-raw'
 import ReactMarkdown from 'react-markdown'
 import {seo} from '../content/home.json';
 
-import Layout from '../components/Layout'
+import Layout from '../components/Layout/Layout'
 
-export default function InnerPage({ siteTitle, siteDescription, frontmatter, markdownBody }) {
+export default function InnerPage({ pageTitle, frontmatter, markdownBody }) {
     if (!frontmatter) return <></>
 
     return (
-        <Layout pageTitle={
-            frontmatter.seo.title ? frontmatter.seo.title : seo.title}
-                pageDescription={frontmatter.seo.description ? frontmatter.seo.description : seo.description}>
+        <Layout
+            pageTitle={frontmatter.seo.title ? frontmatter.seo.title : seo.title}
+            pageDescription={frontmatter.seo.description ? frontmatter.seo.description : seo.description}
+            customClass={pageTitle}
+        >
             <article>
                 <>
                     <ReactMarkdown rehypePlugins={[rehypeRaw]} children={markdownBody} />
@@ -34,6 +36,7 @@ export async function getStaticProps({ ...ctx }) {
             siteDescription: config.description,
             frontmatter: data.data,
             markdownBody: data.data.content,
+            pageTitle: data.data.title
         },
 
     }

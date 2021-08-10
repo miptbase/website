@@ -11,6 +11,7 @@ const Button = (props) => {
         [style.button_color_white]: color === 'white',
         [style.button_color_orange]: color === 'orange',
         [style.button_color_blue]: color === 'blue',
+        [style.button_color_black]: color === 'black',
         [style.button_width_100]: width === '100',
         [style.disabled]: disabled,
     });

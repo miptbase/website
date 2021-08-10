@@ -19,7 +19,7 @@ const Error = () => {
     return (
         <Page>
             <>
-                <Header header={header} menu={menu} scrollToDonation={toDonation}/>
+                <Header header={header} menu={menu}  scrollToDonation={toDonation}/>
                 <ErrorComponent content={content} image={image} scrollToDonation={toDonation}/>
                 <Donation donation={donation} refDonation={donationRef} stats={stats}/>
                 <Footer footer={footer} menu={menu}/>
