@@ -16,6 +16,7 @@ const Page = (props) => {
                 <meta name="msapplication-TileColor" content="#da532c" />
                 <meta name="theme-color" content="#ffffff" />
                 <meta property="og:title" content="Базовый жизненный стандарт для студентов МФТИ" />
+                <meta name="og:description" content={seo.description} />
                 <meta property="og:type" content="website" />
                 <meta property="og:url"
                     content={`https://${process.env.NEXT_PUBLIC_DOMAIN}${pathname}`} />
