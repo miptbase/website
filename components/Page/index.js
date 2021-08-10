@@ -1,8 +1,10 @@
 import React from 'react'
 import Head from "next/head";
 import {seo} from "../../content/home.json";
+import { useRouter } from 'next/router';
 
 const Page = (props) => {
+    const {pathname} = useRouter();
     return (
         <>
             <Head>
@@ -15,7 +17,8 @@ const Page = (props) => {
                 <meta name="theme-color" content="#ffffff" />
                 <meta property="og:title" content="Базовый жизненный стандарт для студентов МФТИ" />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content={`https://${process.env.NEXT_PUBLIC_DOMAIN}`} />
+                <meta property="og:url"
+                    content={`https://${process.env.NEXT_PUBLIC_DOMAIN}${pathname}`} />
                 <meta property="og:image" content={`https://${process.env.NEXT_PUBLIC_DOMAIN}/OpenGraph.jpg`} />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <title>{seo.title}</title>
