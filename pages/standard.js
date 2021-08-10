@@ -1,19 +1,20 @@
 import React, { useRef } from 'react'
 import { header } from '../content/header.json';
 import { footer } from '../content/footer.json';
-import { donation } from '../content/home.json';
+import {donation} from '../content/home.json';
 import Page from "../components/Page";
 import Header from "../components/Header";
 import Donation from "../components/Donation";
 import ErrorComponent from "../components/ErrorComponent";
 import Footer from "../components/Footer";
 import {menu} from "../content/menu.json";
-import { standard, compositionStandard, standardGoal, distribution } from '../content/standard.json';
+import {seo, standard, compositionStandard, standardGoal, distribution } from '../content/standard.json';
 import stats from "../content/stats.json";
 import StandardComponent from "../components/StandardComponent";
 import CompositionStandard from "../components/CompositionStandard";
 import StandardGoal from "../components/StandardGoal";
 import StandardDistribution from "../components/StandardDistribution";
+import Head from "next/head";
 
 const Standard = () => {
     const donationRef = useRef();
@@ -23,6 +24,10 @@ const Standard = () => {
     return (
         <Page>
             <>
+                <Head>
+                    <title>{seo.title}</title>
+                    <meta name="description" content={seo.description} />
+                </Head>
                 <Header header={header} menu={menu} scrollToDonation={toDonation}/>
                 <StandardComponent standard={standard}/>
                 <CompositionStandard composition={compositionStandard} />

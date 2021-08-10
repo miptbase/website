@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from "next/head";
+import {seo} from "../../content/home.json";
 
 const Page = (props) => {
     return (
@@ -17,6 +18,8 @@ const Page = (props) => {
                 <meta property="og:url" content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/OpenGraph.jpg`} />
                 <meta property="og:image" content={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/OpenGraph.jpg`} />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <title>{seo.title}</title>
+                <meta name="description" content={seo.description} />
             </Head>
             {props.children}
         </>

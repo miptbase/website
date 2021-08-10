@@ -33,6 +33,15 @@ module.exports = {
                     file: "content/home.json",
                     fields: [
                         {
+                            label: "Seo",
+                            name: "seo",
+                            widget: "object",
+                            fields:[
+                                { label: "Title", name: "title", widget: "string"},
+                                { label: "Description", name: "description", widget: "string"},
+                            ]
+                        },
+                        {
                             label: "Top",
                             name: "top",
                             widget: "object",
@@ -262,6 +271,25 @@ module.exports = {
                     file: "content/standard.json",
                     fields: [
                         {
+                            label: "SEOSection",
+                            name: "seo",
+                            widget: "object",
+                            fields: [
+                                {
+                                    label: "SEOTitle",
+                                    name: "title",
+                                    widget: "string",
+                                    required: false
+                                },
+                                {
+                                    label: "SEODescription",
+                                    name: "description",
+                                    widget: "string",
+                                    required: false
+                                },
+                            ],
+                        },
+                        {
                             label: "Standard",
                             name: "standard",
                             widget: "object",
@@ -438,6 +466,24 @@ module.exports = {
             extension: "md",
             fields: [
                 {
+                    label: "Selected",
+                    name: "selected",
+                    widget: "list",
+                    types: [
+                        {
+                            label: "Title2",
+                            name: "title2",
+                            widget: "string",
+                        },
+                        {
+                            label: "FFFF2",
+                            name: "jlkjkj2",
+                            widget: "string",
+                        },
+                    ]
+                },
+
+                {
                     label: "Title",
                     name: "title",
                     widget: "string",
@@ -452,11 +498,13 @@ module.exports = {
                             label: "SEOTitle",
                             name: "title",
                             widget: "string",
+                            required: false
                         },
                         {
                             label: "SEODescription",
                             name: "description",
                             widget: "string",
+                            required: false
                         },
                     ],
                 },

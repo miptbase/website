@@ -1,6 +1,5 @@
 import React, { useRef } from 'react'
-import Head from "next/head";
-import { top, features, donors, goal, media, donation} from '../content/home.json';
+import {top, features, donors, goal, media, donation} from '../content/home.json';
 import { header } from '../content/header.json';
 import { footer } from '../content/footer.json';
 import { menu } from '../content/menu.json';
@@ -27,10 +26,6 @@ const Home = () => {
     return (
         <Page>
             <>
-                <Head>
-                    <title>MIPTBASE — базовый жизненный стандарт для студентов МФТИ</title>
-                    <meta name="description" content="Эндаумент для покрытия базовых нужд студентов МФТИ, позволяющий им фокусироваться на учебе и творчестве" />
-                </Head>
                 <Header   header={header} menu={menu} scrollToDonation={toDonation}/>
                 <HomeTop
                     scrollToDonation={toDonation}

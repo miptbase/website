@@ -2,6 +2,7 @@ import Link from 'next/link'
 import matter from 'gray-matter'
 import rehypeRaw from 'rehype-raw'
 import ReactMarkdown from 'react-markdown'
+import {seo} from '../content/home.json';
 
 import Layout from '../components/Layout'
 
@@ -9,7 +10,9 @@ export default function InnerPage({ siteTitle, siteDescription, frontmatter, mar
     if (!frontmatter) return <></>
 
     return (
-        <Layout pageTitle={frontmatter.seo.title} pageDescription={frontmatter.seo.description}>
+        <Layout pageTitle={
+            frontmatter.seo.title ? frontmatter.seo.title : seo.title}
+                pageDescription={frontmatter.seo.description ? frontmatter.seo.description : seo.description}>
             <article>
                 <>
                     <ReactMarkdown rehypePlugins={[rehypeRaw]} children={markdownBody} />

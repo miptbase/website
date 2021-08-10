@@ -1,9 +1,11 @@
 ---
 title: privacy
 seo:
-  title: Privacy Page
-  description: Privacy Page descr
+  title: ""
+  description: ""
 content: |-
-  <h1>Privacy Page</h1>
-  <p>text</p>
+  <h1>Политика обработки  персональных данных</h1>
+  `<h2>Общие положения`
+
+  `</h2>`
 ---
