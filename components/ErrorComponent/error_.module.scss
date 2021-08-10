@@ -3,21 +3,22 @@
 
 .error {
   background: $blue;
-  padding-top: 15.8rem;
+  padding-top: 16.2rem;
   padding-bottom: 18rem;
 }
 
 .container {
   @include container;
   @include col2;
+  grid-gap: 6rem;
 }
 
 .title {
   font-weight: 500;
-  font-size: 3.8rem;
+  font-size: 4.8rem;
   line-height: 110%;
   margin-bottom:  2.5rem;
-  max-width: 46rem;
+  max-width: 36rem;
   color: white;
 }
 
@@ -25,12 +26,12 @@
   font-size: 2rem;
   line-height: 140%;
   color: white;
-  margin-bottom: 6.3rem;
+  margin-bottom: 4.8rem;
 }
 
 .button-container {
   display: grid;
-  width: 100%;
+  width: 47.9rem;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 1.5rem;
 }
@@ -39,10 +40,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-left: 2rem;
+  margin-top: -2rem;
 }
 
 .img {
-  width: 37rem;
-  height: 34.6rem;
+  width: 48.5rem;
+  height: 44.7rem;
   position: relative;
 }
