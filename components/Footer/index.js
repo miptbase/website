@@ -21,13 +21,7 @@ const Footer = (props) => {
                     <div className={style.logo}>
                         <Link href="/">
                             <a>
-                                <Image
-                                    src={`/${footer.logo}`}
-                                    alt='logo'
-                                    layout='fill'
-                                    objectFit='cover'
-                                    objectPosition='left center'
-                                />
+                                <SVG className={style['logo-img']} src={`/${footer.logo}`} />
                             </a>
                         </Link>
                     </div>

@@ -5,6 +5,7 @@ import Menu from "../Menu";
 import cn from "classnames";
 import Link from 'next/link'
 import Image from "next/image";
+import SVG from 'react-inlinesvg';
 
 const Header = (props) => {
     const {header, menu, scrollToDonation, color, goToMain} = props;
@@ -30,13 +31,7 @@ const Header = (props) => {
                 <div className={style.logo}>
                     <Link href="/">
                         <a>
-                            <Image
-                                src={color === 'black'?  `/${header.logoBlack}` : `/${header.logo}`}
-                                alt='logo'
-                                layout='fill'
-                                objectFit='cover'
-                                objectPosition='left center'
-                            />
+                            <SVG className={style['logo-img']} src={color === 'black'?  `/${header.logoBlack}` : `/${header.logo}`} />
                         </a>
                     </Link>
                 </div>
