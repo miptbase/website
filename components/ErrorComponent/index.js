@@ -32,13 +32,7 @@ const ErrorComponent = (props) => {
                 </div>
                 <div className={style['img-container']}>
                     <div className={style.img}>
-                        <Image
-                            src={`/${image.img}`}
-                            alt='error'
-                            layout='fill'
-                            objectFit='cover'
-                            objectPosition='center'
-                        />
+                        <SVG className={style['icon-img']}  src={`/${image.img}`} />
                     </div>
                 </div>
             </div>

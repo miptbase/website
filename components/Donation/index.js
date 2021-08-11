@@ -3,6 +3,7 @@ import style from "./donation_.module.scss"
 import Image from "next/image";
 import Form from '../Form'
 import {useIsMobile} from "../../hooks/useIsMobile";
+import SVG from 'react-inlinesvg';
 
 const Donation = (props) => {
     const isMobile = useIsMobile();
@@ -14,23 +15,11 @@ const Donation = (props) => {
                 <div className={style.img}>
                     {
                         !isMobile &&
-                            <Image
-                                src={`/${donation.img}`}
-                                alt='donation'
-                                layout='fill'
-                                objectFit='cover'
-                                objectPosition='left center'
-                            />
+                        <SVG className={style['icon-img']} src={`/${donation.img}`} />
                     }
                     {
                         isMobile &&
-                            <Image
-                                src={`/${donation.mobileImg}`}
-                                alt='donation'
-                                layout='fill'
-                                objectFit='cover'
-                                objectPosition='left center'
-                            />
+                        <SVG className={style['icon-img']}  src={`/${donation.mobileImg}`} />
                     }
 
                 </div>

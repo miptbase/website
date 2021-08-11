@@ -46,6 +46,14 @@
   width: 12.6rem;
   height: 2.7rem;
   margin-bottom: 2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
 }
 
 .img-title {

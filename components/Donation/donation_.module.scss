@@ -48,7 +48,7 @@
 
 .img {
   position: relative;
-  width: 11.7rem;
+  width: 12.8rem;
   height: 16.3rem;
   margin-bottom: 6rem;
   @include mediaMob {
@@ -56,6 +56,11 @@
     height: 9.6rem;
     margin-bottom: 2.5rem;
   }
+}
+
+.icon-img {
+  width: 100%;
+  height: 100%;
 }
 
 .title {

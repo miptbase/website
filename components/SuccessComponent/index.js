@@ -23,13 +23,7 @@ const SuccessComponent = (props) => {
                         />
                     </div>
                     <div className={style.logo}>
-                        <Image
-                            src={`/${image.logo}`}
-                            alt='logo'
-                            layout='fill'
-                            objectFit='cover'
-                            objectPosition='center'
-                        />
+                        <SVG className={style['logo-img']} src={`/${image.logo}`} />
                     </div>
                     <h2 className={style['img-title']}>
                         {image.title}

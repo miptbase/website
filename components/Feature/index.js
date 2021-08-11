@@ -3,6 +3,7 @@ import style from "./feature_.module.scss"
 import rehypeRaw from 'rehype-raw'
 import ReactMarkdown from 'react-markdown'
 import Image from 'next/image'
+import SVG from 'react-inlinesvg';
 
 import Form from '../Form'
 
@@ -12,8 +13,7 @@ const Feature = (props) => {
         <div className={style.feature}>
             <div className={style.top}>
                 <div className={style.img}>
-                    <Image src={`/${img}`} alt={title} layout='fill' objectFit='cover' objectPosition='center'
-                    />
+                    <SVG className={style['icon-img']} src={`/${img}`} />
                 </div>
                 <div className={style.title}>
                     {title}
