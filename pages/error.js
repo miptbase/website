@@ -10,7 +10,6 @@ import Footer from "../components/Footer";
 import {menu} from "../content/menu.json";
 import {seo, content, image } from '../content/error.json';
 import stats from "../content/stats.json";
-import Head from "next/head";
 
 const Error = () => {
     const donationRef = useRef();

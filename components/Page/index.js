@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Head from "next/head";
 import { useRouter } from 'next/router';
+import smoothscroll from 'smoothscroll-polyfill';
+
 
 const Page = (props) => {
+    useEffect(() => {
+        smoothscroll.polyfill();
+    }, []);
     const { pageTitle, pageDescription, innerPatch } = props;
     const { pathname } = useRouter();
     const pagePathName = pathname === '/[inner]' ? `/${innerPatch}` : pathname
