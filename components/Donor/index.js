@@ -47,7 +47,13 @@ const Donor = (props) => {
                 <div className={style.donor} >
                     <div className={style.container}>
                         <div className={style.img}>
-                            <Image src={`/${img}`} alt={name} layout='fill' objectFit='cover' objectPosition='top center'
+                            <Image
+                                src={`/${img}`}
+                                alt={name}
+                                layout='fill'
+                                objectFit='cover'
+                                objectPosition='top center'
+                                loading='eager'
                             />
                         </div>
                         <div className={style.info}>

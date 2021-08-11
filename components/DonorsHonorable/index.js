@@ -23,6 +23,7 @@ const DonorsHonorable = (props) => {
                                     layout='fill'
                                     objectFit='cover'
                                     objectPosition='left center'
+                                    loading='eager'
                                 />
                             </div>
                             <div className={style.content}>
