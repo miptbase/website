@@ -35,7 +35,7 @@ const Header = (props) => {
                     </Link>
                 </div>
                 <div className={style.menu}>
-                    <Menu menu={menu} color={color}/>
+                    <Menu menu={menu} color={color} size='big'/>
                 </div>
                 <div className={style['button-container']}>
                     {!goToMain &&

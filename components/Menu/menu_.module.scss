@@ -17,6 +17,9 @@
   margin: 0 2.1rem;
   cursor: pointer;
   color: white;
+  &_big {
+    margin: 0 1.6rem;
+  }
   &_black {
     color: black;
   }
@@ -58,6 +61,11 @@
       font-weight: 500;
       font-size: 3.6rem;
       line-height: 120%;
+    }
+  }
+  &_big {
+    a {
+      font-size: 1.8rem;
     }
   }
   &_black {
