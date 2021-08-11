@@ -16,3 +16,11 @@ const output = [];
       fs.writeFileSync(outputPath, JSON.stringify(output));
     })
 })();
+
+const imagesFolder = './public/media/donors';
+const imagesDonors = [];
+fs.readdirSync(imagesFolder).forEach(file => {
+  imagesDonors.push(file);
+})
+fs.writeFileSync('./content/donorsImages.json', JSON.stringify(imagesDonors));
+console.log(imagesDonors);

@@ -1,11 +1,36 @@
 import React, { useRef } from 'react'
 import Page from "../components/Page";
-
+import DonorsTop from "../components/DonorsTop";
+import {seo, top, quote, honorable, proBono } from '../content/donorsPage.json';
+import { seoMain, donation } from '../content/home.json';
+import {header} from "../content/header.json";
+import {menu} from "../content/menu.json";
+import Header from "../components/Header";
+import Donation from "../components/Donation";
+import stats from "../content/stats.json";
+import Footer from "../components/Footer";
+import {footer} from "../content/footer.json";
+import DonorsQuote from "../components/DonorsQuote";
+import DonorsHonorable from "../components/DonorsHonorable";
+import DonorsProBono from "../components/DonorsProBono";
 const Donors = () => {
+    const donationRef = useRef();
+    const toDonation = () => {
+        donationRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
     return (
-        <Page>
+        <Page
+            pageTitle={seo.title ? seo.title : seoMain.title}
+            pageDescription={seo.description ? seo.description : seoMain.description}
+        >
             <>
-                <h1>Donors</h1>
+                <Header header={header} menu={menu} scrollToDonation={toDonation} color='black'/>
+                <DonorsTop top={top} scrollToDonation={toDonation}/>
+                <DonorsQuote quote={quote} />
+                <DonorsHonorable honorable={honorable}/>
+                <DonorsProBono proBono={proBono} />
+                <Donation donation={donation} refDonation={donationRef} stats={stats}/>
+                <Footer footer={footer} menu={menu}/>
             </>
         </Page>
     )
