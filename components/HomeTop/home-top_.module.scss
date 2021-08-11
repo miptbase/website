@@ -14,7 +14,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 15rem;
+  padding-top: 16rem;
   max-width: 96rem;
   margin: 0 auto;
   @include mediaMob {
@@ -23,10 +23,13 @@
 }
 
 .title {
-  @include title-1;
-  margin-bottom: 2rem;
+  font-weight: 500;
+  font-size: 4.8rem;
+  line-height: 110%;
+  margin-bottom: 2.5rem;
   text-align: center;
   color: white;
+  max-width: 81rem;
   @include mediaMob {
     font-weight: 500;
     font-size: 2.4rem;
@@ -36,10 +39,12 @@
 }
 
 .text {
-  @include text-24;
-  margin-bottom: 4.6rem;
+  font-size: 2rem;
+  line-height: 140%;
+  margin-bottom: 4rem;
   text-align: center;
   color: white;
+  max-width: 80rem;
   @include mediaMob {
     font-weight: normal;
     font-size: 1.4rem;
