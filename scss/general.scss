@@ -1,6 +1,9 @@
 @import "mixins";
 html {
   font-size: 0.78125vw;
+  @media (min-width: 1600px) {
+    font-size: 12.5px;
+  }
 
   @include mediaMob {
     font-size: 3.125vw;
