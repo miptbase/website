@@ -1,5 +1,4 @@
-import React, {useEffect, useRef, useState, useCallback} from 'react'
-import ReactDOM from 'react-dom';
+import React, { useEffect, useRef, useState } from 'react'
 import style from './form_.module.scss'
 import Input from '../ui/Input'
 import Check from '../ui/Check'
@@ -7,11 +6,8 @@ import Button from '../ui/Button'
 import Value from '../ui/Value'
 import Select, { components }from 'react-select'
 import cn from 'classnames'
-import {IPSTACK_API_KEY} from '../../config';
-import Menu from "../Menu";
-import {useIsMobile} from "../../hooks/useIsMobile";
+import { useIsMobile } from "../../hooks/useIsMobile";
 import Link from "next/link";
-import Image from "next/image";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import Script from 'next/script';
 

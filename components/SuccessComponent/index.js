@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import style from "./success_.module.scss";
 import Image from "next/image";
 import SVG from 'react-inlinesvg';

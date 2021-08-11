@@ -1,12 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import style from "./donor_.module.scss"
 import { useIsMobile } from '../../hooks/useIsMobile';
 import { makeStyles } from '@material-ui/core/styles';
 import Dialog from "@material-ui/core/Dialog";
 import DonorDetails from "../DonorDetails";
-import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
-import DialogActions from "@material-ui/core/DialogActions";
 import Image from 'next/image'
 
 

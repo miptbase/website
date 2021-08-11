@@ -2,10 +2,7 @@ import React from 'react'
 import style from "./feature_.module.scss"
 import rehypeRaw from 'rehype-raw'
 import ReactMarkdown from 'react-markdown'
-import Image from 'next/image'
 import SVG from 'react-inlinesvg';
-
-import Form from '../Form'
 
 const Feature = (props) => {
     const {title, text, img} = props;

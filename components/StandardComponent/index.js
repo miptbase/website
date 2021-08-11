@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./standard_.module.scss";
-import SVG from "react-inlinesvg";
 
 const StandardGoal = (props) => {
     const { standard } = props;

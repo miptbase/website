@@ -1,8 +1,6 @@
 import React from 'react'
 import Head from "next/head";
 import { useRouter } from 'next/router';
-import {seo} from "../../content/standard.json";
-import {seoMain} from "../../content/home.json";
 
 const Page = (props) => {
     const { pageTitle, pageDescription, innerPatch } = props;

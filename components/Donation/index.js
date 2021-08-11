@@ -1,6 +1,5 @@
 import React from 'react'
 import style from "./donation_.module.scss"
-import Image from "next/image";
 import Form from '../Form'
 import {useIsMobile} from "../../hooks/useIsMobile";
 import SVG from 'react-inlinesvg';

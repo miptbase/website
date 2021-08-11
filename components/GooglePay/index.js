@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import GooglePayButton from "@google-pay/button-react";
-// import "./style.css";
 
 export default function GooglePay() {
     const paymentRequest = {

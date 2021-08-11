@@ -1,14 +1,11 @@
 import React from 'react'
 import style from "./footer_.module.scss"
-import Button from "../ui/Button";
 import Menu from "../Menu";
 import SVG from 'react-inlinesvg';
-import Feedback from "../Feedback";
 import rehypeRaw from 'rehype-raw'
 import ReactMarkdown from 'react-markdown'
 import { useIsMobile } from '../../hooks/useIsMobile';
 import Link from "next/link";
-import Image from "next/image";
 
 const Footer = (props) => {
     const {footer, menu, feedback} = props;

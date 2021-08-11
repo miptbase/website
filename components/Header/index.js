@@ -10,7 +10,6 @@ import SVG from 'react-inlinesvg';
 const Header = (props) => {
     const {header, menu, scrollToDonation, color, goToMain} = props;
     const [menuOpen, setMenuOpen] = useState(false);
-    const [menuPadding, setMenuPadding] = useState(false);
     const menuRef = useRef(null);
 
     useEffect(() => {

@@ -1,6 +1,5 @@
-import React, { useCallback } from "react";
+import React from "react";
 import style from "./error_.module.scss";
-import Image from "next/image";
 import rehypeRaw from 'rehype-raw'
 import SVG from 'react-inlinesvg';
 import Button from "../ui/Button";
