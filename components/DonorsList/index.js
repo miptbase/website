@@ -16,7 +16,7 @@ const DonorsList = (props) => {
                       description= {`${donor.Department != "" &&  donor.Department != "-" ? donor.Department : ''} ${donor.Year != "" &&  donor.Year != "-" ? `(${donor.Year})` : ''}`}
                       company={donor.Company}
                       text={donor.Text}
-                      img={`media/${donor.ID}.png`}
+                      img={`media/donors/${donor.ID}.png`}
                   />
               ))}
           </div>

@@ -355,6 +355,261 @@ module.exports = {
                         },
                     ]
                 },
+                {
+                    label: "DonorsPage",
+                    name: "donorsPage",
+                    file: "content/donorsPage.json",
+                    fields: [
+                        {
+                            label: "SEOSection",
+                            name: "seo",
+                            widget: "object",
+                            fields: [
+                                {
+                                    label: "SEOTitle",
+                                    name: "title",
+                                    widget: "string",
+                                    required: false
+                                },
+                                {
+                                    label: "SEODescription",
+                                    name: "description",
+                                    widget: "string",
+                                    required: false
+                                },
+                            ],
+                        },
+                        {
+                            label: "Top",
+                            name: "top",
+                            widget: "object",
+                            fields:[
+                                { label: "Title", name: "title", widget: "string"},
+                                { label: "Text", name: "text", widget: "text"},
+                                { label: "ButtonText", name: "buttonText", widget: "string"},
+                                { label: "Image", name: "image", widget: "image"},
+                            ]
+                        },
+                        {
+                            label: " Quote",
+                            name: "quote",
+                            widget: "object",
+                            fields:[
+                                {   label: 'Items',
+                                    name: "items",
+                                    widget: "list",
+                                    fields:
+                                        [
+                                            { label: "Text", name: "text", widget: "text" },
+                                            { label: "Image", name: "image", widget: "image" },
+                                            { label: "Name", name: "name", widget: "string" },
+                                            { label: "Info", name: "info", widget: "text" },
+                                        ]
+                                }
+                            ]
+                        },
+                        {
+                            label: "Honorable",
+                            name: "honorable",
+                            widget: "object",
+                            fields:[
+                                { label: "Title", name: "title", widget: "string"},
+                            ]
+                        },
+                        {
+                            label: 'ProBono',
+                            name: "proBono",
+                            widget: "object",
+                            fields: [
+                                { label: "Title", name: "title", widget: "string" },
+                                {   label: 'Items',
+                                    name: "items",
+                                    widget: "list",
+                                    fields:
+                                        [
+                                            { label: "Text", name: "text", widget: "text" },
+                                            { label: "Image", name: "image", widget: "image" },
+                                        ]
+                                }
+                            ]
+                        },
+                    ]
+                },
+                {
+                    label: "Governance",
+                    name: "governance",
+                    file: "content/governance.json",
+                    fields: [
+                        {
+                            label: "SEOSection",
+                            name: "seo",
+                            widget: "object",
+                            fields: [
+                                {
+                                    label: "SEOTitle",
+                                    name: "title",
+                                    widget: "string",
+                                    required: false
+                                },
+                                {
+                                    label: "SEODescription",
+                                    name: "description",
+                                    widget: "string",
+                                    required: false
+                                },
+                            ],
+                        },
+                        {
+                            label: "Top",
+                            name: "top",
+                            widget: "object",
+                            fields:[
+                                { label: "Title", name: "title", widget: "string"},
+                                { label: "Text", name: "text", widget: "text"},
+                                {   label: 'Items',
+                                    name: "items",
+                                    widget: "list",
+                                    fields:
+                                        [
+                                            { label: "Title", name: "text", widget: "string" },
+                                            {   label: 'Items',
+                                                name: "items",
+                                                widget: "list",
+                                                fields:
+                                                    [
+                                                        { label: "Text", name: "text", widget: "text" },
+                                                    ]
+                                            }
+                                        ]
+                                }
+
+                            ]
+                        },
+                        {
+                            label: "Board",
+                            name: "board",
+                            widget: "object",
+                            fields:[
+                                { label: "Title", name: "title", widget: "string"},
+                                { label: "Text", name: "text", widget: "text"},
+                                {   label: 'Items',
+                                    name: "items",
+                                    widget: "list",
+                                    fields:
+                                        [
+                                            { label: "Name", name: "name", widget: "string" },
+                                            { label: "Info", name: "info", widget: "text" },
+                                            { label: "Text", name: "text", widget: "text" },
+                                            { label: "Image", name: "image", widget: "image" },
+                                        ]
+                                },
+                                { label: "Subtitle", name: "subTitle", widget: "string"},
+                                {   label: 'DocItems',
+                                    name: "docItems",
+                                    widget: "list",
+                                    fields:
+                                        [
+                                            { label: "Name", name: "name", widget: "string" },
+                                            { label: "Link", name: "link", widget: "string" },
+                                        ]
+                                },
+                            ]
+                        },
+                        {
+                            label: "Fund",
+                            name: "fund",
+                            widget: "object",
+                            fields:[
+                                { label: "Title", name: "title", widget: "string"},
+                                { label: "Text", name: "text", widget: "text"},
+                                {   label: 'Items',
+                                    name: "items",
+                                    widget: "list",
+                                    fields:
+                                        [
+                                            { label: "Name", name: "name", widget: "string" },
+                                            { label: "Info", name: "info", widget: "text" },
+                                        ]
+                                },
+                                { label: "Subtitle", name: "subTitle", widget: "string"},
+                                {   label: 'DocItems',
+                                    name: "docItems",
+                                    widget: "list",
+                                    fields:
+                                        [
+                                            { label: "Name", name: "name", widget: "string" },
+                                            { label: "Link", name: "link", widget: "string" },
+                                        ]
+                                },
+                            ]
+                        },
+                        {
+                            label: "Company",
+                            name: "company",
+                            widget: "object",
+                            fields:[
+                                { label: "Title", name: "title", widget: "string"},
+                                { label: "Text", name: "text", widget: "text"},
+                                { label: "TableTitle", name: "tableTitle", widget: "string"},
+                                { label: "TableInfo", name: "tableInfo", widget: "string"},
+                                { label: "TableRowTitle", name: "tableRowTitle", widget: "string"},
+                                { label: "Subtitle", name: "subTitle", widget: "string"},
+                                {   label: 'DocItems',
+                                    name: "docItems",
+                                    widget: "list",
+                                    fields:
+                                        [
+                                            { label: "Name", name: "name", widget: "string" },
+                                            { label: "Link", name: "link", widget: "string" },
+                                        ]
+                                },
+                            ]
+                        },
+                    ]
+                },
+                {
+                    label: "FAQ",
+                    name: "FAQ",
+                    file: "content/faq.json",
+                    fields: [
+                        {
+                            label: "SEOSection",
+                            name: "seo",
+                            widget: "object",
+                            fields: [
+                                {
+                                    label: "SEOTitle",
+                                    name: "title",
+                                    widget: "string",
+                                    required: false
+                                },
+                                {
+                                    label: "SEODescription",
+                                    name: "description",
+                                    widget: "string",
+                                    required: false
+                                },
+                            ],
+                        },
+                        {
+                            label: "FAQ",
+                            name: "faq",
+                            widget: "object",
+                            fields:[
+                                { label: "Title", name: "title", widget: "string"},
+                                {   label: 'Items',
+                                    name: "items",
+                                    widget: "list",
+                                    fields:
+                                        [
+                                            { label: "Title", name: "title", widget: "string" },
+                                            { label: "Text", name: "text", widget: "text" },
+                                        ]
+                                }
+                            ]
+                        },
+                    ]
+                },
             ],
         },
         {

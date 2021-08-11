@@ -6,7 +6,7 @@ import Button from "../ui/Button";
 import DonorsList from "../DonorsList";
 
 
-const Donors = (props) => {
+const DonorsComponent = (props) => {
     const {donors, donorsPerson, stats} = props;
     const parseStat = useCallback((arr, key) =>{
         return  arr.filter(item => item.Key === key)[0].Value.replace(/,/g, '');
@@ -96,4 +96,4 @@ const Donors = (props) => {
     )
 }
 
-export default Donors
+export default DonorsComponent

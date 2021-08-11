@@ -10,7 +10,7 @@ import stats from '../content/stats.json'
 import HomeTop from "../components/HomeTop";
 import Features from "../components/Features";
 import Donation from "../components/Donation";
-import Donors from "../components/Donors";
+import DonorsComponent from "../components/DonorsСomponent";
 import Goal from "../components/Goal";
 import Media from "../components/Media";
 import Page from "../components/Page";
@@ -35,7 +35,7 @@ const Home = () => {
                     features={features}
                 />
                 <Goal goal={goal} stats={stats} scrollToDonation={toDonation}/>
-                <Donors donors={donors} donorsPerson={donorsPerson} stats={stats}/>
+                <DonorsComponent donors={donors} donorsPerson={donorsPerson} stats={stats}/>
                 <Media media={media}/>
                 <Donation donation={donation} refDonation={donationRef} stats={stats}/>
                 <Footer   footer={footer} menu={menu} feedback={feedback}/>
