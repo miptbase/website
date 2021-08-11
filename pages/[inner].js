@@ -2,7 +2,7 @@ import Link from 'next/link'
 import matter from 'gray-matter'
 import rehypeRaw from 'rehype-raw'
 import ReactMarkdown from 'react-markdown'
-import {seo} from '../content/home.json';
+import {seoMain} from '../content/home.json';
 
 import Layout from '../components/Layout/Layout'
 
@@ -11,9 +11,9 @@ export default function InnerPage({ pageTitle, frontmatter, markdownBody }) {
 
     return (
         <Layout
-            pageTitle={frontmatter.seo.title ? frontmatter.seo.title : seo.title}
-            pageDescription={frontmatter.seo.description ? frontmatter.seo.description : seo.description}
-            customClass={pageTitle}
+            pageTitle={frontmatter.seo.title ? frontmatter.seo.title : seoMain.title}
+            pageDescription={frontmatter.seo.description ? frontmatter.seo.description : seoMain.description}
+            innerPatch={pageTitle}
         >
             <article>
                 <>

@@ -33,8 +33,8 @@ module.exports = {
                     file: "content/home.json",
                     fields: [
                         {
-                            label: "Seo",
-                            name: "seo",
+                            label: "SeoMain",
+                            name: "seoMain",
                             widget: "object",
                             fields:[
                                 { label: "Title", name: "title", widget: "string"},
@@ -198,6 +198,25 @@ module.exports = {
                     file: "content/success.json",
                     fields: [
                         {
+                            label: "SEOSection",
+                            name: "seo",
+                            widget: "object",
+                            fields: [
+                                {
+                                    label: "SEOTitle",
+                                    name: "title",
+                                    widget: "string",
+                                    required: false
+                                },
+                                {
+                                    label: "SEODescription",
+                                    name: "description",
+                                    widget: "string",
+                                    required: false
+                                },
+                            ],
+                        },
+                        {
                             label: "Content",
                             name: "content",
                             widget: "object",
@@ -243,6 +262,25 @@ module.exports = {
                     name: "Error",
                     file: "content/error.json",
                     fields: [
+                        {
+                            label: "SEOSection",
+                            name: "seo",
+                            widget: "object",
+                            fields: [
+                                {
+                                    label: "SEOTitle",
+                                    name: "title",
+                                    widget: "string",
+                                    required: false
+                                },
+                                {
+                                    label: "SEODescription",
+                                    name: "description",
+                                    widget: "string",
+                                    required: false
+                                },
+                            ],
+                        },
                         {
                             label: "Content",
                             name: "content",

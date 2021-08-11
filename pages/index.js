@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import {top, features, donors, goal, media, donation} from '../content/home.json';
+import {seoMain, top, features, donors, goal, media, donation} from '../content/home.json';
 import { header } from '../content/header.json';
 import { footer } from '../content/footer.json';
 import { menu } from '../content/menu.json';
@@ -16,6 +16,7 @@ import Media from "../components/Media";
 import Page from "../components/Page";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Head from "next/head";
 
 
 const Home = () => {
@@ -26,6 +27,12 @@ const Home = () => {
     return (
         <Page>
             <>
+                <Head>
+                    <meta property="og:title" content={seoMain.title} />
+                    <title>{seoMain.title}</title>
+                    <meta property="og:description" content={seoMain.description} />
+                    <meta name="description" content={seoMain.description} />
+                </Head>
                 <Header   header={header} menu={menu} scrollToDonation={toDonation}/>
                 <HomeTop
                     scrollToDonation={toDonation}

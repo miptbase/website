@@ -11,23 +11,22 @@ import CompositionStandard from "../CompositionStandard";
 import StandardGoal from "../StandardGoal";
 import StandardDistribution from "../StandardDistribution";
 import Donation from "../Donation";
-import {donation} from "../../content/home.json";
+import {donation, seoMain} from "../../content/home.json";
 import stats from "../../content/stats.json";
 import Footer from "../Footer";
 import {footer} from "../../content/footer.json";
 import Page from "../Page";
 
-export default function Layout({ children, pageTitle, pageDescription, customClass, ...props }) {
-    console.log(customClass);
+export default function Layout({ children, pageTitle, pageDescription, innerPatch, ...props }) {
     return (
-        <Page>
+        <Page
+            pageTitle={pageTitle}
+            pageDescription={pageDescription}
+            innerPatch={innerPatch}
+        >
             <>
-                <Head>
-                    <title>{pageTitle}</title>
-                    <meta name="description" content={pageDescription} />
-                </Head>
                 <Header header={header} menu={menu} color='black'/>
-                <section className={cn(style.layout, style[ `${customClass}` ])}>
+                <section className={cn(style.layout, style[ `${innerPatch}` ])}>
                     <div className={style.content}>{children}</div>
                 </section>
                 <Footer footer={footer} menu={menu}/>

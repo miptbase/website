@@ -8,5 +8,9 @@
 
   "image": {
     "img": "media/error-img.svg"
+  },
+  "seo": {
+    "title": "",
+    "description": ""
   }
 }

@@ -6,11 +6,16 @@ import Header from "../components/Header";
 import SuccessComponent from "../components/SuccessComponent";
 import Footer from "../components/Footer";
 import {menu} from "../content/menu.json";
-import { content, image, share } from '../content/success.json';
+import { seoMain } from '../content/home.json';
+import { seo, content, image, share } from '../content/success.json';
+import Head from "next/head";
 
 const Success = () => {
     return (
-        <Page>
+        <Page
+            pageTitle={seo.title ? seo.title : seoMain.title}
+            pageDescription={seo.description ? seo.description : seoMain.description}
+        >
             <>
                 <Header   header={header} menu={menu} color='black' goToMain={true}/>
                 <SuccessComponent content={content} image={image} share={share}/>

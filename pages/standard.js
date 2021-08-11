@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { header } from '../content/header.json';
 import { footer } from '../content/footer.json';
-import {donation} from '../content/home.json';
+import { seoMain, donation } from '../content/home.json';
 import Page from "../components/Page";
 import Header from "../components/Header";
 import Donation from "../components/Donation";
@@ -22,12 +22,11 @@ const Standard = () => {
         donationRef.current.scrollIntoView({ behavior: 'smooth' })
     }
     return (
-        <Page>
+        <Page
+            pageTitle={seo.title ? seo.title : seoMain.title}
+            pageDescription={seo.description ? seo.description : seoMain.description}
+        >
             <>
-                <Head>
-                    <title>{seo.title}</title>
-                    <meta name="description" content={seo.description} />
-                </Head>
                 <Header header={header} menu={menu} scrollToDonation={toDonation}/>
                 <StandardComponent standard={standard}/>
                 <CompositionStandard composition={compositionStandard} />
