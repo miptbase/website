@@ -11,6 +11,16 @@ const HomeTop = (props) => {
         <section className={style['home-top']}>
 
             <div className={style.inner}>
+                <div className={style['img-frame']}>
+                    <Image
+                        src={`/media/home-frame-2.jpg`}
+                        alt='MITPBASE'
+                        layout='fill'
+                        objectFit='cover'
+                        objectPosition='bottom center'
+                    />
+                </div>
+
                 <div className={style.content}>
                     <h1 className={style.title}>{top.title}</h1>
                     <p className={style.text}>{top.content}</p>
@@ -30,11 +40,11 @@ const HomeTop = (props) => {
             <div className={style['img-container']}>
                 <div className={style.img}>
                     <Image
-                        src={`/${top.img}`}
+                        src={`/media/home-frame-1.jpg`}
                         alt='MITPBASE'
                         layout='responsive'
-                        width={1277}
-                        height={455}
+                        width={1250}
+                        height={369}
                     />
                 </div>
                 <div className={style.img_mobile}>

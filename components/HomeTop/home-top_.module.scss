@@ -1,15 +1,27 @@
 @import "./scss/mixins";
 
 .home-top {
-  background: linear-gradient(180deg, #2D83E8 1.56%, #4D8FEB 34.38%, #BBE6FF 78.64%);
+  @include mediaMob {
+    background: linear-gradient(180deg, #2D83E8 1.56%, #4D8FEB 34.38%, #BBE6FF 78.64%);
+  }
 }
 
 .inner {
-  @include container;
   position: relative;
 }
 
+.img-frame {
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  width: 100%;
+  @include mediaMob {
+    display: none;
+  }
+}
+
 .content {
+  @include container;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,6 +29,8 @@
   padding-top: 16rem;
   max-width: 96rem;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
   @include mediaMob {
     padding-top: 7.6rem;
   }
