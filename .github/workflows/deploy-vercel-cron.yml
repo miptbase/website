@@ -1,7 +1,7 @@
 name: Deploy website every night at 04:00
 on:
   schedule:
-    - cron: '0,10,20,30,40,50 * * * *'
+    - cron: '0 4 * * *'
 jobs:
   cron:
     runs-on: ubuntu-latest
