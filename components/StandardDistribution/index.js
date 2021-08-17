@@ -10,13 +10,15 @@ const StandardDistribution = (props) => {
             <div className={style.items}>
                 {distribution.items.map((item, i) => (
                     <div className={style.item} key={i}>
-                        <div className={cn(
-                            style['item-number'],
-                            style[`item-number_${i + 1}`]
-                        )} >
-                        </div>
-                        <div className={style['item-name']}>
-                            {item.title}
+                        <div className={style['item-header']}>
+                            <div className={cn(
+                                style['item-number'],
+                                style[`item-number_${i + 1}`]
+                            )} >
+                            </div>
+                            <div className={style['item-name']}>
+                                {item.title}
+                            </div>
                         </div>
                         <div className={style['item-text']}>
                             {item.text}
