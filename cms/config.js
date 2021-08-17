@@ -631,25 +631,6 @@ module.exports = {
                             ],
                         },
                         {
-                            label: "SEOSection",
-                            name: "seo",
-                            widget: "object",
-                            fields: [
-                                {
-                                    label: "SEOTitle",
-                                    name: "title",
-                                    widget: "string",
-                                    required: false
-                                },
-                                {
-                                    label: "SEODescription",
-                                    name: "description",
-                                    widget: "string",
-                                    required: false
-                                },
-                            ],
-                        },
-                        {
                             label: "FAQ",
                             name: "faq",
                             widget: "object",
