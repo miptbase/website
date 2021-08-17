@@ -1,6 +1,7 @@
 @import "./scss/mixins";
 
 .home-top {
+  background: #3c78b2;
   @include mediaMob {
     background: linear-gradient(180deg, #2D83E8 1.56%, #4D8FEB 34.38%, #BBE6FF 78.64%);
   }
