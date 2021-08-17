@@ -10,6 +10,7 @@ import { useIsMobile } from "../../hooks/useIsMobile";
 import Link from "next/link";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import Script from 'next/script';
+import { useInView } from 'react-intersection-observer';
 
 const tinkoffTerminalKey = process.env.NEXT_PUBLIC_VERCEL_ENV === 'production'
     ? '1611313361029'
@@ -22,6 +23,19 @@ const Form = (props) => {
     const isMobile = useIsMobile();
     const nameInputRef = useRef(null);
     const emailInputRef = useRef(null);
+    const { ref, inView: formInView } = useInView();
+    const [tinkoffScripLoaded, setTinkoffScripLoaded] = useState(false);
+
+    useEffect(() => {
+        if (formInView && !tinkoffScripLoaded) {
+            const script = document.createElement('script');
+            script.onload = () => {
+                setTinkoffScripLoaded(true);
+            };
+            script.src = 'https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js';
+            document.body.append(script);
+        }
+    }, [formInView]);
 
     const formTransfer = [
         {
@@ -374,35 +388,35 @@ const Form = (props) => {
     }
     return (
         <>
-            <Script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js"
-                strategy="beforeInteractive"></Script>
-            <Script strategy="beforeInteractive">{`
-                const terminalkey = document.forms.TinkoffPayForm.terminalkey
-                const widgetParameters = {
-                    container: 'tinkoffWidgetContainer',
-                    terminalKey: terminalkey.value,
-                    paymentSystems: {
-                        GooglePay: {
-                            environment: "TEST",
-                            merchantId: "12345678901234567890",
-                            buttonColor: "black",
-                            buttonType: "short",
-                            paymentInfo: function () {
-                                return {
-                                    infoEmail: "E-mail для отправки информации о платеже",
-                                    paymentData: document.forms.TinkoffPayForm
+            {tinkoffScripLoaded && <>
+                <Script strategy="beforeInteractive">{`
+                    const terminalkey = document.forms.TinkoffPayForm.terminalkey
+                    const widgetParameters = {
+                        container: 'tinkoffWidgetContainer',
+                        terminalKey: terminalkey.value,
+                        paymentSystems: {
+                            GooglePay: {
+                                environment: "TEST",
+                                merchantId: "12345678901234567890",
+                                buttonColor: "black",
+                                buttonType: "short",
+                                paymentInfo: function () {
+                                    return {
+                                        infoEmail: "E-mail для отправки информации о платеже",
+                                        paymentData: document.forms.TinkoffPayForm
+                                    }
                                 }
                             }
-                        }
 
-                    },
-                };
-                initPayments(widgetParameters);
-            `}</Script>
-            <CreatedForm />
+                        },
+                    };
+                    initPayments(widgetParameters);
+                `}</Script>
+                <CreatedForm />
+            </>}
 
 
-            <form onSubmit={onSubmit} className={style.form}>
+            <form ref={ref} onSubmit={onSubmit} className={style.form}>
                 {!isMobile
                 && (
                     <>
@@ -714,7 +728,7 @@ const Form = (props) => {
                     [style.buttons_single]: true,
                 })}>
                     
-                      {activeMethod === 'Карта' && <>
+                      {activeMethod === 'Карта' && tinkoffScripLoaded && <>
                         <div className={cn({
                             [style['pay-button']]: true,
                             [style['pay-button_no_active']]: true,

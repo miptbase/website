@@ -1,0 +1,12 @@
+name: Deploy website every night at 04:00
+on:
+  schedule:
+    - cron: '0 4 * * *'
+jobs:
+  cron:
+    runs-on: ubuntu-latest
+    steps:
+    - name: cron
+      uses: wei/curl@master
+      with:
+        args: https://api.vercel.com/v1/integrations/deploy/prj_yJbdbMQCLkgcibP97Umz3SKybLhN/vMVO0Aa0GM
