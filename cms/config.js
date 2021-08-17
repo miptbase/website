@@ -466,6 +466,7 @@ module.exports = {
                                     fields:
                                         [
                                             { label: "Text", name: "text", widget: "text" },
+                                            { label: "Link", name: "link", widget: "text" },
                                             { label: "Image", name: "image", widget: "image" },
                                         ]
                                 }
@@ -610,6 +611,25 @@ module.exports = {
                     name: "FAQ",
                     file: "content/faq.json",
                     fields: [
+                        {
+                            label: "SEOSection",
+                            name: "seo",
+                            widget: "object",
+                            fields: [
+                                {
+                                    label: "SEOTitle",
+                                    name: "title",
+                                    widget: "string",
+                                    required: false
+                                },
+                                {
+                                    label: "SEODescription",
+                                    name: "description",
+                                    widget: "string",
+                                    required: false
+                                },
+                            ],
+                        },
                         {
                             label: "SEOSection",
                             name: "seo",

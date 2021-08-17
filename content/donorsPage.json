@@ -33,15 +33,17 @@
     "items": [
       {
         "text": "Разработка логотипа MIPTBASE и веб-сайта miptbase.org  (Влад Рафеев, Слава Мишаков, Саша Кириков)",
-        "image": "media/accuraten-logo.svg"
+        "image": "media/accuraten-logo.svg",
+        "link": "/"
       },
       {
         "text": "Разработка логотипа MIPTBASE и веб-сайта miptbase.org  (Влад Рафеев, Слава Мишаков, Саша Кириков)",
-        "image": "media/accuraten-logo.svg"
+        "image": "media/accuraten-logo.svg",
+        "link": "/"
       },
       {
         "text": "Разработка логотипа MIPTBASE и веб-сайта miptbase.org  (Влад Рафеев, Слава Мишаков, Саша Кириков)",
-        "image": "media/accuraten-logo.svg"
+        "link": "/"
       }
     ]
   }

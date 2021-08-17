@@ -9,11 +9,11 @@ const DonorsProBono = (props) => {
             <div className={style.items}>
                 {proBono.items.map((item, i) => (
                     <div className={style.item} key={i}>
-                        <div className={style['img-container']}>
+                        <a href={item.link} className={style['img-container']}>
                             <div className={style.img}>
                                 <SVG className={style['item-img']} src={`/${item.image}`} />
                             </div>
-                        </div>
+                        </a>
                         <div className={style.text}>
                             {item.text}
                         </div>

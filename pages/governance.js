@@ -1,7 +1,6 @@
+
 import React, { useRef } from 'react'
 import Page from "../components/Page";
-import DonorsTop from "../components/DonorsTop";
-import {seo, top, quote, honorable, proBono } from '../content/donorsPage.json';
 import { seoMain, donation } from '../content/home.json';
 import {header} from "../content/header.json";
 import {menu} from "../content/menu.json";
@@ -9,11 +8,11 @@ import Header from "../components/Header";
 import Donation from "../components/Donation";
 import stats from "../content/stats.json";
 import Footer from "../components/Footer";
-import {footer} from "../content/footer.json";
-import DonorsQuote from "../components/DonorsQuote";
-import DonorsHonorable from "../components/DonorsHonorable";
-import DonorsProBono from "../components/DonorsProBono";
-const Donors = () => {
+import GovernanceTop from "../components/GovernanceTop";
+import GovernanceMain from "../components/GovernanceMain";
+import { footer } from "../content/footer.json";
+import { top, board, seo, fund, company } from "../content/governance.json";
+const Governance = () => {
     const donationRef = useRef();
     const toDonation = () => {
         donationRef.current.scrollIntoView({ behavior: 'smooth' })
@@ -24,11 +23,9 @@ const Donors = () => {
             pageDescription={seo.description ? seo.description : seoMain.description}
         >
             <>
-                <Header header={header} menu={menu} scrollToDonation={toDonation} buttonColor='black' color='black'/>
-                <DonorsTop top={top} scrollToDonation={toDonation}/>
-                <DonorsQuote quote={quote} />
-                <DonorsHonorable honorable={honorable}/>
-                <DonorsProBono proBono={proBono} />
+                <Header header={header} menu={menu} scrollToDonation={toDonation}/>
+                <GovernanceTop top={top}/>
+                <GovernanceMain board={board} fund={fund} company={company}/>
                 <Donation donation={donation} refDonation={donationRef} stats={stats}/>
                 <Footer footer={footer} menu={menu}/>
             </>
@@ -36,4 +33,4 @@ const Donors = () => {
     )
 }
 
-export default Donors
+export default Governance

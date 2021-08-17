@@ -8,7 +8,7 @@ import Image from "next/image";
 import SVG from 'react-inlinesvg';
 
 const Header = (props) => {
-    const {header, menu, scrollToDonation, color, goToMain} = props;
+    const {header, menu, scrollToDonation, color, goToMain, buttonColor} = props;
     const [menuOpen, setMenuOpen] = useState(false);
     const menuRef = useRef(null);
 
@@ -40,7 +40,7 @@ const Header = (props) => {
                 <div className={style['button-container']}>
                     {!goToMain &&
                         <Button
-                            color={color === 'black' ? 'black' : 'white'}
+                            color={buttonColor === 'black' ? 'black' : buttonColor === 'orange' ?  'orange' : 'white'}
                             text={header.button}
                             padding='1.6rem'
                             height='4.1rem'
