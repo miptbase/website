@@ -16,7 +16,7 @@ export default function Layout({ children, pageTitle, pageDescription, innerPatc
             innerPatch={innerPatch}
         >
             <>
-                <Header header={header} menu={menu} color='black'/>
+                <Header header={header} menu={menu} color='black' buttonColor='black'/>
                 <section className={cn(style.layout, style[ `${innerPatch}` ])}>
                     <div className={style.content}>{children}</div>
                 </section>
