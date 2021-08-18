@@ -760,8 +760,8 @@ module.exports = {
             extension: "md",
             fields: [
                 {
-                    label: "Title",
-                    name: "title",
+                    label: "URL",
+                    name: "url",
                     widget: "string",
                     required: true,
                 },
@@ -771,13 +771,13 @@ module.exports = {
                     widget: "object",
                     fields: [
                         {
-                            label: "SEOTitle",
+                            label: "Title",
                             name: "title",
                             widget: "string",
                             required: false
                         },
                         {
-                            label: "SEODescription",
+                            label: "Description",
                             name: "description",
                             widget: "string",
                             required: false

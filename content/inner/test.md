@@ -1,5 +1,5 @@
 ---
-title: test
+url: test
 seo:
   title: Test Page
   description: Test Page descr

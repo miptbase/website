@@ -1,5 +1,5 @@
 ---
-title: privacy
+url: privacy
 seo:
   title: Политика обороны персональных данных
   description: Здесь описание странички будет

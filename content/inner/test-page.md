@@ -1,5 +1,5 @@
 ---
-title: test-page
+url: test-page
 seo:
   title: " fdf"
   description: " fdf"
