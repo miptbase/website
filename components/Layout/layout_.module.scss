@@ -21,6 +21,18 @@
     line-height: 130%;
     margin: 2rem 0;
   }
+  ol {
+    list-style: none;
+    padding-left: 4.4rem;
+    position: relative;
+  }
+
+  em {
+    font-style: normal;
+    position: absolute;
+    top: 0;
+    left: -4.4rem;
+  }
 
   li {
     position: relative;
@@ -41,18 +53,4 @@
   max-width: 81.5rem;
 }
 
-.privacy {
-  ol {
-    list-style: none;
-    padding-left: 4.4rem;
-    position: relative;
-  }
-
-  em {
-    font-style: normal;
-    position: absolute;
-    top: 0;
-    left: -4.4rem;
-  }
-}
 
