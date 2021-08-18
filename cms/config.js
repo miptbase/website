@@ -760,24 +760,6 @@ module.exports = {
             extension: "md",
             fields: [
                 {
-                    label: "Selected",
-                    name: "selected",
-                    widget: "list",
-                    types: [
-                        {
-                            label: "Title2",
-                            name: "title2",
-                            widget: "string",
-                        },
-                        {
-                            label: "FFFF2",
-                            name: "jlkjkj2",
-                            widget: "string",
-                        },
-                    ]
-                },
-
-                {
                     label: "Title",
                     name: "title",
                     widget: "string",

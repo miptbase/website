@@ -18,7 +18,7 @@ const output = [];
 })();
 
 const outputPathReport = './content/report.json';
-const urlReport = 'https://docs.google.com/spreadsheets/d/1jUAB1w-GIAbBz-jcpkUBlu996QZFAhpzWVFzOgbPTIo/gviz/tq?tqx=out:csv&sheet=report';
+const urlReport = 'https://docs.google.com/spreadsheets/d/1jUAB1w-GIAbBz-jcpkUBlu996QZFAhpzWVFzOgbPTIo/gviz/tq?tqx=out:csv&sheet=yield';
 const outputReport = [];
 (async () => {
   const response = await axios.get(urlReport);

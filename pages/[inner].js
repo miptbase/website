@@ -11,8 +11,8 @@ export default function InnerPage({ pageTitle, frontmatter, markdownBody }) {
 
     return (
         <Layout
-            pageTitle={frontmatter.seo.title ? frontmatter.seo.title : seoMain.title}
-            pageDescription={frontmatter.seo.description ? frontmatter.seo.description : seoMain.description}
+            pageTitle={frontmatter.seo && frontmatter.seo.title ? frontmatter.seo.title : seoMain.title}
+            pageDescription={frontmatter.seo && frontmatter.seo.description ? frontmatter.seo.description : seoMain.description}
             innerPatch={pageTitle}
         >
             <article>
@@ -26,17 +26,12 @@ export default function InnerPage({ pageTitle, frontmatter, markdownBody }) {
 
 export async function getStaticProps({ ...ctx }) {
     const { inner } = ctx.params
-
     const content = await import(`../content/inner/${inner}.md`)
-    const config = await import(`../siteconfig.json`)
     const data = matter(content.default)
     return {
         props: {
-            siteTitle: config.title,
-            siteDescription: config.description,
             frontmatter: data.data,
-            markdownBody: data.data.content,
-            pageTitle: data.data.title
+            markdownBody: data.data.content
         },
 
     }
