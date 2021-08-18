@@ -761,7 +761,7 @@ module.exports = {
             fields: [
                 {
                     label: "URL",
-                    name: "url",
+                    name: "title",
                     widget: "string",
                     required: true,
                 },

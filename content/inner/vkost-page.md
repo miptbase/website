@@ -1,5 +1,5 @@
 ---
-url: vkost-page
+title: vkost-page
 seo:
   title: Положение о совете целевого капитала №9 (ФЦК МФТИ)
   description: Здесь описание странички будет

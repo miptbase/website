@@ -1,5 +1,5 @@
 ---
-url: inner
+title: inner
 seo:
   title: Inner Page
   description: Inner Page descr
