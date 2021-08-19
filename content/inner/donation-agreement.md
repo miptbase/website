@@ -188,19 +188,29 @@ content: >-
 
   #### Банковские реквизиты для перечисления Пожертвования в Евро:
 
+
   1. Получатель (Beneficiary): MIPT ENDOWMENT FUND
+
 
   2. Валютный счёт (Beneficiary account): 40703978000000000251
 
+
   3. Транзитный счёт (Beneficiary Transit Account): 40703978220000000251
+
 
   4. Банк получателя (Beneficiary's bank): Tinkoff Bank
 
-  5. Beneficiary SWIFT: TICSRUMMXXX Адрес банка получателя (Beneficiary's bank address): Bldg. 26, 38A, 2 Khutorskaya str., Moscow, 127287
+
+  5. Beneficiary SWIFT: TICSRUMMXXX Адрес банка получателя (Beneficiary's bank 
+
+  address): Bldg. 26, 38A, 2 Khutorskaya str., Moscow, 127287
+
 
   6. Банк посредник (Intermediary): J.P.MORGAN AG FRANKFURT AM MAIN, DE
 
+
   7. Intermediary SWIFT: CHASDEFXXXX
+
 
   8. Счёт банка посредника (Intermediary's account): 6231608701
 
