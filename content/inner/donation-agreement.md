@@ -1,5 +1,5 @@
 ---
-title: docs/donation-agreement
+title: donation-agreement
 seo:
   title: Договор пожертвования
 content: "# Договор пожертвования
