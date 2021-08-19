@@ -64,8 +64,17 @@ const Header = (props) => {
                     [style['menu-button']]: true,
                     [style['menu-button_open']]: !!menuOpen
                 })} onClick={() => setMenuOpen(!menuOpen)}>
-                    <div className={cn({[style['menu-line']]: true, [style['menu-line_1']]: true, [style['menu-line_1_open']]: !!menuOpen})} />
-                    <div className={cn({[style['menu-line']]: true, [style['menu-line_2']]: true, [style['menu-line_2_open']]: !!menuOpen})} />
+                    <div className={cn({
+                        [style['menu-line']]: true,
+                        [style['menu-line_1']]: true,
+                        [style['menu-line_1_open']]: !!menuOpen,
+                        [style['menu-line_black']]: color === 'black'})}
+                    />
+                    <div className={cn({
+                        [style['menu-line']]: true,
+                        [style['menu-line_2']]: true,
+                        [style['menu-line_2_open']]: !!menuOpen,
+                        [style['menu-line_black']]: color === 'black'})} />
                 </div>
 
 

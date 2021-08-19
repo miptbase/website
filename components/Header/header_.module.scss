@@ -71,6 +71,10 @@
   height: 0.2rem;
   background: white;
   transform-origin: center;
+  &_black {
+    background: black;
+    transition: 0.3s background-color ease-in-out;
+  }
   &_1 {
     top: 0.6rem;
     right: 0;
@@ -78,6 +82,7 @@
     margin-bottom: 0.8rem;
     transition: 0.1s transform ease-in-out, 0.1s top ease-in-out 0.1s;
     &_open {
+      background: white;
       top: 1.1rem;
       transform: rotate(-25deg);
       transition: 0.1s top ease-in-out 0.1s, 0.1s transform ease-in-out 0.2s;
@@ -89,6 +94,7 @@
     width: 1.3rem;
     transition: 0.1s transform ease-in-out, 0.1s bottom ease-in-out 0.1s, 0.1s width ease-in-out 0.2s;
     &_open {
+      background: white;
       bottom: 1.1rem;
       width: 2.5rem;
       transform: rotate(25deg);
