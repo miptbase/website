@@ -158,43 +158,70 @@ content: >-
   * Тел.: +7(495) 642-38-89
 
 
-  2. Банковские реквизиты для перечисления Пожертвования в рублях:
-     счет в рублях РФ № 40703810800000716007
-     в  АО «ТИНЬКОФФ БАНК»,
-     БИК 044525974, к/счет 30101810145250000974\
-     Назначение платежа: «Пожертвование при публичном сборе денежных средств на пополнение сформированного Целевого капитала № 9 «Базовый жизненный стандарт для студентов МФТИ»  
-  3. Банковские реквизиты для перечисления Пожертвования в долларах США:
-     Получатель (Beneficiary): MIPT ENDOWMENT FUND
-     Валютный счёт (Beneficiary account): 40703840300000010244
-     Транзитный счёт (Beneficiary Transit Account): 40703840520000010244
-     Банк получателя (Beneficiary's bank): Tinkoff Bank
-     Beneficiary SWIFT: TICSRUMMXXX
-     Адрес банка получателя (Beneficiary's bank address): 1st Volokolamsky pr., 10, bld. 1, Moscow, Russia
-     Банк посредник (Intermediary): JPMORGAN CHASE BANK, N.A. NEW YORK, NY
-     Счёт банка посредника (Intermediary's account): 464650808
-  4. Банковские реквизиты для перечисления Пожертвования в Евро:
-     Получатель (Beneficiary): MIPT ENDOWMENT FUND
-     Валютный счёт (Beneficiary account): 40703978000000000251
-     Транзитный счёт (Beneficiary Transit Account): 40703978220000000251
-     Банк получателя (Beneficiary's bank): Tinkoff Bank
-     Beneficiary SWIFT: TICSRUMMXXX Адрес банка получателя (Beneficiary's bank address): Bldg. 26, 38A, 2 Khutorskaya str., Moscow, 127287
-     Банк посредник (Intermediary): J.P.MORGAN AG FRANKFURT AM MAIN, DE
-     Intermediary SWIFT: CHASDEFXXXX
-     Счёт банка посредника (Intermediary's account): 6231608701
-  5. Банковские реквизиты для перечисления Пожертвования в Фунтах стерлингов:
-     Получатель (Beneficiary): MIPT ENDOWMENT FUND
-     Валютный счёт (Beneficiary account): 40703826000000000028
-     Транзитный счёт (Beneficiary Transit Account): 40703826220000000028
+  #### Банковские реквизиты для перечисления Пожертвования в рублях:
 
-  Банк получателя (Beneficiary's bank): Tinkoff Bank
+  * счет в рублях РФ № 40703810800000716007 в  АО «ТИНЬКОФФ БАНК»
 
-  Beneficiary SWIFT: TICSRUMMXXX
+  * БИК 044525974, к/счет 30101810145250000974
 
-  Адрес банка получателя (Beneficiary's bank address): Bldg. 26, 38A, 2 Khutorskaya str., Moscow, 127287 
+  * Назначение платежа: «Пожертвование при публичном сборе денежных средств на пополнение сформированного Целевого капитала № 9 «Базовый жизненный стандарт для студентов МФТИ»  
 
-  Банк посредник (Intermediary): JPMORGAN CHASE BANK, N.A. LONDON, 25 BANK STREET CANARY WHARF, LONDON GB
 
-  Intermediary SWIFT: CHASGB2LXXX
+  #### Банковские реквизиты для перечисления Пожертвования в долларах США:
 
-  Счёт банка посредника (Intermediary's account): 0040015172
+  * Получатель (Beneficiary): MIPT ENDOWMENT FUND
+
+  * Валютный счёт (Beneficiary account): 40703840300000010244
+
+  * Транзитный счёт (Beneficiary Transit Account): 40703840520000010244
+
+  * Банк получателя (Beneficiary's bank): Tinkoff Bank
+
+  * Beneficiary SWIFT: TICSRUMMXXX
+
+  * Адрес банка получателя (Beneficiary's bank address): 1st Volokolamsky pr., 10, bld. 1, Moscow, Russia
+
+  * Банк посредник (Intermediary): JPMORGAN CHASE BANK, N.A. NEW YORK, NY
+
+  * Счёт банка посредника (Intermediary's account): 464650808
+
+
+  #### Банковские реквизиты для перечисления Пожертвования в Евро:
+
+  * Получатель (Beneficiary): MIPT ENDOWMENT FUND
+
+  * Валютный счёт (Beneficiary account): 40703978000000000251
+
+  * Транзитный счёт (Beneficiary Transit Account): 40703978220000000251
+
+  * Банк получателя (Beneficiary's bank): Tinkoff Bank
+
+  * Beneficiary SWIFT: TICSRUMMXXX Адрес банка получателя (Beneficiary's bank address): Bldg. 26, 38A, 2 Khutorskaya str., Moscow, 127287
+
+  * Банк посредник (Intermediary): J.P.MORGAN AG FRANKFURT AM MAIN, DE
+
+  * Intermediary SWIFT: CHASDEFXXXX
+
+  * Счёт банка посредника (Intermediary's account): 6231608701
+
+
+  #### Банковские реквизиты для перечисления Пожертвования в Фунтах стерлингов:
+
+  * Получатель (Beneficiary): MIPT ENDOWMENT FUND
+
+  * Валютный счёт (Beneficiary account): 40703826000000000028
+
+  * Транзитный счёт (Beneficiary Transit Account): 40703826220000000028
+
+  * Банк получателя (Beneficiary's bank): Tinkoff Bank
+
+  * Beneficiary SWIFT: TICSRUMMXXX
+
+  * Адрес банка получателя (Beneficiary's bank address): Bldg. 26, 38A, 2 Khutorskaya str., Moscow, 127287
+
+  * Банк посредник (Intermediary): JPMORGAN CHASE BANK, N.A. LONDON, 25 BANK STREET CANARY WHARF, LONDON GB
+
+  * Intermediary SWIFT: CHASGB2LXXX
+
+  * Счёт банка посредника (Intermediary's account): 0040015172
 ---
