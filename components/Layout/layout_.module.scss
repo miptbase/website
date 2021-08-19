@@ -40,6 +40,12 @@
     list-style: none;
     padding-left: 4.4rem;
     position: relative;
+    > li > ol {
+      padding-left: 0;
+       p {
+        padding-left: 1.5rem;
+      }
+    }
     @include mediaMob {
       padding-left: 3.9rem;
     }
