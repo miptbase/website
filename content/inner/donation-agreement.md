@@ -188,40 +188,40 @@ content: >-
 
   #### Банковские реквизиты для перечисления Пожертвования в Евро:
 
-  * Получатель (Beneficiary): MIPT ENDOWMENT FUND
+  1. Получатель (Beneficiary): MIPT ENDOWMENT FUND
 
-  * Валютный счёт (Beneficiary account): 40703978000000000251
+  2. Валютный счёт (Beneficiary account): 40703978000000000251
 
-  * Транзитный счёт (Beneficiary Transit Account): 40703978220000000251
+  3. Транзитный счёт (Beneficiary Transit Account): 40703978220000000251
 
-  * Банк получателя (Beneficiary's bank): Tinkoff Bank
+  4. Банк получателя (Beneficiary's bank): Tinkoff Bank
 
-  * Beneficiary SWIFT: TICSRUMMXXX Адрес банка получателя (Beneficiary's bank address): Bldg. 26, 38A, 2 Khutorskaya str., Moscow, 127287
+  5. Beneficiary SWIFT: TICSRUMMXXX Адрес банка получателя (Beneficiary's bank address): Bldg. 26, 38A, 2 Khutorskaya str., Moscow, 127287
 
-  * Банк посредник (Intermediary): J.P.MORGAN AG FRANKFURT AM MAIN, DE
+  6. Банк посредник (Intermediary): J.P.MORGAN AG FRANKFURT AM MAIN, DE
 
-  * Intermediary SWIFT: CHASDEFXXXX
+  7. Intermediary SWIFT: CHASDEFXXXX
 
-  * Счёт банка посредника (Intermediary's account): 6231608701
+  8. Счёт банка посредника (Intermediary's account): 6231608701
 
 
   #### Банковские реквизиты для перечисления Пожертвования в Фунтах стерлингов:
 
-  * Получатель (Beneficiary): MIPT ENDOWMENT FUND
+  1. Получатель (Beneficiary): MIPT ENDOWMENT FUND
 
-  * Валютный счёт (Beneficiary account): 40703826000000000028
+  2. Валютный счёт (Beneficiary account): 40703826000000000028
 
-  * Транзитный счёт (Beneficiary Transit Account): 40703826220000000028
+  3. Транзитный счёт (Beneficiary Transit Account): 40703826220000000028
 
-  * Банк получателя (Beneficiary's bank): Tinkoff Bank
+  4. Банк получателя (Beneficiary's bank): Tinkoff Bank
 
-  * Beneficiary SWIFT: TICSRUMMXXX
+  5. Beneficiary SWIFT: TICSRUMMXXX
 
-  * Адрес банка получателя (Beneficiary's bank address): Bldg. 26, 38A, 2 Khutorskaya str., Moscow, 127287
+  6. Адрес банка получателя (Beneficiary's bank address): Bldg. 26, 38A, 2 Khutorskaya str., Moscow, 127287
 
-  * Банк посредник (Intermediary): JPMORGAN CHASE BANK, N.A. LONDON, 25 BANK STREET CANARY WHARF, LONDON GB
+  7. Банк посредник (Intermediary): JPMORGAN CHASE BANK, N.A. LONDON, 25 BANK STREET CANARY WHARF, LONDON GB
 
-  * Intermediary SWIFT: CHASGB2LXXX
+  8. Intermediary SWIFT: CHASGB2LXXX
 
-  * Счёт банка посредника (Intermediary's account): 0040015172
+  9. Счёт банка посредника (Intermediary's account): 0040015172
 ---
