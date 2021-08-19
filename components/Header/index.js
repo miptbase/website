@@ -30,7 +30,18 @@ const Header = (props) => {
                 <div className={style.logo}>
                     <Link href="/">
                         <a>
-                            <SVG className={style['logo-img']} src={color === 'black'?  `/${header.logoBlack}` : `/${header.logo}`} />
+                            <SVG className={cn({
+                                [style['logo-img']]: true,
+                                [style['logo-img_hidden']]: !!menuOpen,
+                                [style['logo-img_visible']]: !menuOpen && color === 'black',
+                            })}
+                                 src={`/${header.logoBlack}`} />
+                            <SVG className={cn({
+                                [style['logo-img']]: true,
+                                [style['logo-img_hidden']]: !menuOpen,
+                                [style['logo-img_visible']]: !!menuOpen || color !== 'black',
+                            })}
+                                 src={`/${header.logo}`} />
                         </a>
                     </Link>
                 </div>
