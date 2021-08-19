@@ -391,8 +391,6 @@ content: "# Договор пожертвования
 
   4. Банковские реквизиты для перечисления Пожертвования в Евро:\r
 
-  \r
-
   Получатель (Beneficiary): MIPT ENDOWMENT FUND\r
 
   Валютный счёт (Beneficiary account): 40703978000000000251\r
@@ -416,15 +414,13 @@ content: "# Договор пожертвования
   5. Банковские реквизиты для перечисления Пожертвования в Фунтах
   стерлингов:\r
 
-  \r
-
   Получатель (Beneficiary): MIPT ENDOWMENT FUND\r
 
   Валютный счёт (Beneficiary account): 40703826000000000028\r
 
-  Транзитный счёт (Beneficiary Transit Account): 40703826220000000028\r
+  Транзитный счёт (Beneficiary Transit Account): 40703826220000000028
 
-  Банк получателя (Beneficiary's bank): Tinkoff Bank\r
+  \rБанк получателя (Beneficiary's bank): Tinkoff Bank\r
 
   Beneficiary SWIFT: TICSRUMMXXX\r
 
