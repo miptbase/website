@@ -425,6 +425,7 @@ module.exports = {
                                 { label: "Title", name: "title", widget: "string"},
                                 { label: "Text", name: "text", widget: "text"},
                                 { label: "ButtonText", name: "buttonText", widget: "string"},
+                                { label: "ButtonTextMobile", name: "buttonTextMobile", widget: "string"},
                                 { label: "Image", name: "image", widget: "image"},
                             ]
                         },
@@ -452,6 +453,7 @@ module.exports = {
                             widget: "object",
                             fields:[
                                 { label: "Title", name: "title", widget: "string"},
+                                { label: "ButtonText", name: "buttonText", widget: "string"},
                             ]
                         },
                         {
