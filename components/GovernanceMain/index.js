@@ -1,13 +1,26 @@
-import React from "react";
+import React, {useCallback} from "react";
 import style from "./governance-main_.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import docImage from "../../public/media/document-icon.svg"
 import SVG from 'react-inlinesvg';
-import { report } from "../../content/report.json"
+import { report } from "../../content/report.js"
 
 const CovernanceMain = (props) => {
     const { board, fund, company } = props;
+    const parseReport = useCallback((arr) =>{
+        arr[0][0] = 'ЦК';
+        const length = arr[0].filter(el => el).length;
+         const newArr = arr.map((item) => item.slice(0, length)).
+                            map((item) => item.map((item) => item.replace('%', '')));
+         return newArr;
+    },[])
+    const sumArr = useCallback((arr) =>{
+        return arr.reduce((prev, next) => next.map((item, i) =>(prev[i] || []).concat(next[i])), []).
+                    slice(2).map((item) => item.slice(1).
+                    map((item) => Number(item) * 10).reduce((a, b) => a + b, 0) / (item.length - 1) / 10).
+                    map((item) => item.toFixed(1));
+    },[])
     return (
         <section className={style['governance-main']}>
             <div className={style.board}>
@@ -146,138 +159,48 @@ const CovernanceMain = (props) => {
                             <table className={style.table}>
                                 <tbody>
                                 <tr className={style.tr}>
-                                    <th className={style.th}>Целевой капитал</th>
-                                    <th className={style.th}>2016</th>
-                                    <th className={style.th}>2017</th>
-                                    <th className={style.th}>2018</th>
-                                    <th className={style.th}>2019</th>
-                                    <th className={style.th}>2020</th>
-                                    <th className={style.th}>2021</th>
-                                    <th className={style.th}>2022</th>
-                                    <th className={style.th}>2023</th>
-                                    <th className={style.th}>2024</th>
-                                    <th className={style.th}>2025</th>
+                                    {
+                                        parseReport(report)[0].map((item, i) => (
+                                          <th className={style.th} key={i}>{item}</th>
+                                        ))
+                                    }
                                 </tr>
-                                <tr className={style.tr}>
-                                   <td className={style.td}>
-                                       <span>ЦК 1</span>
-                                   </td>
-                                    <td className={style.td}>1</td>
-                                    <td className={style.td}>2</td>
-                                    <td className={style.td}>6</td>
-                                    <td className={style.td}>7</td>
-                                    <td className={style.td}>12</td>
-                                    <td className={style.td}>23</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                </tr>
+                                {
+                                    parseReport(report).slice(1).map((row, i) => (
+                                      <tr className={style.tr} key={i}>
+                                          <td className={style.td}>
+                                              <span className={style['name-1']}>
+                                                  {row[0]}
+                                              </span>
+                                          </td>
+                                          <td className={style.td}>
+                                              <span className={style['name-2']}>
+                                                  {row[1]}
+                                              </span>
+                                          </td>
+                                          {row.slice(2).map((item, i) => (
+                                            <td className={style.td} key={i}>{item}</td>
+                                          ))}
+                                      </tr>
+                                    ))
+                                }
                                 <tr className={style.tr}>
                                     <td className={style.td}>
-                                        <span>ЦК 2</span>
+                                        <span className={style['name-1']} />
                                     </td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}>3</td>
-                                    <td className={style.td}>5</td>
-                                    <td className={style.td}>8</td>
-                                    <td className={style.td}>13</td>
-                                    <td className={style.td}>45</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                </tr>
-                                <tr className={style.tr}>
                                     <td className={style.td}>
-                                        <span>ЦК 3</span>
+                                      <span className={style['name-2']}>
+                                          Cр. доходность
+                                      </span>
                                     </td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}>4</td>
-                                    <td className={style.td}>10</td>
-                                    <td className={style.td}>2334</td>
-                                    <td className={style.td}>3</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
+                                    {
+                                        sumArr(parseReport(report)).map((item, i) => (
+                                          <td className={style.td} key={i}>{item}</td>
+                                          )
+                                        )
+                                    }
                                 </tr>
-                                <tr className={style.tr}>
-                                    <td className={style.td}>
-                                        <span>ЦК 4</span>
-                                    </td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}>—</td>
-                                    <td className={style.td}>9</td>
-                                    <td className={style.td}>323</td>
-                                    <td className={style.td}>5</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                </tr>
-                                <tr className={style.tr}>
-                                    <td className={style.td}>
-                                        <span>ЦК 5</span>
-                                    </td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}>—</td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}>223</td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                </tr>
-                                <tr className={style.tr}>
-                                    <td className={style.td}>
-                                        <span>ЦК 6</span>
-                                    </td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}>—</td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}>44</td>
-                                    <td className={style.td}>2</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                </tr>
-                                <tr className={style.tr}>
-                                    <td className={style.td}>
-                                        <span>ЦК 7</span>
-                                    </td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}>2</td>
-                                    <td className={style.td}>5</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                </tr>
-                                <tr className={style.tr}>
-                                    <td className={style.td}>
-                                        <span>ЦК 8</span>
-                                    </td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}></td>
-                                    <td className={style.td}>2</td>
-                                    <td className={style.td}>23</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                    <td className={style.td}>-</td>
-                                </tr>
+
                                 </tbody>
                             </table>
                 </div>

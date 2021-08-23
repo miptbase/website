@@ -17,18 +17,21 @@ const output = [];
     })
 })();
 
-const outputPathReport = './content/report.json';
+const outputPathReport = './content/report.js';
 const urlReport = 'https://docs.google.com/spreadsheets/d/1jUAB1w-GIAbBz-jcpkUBlu996QZFAhpzWVFzOgbPTIo/gviz/tq?tqx=out:csv&sheet=yield';
 const outputReport = [];
 (async () => {
   const response = await axios.get(urlReport);
-  csv()
+  csv({
+    noheader:true,
+    output:"csv"
+  })
       .fromString(response.data)
-      .subscribe((csvLine)=>{
-        outputReport.push(csvLine)
+      .subscribe((csvRow)=>{
+        outputReport.push(csvRow)
       })
       .on('done', (error)=>{
-        fs.writeFileSync(outputPathReport, JSON.stringify(outputReport));
+        fs.writeFileSync(outputPathReport, `export const report = ${JSON.stringify(outputReport)}`);
       })
 })();
 
@@ -38,4 +41,3 @@ fs.readdirSync(imagesFolder).forEach(file => {
   imagesDonors.push(file);
 })
 fs.writeFileSync('./content/donorsImages.json', JSON.stringify(imagesDonors));
-console.log(imagesDonors);
