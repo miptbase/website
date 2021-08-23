@@ -11,12 +11,12 @@ const CovernanceMain = (props) => {
     const parseReport = useCallback((arr) =>{
         arr[0][0] = 'ЦК';
         const length = arr[0].filter(el => el).length;
-         const newArr = arr.map((item) => item.slice(0, length)).
-                            map((item) => item.map((item) => item.replace('%', '')));
+         const newArr = arr.map((item) => item.slice(0, length));
          return newArr;
     },[])
     const sumArr = useCallback((arr) =>{
-        return arr.reduce((prev, next) => next.map((item, i) =>(prev[i] || []).concat(next[i])), []).
+        return arr.map((item) => item.map((item) => item.replace('%', '')))
+          .reduce((prev, next) => next.map((item, i) =>(prev[i] || []).concat(next[i])), []).
                     slice(2).map((item) => item.slice(1).
                     map((item) => Number(item) * 10).reduce((a, b) => a + b, 0) / (item.length - 1) / 10).
                     map((item) => item.toFixed(1));
@@ -195,7 +195,7 @@ const CovernanceMain = (props) => {
                                     </td>
                                     {
                                         sumArr(parseReport(report)).map((item, i) => (
-                                          <td className={style.td} key={i}>{item}</td>
+                                          <td className={style.td} key={i}>{item}%</td>
                                           )
                                         )
                                     }
