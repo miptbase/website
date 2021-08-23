@@ -20,12 +20,11 @@
     width: 100%;
     background: $blue;
     top: 0;
-    left: 0;
+    right: (-100%);
     z-index: 1;
-    transform: translateX(100%);
     transition: 0.3s transform ease-in-out;
     &_open {
-      transform: translateX(0);
+      transform: translateX(-100%);
     }
   }
 }

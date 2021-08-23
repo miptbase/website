@@ -91,7 +91,7 @@ const Header = (props) => {
 
                 <div ref={menuRef} className={cn({
                     [style['menu-mobile']]: true,
-                    [style['menu-mobile_open']]: !!menuOpen
+                    [style['menu-mobile_open']]: menuOpen
                 })} >
                     <Menu menu={menu} />
                 </div>
