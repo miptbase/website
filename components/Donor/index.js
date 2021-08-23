@@ -5,8 +5,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Dialog from "@material-ui/core/Dialog";
 import DonorDetails from "../DonorDetails";
 import DialogContent from "@material-ui/core/DialogContent";
-import Image from 'next/image'
-
+import Image from 'next/image';
+import { avatarPlaceholder, toBase64} from "../../scripts/placeholder";
+import avatar from "../../public/media/avatar.svg";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -48,12 +49,13 @@ const Donor = (props) => {
                     <div className={style.container}>
                         <div className={style.img}>
                             <Image
-                                src={`/${img}`}
+                                src={img ? `/${img}` : avatar}
                                 alt={name}
                                 layout='fill'
                                 objectFit='cover'
                                 objectPosition='top center'
-                                loading='eager'
+                                blurDataURL={`data:image/svg+xml;base64,${toBase64(avatarPlaceholder())}`}
+                                placeholder="blur"
                             />
                         </div>
                         <div className={style.info}>
@@ -71,7 +73,15 @@ const Donor = (props) => {
                 <>
                 <div className={style.donor} onClick={() => setModal(true)}>
                     <div className={style.img}>
-                        <Image src={`/${img}`} alt={name} layout='fill'  objectFit='cover' objectPosition='top center'/>
+                        <Image
+                          src={img ? `/${img}` : avatar}
+                          alt={name}
+                          layout='fill'
+                          objectFit='cover'
+                          objectPosition='top center'
+                          blurDataURL={`data:image/svg+xml;base64,${toBase64(avatarPlaceholder())}`}
+                          placeholder="blur"
+                        />
                     </div>
                     <div className={style.info}>
                         <p className={style.name}>{name}</p>
