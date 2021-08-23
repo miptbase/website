@@ -151,6 +151,14 @@
     }
   }
   &:last-child {
+    .item-info {
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 2rem;
+      @include mediaMob {
+        padding-bottom: 0;
+      }
+    }
     @include mediaMob {
       &:before {
         display: none;

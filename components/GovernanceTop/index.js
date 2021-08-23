@@ -49,7 +49,6 @@ const CovernanceTop = (props) => {
                           }
                         </div>
                       ))}
-                      }
                     </>
                   )
                   }
