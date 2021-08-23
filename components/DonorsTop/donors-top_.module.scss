@@ -57,6 +57,7 @@
   padding: 2.4rem;
   overflow: hidden;
   transform: translate3d(0, 0, 0);
+  border-radius: 2rem;
   backface-visibility: hidden;
   margin-bottom: 6rem;
   @include mediaMob {
