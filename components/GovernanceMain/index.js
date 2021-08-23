@@ -48,7 +48,7 @@ const CovernanceMain = (props) => {
                                         {item.name}
                                     </div>
                                     <div className={style['item-content']}>
-                                        <div className={style['item-text']}>
+                                        <div className={style['item-info']}>
                                             {item.info}
                                         </div>
                                         <div className={style['item-text']}>
@@ -104,7 +104,7 @@ const CovernanceMain = (props) => {
                                 <div className={style['item-name']}>
                                     {item.name}
                                 </div>
-                                <div className={style['item-text']}>
+                                <div className={style['item-info']}>
                                     {item.info}
                                 </div>
                             </div>

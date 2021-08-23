@@ -522,8 +522,16 @@ module.exports = {
                                                     ]
                                             }
                                         ]
+                                },
+                                {   label: 'ItemsMobile',
+                                    name: "itemsMobile",
+                                    widget: "list",
+                                    fields:
+                                      [
+                                          { label: "Title", name: "title", widget: "string" },
+                                          { label: "Text", name: "text", widget: "text", required: false},
+                                      ]
                                 }
-
                             ]
                         },
                         {
@@ -541,7 +549,7 @@ module.exports = {
                                             { label: "Name", name: "name", widget: "string" },
                                             { label: "Info", name: "info", widget: "text" },
                                             { label: "Text", name: "text", widget: "text" },
-                                            { label: "Image", name: "image", widget: "image" },
+                                            { label: "Image", name: "image", widget: "image", required: false},
                                         ]
                                 },
                                 { label: "Subtitle", name: "subTitle", widget: "string"},
