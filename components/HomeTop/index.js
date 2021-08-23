@@ -18,6 +18,7 @@ const HomeTop = (props) => {
                         layout='fill'
                         objectFit='cover'
                         objectPosition='bottom center'
+                        priority={true}
                     />
                 </div>
 
@@ -45,6 +46,7 @@ const HomeTop = (props) => {
                         layout='responsive'
                         width={1250}
                         height={369}
+                        priority={true}
                     />
                 </div>
                 <div className={style.img_mobile}>
@@ -54,6 +56,7 @@ const HomeTop = (props) => {
                         layout='responsive'
                         width={321}
                         height={234}
+                        priority={true}
                     />
                 </div>
             </div>
