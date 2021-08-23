@@ -138,6 +138,10 @@
   @media (max-width: 1023px)  { @content; }
 }
 
+@mixin mediaNoTouch {
+  @media (hover), (min-width:0\0), (min--moz-device-pixel-ratio:0) { @content; }
+}
+
 @mixin logo {
   width: 13.887rem;
   height: 2.963rem;

@@ -158,6 +158,7 @@
   align-items: center;
   text-decoration: none;
   position: relative;
+  -webkit-tap-highlight-color: transparent;
   &:after {
     content: '';
     position: absolute;
@@ -180,28 +181,89 @@
   }
 }
 
-.doc-image {
+.doc-image-container {
   width: 4.3rem;
   height: 5.7rem;
   position: relative;
   flex-shrink: 0;
   margin-right: 3rem;
-  background: url("../../public/media/document-icon.svg") no-repeat left center;
-  background-size: cover;
-  transition: 0.3s background ease-in-out;
+  -webkit-tap-highlight-color: transparent;
   @include mediaMob {
     width: 3.4rem;
     height: 4.5rem;
     margin-right: 2rem;
   }
-  .link:hover &,
-  .link:focus &,
-  .link:focus-visible & {
-    background-image: url("../../public/media/document-icon-hovered.svg");
+  .doc-image,
+  &:after,
+  &:before {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: 0.2s opacity ease-in-out;
+    z-index: 1;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .doc-image {
+    background: url("../../public/media/document-icon.svg") no-repeat left center;
+    background-size: cover;
+    @include mediaNoTouch {
+      & {
+        .link:hover &,
+        .link:focus &,
+        .link:focus-visible & {
+          opacity: 0;
+        }
+      }
+    }
+    .link:active & {
+      opacity: 0;
+    }
+  }
+  &:after {
+    content: '';
+    background: url("../../public/media/document-icon-hovered.svg") no-repeat left center;
+    background-size: cover;
+    opacity: 0;
+    @include mediaNoTouch {
+      & {
+        .link:hover &,
+        .link:focus &,
+        .link:focus-visible & {
+          opacity: 1;
+        }
+      }
+    }
+
+    .link:active & {
+      opacity: 0;
+    }
   }
 
-  .link:active & {
-    background-image: url("../../public/media/document-icon-pushed.svg");
+  &:before {
+    content: '';
+    background: url("../../public/media/document-icon-pushed.svg") no-repeat left center;
+    background-size: cover;
+    z-index: 2;
+    opacity: 0;
+   @include mediaNoTouch {
+      & {
+        .link:hover &,
+        .link:focus &,
+        .link:focus-visible & {
+          opacity: 0;
+        }
+      }
+    }
+
+    .link:active & {
+      opacity: 1;
+    }
   }
 }
 
@@ -219,14 +281,22 @@
   font-size: 1.2rem;
   line-height: 150%;
   letter-spacing: 0.02em;
-  transition: 0.3s color ease-in-out;
+  transition: 0.2s color ease-in-out;
+  z-index: 3;
+  -webkit-backface-visibility: hidden;
   @include mediaMob {
     font-size: 1.2rem;
     bottom: 0.3rem;
   }
-  .link:hover &,
-  .link:focus &,
-  .link:focus-visible &,
+  @include mediaNoTouch {
+    & {
+      .link:hover &,
+      .link:focus &,
+      .link:focus-visible & {
+        color: $blue;
+      }
+    }
+  }
   .link:active & {
     color: $blue;
   }

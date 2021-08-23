@@ -80,7 +80,8 @@ const CovernanceMain = (props) => {
                                         <div className={style['doc-item']} key={i}>
                                             <Link href={item.link}>
                                                 <a className={style.link} target='_blank'>
-                                                    <div className={style['doc-image']}>
+                                                    <div className={style['doc-image-container']}>
+                                                        <div className={style['doc-image']} />
                                                         <div className={style['icon-text']}>PDF</div>
                                                     </div>
                                                     <div className={style['doc-name']}>
