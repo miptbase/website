@@ -19,6 +19,7 @@ const DonorsQuote = (props) => {
                                         layout='fill'
                                         objectFit='cover'
                                         objectPosition='center bottom'
+                                        sizes='8vw'
                                     />
                                 </div>
                                 <div className={style.content}>

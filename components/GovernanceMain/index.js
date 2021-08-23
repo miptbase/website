@@ -51,6 +51,7 @@ const CovernanceMain = (props) => {
                                         placeholder="blur"
                                         objectFit='cover'
                                         objectPosition='top center'
+                                        sizes='16vw'
                                     />
                                 </div>
                                 <div className={style['item-description']}>

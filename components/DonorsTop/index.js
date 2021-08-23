@@ -35,6 +35,7 @@ const DonorsTop = (props) => {
                         layout='fill'
                         objectFit='cover'
                         objectPosition='center bottom'
+                        sizes='32vw'
                     />
                 </div>
             </div>

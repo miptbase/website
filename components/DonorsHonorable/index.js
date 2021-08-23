@@ -32,6 +32,7 @@ const DonorsHonorable = (props) => {
                                      objectPosition='left center'
                                      blurDataURL={`data:image/svg+xml;base64,${toBase64(avatarPlaceholder())}`}
                                      placeholder="blur"
+                                     sizes='4vw'
                                    />
                                </div>
                                <div className={style.content}>
@@ -96,6 +97,7 @@ const DonorsHonorable = (props) => {
                                       loading='eager'
                                       blurDataURL={`data:image/svg+xml;base64,${toBase64(avatarPlaceholder())}`}
                                       placeholder="blur"
+                                      sizes='8vw'
                                     />
                                 </div>
                                 <div className={style.content}>
@@ -145,6 +147,7 @@ const DonorsHonorable = (props) => {
                                                 objectPosition='left center'
                                                 blurDataURL={`data:image/svg+xml;base64,${toBase64(avatarPlaceholder())}`}
                                                 placeholder="blur"
+                                                sizes='8vw'
                                               />
                                           </div>
                                           <div className={style.content}>

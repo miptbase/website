@@ -56,6 +56,7 @@ const Donor = (props) => {
                                 objectPosition='top center'
                                 blurDataURL={`data:image/svg+xml;base64,${toBase64(avatarPlaceholder())}`}
                                 placeholder="blur"
+                                sizes="8vw"
                             />
                         </div>
                         <div className={style.info}>
