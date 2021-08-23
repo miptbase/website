@@ -2,10 +2,10 @@ import React, {useCallback} from "react";
 import style from "./governance-main_.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import docImage from "../../public/media/document-icon.svg"
-import SVG from 'react-inlinesvg';
+import avatar from "../../public/media/avatar.svg"
 import { report } from "../../content/report.js"
 import {useIsMobile} from "../../hooks/useIsMobile";
+import { avatarPlaceholder, toBase64} from "../../scripts/placeholder"
 
 const CovernanceMain = (props) => {
     const isMobile = useIsMobile();
@@ -44,9 +44,11 @@ const CovernanceMain = (props) => {
                             <div className={style['board-item']} key={item.name}>
                                 <div className={style['item-image']}>
                                     <Image
-                                        src={`/${item.image}`}
+                                        src={item.image ? `/${item.image}` : avatar}
                                         alt={item.name}
                                         layout='fill'
+                                        blurDataURL={`data:image/svg+xml;base64,${toBase64(avatarPlaceholder())}`}
+                                        placeholder="blur"
                                         objectFit='cover'
                                         objectPosition='top center'
                                     />

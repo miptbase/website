@@ -5,6 +5,7 @@ import donorsPerson from '../../content/donors.json'
 import donorsImages from '../../content/donorsImages.json'
 import {useIsMobile} from "../../hooks/useIsMobile";
 import Button from "../ui/Button";
+import { avatarPlaceholder, toBase64} from "../../scripts/placeholder"
 
 const DonorsHonorable = (props) => {
     const { honorable } = props;
@@ -29,7 +30,8 @@ const DonorsHonorable = (props) => {
                                      layout='fill'
                                      objectFit='cover'
                                      objectPosition='left center'
-                                     loading='eager'
+                                     blurDataURL={`data:image/svg+xml;base64,${toBase64(avatarPlaceholder())}`}
+                                     placeholder="blur"
                                    />
                                </div>
                                <div className={style.content}>
@@ -92,6 +94,8 @@ const DonorsHonorable = (props) => {
                                       objectFit='cover'
                                       objectPosition='left center'
                                       loading='eager'
+                                      blurDataURL={`data:image/svg+xml;base64,${toBase64(avatarPlaceholder())}`}
+                                      placeholder="blur"
                                     />
                                 </div>
                                 <div className={style.content}>
@@ -139,7 +143,8 @@ const DonorsHonorable = (props) => {
                                                 layout='fill'
                                                 objectFit='cover'
                                                 objectPosition='left center'
-                                                loading='eager'
+                                                blurDataURL={`data:image/svg+xml;base64,${toBase64(avatarPlaceholder())}`}
+                                                placeholder="blur"
                                               />
                                           </div>
                                           <div className={style.content}>
