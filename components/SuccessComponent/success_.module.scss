@@ -115,9 +115,9 @@
   justify-content: space-between;
   padding-top: 2rem;
   @include mediaMob {
-    padding: 0 0.9rem;
+    padding: 0;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
   }
 }
 
@@ -127,7 +127,7 @@
   -webkit-backface-visibility: hidden;
   @include mediaMob {
     flex-shrink: 0;
-    margin: 1.5rem 1.5rem 0;
+    margin: 1.5rem 0 0;
     width: 2.1rem;
     height: 2.1rem;
     svg {
