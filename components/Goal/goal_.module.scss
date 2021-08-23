@@ -64,23 +64,6 @@
   }
 }
 
-.progress-circle {
-  width: 35.3rem;
-  height: 35.3rem;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  border-radius: 50%;
-  background: url("../../public/media/circle.svg") no-repeat center;
-  background-size: cover;
-  @include mediaMob {
-    width: 27rem;
-    height: 27rem;
-    margin: 0 auto;
-    background: url("../../public/media/circle-mobile.svg") no-repeat center;
-    background-size: cover;
-  }
-}
-
 .info {
   position: absolute;
   width: calc(100% - 0.8rem);
