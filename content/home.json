@@ -222,8 +222,8 @@
   "top": {
     "title": "Базовый жизненный стандарт для студентов МФТИ",
     "content": "Целевой капитал позволяет студентам заниматься творчеством и учебой вместо поиска случайных заработков и решения бытовых проблем",
-    "img": "media/home-top.png",
-    "mobileImg": "media/home-mobile.png",
+    "img": "media/home-top-img.jpg",
+    "mobileImg": "media/home-mobile.jpg",
     "button": "Поддержать проект",
     "buttonMobile": "Поддержать"
   },

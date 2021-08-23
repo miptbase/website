@@ -11,16 +11,28 @@ const HomeTop = (props) => {
         <section className={style['home-top']}>
 
             <div className={style.inner}>
-                <div className={style['img-frame']}>
-                    <Image
-                        src={`/media/home-frame-2.jpg`}
-                        alt='MITPBASE'
-                        layout='fill'
-                        objectFit='cover'
-                        objectPosition='bottom center'
-                        priority={true}
-                    />
+                <div className={style['img-container']}>
+                    <div className={style.img}>
+                        <Image
+                          src={`/${top.img}`}
+                          alt='MITPBASE'
+                          layout='fill'
+                          objectFit='cover'
+                          objectPosition='bottom center'
+                          priority={true}
+                        />
+                    </div>
+                    <div className={style.img_mobile}>
+                        <Image
+                          src={`/${top.mobileImg}`}
+                          alt='MITPBASE'
+                          layout='fill'
+                          objectFit='cover'
+                          objectPosition='center bottom'
+                        />
+                    </div>
                 </div>
+
 
                 <div className={style.content}>
                     <h1 className={style.title}>{top.title}</h1>
@@ -38,28 +50,7 @@ const HomeTop = (props) => {
 
 
             </div>
-            <div className={style['img-container']}>
-                <div className={style.img}>
-                    <Image
-                        src={`/media/home-frame-1.jpg`}
-                        alt='MITPBASE'
-                        layout='responsive'
-                        width={1250}
-                        height={369}
-                        priority={true}
-                    />
-                </div>
-                <div className={style.img_mobile}>
-                    <Image
-                        src={`/${top.mobileImg}`}
-                        alt='MITPBASE'
-                        layout='responsive'
-                        width={321}
-                        height={234}
-                        priority={true}
-                    />
-                </div>
-            </div>
+
 
         </section>
     )
