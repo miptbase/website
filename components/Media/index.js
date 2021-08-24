@@ -26,8 +26,8 @@ const Media = (props) => {
                                     style.img,
                                     style[`img_${item.name}`]
                                 )}
-                                style={isMobile ? {background: `url(${item.mobileImg}) no-repeat left bottom`}
-                                : {background: `url(${item.img}) no-repeat left bottom`}}>
+                                style={isMobile ? {backgroundImage: `url(${item.mobileImg})`}
+                                : {backgroundImage: `url(${item.img})`}}>
                             </div>
                             <div className={style.date}>
                                 {item.date}

@@ -20,6 +20,7 @@ const HomeTop = (props) => {
                           objectFit='cover'
                           objectPosition='bottom center'
                           priority={true}
+                          unoptimized={true}
                         />
                     </div>
                     <div className={style.img_mobile}>

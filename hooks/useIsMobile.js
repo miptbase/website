@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const DESKTOP_BREAKPOINT = 1024;
+const DESKTOP_BREAKPOINT = 641;
 
 export function useIsMobile() {
   const [width, setWidth] = useState(0);

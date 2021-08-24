@@ -95,6 +95,9 @@
   z-index: 10;
   text-decoration: none;
   white-space: nowrap;
+  @include mediaTouch {
+    user-select: none;
+  }
 }
 
 

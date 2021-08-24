@@ -86,8 +86,10 @@
     opacity: 0;
     transition: 0.3s opacity ease-in-out;
   }
-  &:hover {
-    opacity: 0.6;
+  @include mediaNoTouch {
+    &:hover {
+      opacity: 0.6;
+    }
   }
   &:active {
     opacity: 0.3;

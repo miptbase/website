@@ -11,8 +11,10 @@
     overflow: hidden;
     height: 21rem;
   }
+  @include mediaTouch {
+    user-select: none;
+  }
 }
-
 
 .img {
   height: 16rem;
@@ -21,6 +23,9 @@
   @include mediaMob {
     height: 13.5rem;
     width: 100%;
+  }
+  @include mediaTouch {
+    pointer-events: none;
   }
   img {
     width: 100%;
@@ -113,21 +118,43 @@
 
 .container {
   transition: 0.6s transform ease-in-out;
-  &:hover {
-    transform: translateY(-16rem);
-    .info {
-      background: $blue;
-    }
-    .name {
-      color: white;
-    }
-    .company {
-      visibility: hidden;
-      opacity: 0;
-    }
-    .details-company {
-      visibility: visible;
-      opacity: 1;
+  @include mediaNoTouch {
+    &:hover {
+      transform: translateY(-16rem);
+      .info {
+        background: $blue;
+      }
+      .name {
+        color: white;
+      }
+      .company {
+        visibility: hidden;
+        opacity: 0;
+      }
+      .details-company {
+        visibility: visible;
+        opacity: 1;
+      }
     }
   }
+  @include mediaTouch {
+    &:active {
+      transform: translateY(-16rem);
+      .info {
+        background: $blue;
+      }
+      .name {
+        color: white;
+      }
+      .company {
+        visibility: hidden;
+        opacity: 0;
+      }
+      .details-company {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
 }

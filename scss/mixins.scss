@@ -135,11 +135,15 @@
 }
 
 @mixin mediaMob {
-  @media (max-width: 1023px)  { @content; }
+  @media (max-width: 640px)  { @content; }
 }
 
 @mixin mediaNoTouch {
   @media (hover), (min-width:0\0), (min--moz-device-pixel-ratio:0) { @content; }
+}
+
+@mixin mediaTouch {
+  @media (hover: none) and (pointer: coarse) { @content; }
 }
 
 @mixin logo {
@@ -181,9 +185,18 @@
       box-shadow: none;
     }
   }
-  &:hover {
-    opacity: 0.6;
+  @include mediaNoTouch {
+    &:hover {
+      opacity: 0.6;
+    }
   }
+
+  @include mediaTouch {
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
   &:focus {
     opacity: 1;
     &:after {
