@@ -18,7 +18,7 @@
 
 .img {
   height: 16rem;
-  width: 16rem;
+  width: 100%;
   position: relative;
   @include mediaMob {
     height: 13.5rem;

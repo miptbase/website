@@ -5,6 +5,9 @@ html {
   @media (min-width: 1400px) {
     font-size: 10.9375px;
   }
+  @include bigScreen {
+    font-size: 0.65vw;
+  }
 
   @include mediaMob {
     font-size: 3.125vw;
