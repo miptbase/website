@@ -27,7 +27,7 @@ const HomeTop = (props) => {
                                      (max-width: 1600px) 800px,
                                       (max-width: 1920px) 960px,
                                     3840px"
-                                 src="/media/home-top-image-1024.jpg" alt="MITPBASE" />
+                                 src="/media/home-top-image-1024.jpg" alt="MITPBASE" loading="lazy"/>
                         </div>
                     </div>
                     <div className={style.img_mobile}>
