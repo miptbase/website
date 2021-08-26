@@ -13,15 +13,22 @@ const HomeTop = (props) => {
             <div className={style.inner}>
                 <div className={style['img-container']}>
                     <div className={style.img}>
-                        <Image
-                          src={`/${top.img}`}
-                          alt='MITPBASE'
-                          layout='fill'
-                          objectFit='cover'
-                          objectPosition='bottom center'
-                          priority={true}
-                          unoptimized={true}
-                        />
+                        <div className={style.slot}>
+                            <img srcSet="
+                                   /media/home-top-image-800.jpg 800w,
+                                   /media/home-top-image-1024.jpg 1024w,
+                                   /media/home-top-image-1280.jpg 1280w,
+                                   /media/home-top-image-1600.jpg 1600w,
+                                   /media/home-top-image-1920.jpg 1920w,
+                                   /media/home-top-image-3840.jpg 3840w,
+                                    "
+                                 sizes="(max-width: 800px) 400px,
+                                    (max-width: 1024px) 512px,
+                                     (max-width: 1600px) 800px,
+                                      (max-width: 1920px) 960px,
+                                    3840px"
+                                 src="/media/home-top-image-1024.jpg" alt="MITPBASE" />
+                        </div>
                     </div>
                     <div className={style.img_mobile}>
                         <Image
