@@ -541,17 +541,6 @@ module.exports = {
                             fields:[
                                 { label: "Title", name: "title", widget: "string"},
                                 { label: "Text", name: "text", widget: "text"},
-                                {   label: 'Items',
-                                    name: "items",
-                                    widget: "list",
-                                    fields:
-                                        [
-                                            { label: "Name", name: "name", widget: "string" },
-                                            { label: "Info", name: "info", widget: "text" },
-                                            { label: "Text", name: "text", widget: "text" },
-                                            { label: "Image", name: "image", widget: "image", required: false},
-                                        ]
-                                },
                                 { label: "Subtitle", name: "subTitle", widget: "string"},
                                 {   label: 'DocItems',
                                     name: "docItems",

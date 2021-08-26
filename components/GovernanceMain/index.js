@@ -5,11 +5,12 @@ import Link from "next/link";
 import avatar from "../../public/media/avatar.svg"
 import { report } from "../../content/report.js"
 import {useIsMobile} from "../../hooks/useIsMobile";
+import donorsImages from '../../content/donorsImages.json'
 import { avatarPlaceholder, toBase64} from "../../scripts/placeholder"
 
 const CovernanceMain = (props) => {
+    const { board, fund, company, boardData } = props;
     const isMobile = useIsMobile();
-    const { board, fund, company } = props;
     const parseReport = useCallback((arr) =>{
         arr[0][0] = 'ЦК';
         const length = arr[0].filter(el => el).length;
@@ -40,12 +41,15 @@ const CovernanceMain = (props) => {
                 </p>
                 <div className={style['board-items']}>
                     {
-                        board.items.map((item) => (
+                        boardData.map((item) => (
                             <div className={style['board-item']} key={item.name}>
                                 <div className={style['item-image']}>
                                     <Image
-                                        src={item.image ? `/${item.image}` : avatar}
-                                        alt={item.name}
+                                      src={
+                                          donorsImages.includes(`${item['ID']}.png`) ?
+                                            `/media/donors/${item.ID}.png` : avatar
+                                      }
+                                        alt={item['Name']}
                                         layout='fill'
                                         blurDataURL={`data:image/svg+xml;base64,${toBase64(avatarPlaceholder())}`}
                                         placeholder="blur"
@@ -56,14 +60,14 @@ const CovernanceMain = (props) => {
                                 </div>
                                 <div className={style['item-description']}>
                                     <div className={style['item-name']}>
-                                        {item.name}
+                                        {item['Name']}
                                     </div>
                                     <div className={style['item-content']}>
                                         <div className={style['item-info']}>
-                                            {item.info}
+                                            {item['Title']}
                                         </div>
                                         <div className={style['item-text']}>
-                                            {item.text}
+                                            {item['Description']}
                                         </div>
                                     </div>
                                 </div>

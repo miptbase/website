@@ -12,6 +12,7 @@ import GovernanceTop from "../components/GovernanceTop";
 import GovernanceMain from "../components/GovernanceMain";
 import { footer } from "../content/footer.json";
 import { top, board, seo, fund, company } from "../content/governance.json";
+import boardData from "../content/board.json";
 const Governance = () => {
     const donationRef = useRef();
     const toDonation = () => {
@@ -25,7 +26,7 @@ const Governance = () => {
             <>
                 <Header header={header} menu={menu} scrollToDonation={toDonation}/>
                 <GovernanceTop top={top}/>
-                <GovernanceMain board={board} fund={fund} company={company}/>
+                <GovernanceMain board={board} fund={fund} company={company} boardData={boardData}/>
                 <Donation donation={donation} refDonation={donationRef} stats={stats}/>
                 <Footer footer={footer} menu={menu}/>
             </>

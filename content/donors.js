@@ -35,6 +35,21 @@ const outputReport = [];
       })
 })();
 
+const outputPathBoard = './content/board.json';
+const urlBoard = 'https://docs.google.com/spreadsheets/d/1Qc_JIdsOex8FEW_PR457OKATArbDDJuw6QkuehOiPC4/gviz/tq?tqx=out:csv&sheet=board';
+const outputBoard = [];
+(async () => {
+  const response = await axios.get(urlBoard);
+  csv()
+    .fromString(response.data)
+    .subscribe((csvLine)=>{
+      outputBoard.push(csvLine)
+    })
+    .on('done', (error)=>{
+      fs.writeFileSync(outputPathBoard, JSON.stringify(outputBoard));
+    })
+})();
+
 const imagesFolder = './public/media/donors';
 const imagesDonors = [];
 fs.readdirSync(imagesFolder).forEach(file => {
