@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import style from "./donors-honorable_.module.scss";
 import Image from "next/image";
+import rehypeRaw from 'rehype-raw'
+import ReactMarkdown from 'react-markdown'
 import donorsPerson from '../../content/donors.json'
 import donorsImages from '../../content/donorsImages.json'
 import {useIsMobile} from "../../hooks/useIsMobile";
@@ -26,7 +28,7 @@ const DonorsHonorable = (props) => {
                                <div className={style['donor-img']}>
                                    <Image
                                      src={`/media/donors/${donor.ID}.png`}
-                                     alt={donor['Donor']}
+                                     alt={donor['Name']}
                                      layout='fill'
                                      objectFit='cover'
                                      objectPosition='left center'
@@ -37,18 +39,11 @@ const DonorsHonorable = (props) => {
                                </div>
                                <div className={style.content}>
                                    <div className={style.name}>
-                                       {donor['Donor']}
+                                       {donor['Name']}
                                    </div>
                                    <div className={style.text}>
-                                       {donor['Text']}
+                                       <ReactMarkdown rehypePlugins={[rehypeRaw]} children={donor['Description']} />
                                    </div>
-                                   <div className={style.text}>
-                                       {
-                                           `${donor.Department != "" &&  donor.Department != "-" ? donor.Department : ''}
-                                        ${donor.Year != "" && donor.Year != "-" ? donor.Year : ''}`
-                                       }
-                                   </div>
-
                                </div>
                            </div>
                          ))}
@@ -63,15 +58,11 @@ const DonorsHonorable = (props) => {
                            <div className={style.item} key={donor.ID}>
                                <div className={style.content}>
                                    <div className={style.name}>
-                                       {donor['Donor']}
+                                       {donor['Name']}
                                    </div>
                                    <div className={style.text}>
-                                       {
-                                           `${donor.Department != "" &&  donor.Department != "-" ? donor.Department : ''}
-                                        ${donor.Year != "" && donor.Year != "-" ? donor.Year : ''}`
-                                       }
+                                       <ReactMarkdown rehypePlugins={[rehypeRaw]} children={donor['Description']} />
                                    </div>
-
                                </div>
                            </div>
                          ))}
@@ -90,7 +81,7 @@ const DonorsHonorable = (props) => {
                                 <div className={style['donor-img']}>
                                     <Image
                                       src={`/media/donors/${donor.ID}.png`}
-                                      alt={donor['Donor']}
+                                      alt={donor['Name']}
                                       layout='fill'
                                       objectFit='cover'
                                       objectPosition='left center'
@@ -102,18 +93,11 @@ const DonorsHonorable = (props) => {
                                 </div>
                                 <div className={style.content}>
                                     <div className={style.name}>
-                                        {donor['Donor']}
+                                        {donor['Name']}
                                     </div>
                                     <div className={style.text}>
-                                        {donor['Text']}
+                                        <ReactMarkdown rehypePlugins={[rehypeRaw]} children={donor['Description']} />
                                     </div>
-                                    <div className={style.text}>
-                                        {
-                                            `${donor.Department != "" &&  donor.Department != "-" ? donor.Department : ''}
-                                        ${donor.Year != "" && donor.Year != "-" ? donor.Year : ''}`
-                                        }
-                                    </div>
-
                                 </div>
                             </div>
                           ))}
@@ -141,7 +125,7 @@ const DonorsHonorable = (props) => {
                                           <div className={style['donor-img']}>
                                               <Image
                                                 src={`/media/donors/${donor.ID}.png`}
-                                                alt={donor['Donor']}
+                                                alt={donor['Name']}
                                                 layout='fill'
                                                 objectFit='cover'
                                                 objectPosition='left center'
@@ -152,18 +136,11 @@ const DonorsHonorable = (props) => {
                                           </div>
                                           <div className={style.content}>
                                               <div className={style.name}>
-                                                  {donor['Donor']}
+                                                  {donor['Name']}
                                               </div>
                                               <div className={style.text}>
-                                                  {donor['Text']}
+                                                  <ReactMarkdown rehypePlugins={[rehypeRaw]} children={donor['Description']} />
                                               </div>
-                                              <div className={style.text}>
-                                                  {
-                                                      `${donor.Department != "" &&  donor.Department != "-" ? donor.Department : ''}
-                                        ${donor.Year != "" && donor.Year != "-" ? donor.Year : ''}`
-                                                  }
-                                              </div>
-
                                           </div>
                                       </div>
                                     ))}
@@ -178,13 +155,10 @@ const DonorsHonorable = (props) => {
                                       <div className={style.item} key={donor.ID}>
                                           <div className={style['content-mini']}>
                                               <div className={style.name}>
-                                                  {donor['Donor']}
+                                                  {donor['Name']}
                                               </div>
                                               <div className={style.text}>
-                                                  {
-                                                      `${donor.Department != "" &&  donor.Department != "-" ? donor.Department : ''}
-                                                        ${donor.Year != "" && donor.Year != "-" ? donor.Year : ''}`
-                                                  }
+                                                  <ReactMarkdown rehypePlugins={[rehypeRaw]} children={donor['Description']} />
                                               </div>
 
                                           </div>

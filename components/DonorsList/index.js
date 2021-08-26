@@ -4,7 +4,6 @@ import Donor from "../Donor";
 
 const DonorsList = (props) => {
     const {donors} = props;
-
     return (
         <div className={style['donors-list']}>
           <div className={style.list}>
@@ -12,10 +11,9 @@ const DonorsList = (props) => {
                   <Donor
                       key={donor.ID}
                       donor={donor}
-                      name={donor.Donor}
-                      description= {`${donor.Department != "" &&  donor.Department != "-" ? donor.Department : ''} ${donor.Year != "" &&  donor.Year != "-" ? `(${donor.Year})` : ''}`}
-                      company={donor.Company}
-                      text={donor.Text}
+                      name={donor['Name']}
+                      description= {donor['Description']}
+                      company={donor['Top company']}
                       img={`media/donors/${donor.ID}.png`}
                   />
               ))}

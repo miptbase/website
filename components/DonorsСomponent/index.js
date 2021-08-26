@@ -77,7 +77,7 @@ const DonorsComponent = (props) => {
                         </div>
                     ))}
                 </div>
-                <DonorsList donors={donorsPerson.filter(donor => donor['Top donor'] === "1")}/>
+                <DonorsList donors={donorsPerson.filter(donor => donor['Top'] === "1")}/>
                 <div className={style.button}>
 
                     <Button

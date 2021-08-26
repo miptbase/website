@@ -1,5 +1,7 @@
 import React from 'react'
 import style from "./donor_.module.scss"
+import rehypeRaw from 'rehype-raw'
+import ReactMarkdown from 'react-markdown'
 import { useIsMobile } from '../../hooks/useIsMobile';
 import { makeStyles } from '@material-ui/core/styles';
 import Dialog from "@material-ui/core/Dialog";
@@ -36,9 +38,9 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Donor = (props) => {
+    const {name, description, img, company} = props;
     const classes = useStyles();
     const isMobile = useIsMobile();
-    const {name, description, img, company, text} = props;
     const [modal, setModal] = React.useState(false);
 
     return (
@@ -63,7 +65,9 @@ const Donor = (props) => {
                             <p className={style.name}>{name}</p>
                             <p className={style.company}>{company}</p>
                             <p className={style['details-company']}>{company}</p>
-                            <p className={style['description']}>{description}</p>
+                            <p className={style['description']}>
+                                <ReactMarkdown rehypePlugins={[rehypeRaw]} children={description} />
+                            </p>
                         </div>
                     </div>
 
@@ -107,7 +111,7 @@ const Donor = (props) => {
                         <DonorDetails
                             donor={name}
                             company={company}
-                            text={text}
+                            text={description}
                         />
                         <button
                             className={style.button}
