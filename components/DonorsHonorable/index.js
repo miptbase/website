@@ -49,7 +49,9 @@ const DonorsHonorable = (props) => {
                                        {donor['Name']}
                                    </div>
                                    <div className={style.text}>
-                                       <ReactMarkdown rehypePlugins={[rehypeRaw]} children={donor['Description']} />
+                                       <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                                           {donor['Description']}
+                                       </ReactMarkdown>
                                    </div>
                                </div>
                            </div>
@@ -66,7 +68,9 @@ const DonorsHonorable = (props) => {
                                        {donor['Name']}
                                    </div>
                                    <div className={style.text}>
-                                       <ReactMarkdown rehypePlugins={[rehypeRaw]} children={donor['Description']} />
+                                       <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                                           {donor['Description']}
+                                       </ReactMarkdown>
                                    </div>
                                </div>
                            </div>
@@ -106,7 +110,9 @@ const DonorsHonorable = (props) => {
                                         {donor['Name']}
                                     </div>
                                     <div className={style.text}>
-                                        <ReactMarkdown rehypePlugins={[rehypeRaw]} children={donor['Description']} />
+                                        <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                                            {donor['Description']}
+                                        </ReactMarkdown>
                                     </div>
                                 </div>
                             </div>
@@ -154,7 +160,9 @@ const DonorsHonorable = (props) => {
                                                   {donor['Name']}
                                               </div>
                                               <div className={style.text}>
-                                                  <ReactMarkdown rehypePlugins={[rehypeRaw]} children={donor['Description']} />
+                                                  <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                                                      {donor['Description']}
+                                                  </ReactMarkdown>
                                               </div>
                                           </div>
                                       </div>
@@ -171,7 +179,9 @@ const DonorsHonorable = (props) => {
                                                   {donor['Name']}
                                               </div>
                                               <div className={style.text}>
-                                                  <ReactMarkdown rehypePlugins={[rehypeRaw]} children={donor['Description']} />
+                                                  <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                                                      {donor['Description']}
+                                                  </ReactMarkdown>
                                               </div>
 
                                           </div>

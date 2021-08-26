@@ -9,7 +9,7 @@ const StandardGoal = (props) => {
                 <h1 className={style.title}>{standard.title}</h1>
                 <div className={style.items}>
                     {standard.items.map((item) => (
-                        <div className={style.item}>
+                        <div className={style.item} key={item.name}>
                             <div className={style['item-name']}>
                                 {item.name}
                             </div>

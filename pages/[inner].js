@@ -17,7 +17,7 @@ export default function InnerPage({ pageTitle, frontmatter, markdownBody }) {
         >
             <article>
                 <>
-                    <ReactMarkdown rehypePlugins={[rehypeRaw]} children={markdownBody} />
+                    <ReactMarkdown rehypePlugins={[rehypeRaw]}>{markdownBody}</ReactMarkdown>
                 </>
             </article>
         </Layout>

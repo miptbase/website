@@ -13,7 +13,7 @@ const ErrorComponent = (props) => {
                 <div>
                     <h1 className={style.title}>{content.title}</h1>
                     <div className={style.text}>
-                        <ReactMarkdown rehypePlugins={[rehypeRaw]} children={content.text} />
+                        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{content.text}</ReactMarkdown>
                     </div>
                     <div className={style['button-container']}>
                         <Button

@@ -21,8 +21,8 @@ const CovernanceTop = (props) => {
                           {item.items &&
                           <div className={style['info-container']}>
                             {
-                              item.items.map((item) => (
-                                <div className={style['item-info']}>
+                              item.items.map((item, i) => (
+                                <div key={i} className={style['item-info']}>
                                   {item.text}
                                 </div>
                               ))
@@ -31,7 +31,6 @@ const CovernanceTop = (props) => {
                           }
                         </div>
                       ))}
-                      }
                     </>
                   )
                 }

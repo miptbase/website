@@ -10,8 +10,8 @@ const CompositionStandard = (props) => {
                 {composition.title}
             </h2>
             <div className={style.items}>
-                {composition.items.map((item) => (
-                    <div className={style.item}>
+                {composition.items.map((item, i) => (
+                    <div className={style.item} key={i}>
                         <div className={style['item-header']}>
                             <div className={style['item-titles']}>
                                 <div className={style['item-title']}>

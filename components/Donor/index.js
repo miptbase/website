@@ -65,9 +65,11 @@ const Donor = (props) => {
                             <p className={style.name}>{name}</p>
                             <p className={style.company}>{company}</p>
                             <p className={style['details-company']}>{company}</p>
-                            <p className={style['description']}>
-                                <ReactMarkdown rehypePlugins={[rehypeRaw]} children={description} />
-                            </p>
+                            <div className={style['description']}>
+                                <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                                    {description}
+                                </ReactMarkdown>
+                            </div>
                         </div>
                     </div>
 

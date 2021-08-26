@@ -13,7 +13,7 @@ const Media = (props) => {
             </h2>
             <div className={style.items}>
                 {media.items.map((item, index) => (
-                    <a href={item.link} target='_blank' rel='noopener'
+                    <a href={item.link} target='_blank' rel='noopener noreferrer'
                         className={style.item}
                         key={index}
                     >
