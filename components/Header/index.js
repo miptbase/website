@@ -65,6 +65,7 @@ const Header = (props) => {
                                     text={header.button}
                                     color='orange'
                                     padding='1.6rem'
+                                    height='4.1rem'
                                 />
                             </a>
                         </Link>
