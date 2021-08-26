@@ -36,7 +36,7 @@ const outputReport = [];
 })();
 
 const outputPathBoard = './content/board.json';
-const urlBoard = 'https://docs.google.com/spreadsheets/d/1Qc_JIdsOex8FEW_PR457OKATArbDDJuw6QkuehOiPC4/gviz/tq?tqx=out:csv&sheet=board';
+const urlBoard = 'https://docs.google.com/spreadsheets/d/1jUAB1w-GIAbBz-jcpkUBlu996QZFAhpzWVFzOgbPTIo/gviz/tq?tqx=out:csv&headers=0&sheet=board';
 const outputBoard = [];
 (async () => {
   const response = await axios.get(urlBoard);
