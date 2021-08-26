@@ -5,6 +5,8 @@ import rehypeRaw from 'rehype-raw'
 import ReactMarkdown from 'react-markdown'
 import donorsPerson from '../../content/donors.json'
 import donorsImages from '../../content/donorsImages.json'
+import avatar from "../../public/media/avatar-2.svg"
+import avatarMobile from "../../public/media/avatar-3.svg"
 import {useIsMobile} from "../../hooks/useIsMobile";
 import Button from "../ui/Button";
 import { avatarPlaceholder, toBase64} from "../../scripts/placeholder"
@@ -21,13 +23,18 @@ const DonorsHonorable = (props) => {
                <>
                    <div className={style['donors-top']}>
                        {donorsPerson.filter(donor =>
-                         donor['Class'] === "A" && donorsImages.includes(`${donor['ID']}.png`) ||
-                         donor['Class'] === "B" && donorsImages.includes(`${donor['ID']}.png`))
+                         donor['Name'] != "" && (
+                         donor['Class'] === "A" ||
+                         donor['Class'] === "B")
+                         )
                          .map((donor)  => (
                            <div className={style.item} key={donor.ID}>
                                <div className={style['donor-img']}>
                                    <Image
-                                     src={`/media/donors/${donor.ID}.png`}
+                                     src={
+                                         donorsImages.includes(`${donor['ID']}.png`) ?
+                                           `/media/donors/${donor.ID}.png` : avatar
+                                     }
                                      alt={donor['Name']}
                                      layout='fill'
                                      objectFit='cover'
@@ -50,8 +57,6 @@ const DonorsHonorable = (props) => {
                    </div>
                    <div className={style.donors}>
                        {donorsPerson.filter(donor =>
-                         donor['Class'] === "A" && !(donorsImages.includes(`${donor['ID']}.png`)) ||
-                         donor['Class'] === "B" && !(donorsImages.includes(`${donor['ID']}.png`)) ||
                          donor['Class'] !== "A" && donor['Class'] !== "B"
                        )
                          .map((donor)  => (
@@ -74,13 +79,18 @@ const DonorsHonorable = (props) => {
                 <>
                     <div className={style['donors-top']}>
                         {donorsPerson.filter(donor =>
-                          donor['Class'] === "A" && donorsImages.includes(`${donor['ID']}.png`) ||
-                          donor['Class'] === "B" && donorsImages.includes(`${donor['ID']}.png`))
+                          donor['Name'] != "" && (
+                          donor['Class'] === "A" ||
+                          donor['Class'] === "B")
+                        )
                           .slice(0, 9).map((donor)  => (
                             <div className={style.item} key={donor.ID}>
                                 <div className={style['donor-img']}>
                                     <Image
-                                      src={`/media/donors/${donor.ID}.png`}
+                                      src={
+                                          donorsImages.includes(`${donor['ID']}.png`) ?
+                                            `/media/donors/${donor.ID}.png` : avatarMobile
+                                      }
                                       alt={donor['Name']}
                                       layout='fill'
                                       objectFit='cover'
@@ -118,13 +128,18 @@ const DonorsHonorable = (props) => {
                           <>
                               <div className={style['donors-top']}>
                                   {donorsPerson.filter(donor =>
-                                    donor['Class'] === "A" && donorsImages.includes(`${donor['ID']}.png`) ||
-                                    donor['Class'] === "B" && donorsImages.includes(`${donor['ID']}.png`))
+                                    donor['Name'] != "" && (
+                                    donor['Class'] === "A" ||
+                                    donor['Class'] === "B")
+                                  )
                                     .slice(10).map((donor)  => (
                                       <div className={style.item} key={donor.ID}>
                                           <div className={style['donor-img']}>
                                               <Image
-                                                src={`/media/donors/${donor.ID}.png`}
+                                                src={
+                                                    donorsImages.includes(`${donor['ID']}.png`) ?
+                                                      `/media/donors/${donor.ID}.png` : avatarMobile
+                                                }
                                                 alt={donor['Name']}
                                                 layout='fill'
                                                 objectFit='cover'
@@ -147,8 +162,6 @@ const DonorsHonorable = (props) => {
                               </div>
                               <div className={style.donors}>
                                   {donorsPerson.filter(donor =>
-                                    donor['Class'] === "A" && !(donorsImages.includes(`${donor['ID']}.png`)) ||
-                                    donor['Class'] === "B" && !(donorsImages.includes(`${donor['ID']}.png`)) ||
                                     donor['Class'] !== "A" && donor['Class'] !== "B"
                                   )
                                     .map((donor)  => (
