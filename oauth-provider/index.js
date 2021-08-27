@@ -24,9 +24,29 @@ function indexMiddleWare (req, res) {
     </a>`)
 }
 
-module.exports = {
-  auth: authMiddleWareInit(oauth2),
-  callback: callbackMiddleWareInit(oauth2, oauthProvider),
-  success: (req, res) => { res.send('') },
-  index: indexMiddleWare
-}
+const auth = authMiddleWareInit(oauth2);
+const callback = callbackMiddleWareInit(oauth2, oauthProvider);
+const success = (req, res) => { res.send('') };
+const index = indexMiddleWare;
+
+require('dotenv').config({ silent: true })
+const express = require('express')
+const port = process.env.PORT || 3000
+
+const app = express()
+
+// Initial page redirecting to Github
+app.get('/oauth-provider/auth', auth)
+
+// Callback service parsing the authorization token
+// and asking for the access token
+app.get('/oauth-provider/callback', callback)
+
+app.get('/oauth-provider/success', success)
+app.get('/oauth-provider', index)
+
+app.listen(port, () => {
+  console.log("gandalf is walkin' on port " + port)
+})
+
+module.exports = app;
