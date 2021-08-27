@@ -9,7 +9,7 @@ module.exports = {
         repo: "miptbase/website",
         branch: "develop",
         squash_merges: true,
-        base_url: 'https://dev.miptbase.org/oauth-provider',
+        base_url: 'https://dev.miptbase.org/api',
     },
 
     // Local backend is used during development
