@@ -6,14 +6,14 @@ const port = process.env.PORT || 3000
 const app = express()
 
 // Initial page redirecting to Github
-app.get('/auth', middleWarez.auth)
+app.get('/api/auth', middleWarez.auth)
 
 // Callback service parsing the authorization token
 // and asking for the access token
-app.get('/callback', middleWarez.callback)
+app.get('/api/callback', middleWarez.callback)
 
-app.get('/success', middleWarez.success)
-app.get('/', middleWarez.index)
+app.get('/api/success', middleWarez.success)
+app.get('/api/', middleWarez.index)
 
 app.listen(port, () => {
   console.log("gandalf is walkin' on port " + port)
