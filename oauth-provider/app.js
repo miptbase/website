@@ -10,10 +10,10 @@ app.get('/auth', middleWarez.auth)
 
 // Callback service parsing the authorization token
 // and asking for the access token
-app.get('/callback', middleWarez.callback)
+app.get('/oauth-provider/callback', middleWarez.callback)
 
-app.get('/success', middleWarez.success)
-app.get('/', middleWarez.index)
+app.get('/oauth-provider/success', middleWarez.success)
+app.get('/oauth-provider/', middleWarez.index)
 
 app.listen(port, () => {
   console.log("gandalf is walkin' on port " + port)
