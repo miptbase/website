@@ -10,6 +10,7 @@ module.exports = {
         branch: "develop",
         squash_merges: true,
         base_url: 'https://dev.miptbase.org',
+        auth_endpoint: '/prod/auth',
     },
 
     // Local backend is used during development
