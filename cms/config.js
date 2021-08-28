@@ -9,7 +9,7 @@ module.exports = {
         repo: "miptbase/website",
         branch: "develop",
         squash_merges: true,
-        base_url: 'https://dev.miptbase.org/api',
+        base_url: 'https://dev.miptbase.org',
     },
 
     // Local backend is used during development
