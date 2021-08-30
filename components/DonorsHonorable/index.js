@@ -23,10 +23,8 @@ const DonorsHonorable = (props) => {
                <>
                    <div className={style['donors-top']}>
                        {donorsPerson.filter(donor =>
-                         donor['Name'] != "" && (
-                         donor['Class'] === "A" ||
-                         donor['Class'] === "B")
-                         )
+                         donor['Name'] != ""
+                         ).sort((a, b) => a["Class"] > b["Class"] ? 1 : -1)
                          .map((donor)  => (
                            <div className={style.item} key={donor.ID}>
                                <div className={style['donor-img']}>
@@ -57,25 +55,6 @@ const DonorsHonorable = (props) => {
                            </div>
                          ))}
                    </div>
-                   <div className={style.donors}>
-                       {donorsPerson.filter(donor =>
-                         donor['Class'] !== "A" && donor['Class'] !== "B"
-                       )
-                         .map((donor)  => (
-                           <div className={style.item} key={donor.ID}>
-                               <div className={style.content}>
-                                   <div className={style.name}>
-                                       {donor['Name']}
-                                   </div>
-                                   <div className={style.text}>
-                                       <ReactMarkdown rehypePlugins={[rehypeRaw]}>
-                                           {donor['Description']}
-                                       </ReactMarkdown>
-                                   </div>
-                               </div>
-                           </div>
-                         ))}
-                   </div>
                </>
             }
             {
@@ -83,10 +62,8 @@ const DonorsHonorable = (props) => {
                 <>
                     <div className={style['donors-top']}>
                         {donorsPerson.filter(donor =>
-                          donor['Name'] != "" && (
-                          donor['Class'] === "A" ||
-                          donor['Class'] === "B")
-                        )
+                          donor['Name'] != ""
+                        ).sort((a, b) => a["Class"] > b["Class"] ? 1 : -1)
                           .slice(0, 9).map((donor)  => (
                             <div className={style.item} key={donor.ID}>
                                 <div className={style['donor-img']}>
@@ -134,10 +111,8 @@ const DonorsHonorable = (props) => {
                           <>
                               <div className={style['donors-top']}>
                                   {donorsPerson.filter(donor =>
-                                    donor['Name'] != "" && (
-                                    donor['Class'] === "A" ||
-                                    donor['Class'] === "B")
-                                  )
+                                    donor['Name'] != ""
+                                  ).sort((a, b) => a["Class"] > b["Class"] ? 1 : -1)
                                     .slice(10).map((donor)  => (
                                       <div className={style.item} key={donor.ID}>
                                           <div className={style['donor-img']}>
@@ -164,26 +139,6 @@ const DonorsHonorable = (props) => {
                                                       {donor['Description']}
                                                   </ReactMarkdown>
                                               </div>
-                                          </div>
-                                      </div>
-                                    ))}
-                              </div>
-                              <div className={style.donors}>
-                                  {donorsPerson.filter(donor =>
-                                    donor['Class'] !== "A" && donor['Class'] !== "B"
-                                  )
-                                    .map((donor)  => (
-                                      <div className={style.item} key={donor.ID}>
-                                          <div className={style['content-mini']}>
-                                              <div className={style.name}>
-                                                  {donor['Name']}
-                                              </div>
-                                              <div className={style.text}>
-                                                  <ReactMarkdown rehypePlugins={[rehypeRaw]}>
-                                                      {donor['Description']}
-                                                  </ReactMarkdown>
-                                              </div>
-
                                           </div>
                                       </div>
                                     ))}
