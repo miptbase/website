@@ -31,6 +31,12 @@
 .logo {
   position: relative;
   @include logo;
+  width: 18.281rem;
+  height: 3.9rem;
+  &:after {
+    width: 19.281rem;
+    height: 5.9rem;
+  }
   @include mediaMob {
     margin-bottom: 4rem;
   }
@@ -48,17 +54,17 @@
 
 .social {
   display: grid;
-  gap: 2rem;
+  gap: 2.8rem;
   align-items: center;
   justify-content: flex-end;
   cursor: pointer;
-  grid-template-columns: repeat(5, 1.6rem);
+  grid-template-columns: repeat(5, 2.4rem);
 }
 
 .social-item {
   position: relative;
-  width: 1.6rem;
-  height: 1.7rem;
+  width: 2.4rem;
+  height: 2.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,8 +82,8 @@
     content: '';
     display: block;
     position: absolute;
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 3.2rem;
+    height: 3.2rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -121,9 +127,9 @@
 
 .info-description {
   margin-right: 2rem;
-  width: 29.1rem;
-  font-size: 0.8rem;
-  line-height: 120%;
+  width: 43.6rem;
+  font-size: 1.2rem;
+  line-height: 130%;
   color: rgba(white, 0.6);
   @include mediaMob {
     margin-right: 0;
@@ -134,6 +140,11 @@
   }
   a {
     @include link-hovered;
+    color: white;
+    border-bottom: none;
+    &:hover {
+      border-bottom: none;
+    }
   }
 }
 
@@ -158,9 +169,9 @@
 .info-button {
   display: flex;
   align-items: center;
-  width: 10.245rem;
-  height: 2.1rem;
-  padding: 0 0.6rem ;
+  width: 15.6rem;
+  height: 3.2rem;
+  padding: 0.8rem 1.2rem 1rem;
   border: 1px solid #FFFFFF;
   border-radius: 3px;
   &:focus, &:focus-visible {
@@ -173,27 +184,32 @@
 }
 
 .info-text {
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   line-height: 120%;
   color: white;
-  margin-left: 0.6rem;
+  margin-left: 1rem;
   white-space: nowrap;
 }
 
 .info-icon {
-  width: 1.3rem;
-  height: 1.1rem;
+  width: 1.564rem;
+  height: 1.352rem;
 }
 
 .copy {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   margin-left: auto;
-  font-size: 1.2rem;
-  line-height: 130%;
+  font-size: 1.4rem;
+  line-height: 140%;
   color: rgba(#FFFFFF, 0.75);
   a {
     @include link-hovered;
+    color: white;
+    border-bottom: none;
+    &:hover {
+      border-bottom: none;
+    }
   }
   @include mediaMob {
    align-items: flex-end;
