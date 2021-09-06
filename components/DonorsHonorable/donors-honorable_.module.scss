@@ -29,7 +29,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 4rem;
-  grid-auto-rows: 9.8rem;
+  grid-auto-rows: 10.4rem;
   margin-bottom: 4rem;
   @include mediaMob {
     grid-template-columns: 1fr;
@@ -43,7 +43,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 4rem;
-  grid-auto-rows: 8.2rem;
+  grid-auto-rows: 10.4rem;
   @include mediaMob {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1.5rem;
@@ -63,8 +63,8 @@
 }
 
 .donor-img {
-  width: 9.8rem;
-  height: 9.8rem;
+  width: 10.4rem;
+  height: 10.4rem;
   position: relative;
   flex-shrink: 0;
   @include mediaMob {
@@ -74,10 +74,9 @@
 }
 
 .content {
-  padding: 2rem 2rem 2rem 3rem;
+  padding: 1.6rem 1.8rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   @include mediaMob {
     padding: 1.5rem 1.5rem 1.5rem 2rem;
   }
@@ -96,7 +95,7 @@
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 110%;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.6rem;
   @include mediaMob {
     font-size: 1.4rem;
     margin-bottom: 0.4rem;
