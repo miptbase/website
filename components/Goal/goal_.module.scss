@@ -56,6 +56,9 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  width: 41.1rem;
+  height: 41.1rem;
+  align-self: center;
   @include mediaMob {
     height: 27rem;
     width: 27rem;
