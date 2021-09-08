@@ -4,15 +4,19 @@ import Link from "next/link";
 import cn from "classnames";
 
 const Menu = (props) => {
-    const {menu, color, size} = props;
+    const {menu, color, size, footer} = props;
     return (
-        <nav className={style.menu}>
+        <nav className={cn({
+            [style.menu]: true,
+            [style.menu_footer]: footer,
+        })}>
             {menu.items.map((item) => (
                 <div
                     className={cn({
                         [style.item]: true,
                         [style.item_black]: color === 'black',
-                        [style.item_big]: size === 'big'
+                        [style.item_big]: size === 'big',
+                        [style.item_footer]: footer,
                     })}
                     key={item.item}
                 >
@@ -20,6 +24,7 @@ const Menu = (props) => {
                         [style.link]: true,
                         [style.link_black]: color === 'black',
                         [style.link_big]: size === 'big',
+                         [style.link_footer]: footer,
                     })}>
                         <Link href={item.link}>
                             <a>

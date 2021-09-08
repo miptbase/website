@@ -22,42 +22,37 @@ const Footer = (props) => {
                             </a>
                         </Link>
                     </div>
-                    {!isMobile
-                    && (
-                        <>
-                            <div className={style.menu}>
-                                <Menu menu={menu} />
-                            </div>
-                            <div className={style.social}>
-                                {footer.social.map((item) => (
-                                    <div
-                                        className={style['social-item']}
-                                        key={item.img}
-                                    >
-                                        <a className={style.link} href={item.link} target='_blank' rel='noopener noreferrer'>
-                                            <SVG className={style['social-img']} src={item.img} />
-                                        </a>
+                    <div className={style.menu}>
+                        <Menu menu={menu} footer={true}/>
+                    </div>
+                    <div className={style.social}>
+                        {footer.social.map((item) => (
+                          <div
+                            className={style['social-item']}
+                            key={item.img}
+                          >
+                              <a className={style.link} href={item.link} target='_blank' rel='noopener noreferrer'>
+                                  <SVG className={style['social-img']} src={item.img} />
+                              </a>
 
-                                    </div>
-                                ))}
-                            </div>
-                        </>
-                    )}
-                    {isMobile
-                    && (
-                        <>
-                            <div className={style.links}>
-                                {footer.social.map((item) => (
-                                        <a className={style['social-link']}     key={item.name} href={item.link} target='_blank' rel='noopener noreferrer'>
-                                            {item.name}
-                                        </a>
-                                ))}
-                                <a className={style['social-link']} href='mailto:fund@phystech.edu' target='_blank' rel='noopener noreferrer'>
-                                    Mail us
-                                </a>
-                            </div>
-                        </>
-                    )}
+                          </div>
+                        ))}
+                    </div>
+                    {/*{isMobile*/}
+                    {/*&& (*/}
+                    {/*    <>*/}
+                    {/*        <div className={style.links}>*/}
+                    {/*            {footer.social.map((item) => (*/}
+                    {/*                    <a className={style['social-link']}     key={item.name} href={item.link} target='_blank' rel='noopener noreferrer'>*/}
+                    {/*                        {item.name}*/}
+                    {/*                    </a>*/}
+                    {/*            ))}*/}
+                    {/*            <a className={style['social-link']} href='mailto:fund@phystech.edu' target='_blank' rel='noopener noreferrer'>*/}
+                    {/*                Mail us*/}
+                    {/*            </a>*/}
+                    {/*        </div>*/}
+                    {/*    </>*/}
+                    {/*)}*/}
 
 
                 </div>
