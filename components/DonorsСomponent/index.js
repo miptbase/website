@@ -5,6 +5,15 @@ import Link from "next/link";
 import Button from "../ui/Button";
 import DonorsList from "../DonorsList";
 
+const getDonorsTitle = (title, count) => {
+    const res = count % 10;
+
+    if (res === 1 && String(count)[String(count).length - 2] !== '1') {
+        return title.slice(0, title.length - 1);
+    }
+
+    return title;
+}
 
 const DonorsComponent = (props) => {
     const {donors, donorsPerson, stats} = props;
@@ -60,7 +69,14 @@ const DonorsComponent = (props) => {
         <section className={style.donors}>
             <div className={style.inner}>
                 <h2 className={style.title}>
-                    {donors.title} {totalDonors} {name(totalDonors, 'донор', 'донора', 'доноров')}
+                    {donors.title}
+                    {' '}
+                    {getDonorsTitle(donors.titleSecond, totalDonors)}
+                    {donors.titleThird}
+                    {' '}
+                    {totalDonors}
+                    {' '}
+                    {name(totalDonors, 'донор', 'донора', 'доноров')}
                 </h2>
                 <div className={style.items}>
                     {data.map((item, index) => (
