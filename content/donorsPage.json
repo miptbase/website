@@ -41,14 +41,14 @@
         "link": "/"
       },
       {
-        "text": "Разработка логотипа MIPTBASE и веб-сайта miptbase.org  (Влад Рафеев, Слава Мишаков, Саша Кириков)",
-        "image": "media/accuraten-logo.svg",
-        "link": "/"
+        "text": "Разработка платежных моделей и backend miptbase.org  (Евгений Чернявский, Дмитрий Шапошников)",
+        "image": "media/phystech-center-logo.png",
+        "link": "https://phystech.center/"
       },
       {
-        "text": "Разработка логотипа MIPTBASE и веб-сайта miptbase.org  (Влад Рафеев, Слава Мишаков, Саша Кириков)",
-        "image": "media/accuraten-logo.svg",
-        "link": "/"
+        "text": "Разработка и поддержка телеграм-бота MIPTBASE  (Даниил Охлопков)",
+        "image": "media/okhlopkov-logo.png",
+        "link": "https://t.me/danokhlopkov"
       }
     ]
   }
