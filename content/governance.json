@@ -178,8 +178,8 @@
     "subTitle": "Документы",
     "docItems": [
       {
-        "name": "Договор пожертвования в ЦК №9 \"Базовый жизненный стандарт\"",
-        "link": "/"
+        "name": "Договор доверительного управления имуществом целевого капитала №9",
+        "link": "https://github.com/miptbase/docs/raw/main/trust_agreement.pdf"
       }
     ]
   }
