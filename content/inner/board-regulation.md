@@ -1,5 +1,5 @@
 ---
-title: board-regulation
+title: docs/board
 seo:
   title: Положение о совете целевого капитала №9 (ФЦК МФТИ)
   description: Здесь описание странички будет
