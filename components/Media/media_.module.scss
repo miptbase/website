@@ -53,10 +53,12 @@
     box-shadow: 0 0 0 1px  rgba(0, 0, 0, 0.3) inset;
     transition: 0.3s opacity ease-in-out;
   }
-  &:hover, &:active {
-    background: #F7F7F7;
-    &:after {
-      opacity: 0;
+  @include mediaNoTouch {
+    &:hover, &:active {
+      background: #F7F7F7;
+      &:after {
+        opacity: 0;
+      }
     }
   }
   &:focus {
@@ -92,13 +94,19 @@
 }
 
 .img {
-  height: 4rem;
+  height: 8rem;
   width: 20rem;
+  background-repeat: no-repeat;
+  background-position: left bottom;
   &_mfti {
-    margin-bottom: -6px;
+    margin-bottom: -0.6rem;
+  }
+  @media (min-width: 641px) and (max-width: 1024px) {
+    background-size: 65%;
   }
   @include mediaMob {
-  margin-bottom: 0;
+    margin-bottom: 0;
+    height: 4rem;
   }
 }
 

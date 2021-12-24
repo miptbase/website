@@ -5,6 +5,10 @@
   background: $blue;
   padding-top: 12rem;
   padding-bottom: 12rem;
+  @include mediaMob {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
 }
 
 .container {
@@ -14,6 +18,9 @@
 .items {
   @include col2;
   grid-gap: 6rem;
+  @include mediaMob {
+    display: block;
+  }
 }
 
 .item {
@@ -25,12 +32,25 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @include mediaMob {
+    height: auto;
+    padding: 2.5rem 2rem;
+    margin-bottom: 3rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .text {
   font-size: 2rem;
   line-height: 140%;
   color: white;
+  @include mediaMob {
+    font-size: 1.6rem;
+    line-height: 130%;
+    margin-bottom: 4rem;
+  }
 }
 
 .bottom {
@@ -47,6 +67,12 @@
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   margin-right: 3rem;
+  @include mediaMob {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 0.6rem;
+    margin-right: 1.5rem;
+  }
 }
 
 .content {
@@ -62,6 +88,10 @@
   line-height: 120%;
   color: white;
   margin-bottom: 0.8rem;
+  @include mediaMob {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+  }
 }
 
 .info {
@@ -69,4 +99,7 @@
   line-height: 130%;
   color: rgba(white, 0.6);
   width: 92%;
+  @include mediaMob {
+    font-size: 1rem;
+  }
 }

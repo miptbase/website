@@ -11,17 +11,21 @@
     overflow: hidden;
     height: 21rem;
   }
+  @include mediaTouch {
+    user-select: none;
+  }
 }
-
 
 .img {
   height: 16rem;
-  width: 16rem;
-  background: $blue;
+  width: 100%;
   position: relative;
   @include mediaMob {
     height: 13.5rem;
     width: 100%;
+  }
+  @include mediaTouch {
+    pointer-events: none;
   }
   img {
     width: 100%;
@@ -38,7 +42,7 @@
   display: flex;
   flex-direction: column;
   height: 25rem;
-  transition: 0.3s background ease-in-out;
+  transition: 0.05s background ease-in-out,  0.1s transform cubic-bezier(0.4, 0.0, 1, 1);
   @include mediaMob {
     height: 7.5rem;
     padding: 1rem;
@@ -50,7 +54,7 @@
   font-size: 1.6rem;
   line-height: 110%;
   height: 3.2rem;
-  transition: 0.6s all ease-in-out;
+  transition: 0.05s all ease-in-out;
   transform-origin: top left;
   margin-bottom: 1.3rem;
   @include mediaMob {
@@ -74,7 +78,7 @@
 .company {
   font-size: 1.2rem;
   line-height: 130%;
-  transition: 0.6s visibility ease-in-out, 0.6s opacity ease-in-out, 0.6s top ease-in-out;
+  transition: 0.05s visibility ease-in-out, 0.05s opacity ease-in-out, 0.05s top ease-in-out;
   color: rgba(black, 0.6);
   @include mediaMob {
     font-size: 1.2rem;
@@ -89,7 +93,7 @@
   color: white;
   opacity: 0;
   visibility: hidden;
-  transition: 0.6s visibility ease-in-out, 0.6s opacity ease-in-out;
+  transition: 0.05s visibility ease-in-out, 0.05s opacity ease-in-out;
 }
 
 .description {
@@ -113,22 +117,54 @@
 }
 
 .container {
-  transition: 0.6s transform ease-in-out;
-  &:hover {
-    transform: translateY(-16rem);
-    .info {
-      background: $blue;
-    }
-    .name {
-      color: white;
-    }
-    .company {
-      visibility: hidden;
-      opacity: 0;
-    }
-    .details-company {
-      visibility: visible;
-      opacity: 1;
+
+  @include mediaNoTouch {
+    &:hover {
+
+      .info {
+        transform: translateY(-16rem);
+        transition: 0.150s transform cubic-bezier(0.0, 0.0, 0.2, 1), 0.05s background ease-in-out;
+        background: $blue;
+      }
+      .name {
+        color: white;
+        transition: 0.150s all ease-in-out;
+      }
+      .company {
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.05s visibility ease-in-out, 0.05s opacity ease-in-out, 0.05s top ease-in-out;
+      }
+      .details-company {
+        visibility: visible;
+        opacity: 1;
+        transition: 0.05s visibility ease-in-out, 0.05s opacity ease-in-out;
+      }
     }
   }
+  @include mediaTouch {
+    &:active {
+      transform: translateY(-16rem);
+      transition: 0.150s transform cubic-bezier(0.0, 0.0, 0.2, 1);;
+      .info {
+        background: $blue;
+        transition: 0.150s background ease-in-out;
+      }
+      .name {
+        color: white;
+        transition: 0.150s all ease-in-out;
+      }
+      .company {
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.150s visibility ease-in-out, 0.150s opacity ease-in-out, 0.150s top ease-in-out;
+      }
+      .details-company {
+        visibility: visible;
+        opacity: 1;
+        transition: 0.150s visibility ease-in-out, 0.150s opacity ease-in-out;
+      }
+    }
+  }
+
 }

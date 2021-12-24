@@ -1,5 +1,7 @@
 import React from 'react';
 import style from "./donor-details.module.css";
+import rehypeRaw from 'rehype-raw'
+import ReactMarkdown from 'react-markdown'
 
 const DonorDetails = (props) => {
     const {donor, company, text} = props;
@@ -14,7 +16,7 @@ const DonorDetails = (props) => {
                     {company}
                 </div>
                 <div className={style.text}>
-                    {text}
+                    <ReactMarkdown rehypePlugins={[rehypeRaw]}>{text}</ReactMarkdown>
                 </div>
             </div>
     );

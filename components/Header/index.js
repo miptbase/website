@@ -30,7 +30,18 @@ const Header = (props) => {
                 <div className={style.logo}>
                     <Link href="/">
                         <a>
-                            <SVG className={style['logo-img']} src={color === 'black'?  `/${header.logoBlack}` : `/${header.logo}`} />
+                            <SVG className={cn({
+                                [style['logo-img']]: true,
+                                [style['logo-img_hidden']]: !!menuOpen,
+                                [style['logo-img_visible']]: !menuOpen && color === 'black',
+                            })}
+                                 src={`/${header.logoBlack}`} />
+                            <SVG className={cn({
+                                [style['logo-img']]: true,
+                                [style['logo-img_hidden']]: !menuOpen,
+                                [style['logo-img_visible']]: !!menuOpen || color !== 'black',
+                            })}
+                                 src={`/${header.logo}`} />
                         </a>
                     </Link>
                 </div>
@@ -54,6 +65,7 @@ const Header = (props) => {
                                     text={header.button}
                                     color='orange'
                                     padding='1.6rem'
+                                    height='4.1rem'
                                 />
                             </a>
                         </Link>
@@ -64,14 +76,23 @@ const Header = (props) => {
                     [style['menu-button']]: true,
                     [style['menu-button_open']]: !!menuOpen
                 })} onClick={() => setMenuOpen(!menuOpen)}>
-                    <div className={cn({[style['menu-line']]: true, [style['menu-line_1']]: true, [style['menu-line_1_open']]: !!menuOpen})} />
-                    <div className={cn({[style['menu-line']]: true, [style['menu-line_2']]: true, [style['menu-line_2_open']]: !!menuOpen})} />
+                    <div className={cn({
+                        [style['menu-line']]: true,
+                        [style['menu-line_1']]: true,
+                        [style['menu-line_1_open']]: !!menuOpen,
+                        [style['menu-line_black']]: color === 'black'})}
+                    />
+                    <div className={cn({
+                        [style['menu-line']]: true,
+                        [style['menu-line_2']]: true,
+                        [style['menu-line_2_open']]: !!menuOpen,
+                        [style['menu-line_black']]: color === 'black'})} />
                 </div>
 
 
                 <div ref={menuRef} className={cn({
                     [style['menu-mobile']]: true,
-                    [style['menu-mobile_open']]: !!menuOpen
+                    [style['menu-mobile_open']]: menuOpen
                 })} >
                     <Menu menu={menu} />
                 </div>

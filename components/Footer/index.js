@@ -22,50 +22,45 @@ const Footer = (props) => {
                             </a>
                         </Link>
                     </div>
-                    {!isMobile
-                    && (
-                        <>
-                            <div className={style.menu}>
-                                <Menu menu={menu} />
-                            </div>
-                            <div className={style.social}>
-                                {footer.social.map((item) => (
-                                    <div
-                                        className={style['social-item']}
-                                        key={item.img}
-                                    >
-                                        <a className={style.link} href={item.link} target='_blank' rel='noopener'>
-                                            <SVG className={style['social-img']} src={item.img} />
-                                        </a>
+                    <div className={style.menu}>
+                        <Menu menu={menu} footer={true}/>
+                    </div>
+                    <div className={style.social}>
+                        {footer.social.map((item) => (
+                          <div
+                            className={style['social-item']}
+                            key={item.img}
+                          >
+                              <a className={style.link} href={item.link} target='_blank' rel='noopener noreferrer'>
+                                  <SVG className={style['social-img']} src={item.img} />
+                              </a>
 
-                                    </div>
-                                ))}
-                            </div>
-                        </>
-                    )}
-                    {isMobile
-                    && (
-                        <>
-                            <div className={style.links}>
-                                {footer.social.map((item) => (
-                                        <a className={style['social-link']}     key={item.name} href={item.link} target='_blank' rel='noopener'>
-                                            {item.name}
-                                        </a>
-                                ))}
-                                <a className={style['social-link']} href='mailto:fund@phystech.edu' target='_blank' rel='noopener'>
-                                    Mail us
-                                </a>
-                            </div>
-                        </>
-                    )}
+                          </div>
+                        ))}
+                    </div>
+                    {/*{isMobile*/}
+                    {/*&& (*/}
+                    {/*    <>*/}
+                    {/*        <div className={style.links}>*/}
+                    {/*            {footer.social.map((item) => (*/}
+                    {/*                    <a className={style['social-link']}     key={item.name} href={item.link} target='_blank' rel='noopener noreferrer'>*/}
+                    {/*                        {item.name}*/}
+                    {/*                    </a>*/}
+                    {/*            ))}*/}
+                    {/*            <a className={style['social-link']} href='mailto:fund@phystech.edu' target='_blank' rel='noopener noreferrer'>*/}
+                    {/*                Mail us*/}
+                    {/*            </a>*/}
+                    {/*        </div>*/}
+                    {/*    </>*/}
+                    {/*)}*/}
 
 
                 </div>
                 <div className={style.info}>
                     <div className={style['info-description']}>
-                        <ReactMarkdown rehypePlugins={[rehypeRaw]} children={footer.copy.text} />
+                        <ReactMarkdown rehypePlugins={[rehypeRaw]}>{footer.copy.text}</ReactMarkdown>
                     </div>
-                    <a className={style['info-button']} href='https://vercel.com/?utm_source=miptbaseorg&utm_campaign=oss' target='_blank' rel='noopener'>
+                    <a className={style['info-button']} href='https://vercel.com/?utm_source=miptbaseorg&utm_campaign=oss' target='_blank' rel='noopener noreferrer'>
                         <SVG className={style['info-icon']} src='media/info-footer.svg' />
                         <div className={style['info-text']}>Powered by Vercel</div>
                     </a>
@@ -73,13 +68,12 @@ const Footer = (props) => {
                     <div className={style.copy}>
                         {!isMobile
                         && (
-                            <ReactMarkdown rehypePlugins={[rehypeRaw]} children={footer.copy.copy} />
+                          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{footer.copy.copy}</ReactMarkdown>
                         )}
                         {isMobile
                         && (
-                            <ReactMarkdown rehypePlugins={[rehypeRaw]} children={footer.copy.copy_mobile} />
+                          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{footer.copy.copy_mobile}</ReactMarkdown>
                         )}
-
                     </div>
                 </div>
             </div>

@@ -15,6 +15,7 @@
   padding: 0 var(--buttonPadding, 3.6rem);
   cursor: pointer;
   transform: translate3d(0, 0, 0);
+  white-space: nowrap;
   backface-visibility: hidden;
   transition: 0.3s color ease-in-out,
               0.3s background-color ease-in-out,
@@ -75,7 +76,7 @@
       }
     }
     &_black {
-      color: black;
+      color: $blue;
       background: transparent;
       &:after {
         content: '';
@@ -83,7 +84,7 @@
         border-radius: 0.5rem;
         overflow: hidden;
         background: transparent;
-        box-shadow: 0 0 0 2px black inset;
+        box-shadow: 0 0 0 2px $blue inset;
         top: 0;
         bottom: 0;
         left: 0;
@@ -92,29 +93,9 @@
         transition: 0.3s opacity ease-in-out, 0.3s background-color ease-in-out;
         z-index: 1;
       }
-      &:hover, &:focus {
-        color: black;
-        background: white;
-      }
-      &:hover {
-        &:after {
-          opacity: 0;
-        }
-      }
-      &:focus {
-        &:after {
-          box-shadow: 0 0 0 2px black inset;
-        }
-      }
-      &:active {
-        background: #F7F7F7;
-        color: black;
-        &:after {
-          opacity: 0;
-        }
-      }
-      &.disabled {
-        opacity: 0.5;
+      &:hover, &:focus, &:active {
+        color: white;
+        background: $blue;
       }
     }
 
@@ -200,5 +181,6 @@
   position: relative;
   z-index: 2;
   white-space: nowrap;
+  top: -0.1rem;
 }
 

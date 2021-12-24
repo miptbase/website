@@ -17,7 +17,9 @@ const Feature = (props) => {
                 </div>
             </div>
             <div className={style.text}>
-                <ReactMarkdown rehypePlugins={[rehypeRaw]} children={text} />
+              <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                {text}
+              </ReactMarkdown>
             </div>
         </div>
     )

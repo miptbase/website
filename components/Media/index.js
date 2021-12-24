@@ -13,7 +13,7 @@ const Media = (props) => {
             </h2>
             <div className={style.items}>
                 {media.items.map((item, index) => (
-                    <a href={item.link} target='_blank' rel='noopener'
+                    <a href={item.link} target='_blank' rel='noopener noreferrer'
                         className={style.item}
                         key={index}
                     >
@@ -26,8 +26,8 @@ const Media = (props) => {
                                     style.img,
                                     style[`img_${item.name}`]
                                 )}
-                                style={isMobile ? {background: `url(${item.mobileImg}) no-repeat left bottom`}
-                                : {background: `url(${item.img}) no-repeat left bottom`}}>
+                                style={isMobile ? {backgroundImage: `url(${item.mobileImg})`}
+                                : {backgroundImage: `url(${item.img})`}}>
                             </div>
                             <div className={style.date}>
                                 {item.date}

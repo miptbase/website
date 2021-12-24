@@ -1,12 +1,15 @@
 import React from 'react'
 import style from "./donor_.module.scss"
+import rehypeRaw from 'rehype-raw'
+import ReactMarkdown from 'react-markdown'
 import { useIsMobile } from '../../hooks/useIsMobile';
 import { makeStyles } from '@material-ui/core/styles';
 import Dialog from "@material-ui/core/Dialog";
 import DonorDetails from "../DonorDetails";
 import DialogContent from "@material-ui/core/DialogContent";
-import Image from 'next/image'
-
+import Image from 'next/image';
+import { avatarPlaceholder, toBase64} from "../../scripts/placeholder";
+import avatar from "../../public/media/avatar.svg";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -35,9 +38,9 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Donor = (props) => {
+    const {name, description, img, company} = props;
     const classes = useStyles();
     const isMobile = useIsMobile();
-    const {name, description, img, company, text} = props;
     const [modal, setModal] = React.useState(false);
 
     return (
@@ -48,19 +51,25 @@ const Donor = (props) => {
                     <div className={style.container}>
                         <div className={style.img}>
                             <Image
-                                src={`/${img}`}
+                                src={img ? `/${img}` : avatar}
                                 alt={name}
                                 layout='fill'
                                 objectFit='cover'
                                 objectPosition='top center'
-                                loading='eager'
+                                blurDataURL={`data:image/svg+xml;base64,${toBase64(avatarPlaceholder())}`}
+                                placeholder="blur"
+                                sizes="8vw"
                             />
                         </div>
                         <div className={style.info}>
                             <p className={style.name}>{name}</p>
                             <p className={style.company}>{company}</p>
                             <p className={style['details-company']}>{company}</p>
-                            <p className={style['description']}>{description}</p>
+                            <div className={style['description']}>
+                                <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                                    {description}
+                                </ReactMarkdown>
+                            </div>
                         </div>
                     </div>
 
@@ -71,7 +80,15 @@ const Donor = (props) => {
                 <>
                 <div className={style.donor} onClick={() => setModal(true)}>
                     <div className={style.img}>
-                        <Image src={`/${img}`} alt={name} layout='fill'  objectFit='cover' objectPosition='top center'/>
+                        <Image
+                          src={img ? `/${img}` : avatar}
+                          alt={name}
+                          layout='fill'
+                          objectFit='cover'
+                          objectPosition='top center'
+                          blurDataURL={`data:image/svg+xml;base64,${toBase64(avatarPlaceholder())}`}
+                          placeholder="blur"
+                        />
                     </div>
                     <div className={style.info}>
                         <p className={style.name}>{name}</p>
@@ -96,7 +113,7 @@ const Donor = (props) => {
                         <DonorDetails
                             donor={name}
                             company={company}
-                            text={text}
+                            text={description}
                         />
                         <button
                             className={style.button}

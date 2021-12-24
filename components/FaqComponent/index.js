@@ -23,8 +23,8 @@ const FaqComponent = (props) => {
             <div className={style.contents}>
                 <div>
                     {faq.items.map((item, i) => (
-                        <div className={style['link-container']}>
-                            <a className={style['content-link']} key={i} href={`#faq_${i + 1}`}>
+                        <div className={style['link-container']} key={i}>
+                            <a className={style['content-link']} href={`#faq_${i + 1}`}>
                                 {item.title}
                             </a>
                         </div>

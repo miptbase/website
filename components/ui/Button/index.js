@@ -17,7 +17,7 @@ const Button = (props) => {
     });
 
     return (
-        <button onClick={buttonFunction} className={buttonClass} type={type} style={{'padding' : `0 ${padding}`, 'height' : {height}}}>
+        <button onClick={buttonFunction} className={buttonClass} type={type} style={{'padding' : `0 ${padding}`, 'height' : `${height}`}}>
             {text &&  <span className={style.text}>{text}</span>}
             {children}
         </button>

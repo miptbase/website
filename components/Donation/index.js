@@ -7,7 +7,7 @@ import SVG from 'react-inlinesvg';
 const Donation = (props) => {
     const isMobile = useIsMobile();
     const {donation, refDonation, stats} = props;
-    const topQuartile = Number(stats.filter(item => item.Key === 'Top quartile')[0].Value.replace(/,/g, ''));
+    const topQuartile = Number(stats.filter(item => item.Key === 'Top-25% donor')[0].Value.replace(/,/g, ''));
     return (
         <section className={style.donation}>
             <div className={style.content}>

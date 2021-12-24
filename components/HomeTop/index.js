@@ -11,15 +11,36 @@ const HomeTop = (props) => {
         <section className={style['home-top']}>
 
             <div className={style.inner}>
-                <div className={style['img-frame']}>
-                    <Image
-                        src={`/media/home-frame-2.jpg`}
-                        alt='MITPBASE'
-                        layout='fill'
-                        objectFit='cover'
-                        objectPosition='bottom center'
-                    />
+                <div className={style['img-container']}>
+                    <div className={style.img}>
+                        <div className={style.slot}>
+                            <img srcSet="
+                                   /media/home-top-image-800.jpg 800w,
+                                   /media/home-top-image-1024.jpg 1024w,
+                                   /media/home-top-image-1280.jpg 1280w,
+                                   /media/home-top-image-1600.jpg 1600w,
+                                   /media/home-top-image-1920.jpg 1920w,
+                                   /media/home-top-image-3840.jpg 3840w,
+                                    "
+                                 sizes="(max-width: 800px) 400px,
+                                    (max-width: 1024px) 512px,
+                                     (max-width: 1600px) 800px,
+                                      (max-width: 1920px) 960px,
+                                    3840px"
+                                 src="/media/home-top-image-1024.jpg" alt="MITPBASE" loading="lazy"/>
+                        </div>
+                    </div>
+                    <div className={style.img_mobile}>
+                        <Image
+                          src={`/${top.mobileImg}`}
+                          alt='MITPBASE'
+                          layout='fill'
+                          objectFit='cover'
+                          objectPosition='center bottom'
+                        />
+                    </div>
                 </div>
+
 
                 <div className={style.content}>
                     <h1 className={style.title}>{top.title}</h1>
@@ -37,26 +58,7 @@ const HomeTop = (props) => {
 
 
             </div>
-            <div className={style['img-container']}>
-                <div className={style.img}>
-                    <Image
-                        src={`/media/home-frame-1.jpg`}
-                        alt='MITPBASE'
-                        layout='responsive'
-                        width={1250}
-                        height={369}
-                    />
-                </div>
-                <div className={style.img_mobile}>
-                    <Image
-                        src={`/${top.mobileImg}`}
-                        alt='MITPBASE'
-                        layout='responsive'
-                        width={321}
-                        height={234}
-                    />
-                </div>
-            </div>
+
 
         </section>
     )

@@ -10,6 +10,7 @@ const CMS = dynamic(
         }),
     {
         ssr: false,
+      // eslint-disable-next-line react/display-name
         loading: () => <h1>Loading</h1>,
     }
 );

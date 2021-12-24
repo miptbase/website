@@ -7,6 +7,7 @@
   @include mediaMob {
     padding-top: 0;
     overflow: hidden;
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }
 
@@ -23,15 +24,28 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 3rem 0;
+    padding: 3rem 0 5rem;
+    border-top: 1px solid rgba(white, 0.3);
   }
 }
 
 .logo {
   position: relative;
   @include logo;
+  width: 18.281rem;
+  height: 3.9rem;
+  &:after {
+    width: 19.281rem;
+    height: 5.9rem;
+  }
   @include mediaMob {
-    margin-bottom: 4rem;
+    width: 15rem;
+    height: 3.2rem;
+    margin-bottom: 4.8rem;
+    &:after {
+      width: 16rem;
+      height: 5.2rem;
+    }
   }
 }
 
@@ -43,21 +57,27 @@
 .menu {
   display: flex;
   justify-content: center;
+  @include mediaMob {
+    width: 100%;
+  }
 }
 
 .social {
   display: grid;
-  gap: 2rem;
+  gap: 2.8rem;
   align-items: center;
   justify-content: flex-end;
   cursor: pointer;
-  grid-template-columns: repeat(5, 1.6rem);
+  grid-template-columns: repeat(5, 2.4rem);
+  @include mediaMob {
+    margin: 0 auto;
+  }
 }
 
 .social-item {
   position: relative;
-  width: 1.6rem;
-  height: 1.7rem;
+  width: 2.4rem;
+  height: 2.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,18 +95,21 @@
     content: '';
     display: block;
     position: absolute;
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 3.2rem;
+    height: 3.2rem;
     top: 50%;
     left: 50%;
+    -webkit-backface-visibility: hidden;
     transform: translate(-50%, -50%);
     border: 1px solid #FFFFFF;
     border-radius: 0.3rem;
     opacity: 0;
     transition: 0.3s opacity ease-in-out;
   }
-  &:hover {
-    opacity: 0.6;
+  @include mediaNoTouch {
+    &:hover {
+      opacity: 0.6;
+    }
   }
   &:active {
     opacity: 0.3;
@@ -113,14 +136,15 @@
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 2rem;
     padding: 0 0 3rem;
+    align-items: center;
   }
 }
 
 .info-description {
   margin-right: 2rem;
-  width: 29.1rem;
-  font-size: 0.8rem;
-  line-height: 120%;
+  width: 43.6rem;
+  font-size: 1.2rem;
+  line-height: 130%;
   color: rgba(white, 0.6);
   @include mediaMob {
     margin-right: 0;
@@ -131,6 +155,11 @@
   }
   a {
     @include link-hovered;
+    color: white;
+    border-bottom: none;
+    &:hover {
+      border-bottom: none;
+    }
   }
 }
 
@@ -153,46 +182,56 @@
 }
 
 .info-button {
+  text-decoration: none;
   display: flex;
   align-items: center;
-  width: 10.245rem;
-  height: 2.1rem;
-  padding: 0 0.6rem ;
+  width: 15.6rem;
+  height: 3.2rem;
+  padding: 0.8rem 1.2rem 1rem;
   border: 1px solid #FFFFFF;
   border-radius: 3px;
   &:focus, &:focus-visible {
     outline: none;
   }
   @include mediaMob {
-    width: 10rem;
-    height: 2.5rem;
+    width: 15.18rem;
+    height: 3.2rem;
+    padding: 0.8rem 1rem 1rem;
   }
 }
 
 .info-text {
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   line-height: 120%;
   color: white;
-  margin-left: 0.6rem;
+  margin-left: 1rem;
   white-space: nowrap;
 }
 
 .info-icon {
-  width: 1.3rem;
-  height: 1.1rem;
+  width: 1.564rem;
+  height: 1.352rem;
+  flex-shrink: 0;
 }
 
 .copy {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   margin-left: auto;
-  font-size: 1.2rem;
-  line-height: 130%;
+  font-size: 1.4rem;
+  line-height: 140%;
   color: rgba(#FFFFFF, 0.75);
   a {
     @include link-hovered;
+    color: white;
+    border-bottom: none;
+    &:hover {
+      border-bottom: none;
+    }
   }
   @include mediaMob {
-   align-items: flex-end;
+    text-align: right;
+    font-size: 1.2rem;
+    line-height: 130%;
   }
 }

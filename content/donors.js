@@ -17,19 +17,37 @@ const output = [];
     })
 })();
 
-const outputPathReport = './content/report.json';
-const urlReport = 'https://docs.google.com/spreadsheets/d/1jUAB1w-GIAbBz-jcpkUBlu996QZFAhpzWVFzOgbPTIo/gviz/tq?tqx=out:csv&sheet=report';
+const outputPathReport = './content/report.js';
+const urlReport = 'https://docs.google.com/spreadsheets/d/1jUAB1w-GIAbBz-jcpkUBlu996QZFAhpzWVFzOgbPTIo/gviz/tq?tqx=out:csv&sheet=yield';
 const outputReport = [];
 (async () => {
   const response = await axios.get(urlReport);
-  csv()
+  csv({
+    noheader:true,
+    output:"csv"
+  })
       .fromString(response.data)
-      .subscribe((csvLine)=>{
-        outputReport.push(csvLine)
+      .subscribe((csvRow)=>{
+        outputReport.push(csvRow)
       })
       .on('done', (error)=>{
-        fs.writeFileSync(outputPathReport, JSON.stringify(outputReport));
+        fs.writeFileSync(outputPathReport, `export const report = ${JSON.stringify(outputReport)}`);
       })
+})();
+
+const outputPathBoard = './content/board.json';
+const urlBoard = 'https://docs.google.com/spreadsheets/d/1jUAB1w-GIAbBz-jcpkUBlu996QZFAhpzWVFzOgbPTIo/gviz/tq?tqx=out:csv&headers=0&sheet=board';
+const outputBoard = [];
+(async () => {
+  const response = await axios.get(urlBoard);
+  csv()
+    .fromString(response.data)
+    .subscribe((csvLine)=>{
+      outputBoard.push(csvLine)
+    })
+    .on('done', (error)=>{
+      fs.writeFileSync(outputPathBoard, JSON.stringify(outputBoard));
+    })
 })();
 
 const imagesFolder = './public/media/donors';
@@ -38,4 +56,3 @@ fs.readdirSync(imagesFolder).forEach(file => {
   imagesDonors.push(file);
 })
 fs.writeFileSync('./content/donorsImages.json', JSON.stringify(imagesDonors));
-console.log(imagesDonors);

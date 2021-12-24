@@ -9,7 +9,8 @@ module.exports = {
         repo: "miptbase/website",
         branch: "develop",
         squash_merges: true,
-        base_url: 'https://netlify-cms-github-oauth-provider.vercel.app',
+        base_url: 'https://dev.miptbase.org',
+        auth_endpoint: '/api/auth',
     },
 
     // Local backend is used during development
@@ -425,6 +426,7 @@ module.exports = {
                                 { label: "Title", name: "title", widget: "string"},
                                 { label: "Text", name: "text", widget: "text"},
                                 { label: "ButtonText", name: "buttonText", widget: "string"},
+                                { label: "ButtonTextMobile", name: "buttonTextMobile", widget: "string"},
                                 { label: "Image", name: "image", widget: "image"},
                             ]
                         },
@@ -452,6 +454,7 @@ module.exports = {
                             widget: "object",
                             fields:[
                                 { label: "Title", name: "title", widget: "string"},
+                                { label: "ButtonText", name: "buttonText", widget: "string"},
                             ]
                         },
                         {
@@ -520,8 +523,16 @@ module.exports = {
                                                     ]
                                             }
                                         ]
+                                },
+                                {   label: 'ItemsMobile',
+                                    name: "itemsMobile",
+                                    widget: "list",
+                                    fields:
+                                      [
+                                          { label: "Title", name: "title", widget: "string" },
+                                          { label: "Text", name: "text", widget: "text", required: false},
+                                      ]
                                 }
-
                             ]
                         },
                         {
@@ -531,17 +542,6 @@ module.exports = {
                             fields:[
                                 { label: "Title", name: "title", widget: "string"},
                                 { label: "Text", name: "text", widget: "text"},
-                                {   label: 'Items',
-                                    name: "items",
-                                    widget: "list",
-                                    fields:
-                                        [
-                                            { label: "Name", name: "name", widget: "string" },
-                                            { label: "Info", name: "info", widget: "text" },
-                                            { label: "Text", name: "text", widget: "text" },
-                                            { label: "Image", name: "image", widget: "image" },
-                                        ]
-                                },
                                 { label: "Subtitle", name: "subTitle", widget: "string"},
                                 {   label: 'DocItems',
                                     name: "docItems",
@@ -611,25 +611,6 @@ module.exports = {
                     name: "FAQ",
                     file: "content/faq.json",
                     fields: [
-                        {
-                            label: "SEOSection",
-                            name: "seo",
-                            widget: "object",
-                            fields: [
-                                {
-                                    label: "SEOTitle",
-                                    name: "title",
-                                    widget: "string",
-                                    required: false
-                                },
-                                {
-                                    label: "SEODescription",
-                                    name: "description",
-                                    widget: "string",
-                                    required: false
-                                },
-                            ],
-                        },
                         {
                             label: "SEOSection",
                             name: "seo",
@@ -779,25 +760,7 @@ module.exports = {
             extension: "md",
             fields: [
                 {
-                    label: "Selected",
-                    name: "selected",
-                    widget: "list",
-                    types: [
-                        {
-                            label: "Title2",
-                            name: "title2",
-                            widget: "string",
-                        },
-                        {
-                            label: "FFFF2",
-                            name: "jlkjkj2",
-                            widget: "string",
-                        },
-                    ]
-                },
-
-                {
-                    label: "Title",
+                    label: "URL",
                     name: "title",
                     widget: "string",
                     required: true,
@@ -808,13 +771,13 @@ module.exports = {
                     widget: "object",
                     fields: [
                         {
-                            label: "SEOTitle",
+                            label: "Title",
                             name: "title",
                             widget: "string",
                             required: false
                         },
                         {
-                            label: "SEODescription",
+                            label: "Description",
                             name: "description",
                             widget: "string",
                             required: false

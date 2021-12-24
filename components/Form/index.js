@@ -561,13 +561,13 @@ const Form = (props) => {
                             }
                             {
                                 isMobile &&
-                                <select className={cn(
+                                <select defaultValue={'DEFAULT'} className={cn(
                                     style.select,
                                     style.select_color_white
                                 )} name="departments">
-                                    <option selected >Факультет</option>
+                                    <option  value="DEFAULT" >Факультет</option>
                                     {departments.map(department => (
-                                        <option value={department.value}>{department.value}</option>
+                                        <option key={department.value} value={department.value}>{department.value}</option>
                                     ))}
                                 </select>
                             }
